@@ -1,14 +1,14 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Alexander-Aghili 
 
-repo_description_lines_max: 2
+repo_description_lines_max: 1
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Alexander-Aghili/Lempel-Ziv-78-Compression
+  - Alexander-Aghili/Schmidt-Somoa-Cryptography
+  - Alexander-Aghili/PerlinBackground
+  - Alexander-Aghili/PublicPollBackEnd
+
+public_poll_repos:
+  - Alexander-Aghili/PublicPollAppFrontEnd
+  - Alexander-Aghili/PublicPollBackEnd
