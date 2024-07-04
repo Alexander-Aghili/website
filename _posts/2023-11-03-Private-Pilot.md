@@ -4,6 +4,7 @@ title: 'My Journey to Become a Private Pilot'
 date: 2023-11-03
 categories: Flying 
 thumbnail: assets/img/PrivatePilot/FrontView.JPEG
+giscus_comments: true
 ---
 
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/Sunset.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}

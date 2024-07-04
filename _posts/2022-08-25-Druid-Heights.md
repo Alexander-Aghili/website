@@ -5,6 +5,7 @@ subtitle: 'The remains of a bohemian communal living area reside in the depths o
 date: 2022-08-25
 category: Exploration
 thumbnail: assets/img/DruidHeights/Aban1.jpg
+giscus_comments: true
 ---
 
 {% include figure.liquid loading="eager" path="assets/img/DruidHeights/Aban1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
