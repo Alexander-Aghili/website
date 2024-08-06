@@ -134,15 +134,15 @@ def get_embeddings(fname):
 
 To get an understanding of the next part, we have to understand the database structure. We decided to have to main tables with the following structures:
 1. The Publication Table - Holds publication metadata
-    a. DOI (Digital Object Identifier) - Universal Paper Identifier
-    b. The title
-    c. pmc link
-    d. pubmed link
+    1. DOI (Digital Object Identifier) - Universal Paper Identifier
+    2. The title
+    3. pmc link
+    4. pubmed link
 2. The Fragments Table
-    a. DOI (Foreign Key used to identify which paper fragment is from)
-    b. Header
-    c. Content
-    d.Vector
+    1. DOI (Foreign Key used to identify which paper fragment is from)
+    2. Header
+    3. Content
+    4. Vector
 
 ```python
 
@@ -189,10 +189,6 @@ def retreiveTextFromPdf(inp_file):
     for txt, embs in txt_embs:
         fragment = Fragment(doi, 'methods', txt, embs)
         fragments.append(fragment)
-
-    title = ""
-    pmc = ""
-    pubmed = ""
 
     publication = Publication(doi, title, pmc, pubmed, doi)
 
@@ -469,7 +465,7 @@ There were several key takeaways from this event.
 ### Structuring a Project Based on Requirements
 One of the most critical aspects of this hackathon was learning how to structure a project effectively to meet specific requirements. 
 1. Requirement Analysis: Understanding the core problem of data scarcity in the Protein Data Bank and how to address it with automation.
-2. Clear Objectives: Defining clear goals such as automating the data extraction and annotation process, ensuring metadata accuracy, and facilitating seamless integration with existing databases.
+2. Clear Objectives: Defining clear goals such as automating the data extraction and annotation process, ensuring metadata accuracy, and facilitating integration with existing databases.
 3. Modular Design: Breaking down the project into manageable components like the bioRxiv scraper, document analyzer, and database management. This modular approach ensured that each part could be developed, tested, and integrated independently.
 
 ### Quick Delegation and Integration of Separate Work
