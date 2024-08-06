@@ -4,13 +4,13 @@ title: 'The Bio-Science AI Hackathon'
 date: 2024-08-06
 categories: Reflections Software
 tags: AI Biotechnology Bioscience Hackathon
-thumbnail: assets/img/QB3Hackathon/AWS-pipeline.png
+thumbnail: assets/img/QBIHackathon/AWS-pipeline.png
 giscus_comments: true
 ---
 ## Introduction 
-Recently, I had the chance to join the Qb3 bio-hackathon at UCSF. This year's focus was on using machine learning and artificial intelligence to advance medicine. There were many incredible projects, like breast cancer detection using imaging and protein visualization. I was excited about contributing my computing skills to medical problems. Technology advancements that improve medicine can significantly enhance people's lives. 
+Recently, I had the chance to join the QBI bio-hackathon at UCSF. This year's focus was on using machine learning and artificial intelligence to advance medicine. There were many incredible projects, like breast cancer detection using imaging and protein visualization. I was excited about contributing my computing skills to medical problems. Technology advancements that improve medicine can significantly enhance people's lives. 
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Hackathon.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Hackathon.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 Initially, I didn't have a team. Fortunately, we were given the opportunity to pitch ideas and join existing teams. One pitch that caught my attention was from a Ph.D. researcher at UCSF, who was grappling with a challenging issue related to scientific data.
 
@@ -20,7 +20,7 @@ However, getting the correct data and metadata is difficult, as researchers do n
 
 The researcher leading this hackathon project, over the previous summer, had interns manually go through papers and fill out a spreadsheet with information about the article. Such information includes which methods were used to image the protein or if multiple methods were used. The team could then reach out to the researchers and encourage/collaborate with them to input their data into the protein data bank. The given task, for our hackathon, was to try and automate this pipeline. With recent advancements using LLMs, we figured it’d be possible to do the entire pipeline. 
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Data-Interns.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Data-Interns.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## Project Description
 
@@ -35,7 +35,7 @@ Since the relevant papers are available through bioRxiv and medRxiv, we used tho
 To get the prototype working, we decided to use the GPT 4.0 API. While this does break the 3rd goal, the LLM is easily replaceable by an open source alternative. The basic pipeline we created is as follows. We get the papers from the bioRxiv API and extract the metadata from the content. We turn the content into vector embeddings using OpenAI’s embeddings and store the embeddings in the Lantern Vector+postgres database, who was sponsoring the event. This helped us store the data about the papers for the long term and ask additional questions if necessary. We then used FAISS context retrieval to retrieve the context based on a given input using cosine similarity. We use GPT 4.0 to annotate the retrieved data and use Google Sheets and Mail APIs to save the data and notify stakeholders. We use AWS to host the architecture through an EC2 instance. We used langchain to help with LLM utilities. 
 
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/AWS-pipeline.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/AWS-pipeline.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## Implementation
 
@@ -445,19 +445,19 @@ We were also able to ask questions directly about the papers using the evaluate_
 
 ## Results
 
-The results after completing the project were quite successful. Due to the nature of LLMs, we know that we need to test the accuracy to see if it is a useful tool. Using GTP 4.0, the developed system had an accuracy of .82 plus or minus 0.02 on a 95% confidence interval. Out of 20 runs, it got 17 correct, and provided two false positives and one false negative. This was more successful than GPT 3.5 which had a lower accuracy. 
+The results after completing the project were quite successful. Due to the nature of LLMs, we know that we need to test the accuracy to see if it is a useful tool. Using GPT 4.0, the developed system had an accuracy of .82 plus or minus 0.02 on a 95% confidence interval. Out of 20 runs, it got 17 correct, and provided two false positives and one false negative. This was more successful than GPT 3.5 which had a lower accuracy. 
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Results-A.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Results-A.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 The system filled out a spreadsheet with information about the papers including the methods and technologies used and provided updates through email. 
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Results-B.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Results-B.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 This project was a very fun hackathon project to work on and our team ended up winning first place!
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Award.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Award.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-{% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Team.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/QBIHackathon/Team.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ## Key Takeaways
 There were several key takeaways from this event.
