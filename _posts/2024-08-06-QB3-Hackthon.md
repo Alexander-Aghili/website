@@ -18,7 +18,7 @@ Advancements in Artificial Intelligence and Machine Learning in medicine depend 
 
 However, getting the correct data and metadata is difficult, as researchers do not like spending time on data formatting and deposition. Oftentimes, they may not be aware or simply forget to input the data into the data bank whenever they have discovered a new structure. Thus, to solve this issue, we want to scan through recently published papers that report structures of biomolecules so we can reach out to authors and bring their data into PDB. 
 
-The researcher leading this hackathon project, over the previous summer, had interns manually go through papers and fill out a spreadsheet with information about the article. *Describe information. The team could then reach out to the researchers and encourage/collaborate with them to input their data into the protein data bank. The given task, for our hackathon, was to try and automate this pipeline. With recent advancements using LLMs, we figured it’d be possible to do the entire pipeline. 
+The researcher leading this hackathon project, over the previous summer, had interns manually go through papers and fill out a spreadsheet with information about the article. Such information includes which methods were used to image the protein or if multiple methods were used. The team could then reach out to the researchers and encourage/collaborate with them to input their data into the protein data bank. The given task, for our hackathon, was to try and automate this pipeline. With recent advancements using LLMs, we figured it’d be possible to do the entire pipeline. 
 
 {% include figure.liquid loading="eager" path="assets/img/QB3Hackathon/Data-Interns.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
