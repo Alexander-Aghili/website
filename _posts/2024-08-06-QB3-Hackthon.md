@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'The Bio-Science AI Hackathon'
-date: 2024-07-31
+date: 2024-08-06
 categories: Reflections Software
 tags: AI Biotechnology Bioscience Hackathon
 thumbnail: assets/img/QB3Hackathon/AWS-pipeline.png
