@@ -487,6 +487,6 @@ The hackathon provided hands-on experience with various LLM technologies and too
 
 The repository with all of the code can be found below:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-    {% include repository/repo.liquid repository=aozalevsky/structhunt %}
+    {% include repository/repo.liquid repository='aozalevsky/structhunt' %}
 </div>
 
