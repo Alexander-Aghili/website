@@ -28,25 +28,25 @@ I also learned how to navigate varying screen dimensions, utilize cloud serices,
 The app includes many pages. There is, of course, a sign up and sign in page. 
 Here users will sign in securely. 
 
-{% include figure.liquid loading="eager" path="assets/img/PublicPoll/Signin.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/PublicPoll/SigninHorizontal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 Then there is the home page which includes a feed of all polls not responded to yet.
 Refreshing the page is available by scrolling up or clicking the refresh button in the bottom right.
 Each poll contains a question, up to 26 possible answers (A-Z), a statistics page to show the results, and includes comments from others.
 On the comment page, you can access other people's account page by clicking on their profile picture.
 
-{% include figure.liquid loading="eager" path="assets/img/PublicPoll/Comment.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-{% include figure.liquid loading="eager" path="assets/img/PublicPoll/StatPage.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/PublicPoll/CommentHorizontal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/PublicPoll/StatPageHorizontal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 There is a create poll page in which a poll can be created and published.
 
-{% include figure.liquid loading="eager" path="assets/img/PublicPoll/CreatePollPage.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/PublicPoll/CreatePollPageHorizontal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 The account page contains the users information and three lists of polls. 
 The first is a list of all polls manually saved,  the second is a list of all polls responded to, and the final is a list of all polls created by that user.
 There is also a settings button which allows the user to edit personal information, profile picture, or the theme(color) of the app.
 
-{% include figure.liquid loading="eager" path="assets/img/PublicPoll/AccountPage.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/PublicPoll/AccountPageHorizontal.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 Github Repos:
 
