@@ -5,6 +5,7 @@ description: 'This is a mobile app that I developed to use as polls between my f
 date: 2022-9-21
 importance: 1
 category: Personal Projects
+thumbnail: assets/img/PublicPoll/SigninHorizontal.png
 giscus_comments: true
 ---
 This was my first ever attempt at create a full stack application on my own and I decided it would be fun to do it as a mobile app instead of as a web app since the world is going mobile.
