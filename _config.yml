@@ -514,8 +514,6 @@ third_party_libraries:
       js_map: "https://cdn.jsdelivr.net/npm/leaflet@{{version}}/dist/leaflet.js.map"
     version: "1.9.4"
   mathjax:
-    integrity:
-      js: "sha256-rjmgmaB99riUNcdlrDtcAiwtLIojSxNyUFdl+Qh+rB4="
     local:
       fonts: "output/chtml/fonts/woff-v2/"
     url:

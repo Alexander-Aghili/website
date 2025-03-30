@@ -12,6 +12,7 @@ giscus_comments: true
 
 The Julia Set Visualizer is a project aimed at bringing to life the intricate and captivating beauty of Julia sets, which are fundamental objects in the field of complex dynamics and fractal geometry. Julia sets are named after the French mathematician Gaston Julia, who, in the early 20th century, made significant contributions to our understanding of these complex structures. The study of Julia sets not only serves as a gateway into the fascinating world of fractals but also provides deep insights into the behavior of complex systems.
 
+{% include video.liquid path="assets/img/JuliaSetVisualizer/JuliaSetMovement.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
 ### Background and Mathematical Foundation
 
 Julia sets are derived from the dynamics of iterating a complex function, typically a quadratic polynomial of the form:
@@ -179,7 +180,6 @@ void calculate_pixels(ComplexScene* scene, uint32_t*** ip) {
 While this initially increased the time of processing, there were quickly diminishing and then negative returns. This is because as the number of threads increases, the overhead of a context switch begins to increase in proportion to the amount of computation being performed by the thread. This is worsened because each thread does less computation as the number of threads increases. Here is a graph of the time to compute a julia set by number of threads:
 
 {% include figure.liquid loading="eager" path="assets/img/JuliaSetVisualizer/Perf.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 As such, while CPU parallelization has some benefit, it doesn't solve the problem. It can be done better.
 
 ### GPU Parallelization
@@ -223,6 +223,7 @@ This calculates the number of blocks required with the given number of threads p
 
 GPUs are crazy fast and allow for parallelization to drastically increase the processing speed enabling real-time applications.
 
+{% include video.liquid path="assets/img/JuliaSetVisualizer/Zoom.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
 ### SDL2
 GPU parallelization enables quick processing of changes. Therefore, changes can be displayed quickly. Moving around the plane, zooming, changing the constant c, and animations can all be performed in a smooth experience. When waiting for a user event, a function called wait_event polls for the next user event. There are a few options. 
 
