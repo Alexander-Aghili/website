@@ -3,7 +3,7 @@ layout: post
 date: 2025-03-22
 title: 'A Simple Optimization for Time-lagged Independent Component Analysis'
 categories: Software Mathematics Parallelization MD TICA
-thumbnail: assets/img/TICAOptimization/thumbnail.png
+thumbnail: assets/img/TICASpeedup/ProteinImage.png
 giscus_comments: true
 ---
 
@@ -295,7 +295,3 @@ A 14x speedup on the _M2_dense function. Making the switch in the source code an
    390438    0.671    0.000    0.671    0.000 {method 'reduce' of 'numpy.ufunc' objects}
 ```
 Thus, I cut between a third and a half of the processing time. This made the process of creating new experiments much faster without that much hard work required.
-### Parallelization in Science and Mathematics
-Much of computational science and mathematics has many components which can be parallelized. 
-
-### Conclusion 
