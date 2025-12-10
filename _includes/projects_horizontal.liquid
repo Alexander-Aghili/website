@@ -26,9 +26,28 @@
                 </div>
               {% endif %}
             </div>
-          </div>
+            </div>
         </div>
       </div>
+            {% if project.external_links %}
+            <div class="links">
+              {% for link in project.external_links %}
+                {% assign href = link.url %}
+                {% if href contains '://' %}
+                {% else %}
+                  {% assign href = link.url | relative_url %}
+                {% endif %}
+                <a href="{{ href }}"
+                   class="btn btn-sm z-depth-0"
+                   role="button"
+                   target="_blank"
+                   rel="noopener">
+                  {{ link.label }}
+                </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+
     </div>
   </a>
 </div>

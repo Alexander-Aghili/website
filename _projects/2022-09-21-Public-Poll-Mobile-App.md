@@ -1,11 +1,11 @@
 ---
 layout: page 
 title: 'Public Poll Mobile App'
-description: 'This is a mobile app that I developed to use as polls between my friends'
+description: ' A mobile app using Flutter and Java that I developed to create, share, and comment on opinion controversial topics between friends.'
 date: 2022-9-21
-importance: 1
-category: Personal Projects
-thumbnail: assets/img/PublicPoll/SigninHorizontal.png
+importance: 3
+category: Computer Science and Mathematics Projects 
+img: assets/img/PublicPoll/AccountPageHorizontal.png
 giscus_comments: true
 ---
 This was my first ever attempt at create a full stack application on my own and I decided it would be fun to do it as a mobile app instead of as a web app since the world is going mobile.

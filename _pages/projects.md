@@ -5,8 +5,8 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 3
-display_categories: [Personal Projects, Work]
-horizontal: false
+display_categories: [Computer Science and Mathematics Projects]
+horizontal: true 
 ---
 
 <!-- pages/projects.md -->
@@ -22,11 +22,9 @@ horizontal: false
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
-    </div>
   </div>
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">

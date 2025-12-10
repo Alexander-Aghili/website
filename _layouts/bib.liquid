@@ -237,6 +237,13 @@
           <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
         {% endif %}
       {% endif %}
+      {% if entry.arxiv %}
+        {% if entry.arxiv contains '://' %}
+          <a href="{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">Arxiv</a>
+        {% else %}
+          <a href="{{ entry.arxiv | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Arxiv</a>
+        {% endif %}
+      {% endif %}
       {% if entry.slides %}
         {% if entry.slides contains '://' %}
           <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
