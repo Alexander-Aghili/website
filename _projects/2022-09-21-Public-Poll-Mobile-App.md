@@ -3,7 +3,7 @@ layout: page
 title: 'Public Poll Mobile App'
 description: ' A mobile app using Flutter and Java that I developed to create, share, and comment on opinion controversial topics between friends.'
 date: 2022-9-21
-importance: 3
+importance: 4
 category: Computer Science and Mathematics Projects 
 img: assets/img/PublicPoll/AccountPageHorizontal.png
 giscus_comments: true
