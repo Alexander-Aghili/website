@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Computational Methods for Fluid Dynamics Simulations"
-description: "A seminar final project surveying the numerical solution of the Navier-Stokes equations, covering finite difference and finite volume spatial discretizations paired with explicit Runge-Kutta time integrators."
+description: "A short paper surveying the numerical solution of the Navier-Stokes equations, covering finite difference and finite volume spatial discretizations paired with explicit Runge-Kutta time integrators."
 date: 2026-06-30
 importance: 0
 category: Computer Science and Mathematics Projects
@@ -13,7 +13,7 @@ external_links:
     url: https://docs.google.com/presentation/d/e/2PACX-1vQG2b1Oc3wv336p7rnketeOPzGUi0SP0TiItWdinVze3045wPXW0bxht8Z7sCkYqCjgUDWqCh9souhq/pub?start=true&loop=true&delayms=30000
 ---
 
-This seminar final project reviews the two principal families of spatial discretization used in computational fluid dynamics and the explicit time integrators that complete the method-of-lines paradigm for the compressible Navier-Stokes equations. It begins from the continuum setting and the conservation (divergence) form of the governing equations, then works through the discretizations and stability theory that make their numerical solution possible.
+This project was for my senior seminar class in Mathematics consisting of a ten page paper and a slideshow presentation. I review two common families of spatial discretization used in computational fluid dynamics and the explicit time integrators that complete the method-of-lines paradigm for the compressible Navier-Stokes equations. It begins from the continuum setting and the conservation (divergence) form of the governing equations, then works through the discretizations and stability theory that make their numerical solution possible.
 
 Finite difference methods are derived from Taylor expansion on structured grids, and higher-order central stencils are constructed by Richardson extrapolation on the same central formula. Finite volume methods are built instead on the integral conservation laws over control volumes, with Riemann-solver-based numerical fluxes such as Roe, HLL, and Godunov that make the schemes robust to shocks and contact discontinuities. The paper summarizes the trade-offs between the two families in geometry flexibility, exactness of local conservation, and the cost of high-order accuracy.
 
