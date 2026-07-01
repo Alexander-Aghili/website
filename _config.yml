@@ -180,6 +180,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  cool_websites:
+    output: true
+    permalink: /cool-website-wednesday/:title/
 
 announcements:
   enabled: true
@@ -259,6 +262,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: cool_websites
+    values:
+      layout: post
 
 sass:
   style: compressed

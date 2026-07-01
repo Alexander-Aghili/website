@@ -59,6 +59,16 @@ layout: default
         {% endfor %}
       {% endif %}
     </p>
+    {% if page.website_url %}
+      <p class="post-website-link">
+        <a class="btn btn-sm btn-outline-primary" href="{{ page.website_url }}" target="_blank" rel="noopener noreferrer">
+          Visit site
+          <svg width="0.9rem" height="0.9rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="vertical-align: -1px;">
+            <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </p>
+    {% endif %}
   </header>
 
   <article class="post-content">
