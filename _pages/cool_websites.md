@@ -2,7 +2,7 @@
 layout: page
 title: Cool Website Wednesday
 permalink: /cool-website-wednesday/
-description: A cool website I stumbled onto, shared every Wednesday. Could be anything I find interesting, whether a tool, a toy, an experiment, or a corner of the web worth a click.
+description: A cool website I stumbled onto, shared every Wednesday. 
 nav: true
 nav_order: 4
 ---
