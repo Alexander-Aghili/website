@@ -1,6 +1,8 @@
 ---
 title: Fields of the World 
-website_url: http://fieldsofthe.world/ftw-inference-app/#map
+websites:
+  - name: Fields of the World
+    url: http://fieldsofthe.world/ftw-inference-app/#map
 date: 2026-07-01
 description: A machine-learning map of the world's agricultural field boundaries, letting you explore the planet's farmland from above.
 ---

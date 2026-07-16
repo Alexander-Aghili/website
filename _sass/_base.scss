@@ -866,6 +866,13 @@ html.transition *:after {
     margin-bottom: 0;
   }
 
+  .post-website-link {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
   .post-tags {
     color: var(--global-text-color-light);
     font-size: 0.875rem;

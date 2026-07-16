@@ -27,9 +27,15 @@ nav_order: 4
     flex-wrap: wrap;
   }
   .cw-card .post-title { margin: 0; }
-  .cw-visit {
+  .cw-visit-group {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .cw-visit {
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
@@ -57,22 +63,26 @@ nav_order: 4
       <a class="cw-card-link" href="{{ site_entry.url | relative_url }}" aria-label="Read post: {{ site_entry.title }}"></a>
       <div class="cw-card-head">
         <h3 class="post-title">{{ site_entry.title }}</h3>
-        {% if site_entry.website_url %}
-        <a class="cw-visit" href="{{ site_entry.website_url }}" target="_blank" rel="noopener noreferrer">
-          Visit site
-          <svg width="1rem" height="1rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
+        {% if site_entry.websites %}
+        <div class="cw-visit-group">
+          {% for website in site_entry.websites %}
+          <a class="cw-visit" href="{{ website.url }}" target="_blank" rel="noopener noreferrer">
+            {% if website.name %}{{ website.name }}{% else %}Visit site{% endif %}
+            <svg width="1rem" height="1rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          {% endfor %}
+        </div>
         {% endif %}
       </div>
       {% if site_entry.description %}<p class="cw-desc">{{ site_entry.description }}</p>{% endif %}
       <p class="post-meta">
         <i class="fa-solid fa-calendar fa-sm"></i> {{ site_entry.date | date: '%B %d, %Y' }}
-        {% if site_entry.website_url %}
+        {% for website in site_entry.websites %}
         &nbsp; &middot; &nbsp;
-        {{ site_entry.website_url | remove: 'https://' | remove: 'http://' | split: '/' | first }}
-        {% endif %}
+        {{ website.url | remove: 'https://' | remove: 'http://' | split: '/' | first }}
+        {% endfor %}
       </p>
     </li>
     {% endfor %}
