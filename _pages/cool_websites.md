@@ -2,7 +2,7 @@
 layout: page
 title: Cool Website Wednesday
 permalink: /cool-website-wednesday/
-description: A cool website I stumbled onto, shared every Wednesday. 
+description: A cool website I stumbled onto, shared whenever I find inspiration. 
 nav: true
 nav_order: 4
 ---
@@ -89,6 +89,6 @@ nav_order: 4
   </ul>
 
 {% if websites == empty %}
-  <p>No cool websites yet, check back on Wednesday!</p>
+  <p>No cool websites yet, check back soon!</p>
 {% endif %}
 </div>

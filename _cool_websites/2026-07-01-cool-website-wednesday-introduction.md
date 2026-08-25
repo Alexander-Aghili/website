@@ -5,7 +5,7 @@ pinned: true
 description: What Cool Website Wednesday is about.
 ---
 
-Every Wednesday, I will be posting a link to a cool website that I have found. While many of the
+Whenever I find inspiration, I will post a link to a cool website that I have found. While many of the
 other topics and posts are more technical, I won't try to go into depth about any of the topics.
 Instead, I will just point out what I find interesting about the website. Here are the rules:
 
