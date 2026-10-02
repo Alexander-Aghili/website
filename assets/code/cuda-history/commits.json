@@ -1,0 +1,62 @@
+{
+  "3affd9b": {
+    "sha": "3affd9b8cef659d19bafb471e8a37b81ddc93ee3",
+    "parent": "4da826e460b097732cbb6a0f6b0c90682ba56fa2",
+    "subject": "Shared memory to remove atomic add"
+  },
+  "47a65d8": {
+    "sha": "47a65d8c5f30e757fd4f8fbb5ad75fc7dffed48f",
+    "parent": "3affd9b8cef659d19bafb471e8a37b81ddc93ee3",
+    "subject": "reversed loop and threadID-based indexing"
+  },
+  "7099f40": {
+    "sha": "7099f40ef82038702cd4e94dd6d9bd35d6ba0ff3",
+    "parent": "47a65d8c5f30e757fd4f8fbb5ad75fc7dffed48f",
+    "subject": "Change grid size to allow multiple iterations in the loop per call"
+  },
+  "98cc847": {
+    "sha": "98cc847751716002bdfa4a55b821b9f8cc5816bb",
+    "parent": "7099f40ef82038702cd4e94dd6d9bd35d6ba0ff3",
+    "subject": "Shuffling down"
+  },
+  "f52cdda": {
+    "sha": "f52cddaec7421e238d9e17d6af1587cda5056f71",
+    "parent": "98cc847751716002bdfa4a55b821b9f8cc5816bb",
+    "subject": "Update to add cuBLAS into the code for comparison purposes"
+  },
+  "051d7c3": {
+    "sha": "051d7c35b263753f8965598772b72fb0c79a641c",
+    "parent": "f52cddaec7421e238d9e17d6af1587cda5056f71",
+    "subject": "Update to BLOCK_SIZE"
+  },
+  "cca54d1": {
+    "sha": "cca54d1be16f5d262b7e7c0f2a22b394f97a95f6",
+    "parent": "051d7c35b263753f8965598772b72fb0c79a641c",
+    "subject": "Update row_dot to use shared memory and fix up the sizes"
+  },
+  "15e6bc6": {
+    "sha": "15e6bc64f257fb2fb052e6ff13cdd2a4e40bd659",
+    "parent": "cca54d1be16f5d262b7e7c0f2a22b394f97a95f6",
+    "subject": "Created 2D Grid Version with optimized structure"
+  },
+  "89b175b": {
+    "sha": "89b175ba1e304de3caf5f235c27824257ce0716a",
+    "parent": "15e6bc64f257fb2fb052e6ff13cdd2a4e40bd659",
+    "subject": "Add shared memory tiling to gemm kernel"
+  },
+  "a44068e": {
+    "sha": "a44068e250c167630f998e89cf14d9dd4a6b138f",
+    "parent": "89b175ba1e304de3caf5f235c27824257ce0716a",
+    "subject": "Add register blocking to gemm kernel (4x4 sub-block per thread)"
+  },
+  "6d1f43a": {
+    "sha": "6d1f43aaf75bb7ed30a937221930137aa20e9751",
+    "parent": "a44068e250c167630f998e89cf14d9dd4a6b138f",
+    "subject": "Widen gemm register tile to 8x8 per thread (128x128 block tile)"
+  },
+  "c11b4fd": {
+    "sha": "c11b4fdd9f0f295dd3f53b0750ca8a106476a126",
+    "parent": "6d1f43aaf75bb7ed30a937221930137aa20e9751",
+    "subject": "Double-buffer gemm tiles: prefetch next k-tile, one barrier per step"
+  }
+}

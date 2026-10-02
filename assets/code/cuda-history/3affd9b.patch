@@ -1,0 +1,71 @@
+commit 3affd9b8cef659d19bafb471e8a37b81ddc93ee3
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Wed Aug 12 00:40:05 2026 -0400
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Wed Aug 12 00:40:05 2026 -0400
+
+    Shared memory to remove atomic add
+
+diff --git a/blas.cu b/blas.cu
+index 56f424e..4a202d9 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -2,6 +2,8 @@
+ 
+ #include <cmath>
+ 
++#define DOT_BLOCK_SIZE 256
++
+ static long span_of(int n, int inc) {
+     return n > 0 ? 1 + (long)(n - 1) * (inc < 0 ? -inc : inc) : 0;
+ }
+@@ -158,27 +160,42 @@ void swap(Vector& x, Vector& y) {
+ __global__ void dot_kernel(const Vector x, const Vector y, real_t* result) {
+     const real_t* __restrict__ xp = x.data;
+     const real_t* __restrict__ yp = y.data;
+-    for (long i = blockIdx.x * (long)blockDim.x + threadIdx.x; i < x.n; i+= (long)gridDim.x * blockDim.x) {
+-	atomicAdd(result, xp[i * x.inc] * yp[i * y.inc]);
++    __shared__ real_t sdata[DOT_BLOCK_SIZE];
++    unsigned int tid = threadIdx.x;
++    
++    real_t sum = 0;
++    for (long i = blockIdx.x * (long)blockDim.x + threadIdx.x; i < x.n; i += (long)gridDim.x * blockDim.x) {
++	sum += xp[i * x.inc] * yp[i * y.inc];
++    }
++    sdata[tid] = sum;
++    __syncthreads();
++
++    for (unsigned int s = 1; s < blockDim.x; s *= 2) {
++	int index = 2 * s * tid;
++	if (index < blockDim.x) {
++	    sdata[index] += sdata[index + s];
++	}
++	__syncthreads();
++    }
++
++    if (tid == 0) {
++	atomicAdd(result, sdata[0]);
+     }
+ }
+ 
+ real_t dot(const Vector& x, const Vector& y) {
+     if (x.n <= 0 || y.n <= 0) return 0;
+ 
+-    int min_grid = 0, block = 0;
+-    GET_MAX_POTENTIAL_BLOCKS_SIZE(min_grid, block, dot_kernel);
+-
+     real_t* sx = nullptr;
+     real_t* sy = nullptr;
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = (x.n + block - 1) / block;
++    const int grid = (x.n + DOT_BLOCK_SIZE - 1) / DOT_BLOCK_SIZE;
+     real_t* d_result = nullptr;
+     CUDA_ERROR_CHECK(cudaMalloc(&d_result, sizeof(real_t)));
+     CUDA_ERROR_CHECK(cudaMemset(d_result, 0, sizeof(real_t)));
+-    dot_kernel<<<grid, block>>>(dx, dy, d_result);
++    dot_kernel<<<grid, DOT_BLOCK_SIZE>>>(dx, dy, d_result);
+     CUDA_ERROR_CHECK(cudaGetLastError());
+     real_t result = 0;
+     CUDA_ERROR_CHECK(cudaMemcpy(&result, d_result, sizeof(real_t), cudaMemcpyDeviceToHost));

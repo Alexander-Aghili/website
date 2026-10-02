@@ -1,0 +1,77 @@
+commit 051d7c35b263753f8965598772b72fb0c79a641c
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Tue Aug 18 14:00:16 2026 -0700
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Tue Aug 18 14:00:16 2026 -0700
+
+    Update to BLOCK_SIZE
+
+diff --git a/blas.cu b/blas.cu
+index a008795..62b434b 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -2,7 +2,7 @@
+ 
+ #include <cmath>
+ 
+-#define DOT_BLOCK_SIZE 256
++#define BLOCK_SIZE 256
+ 
+ static long span_of(int n, int inc) {
+     return n > 0 ? 1 + (long)(n - 1) * (inc < 0 ? -inc : inc) : 0;
+@@ -160,7 +160,7 @@ void swap(Vector& x, Vector& y) {
+ __global__ void dot_kernel(const Vector x, const Vector y, real_t* result) {
+     const real_t* __restrict__ xp = x.data;
+     const real_t* __restrict__ yp = y.data;
+-    __shared__ real_t sdata[DOT_BLOCK_SIZE / 32];
++    __shared__ real_t sdata[BLOCK_SIZE / 32];
+     unsigned int warp = threadIdx.x / 32;
+     unsigned int lane = threadIdx.x % 32;
+     
+@@ -178,7 +178,7 @@ __global__ void dot_kernel(const Vector x, const Vector y, real_t* result) {
+     __syncthreads();
+ 
+     if (warp == 0) {
+-	sum = lane < DOT_BLOCK_SIZE / 32 ? sdata[lane] : 0;
++	sum = lane < BLOCK_SIZE / 32 ? sdata[lane] : 0;
+ 	sum += __shfl_down_sync(0xffffffff, sum, 16);
+ 	sum += __shfl_down_sync(0xffffffff, sum, 8);
+ 	sum += __shfl_down_sync(0xffffffff, sum, 4);
+@@ -197,11 +197,11 @@ real_t dot(const Vector& x, const Vector& y) {
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = (x.n + 2L * DOT_BLOCK_SIZE - 1) / (2L * DOT_BLOCK_SIZE);
++    const int grid = (x.n + 2L * BLOCK_SIZE - 1) / (2L * BLOCK_SIZE);
+     real_t* d_result = nullptr;
+     CUDA_ERROR_CHECK(cudaMalloc(&d_result, sizeof(real_t)));
+     CUDA_ERROR_CHECK(cudaMemset(d_result, 0, sizeof(real_t)));
+-    dot_kernel<<<grid, DOT_BLOCK_SIZE>>>(dx, dy, d_result);
++    dot_kernel<<<grid, BLOCK_SIZE>>>(dx, dy, d_result);
+     CUDA_ERROR_CHECK(cudaGetLastError());
+     real_t result = 0;
+     CUDA_ERROR_CHECK(cudaMemcpy(&result, d_result, sizeof(real_t), cudaMemcpyDeviceToHost));
+@@ -299,8 +299,6 @@ void gemv(const char* trans, real_t alpha, const Matrix& A, const Vector& x, rea
+     const long m = notrans ? A.rows : A.cols;
+     const long n = notrans ? A.cols : A.rows;
+ 
+-    int min_grid = 0, block = 0;
+-    GET_MAX_POTENTIAL_BLOCKS_SIZE(min_grid, block, (gemv_kernel<NoTransAt>));
+ 
+     real_t* sa = nullptr;
+     real_t* sx = nullptr;
+@@ -309,11 +307,11 @@ void gemv(const char* trans, real_t alpha, const Matrix& A, const Vector& x, rea
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = (m + block - 1) / block;
++    const int grid = (m + 2L * BLOCK_SIZE - 1) / (2L * BLOCK_SIZE);
+     if (notrans) {
+-	gemv_kernel<<<grid, block>>>(alpha, dA, dx, beta, dy, m, n, NoTransAt());
++	gemv_kernel<<<grid, BLOCK_SIZE>>>(alpha, dA, dx, beta, dy, m, n, NoTransAt());
+     } else {
+-	gemv_kernel<<<grid, block>>>(alpha, dA, dx, beta, dy, m, n, TransAt());
++	gemv_kernel<<<grid, BLOCK_SIZE>>>(alpha, dA, dx, beta, dy, m, n, TransAt());
+     }
+     CUDA_ERROR_CHECK(cudaGetLastError());
+     unstage_vector(y, sy);

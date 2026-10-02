@@ -1,0 +1,86 @@
+commit c11b4fdd9f0f295dd3f53b0750ca8a106476a126
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Sun Sep 20 20:28:54 2026 -0400
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Sun Sep 20 20:28:54 2026 -0400
+
+    Double-buffer gemm tiles: prefetch next k-tile, one barrier per step
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+diff --git a/blas.cu b/blas.cu
+index b3b6bb5..7346b75 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -376,35 +376,58 @@ void symv(const char* uplo, real_t alpha, const Matrix& A, const Vector& x, real
+ 
+ template <typename AccessA, typename AccessB>
+ __global__ void gemm_kernel(real_t alpha, const Matrix A, const Matrix B, real_t beta, Matrix C, long m, long n, long k, AccessA at_a, AccessB at_b) {
+-    __shared__ real_t as[GEMM_TILE][GEMM_BLOCK_TILE];
+-    __shared__ real_t bs[GEMM_BLOCK_TILE][GEMM_TILE];
++    __shared__ real_t as[2][GEMM_TILE][GEMM_BLOCK_TILE];
++    __shared__ real_t bs[2][GEMM_BLOCK_TILE][GEMM_TILE];
+     real_t* __restrict__ cp = C.data;
+     const int tid = threadIdx.y * GEMM_TILE + threadIdx.x;
+     for (long ib = blockIdx.x * (long)GEMM_BLOCK_TILE; ib < m; ib += (long)gridDim.x * GEMM_BLOCK_TILE) {
+ 	for (long jb = blockIdx.y * (long)GEMM_BLOCK_TILE; jb < n; jb += (long)gridDim.y * GEMM_BLOCK_TILE) {
+ 	    real_t acc[GEMM_THREAD_TILE][GEMM_THREAD_TILE] = {};
++	    for (int q = 0; q < GEMM_THREAD_TILE; q++) {
++		const int e = tid + q * GEMM_TILE * GEMM_TILE;
++		const int ar = e % GEMM_BLOCK_TILE;
++		const int ak = e / GEMM_BLOCK_TILE;
++		as[0][ak][ar] = (ib + ar < m && ak < k) ? at_a(A, ib + ar, ak) : real_t(0);
++		const int bk = e % GEMM_TILE;
++		const int bc = e / GEMM_TILE;
++		bs[0][bc][bk] = (bk < k && jb + bc < n) ? at_b(B, bk, jb + bc) : real_t(0);
++	    }
++	    __syncthreads();
++	    int buf = 0;
+ 	    for (long t = 0; t < k; t += GEMM_TILE) {
+-		for (int q = 0; q < GEMM_THREAD_TILE; q++) {
+-		    const int e = tid + q * GEMM_TILE * GEMM_TILE;
+-		    const int ar = e % GEMM_BLOCK_TILE;
+-		    const int ak = e / GEMM_BLOCK_TILE;
+-		    as[ak][ar] = (ib + ar < m && t + ak < k) ? at_a(A, ib + ar, t + ak) : real_t(0);
+-		    const int bk = e % GEMM_TILE;
+-		    const int bc = e / GEMM_TILE;
+-		    bs[bc][bk] = (t + bk < k && jb + bc < n) ? at_b(B, t + bk, jb + bc) : real_t(0);
++		const long tn = t + GEMM_TILE;
++		real_t pa[GEMM_THREAD_TILE];
++		real_t pb[GEMM_THREAD_TILE];
++		if (tn < k) {
++		    for (int q = 0; q < GEMM_THREAD_TILE; q++) {
++			const int e = tid + q * GEMM_TILE * GEMM_TILE;
++			const int ar = e % GEMM_BLOCK_TILE;
++			const int ak = e / GEMM_BLOCK_TILE;
++			pa[q] = (ib + ar < m && tn + ak < k) ? at_a(A, ib + ar, tn + ak) : real_t(0);
++			const int bk = e % GEMM_TILE;
++			const int bc = e / GEMM_TILE;
++			pb[q] = (tn + bk < k && jb + bc < n) ? at_b(B, tn + bk, jb + bc) : real_t(0);
++		    }
+ 		}
+-		__syncthreads();
+ 		for (int l = 0; l < GEMM_TILE; l++) {
+ 		    real_t ra[GEMM_THREAD_TILE];
+ 		    real_t rb[GEMM_THREAD_TILE];
+ 		    for (int u = 0; u < GEMM_THREAD_TILE; u++)
+-			ra[u] = as[l][threadIdx.x + u * GEMM_TILE];
++			ra[u] = as[buf][l][threadIdx.x + u * GEMM_TILE];
+ 		    for (int v = 0; v < GEMM_THREAD_TILE; v++)
+-			rb[v] = bs[threadIdx.y + v * GEMM_TILE][l];
++			rb[v] = bs[buf][threadIdx.y + v * GEMM_TILE][l];
+ 		    for (int u = 0; u < GEMM_THREAD_TILE; u++)
+ 			for (int v = 0; v < GEMM_THREAD_TILE; v++)
+ 			    acc[u][v] += ra[u] * rb[v];
+ 		}
++		if (tn < k) {
++		    for (int q = 0; q < GEMM_THREAD_TILE; q++) {
++			const int e = tid + q * GEMM_TILE * GEMM_TILE;
++			as[buf ^ 1][e / GEMM_BLOCK_TILE][e % GEMM_BLOCK_TILE] = pa[q];
++			bs[buf ^ 1][e / GEMM_TILE][e % GEMM_TILE] = pb[q];
++		    }
++		    buf ^= 1;
++		}
+ 		__syncthreads();
+ 	    }
+ 	    for (int u = 0; u < GEMM_THREAD_TILE; u++) {

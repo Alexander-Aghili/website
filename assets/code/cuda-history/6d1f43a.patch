@@ -1,0 +1,23 @@
+commit 6d1f43aaf75bb7ed30a937221930137aa20e9751
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Sun Sep 20 20:21:49 2026 -0400
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Sun Sep 20 20:21:49 2026 -0400
+
+    Widen gemm register tile to 8x8 per thread (128x128 block tile)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+diff --git a/blas.cu b/blas.cu
+index 9b1517f..b3b6bb5 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -7,7 +7,7 @@
+ #define GEMV_ROWS 32
+ #define GEMV_SPLITS 16
+ #define GEMM_TILE 16
+-#define GEMM_THREAD_TILE 4
++#define GEMM_THREAD_TILE 8
+ #define GEMM_BLOCK_TILE (GEMM_TILE * GEMM_THREAD_TILE)
+ 
+ static long span_of(int n, int inc) {

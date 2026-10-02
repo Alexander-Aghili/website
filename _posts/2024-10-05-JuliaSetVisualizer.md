@@ -1,18 +1,16 @@
 ---
 layout: post
 date: 2024-10-05
-title: 'Julia Set Visualization'
-categories: Software Math Graphics Parallelization 
+title: "Julia Set Visualization"
+categories: Software Math Graphics Parallelization
 thumbnail: assets/img/JuliaSetVisualizer/JuliaSetIntro.png
 giscus_comments: true
 ---
 
 ### Introduction
 
-
 The Julia Set Visualizer is a project aimed at bringing to life the intricate and captivating beauty of Julia sets, which are fundamental objects in the field of complex dynamics and fractal geometry. Julia sets are named after the French mathematician Gaston Julia, who, in the early 20th century, made significant contributions to our understanding of these complex structures. The study of Julia sets not only serves as a gateway into the fascinating world of fractals but also provides deep insights into the behavior of complex systems.
 
-{% include video.liquid path="assets/img/JuliaSetVisualizer/JuliaSetMovement.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
 ### Background and Mathematical Foundation
 
 Julia sets are derived from the dynamics of iterating a complex function, typically a quadratic polynomial of the form:
@@ -20,7 +18,6 @@ Julia sets are derived from the dynamics of iterating a complex function, typica
 $$ f_c(z) = z^2 + c $$
 
 where $$z$$ is a complex number and $$c$$ is a complex parameter. For a given value of $$c$$, the Julia set is the boundary that separates points in the complex plane that converge to a stable cycle from those that escape to infinity under repeated iteration of the function $$f_c(z)$$.
-
 
 Mathematically, the Julia set can be described as the closure of the set of repelling periodic points of the function. However, a more intuitive approach is to consider the behavior of individual points in the complex plane under iteration. For a fixed $$c$$, starting with a point $$z_0$$, we generate a sequence $$z_1 = f_c(z_0)$$, $$z_2 = f_c(z_1)$$, and so on. Depending on the value of $$c$$, the point may either remain bounded, forming part of the Julia set, or escape to infinity, indicating that it lies outside the Julia set.
 
@@ -31,9 +28,11 @@ The visual representation of a Julia set reveals its intricate, self-similar str
 The Julia Set Visualizer project is designed to allow users to explore the fascinating and diverse world of Julia sets by varying the complex parameter $$c$$ and visualizing the resulting fractal patterns. Through this tool, users can gain a deeper understanding of the complex dynamics that govern these sets, as well as an appreciation for the stunning mathematical beauty that lies within them. Whether used for educational purposes, research, or simply to marvel at the aesthetics of fractals, the Julia Set Visualizer opens a window into a world where mathematics and art converge.
 
 ### Base Algorithm
+
 The core of the Julia Set Visualizer lies in its ability to compute and color each point in a two-dimensional grid representing the complex plane. The algorithm determines whether each point belongs to the Julia set for a given complex parameter c by iterating the function $$f(z)=z^2+c$$. The coloring of each point is based on the number of iterations it takes for the sequence to escape a predefined threshold. Below is a detailed explanation of the base algorithm, as illustrated by the provided C code.
 
 #### Color Representation and Utilities
+
 The visualization requires coloring each point to represent its behavior under iteration. Colors are handled using 32-bit integers.
 
 ```c++
@@ -47,6 +46,7 @@ uint32_t get_int_from_color(int red, int green, int blue) {
 ```
 
 #### Initializing the Color Map
+
 A predefined color map enhances the visual appeal by assigning specific colors to different iteration counts.
 
 ```c++
@@ -62,7 +62,8 @@ void initialize_color_map() {
 ```
 
 #### Mapping Iteration Counts to Colors
-Each point's iteration count determines its color. Points that escape quickly are colored differently from those that remain bounded longer. 
+
+Each point's iteration count determines its color. Points that escape quickly are colored differently from those that remain bounded longer.
 
 ```c++
 uint32_t get_color(int n) {
@@ -76,7 +77,9 @@ uint32_t get_color(int n) {
 ```
 
 #### Iterating the Complex Function
-The heart of the algorithm computes how each point behaves under iteration of the function $$ f(z) = z^2 + c $$. This function takes in a coordinate on the complex plane defined by (a,b) and the complex constant c and performs the iteration up to MAX_ITERATIONS. If the absolute value of $$f(z)$$ is less than some pre-defined threshold, the iteration stops. The number of iterations will determine the color using the get_color function shown above. 
+
+The heart of the algorithm computes how each point behaves under iteration of the function $$ f(z) = z^2 + c $$. This function takes in a coordinate on the complex plane defined by (a,b) and the complex constant c and performs the iteration up to MAX_ITERATIONS. If the absolute value of $$f(z)$$ is less than some pre-defined threshold, the iteration stops. The number of iterations will determine the color using the get_color function shown above.
+
 ```c++
 int color_point(double a, double b, ComplexNumber* c) {
     int n = 0;
@@ -99,15 +102,14 @@ int color_point(double a, double b, ComplexNumber* c) {
 
 {% include figure.liquid loading="eager" path="assets/img/JuliaSetVisualizer/JuliaSetIntro.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
 ### CPU Parallelization
 
-Unfortanately, this process is quite slow. This process has to occur for each pixel on the screen, meaning that with screen dimensions at 1800x1200, there is a total of 2,160,000 pixels. Therefore, to increase the speed of processing, parallelization may help. My first attempt to do so involved utilizing pthreads, POSIX threads that have an easy interface in C. To parallelize the computation, I would take the numnber of threads and split screen, which is a rectangle, into smaller rectangles. For example, four threads would split the screen at half of the width and half of the height, creating four boxes. At nine threads, there would be nine even boxes that make up the entire screen space. 
+Unfortanately, this process is quite slow. This process has to occur for each pixel on the screen, meaning that with screen dimensions at 1800x1200, there is a total of 2,160,000 pixels. Therefore, to increase the speed of processing, parallelization may help. My first attempt to do so involved utilizing pthreads, POSIX threads that have an easy interface in C. To parallelize the computation, I would take the numnber of threads and split screen, which is a rectangle, into smaller rectangles. For example, four threads would split the screen at half of the width and half of the height, creating four boxes. At nine threads, there would be nine even boxes that make up the entire screen space.
 
 {% include figure.liquid loading="eager" path="assets/img/JuliaSetVisualizer/BlackJulia.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
 Definitions and bounds for the chunks(boxes):
+
 ```c++
 typedef struct {
     uint32_t** image_pixels;
@@ -131,10 +133,11 @@ void get_chunk_bounds(int screen_width, int screen_height, int num_chunks, int c
 ```
 
 Calculating each pixel in a chunk:
+
 ```c++
 void* calculate_chunk(void* d) {
-   ChunkData* data = (ChunkData*) d; 
-   int x_min, x_max, y_min, y_max; 
+   ChunkData* data = (ChunkData*) d;
+   int x_min, x_max, y_min, y_max;
    get_chunk_bounds(WIDTH, HEIGHT, num_chunks, data->x_chunk, data->y_chunk, &x_min, &y_min, &x_max, &y_max);
    for (int x = x_min; x < x_max; x++) {
        for (int y = y_min; y < y_max; y++) {
@@ -157,6 +160,7 @@ void run_chunk(pthread_t* tid, uint32_t** ip, int x_chunk, int y_chunk, ComplexS
 ```
 
 Processing the whole set:
+
 ```c++
 void calculate_pixels(ComplexScene* scene, uint32_t*** ip) {
     uint32_t ** image_pixels = *(ip);
@@ -176,7 +180,6 @@ void calculate_pixels(ComplexScene* scene, uint32_t*** ip) {
 }
 ```
 
-
 While this initially increased the time of processing, there were quickly diminishing and then negative returns. This is because as the number of threads increases, the overhead of a context switch begins to increase in proportion to the amount of computation being performed by the thread. This is worsened because each thread does less computation as the number of threads increases. Here is a graph of the time to compute a julia set by number of threads:
 
 {% include figure.liquid loading="eager" path="assets/img/JuliaSetVisualizer/Perf.png" class="img-fluid rounded z-depth-1" zoomable=true %}
@@ -184,7 +187,7 @@ As such, while CPU parallelization has some benefit, it doesn't solve the proble
 
 ### GPU Parallelization
 
-GPUs are Graphics Processing Units that can help perform mathematical process at increased speed using parallelization. A GPU can perform many math operations at the same time and faster than a CPU. Whereas a CPU might have 8 cores, modern (consumer) GPUs like NVIDIA's RTX 4090 have 16,384 CUDA cores. To do so, we have to write GPU code. Since I have access to a NVIDIA GPU, I will be writing CUDA code which is a specific lanaguage used to interface with NVIDIA GPUs. 
+GPUs are Graphics Processing Units that can help perform mathematical process at increased speed using parallelization. A GPU can perform many math operations at the same time and faster than a CPU. Whereas a CPU might have 8 cores, modern (consumer) GPUs like NVIDIA's RTX 4090 have 16,384 CUDA cores. To do so, we have to write GPU code. Since I have access to a NVIDIA GPU, I will be writing CUDA code which is a specific lanaguage used to interface with NVIDIA GPUs.
 
 The function add_pixel_kernel would calculate and add the pixel to the image array. This is doing most of the heavy lifting, although some helpers functions were translated to CUDA to work as well.
 
@@ -209,6 +212,7 @@ __global__ void add_pixel_kernel(ComplexBounds* scene_bounds, ComplexNumber* c, 
 ```
 
 The blockIdx, blockDim, and threadIdx help CUDA identify what components of the pixel it is calculating. The regular processing is performed, with the exception that 2D arrays aren't supported in CUDA so linearized indexing is required. This function is called using the add_pixel function:
+
 ```c++
 void add_pixel(ComplexBounds* scene_bounds, ComplexNumber* c, uint32_t* image_pixels) {
     dim3 threadsPerBlock(THREADS_PER_BLOCK, THREADS_PER_BLOCK);
@@ -219,13 +223,16 @@ void add_pixel(ComplexBounds* scene_bounds, ComplexNumber* c, uint32_t* image_pi
 }
 
 ```
+
 This calculates the number of blocks required with the given number of threads per block and runs the function add_pixel_kernel with those parameters so CUDA knows how to parallelize the work.
 
-GPUs are crazy fast and allow for parallelization to drastically increase the processing speed enabling real-time applications.
+GPU parallelization increases processing speed, enabling real-time visualization.
 
-{% include video.liquid path="assets/img/JuliaSetVisualizer/Zoom.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+{% include video.liquid path="assets/img/JuliaSetVisualizer/Zoom.webm" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
+
 ### SDL2
-GPU parallelization enables quick processing of changes. Therefore, changes can be displayed quickly. Moving around the plane, zooming, changing the constant c, and animations can all be performed in a smooth experience. When waiting for a user event, a function called wait_event polls for the next user event. There are a few options. 
+
+GPU parallelization enables quick processing of changes. Therefore, changes can be displayed quickly. Moving around the plane, zooming, changing the constant c, and animations can all be performed in a smooth experience. When waiting for a user event, a function called wait_event polls for the next user event. There are a few options.
 
 ```c++
 int wait_event(ComplexScene *scene, int* change, int* quit) {
@@ -246,6 +253,7 @@ int wait_event(ComplexScene *scene, int* change, int* quit) {
 ```
 
 #### Arrow Key Press
+
 If an arrow key is pressed, this is a change to the constant c. This isn't too complicated:
 
 ```c++
@@ -264,8 +272,9 @@ if (event.key.keysym.sym == SDLK_LEFT) {
 }
 ```
 
-#### Zoom 
-Zooming is slightly more difficult. This is because instead of zooming into the center of the complex plane (0,0), we want to zoom into the center of the screen. This means finding the real and imaginary components of the screen, taking the middle, and adjusting the bounds. 
+#### Zoom
+
+Zooming is slightly more difficult. This is because instead of zooming into the center of the complex plane (0,0), we want to zoom into the center of the screen. This means finding the real and imaginary components of the screen, taking the middle, and adjusting the bounds.
 
 ```c++
 void zoom(ComplexBounds* bounds, double scaling_factor) {
@@ -277,9 +286,10 @@ void zoom(ComplexBounds* bounds, double scaling_factor) {
     bounds->min_img = img_center + scaling_factor * (bounds->min_img - img_center);
 }
 ```
+
 #### Move
 
-The final action is move, which calculates the movement from a mouse click and drag action. To accomplish this, a down click event is registered and the mouse coordinates are recoreded. Then, once an up click event is registered, the mouse coordinates are recorded and a difference is calculated. The difference is calculated by subtracting the second positon from the first position. However, this alone would yield numbers in the hundreds as positions on the screen are based on pixel positions. To adjust for this, I normalized the result. However, this still isn't enough has zooming in means the screen might show an area spanning the upper and lower bounds of 64-bit floating point precision. Thus, I added one more component to scale with the current area. 
+The final action is move, which calculates the movement from a mouse click and drag action. To accomplish this, a down click event is registered and the mouse coordinates are recoreded. Then, once an up click event is registered, the mouse coordinates are recorded and a difference is calculated. The difference is calculated by subtracting the second positon from the first position. However, this alone would yield numbers in the hundreds as positions on the screen are based on pixel positions. To adjust for this, I normalized the result. However, this still isn't enough has zooming in means the screen might show an area spanning the upper and lower bounds of 64-bit floating point precision. Thus, I added one more component to scale with the current area.
 
 ```c++
 } else if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
@@ -307,10 +317,11 @@ The final action is move, which calculates the movement from a mouse click and d
 ```
 
 ### Conclusion
+
 The Julia Set Visualizer project provides a dynamic way to explore the complex world of fractals and the mathematical beauty that emerges from iterative processes. By combining mathematical theory, computational techniques, and graphical rendering, this project demonstrates how complex dynamics can be visualized and manipulated in real-time. I also gained a deeper understanding of parallel processing, both on CPUs and GPUs, and the importance of efficient computation in graphical applications.
 
 The repository with all of the code can be found below:
+
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
     {% include repository/repo.liquid repository='Alexander-Aghili/JuliaSetVisualizer' %}
 </div>
-

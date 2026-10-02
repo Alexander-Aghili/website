@@ -1,0 +1,25 @@
+<figure
+  class="cuda-chart"
+  data-chart="{{ include.name }}"
+  {% if include.sweep %}
+    data-src="{{ '/assets/data/cuda-size-sweep.csv' | relative_url }}"
+  {% endif %}
+  aria-label="{{ include.alt }}"
+>
+  <div class="cuda-chart-head">
+    <span class="cuda-chart-title">{{ include.title }}</span>
+    {%- if include.sweep %}<span class="cuda-legend"></span>{% endif %}
+  </div>
+  <div class="cuda-chart-plot">
+    <noscript
+      >This chart needs JavaScript; the same values are in the table{% if include.sweep %} below{% endif %}.</noscript
+    >
+  </div>
+  {% if include.sweep %}
+    <details class="cuda-support">
+      <summary>Show the measurements as a table</summary>
+      <div class="cuda-chart-table cuda-table-wrap"></div>
+    </details>
+  {% endif %}
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

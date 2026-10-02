@@ -1,0 +1,18 @@
+{% assign cuda_clip = '/assets/video/CUDAOptimization/' | append: include.name | append: '.mp4' | relative_url %}
+{% assign cuda_poster = '/assets/img/CUDAOptimization/animations/' | append: include.name | append: '.png' | relative_url %}
+<figure class="cuda-diagram">
+  <video
+    data-cuda-animation
+    src="{{ cuda_clip }}"
+    poster="{{ cuda_poster }}"
+    width="1280"
+    height="720"
+    muted
+    loop
+    playsinline
+    controls
+    preload="none"
+    aria-label="{{ include.alt }}"
+  ></video>
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

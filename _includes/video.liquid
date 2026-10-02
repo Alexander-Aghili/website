@@ -35,6 +35,8 @@
       {% if include.alt %}
         alt="{{ include.alt }}"
       {% endif %}
+      playsinline
+      preload="metadata"
       {% if include.autoplay %}
         autoplay
       {% endif %}
@@ -50,7 +52,10 @@
       {% if include.poster %}
         poster="{{ include.poster }}"
       {% endif %}
-    />
+    >
+      Your browser does not support embedded video.
+      <a href="{{ include.path | relative_url }}">Download the video</a>.
+    </video>
 
   {% else %}
     <iframe
@@ -89,7 +94,7 @@
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
-    />
+    ></iframe>
   {% endif %}
   {% if include.caption %}
     <figcaption class="caption">{{ include.caption }}</figcaption>
