@@ -1,0 +1,6 @@
+[submodule "atlas-projects/abandoned-airfields"]
+	path = atlas-projects/abandoned-airfields
+	url = https://github.com/Alexander-Aghili/AbandondedAirfieldAtlas.git
+[submodule "atlas-projects/air-crashes"]
+	path = atlas-projects/air-crashes
+	url = https://github.com/Alexander-Aghili/AirCrashAtlas-.git

@@ -6,6 +6,8 @@ on:
       - master
       - main
     paths:
+      - ".gitmodules"
+      - "atlas-projects/**"
       - "assets/**"
       - "**.bib"
       - "**.html"
@@ -33,6 +35,8 @@ on:
       - master
       - main
     paths:
+      - ".gitmodules"
+      - "atlas-projects/**"
       - "assets/**"
       - "**.bib"
       - "**.html"
@@ -67,6 +71,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
