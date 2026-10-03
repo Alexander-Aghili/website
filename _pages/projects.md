@@ -2,11 +2,11 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: 
+description:
 nav: true
 nav_order: 3
-display_categories: [Computer Science and Mathematics Projects]
-horizontal: true 
+display_categories: [GIS, Computer Science and Mathematics Projects]
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
