@@ -68,7 +68,7 @@ function template(M) {
             <button id="ins-iso" class="primary">Isolate</button><button id="ins-isogroup">Isolate group</button><button id="ins-hide">Hide</button>
             <div class="seg"><button id="ins-prev" aria-label="Previous part">◀</button><button id="ins-next" aria-label="Next part">▶</button></div>
           </div>
-          <p class="ins-hint">Shift-click to add parts · double-click to isolate · <kbd>Esc</kbd> back</p>
+          <p class="ins-hint">${matchMedia("(pointer: coarse)").matches ? "Double-tap a part to isolate it" : "Shift-click to add parts · double-click to isolate · <kbd>Esc</kbd> back"}</p>
         </div>
         <div class="hover-tip" id="hover-tip" hidden></div>
         <div class="loading" id="loading">loading ${esc(M.name)}…</div>
@@ -153,11 +153,15 @@ const ICONS = {   // 24×24 line icons for the chapters drawer
 };
 const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[k] || ICONS.dot}"/></svg>`;
 
+// Phones: the note, part card and explore panel become bottom sheets; touch screens get tap hints, not keys.
+// (Landscape phones, short and wide, use a side panel instead.)
+const PHONE = matchMedia("(max-width: 760px), (max-height: 500px)"), TOUCH = matchMedia("(pointer: coarse)");
+
 // Drag a floating panel by its handle (the panel itself if no handle). Interactive children keep working.
 function makeDraggable(el, handle, onDrag) {
   let start = null;
   (handle || el).addEventListener("pointerdown", e => {
-    if (e.button !== 0 || e.target.closest("button,input,select,textarea,a,label,[role=listbox],.fig-frame,.fx-list,.sx-evlist,table")) return;
+    if (PHONE.matches || e.button !== 0 || e.target.closest("button,input,select,textarea,a,label,[role=listbox],.fig-frame,.fx-list,.sx-evlist,table")) return;
     const r = el.getBoundingClientRect();
     start = { x: e.clientX, y: e.clientY, l: r.left, t: r.top };
     try { el.setPointerCapture(e.pointerId); } catch (_) {}
@@ -910,7 +914,8 @@ export async function createExplorer(M) {
         if (st.widget && M.widgets?.[st.widget]) story.widget = M.widgets[st.widget](w, ctx, st) || null;
         $("story-note").classList.toggle("wide", !!w.childElementCount);
         $("story-sources").textContent = st.sources ? `Sources: ${[].concat(st.sources).join(" · ")}` : "";
-        $("story-hint").innerHTML = last ? "The end." : si < ch.steps.length - 1 ? "Press <kbd>Enter</kbd> to continue" : `Press <kbd>Enter</kbd> for <i>${esc(chapters[ci + 1].title)}</i>`;
+        const go = TOUCH.matches ? "Tap <b>Next</b>" : "Press <kbd>Enter</kbd>";
+        $("story-hint").innerHTML = last ? "The end." : si < ch.steps.length - 1 ? `${go} to continue` : `${go} for <i>${esc(chapters[ci + 1].title)}</i>`;
         story.anchor = anchorOf(st);
         $("story-note").scrollTop = 0;
       }
@@ -938,6 +943,15 @@ export async function createExplorer(M) {
         tmpA.project(camera);
         if (tmpA.z < 1 && Math.abs(tmpA.x) < 1.1 && Math.abs(tmpA.y) < 1.1) { ax = (tmpA.x * 0.5 + 0.5) * W; ay = (-tmpA.y * 0.5 + 0.5) * H; }
       }
+      if (PHONE.matches) {        // sheet: no leader, just the dot on the part when it shows outside the sheet
+        note.style.transform = "none"; line.style.display = "none";
+        const nr = note.getBoundingClientRect();
+        const vis = ax != null && ay > 48 && (ay < nr.top - 8 || ax < nr.left - 8);
+        svg.style.display = vis ? "" : "none";
+        if (vis) { dot.setAttribute("cx", ax); dot.setAttribute("cy", ay); }
+        return;
+      }
+      line.style.display = "";
       let x, y;
       if (story.userPos && W >= 760) { x = Math.max(4, Math.min(W - nw - 4, story.userPos.x)); y = Math.max(4, Math.min(H - 40, story.userPos.y)); }
       else if (W < 760) { x = 12; y = H - nh - 12; ax = null; }
@@ -957,6 +971,7 @@ export async function createExplorer(M) {
     story.placeNote = placeNote;
     makeDraggable($("story-note"), null, (x, y) => { story.userPos = { x, y }; placeNote(true); });
     $("story-note").querySelector(".note-head").addEventListener("dblclick", () => { story.userPos = null; placeNote(true); });
+    $("story-note").querySelector(".note-head").addEventListener("click", () => { if (PHONE.matches) { const c = $("story-note").classList.toggle("collapsed"); $("story-note").querySelector(".note-head").setAttribute("aria-expanded", !c); } });
     makeDraggable($("story-photo"));
     makeDraggable($("inspector"), $("inspector").querySelector(".ins-head"));
     const next = () => { const ch = chapters[story.ci]; if (story.si < ch.steps.length - 1) storyGo(story.ci, story.si + 1); else if (story.ci < chapters.length - 1) storyGo(story.ci + 1, 0); };
@@ -1062,12 +1077,40 @@ export async function createExplorer(M) {
     const r = $("stage").getBoundingClientRect(), dpr = devicePixelRatio || 1;
     const w = Math.round(r.width), h = Math.round(r.height);
     if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) { renderer.setPixelRatio(dpr); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); wake(); }
-    // Story mode: on the intro screen the machine sits right of the title (as on enigma.design); else centred.
-    if (M.story && w > 860) {
+    // Story mode on a phone: the machine sits in the space the sheets leave (between the intro text and its
+    // buttons; above the note, part card or explore panel), with a wider view on tall screens.
+    if (M.story && PHONE.matches) {
+      const land = w > h, intro = document.body.classList.contains("in-intro");
+      let offX = 0, offY = 0, zoom;
+      if (intro && land) {
+        const right = $("intro-go").parentElement.getBoundingClientRect().right;
+        offX = -Math.round((right + w) / 2 - w / 2); zoom = Math.max(0.6, Math.min(1, (w - right) / h / 1.45));
+      } else if (intro) {
+        const t = $("intro-body").getBoundingClientRect().bottom, b = $("intro-go").getBoundingClientRect().top;
+        if (b > t) offY = -Math.round((t + b) / 2 - h / 2);
+        zoom = Math.max(0.4, Math.min(1, w / h / 1.1));
+      } else {
+        const rs = ["story-note", "inspector", "explore-drawer"].map(id => $(id)?.getBoundingClientRect()).filter(r => r && r.height > 0);
+        if (land) {
+          const left = Math.max(w * 0.4, Math.min(w, ...rs.map(r => r.left)));
+          offX = Math.round(w / 2 - left / 2); offY = -22; zoom = Math.max(0.6, Math.min(1, left / (h - 44) / 1.45));
+        } else {
+          const top = Math.max(h * 0.35, Math.min(h, ...rs.map(r => r.top)));
+          offY = Math.round(h / 2 - (44 + top) / 2); zoom = Math.max(0.55, Math.min(1, w / h / 0.75));
+        }
+      }
+      const v = camera.view?.enabled ? camera.view : null;
+      if (offX !== (v ? v.offsetX : 0) || offY !== (v ? v.offsetY : 0) || zoom !== camera.zoom || (v && (v.fullWidth !== w || v.fullHeight !== h))) {
+        camera.zoom = zoom;
+        if (offX || offY) camera.setViewOffset(w, h, offX, offY, w, h); else camera.clearViewOffset();
+        camera.updateProjectionMatrix(); wake();
+      }
+    } else if (M.story && w > 860) {
+      if (camera.zoom !== 1) { camera.zoom = 1; camera.updateProjectionMatrix(); }
       const intro = document.body.classList.contains("in-intro"), exploring = !$("explore-drawer").hidden;
       const shift = intro ? -Math.round(w * 0.2) : exploring ? Math.round(Math.min(480, w * 0.4) / 2) : 0;
-      if (shift !== (camera.view?.enabled ? camera.view.offsetX : 0)) { if (shift) camera.setViewOffset(w, h, shift, 0, w, h); else camera.clearViewOffset(); camera.updateProjectionMatrix(); wake(); }
-    } else if (camera.view?.enabled) { camera.clearViewOffset(); camera.updateProjectionMatrix(); }
+      if (shift !== (camera.view?.enabled ? camera.view.offsetX : 0) || camera.view?.offsetY) { if (shift) camera.setViewOffset(w, h, shift, 0, w, h); else camera.clearViewOffset(); camera.updateProjectionMatrix(); wake(); }
+    } else if (camera.view?.enabled || camera.zoom !== 1) { camera.zoom = 1; camera.clearViewOffset(); camera.updateProjectionMatrix(); }
     return [w, h];
   }
   // Draw only when something changes: input, camera motion, animation (M.animating), or a resize.

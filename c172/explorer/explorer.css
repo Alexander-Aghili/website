@@ -70,7 +70,7 @@ h1 em { color: var(--accent); }
 .hover-tip { position: absolute; left: 0; top: 0; pointer-events: none; font: 500 12px var(--font-ui); color: var(--fg); background: rgba(7, 9, 12, 0.85);
   border: 1px solid var(--line); border-radius: 4px; padding: 3px 7px; white-space: nowrap; z-index: 3; }
 .inspector:not([hidden]) ~ .hover-tip { z-index: 5; }
-@media (max-width: 700px) { .stage-tools { left: 12px; flex-wrap: wrap; } .find input { width: 9em; } .stage-tools select { max-width: 9em; } .inspector dl { display: none; } }
+@media (max-width: 700px) { .stage-tools { left: 12px; flex-wrap: wrap; } .find input { width: 9em; } .stage-tools select { max-width: 9em; } body:not(.story-mode) .inspector dl { display: none; } }
 kbd { font: 500 11px var(--font-mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; }
 .stage-title { position: absolute; left: 18px; top: 14px; pointer-events: none; display: grid; gap: 2px; }
 .stage-title .eyebrow { font: 500 11px var(--font-ui); letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
@@ -281,14 +281,78 @@ body.story-mode { overflow: hidden; height: 100vh; margin: 0; }
 .paper .src, .paper .hint, .paper .readout { color: var(--caption); }
 .paper .tree .part:hover, .paper .trace li:hover { background: color-mix(in srgb, var(--fg) 6%, transparent); }
 .paper .fig-frame { background: #fffdf7; }
+/* Phones: intro text on top and its buttons at the bottom with the machine between; the note, the part card
+   and the explore panel are bottom sheets (the camera centres the machine in the space above them). */
 @media (max-width: 760px) {
-  .intro-copy { left: 20px; top: 56px; width: calc(100vw - 40px); }
+  .tour-bar { top: env(safe-area-inset-top); }
+  .tour-bar button { padding: 0 6px; }
+  #story-chapter-title { max-width: 42vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .intro-copy { left: 20px; right: 20px; top: calc(52px + env(safe-area-inset-top)); bottom: calc(16px + env(safe-area-inset-bottom)); width: auto;
+    display: flex; flex-direction: column; pointer-events: none; }
+  .intro-copy > * { pointer-events: auto; }
+  .intro-copy h1 { font-size: clamp(34px, 10vw, 44px); margin-bottom: 12px; }
+  .intro-copy p { font-size: 15px; line-height: 1.5; margin-bottom: 8px; }
+  .intro-copy .intro-action { margin-top: auto; width: 100%; height: 52px; }
+  .intro-link { padding: 8px 0 0; text-align: center; width: 100%; }
   .intro-gallery { display: none; }
-  .anchored-note, .anchored-note.wide { width: calc(100vw - 24px); max-height: 46vh; }
+  .anchored-note, .anchored-note.wide { left: 0; right: 0; top: auto; bottom: 0; width: auto; transform: none !important; transition: none; background: var(--panel);
+    max-height: 44dvh; border-width: 1px 0 0; border-radius: 12px 12px 0 0; padding: 0 18px calc(14px + env(safe-area-inset-bottom));
+    touch-action: pan-y; cursor: auto; overscroll-behavior: contain; box-shadow: 0 -8px 30px rgba(81, 71, 45, 0.16); }
+  .anchored-note .note-head { position: sticky; top: 0; z-index: 1; background: inherit; margin: 0 -18px 4px; padding: 14px 18px 6px; cursor: pointer; }
+  .anchored-note .note-head::before { content: ""; position: absolute; left: 50%; top: 6px; width: 36px; height: 4px; margin-left: -18px; border-radius: 2px; background: var(--card-border); }
+  .anchored-note .note-head .grip { display: none; }
+  .anchored-note h2 { font-size: 24px; margin-bottom: 8px; }
+  .anchored-note.collapsed > :not(.note-head):not(h2) { display: none; }
+  .anchored-note.collapsed { padding-bottom: calc(6px + env(safe-area-inset-bottom)); }
+  .anchored-note.collapsed h2 { margin-bottom: 4px; }
+  .story-mode:has(.inspector:not([hidden])) .anchored-note { display: none; }
   .story-polaroid { display: none; }
-  .utility { right: 8px; bottom: auto; top: 46px; }
-  .story-mode .inspector { display: none; }
+  .story-mode .utility { display: none; }
+  .story-mode.exploring .utility { display: flex; left: 8px; right: 8px; top: calc(46px + env(safe-area-inset-top)); align-items: stretch; }
+  .story-mode.exploring .stage-tools { flex-wrap: nowrap; }
+  .story-mode.exploring .stage-tools .find { flex: 1; min-width: 0; }
+  .story-mode.exploring .stage-tools .find input { width: 100%; }
+  .story-mode.exploring .stage-tools select { max-width: 38vw; }
+  .story-mode .find-list { width: calc(100vw - 16px); right: auto; left: 0; }
+  .story-mode .export-menu { width: auto; max-height: 60dvh; overflow-y: auto; }
+  .story-mode .inspector { display: grid; left: 0 !important; right: 0 !important; top: auto !important; bottom: 0 !important; width: auto; transform: none !important;
+    max-height: 50dvh; overflow-y: auto; overscroll-behavior: contain; border-width: 1px 0 0; border-radius: 12px 12px 0 0;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom)); touch-action: pan-y; cursor: auto; box-shadow: 0 -8px 30px rgba(81, 71, 45, 0.16); }
+  .story-mode .inspector dl { display: grid; }
+  .story-mode .inspector .ins-head { cursor: auto; }
+  .story-mode .inspector .ins-actions button, .story-mode .ins-head button { min-height: 40px; }
+  .story-mode .iso-chip { top: calc(48px + env(safe-area-inset-top)); max-width: 80vw; }
+  .explore-drawer { top: auto; left: 0; width: auto; height: 46dvh; border-radius: 12px 12px 0 0; box-shadow: 0 -8px 30px rgba(57, 55, 47, 0.18);
+    overscroll-behavior: contain; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
+  .explore-drawer .drawer-head { position: sticky; top: 0; z-index: 2; background: var(--panel); padding: 12px 4px 6px; }
+  .explore-drawer .drawer-head h2 { font-size: 24px; }
+  .story-drawer { padding-top: env(safe-area-inset-top); }
 }
+/* Landscape phones: the same sheets as a panel on the right; intro text in a narrow column on the left. */
+@media (max-height: 500px) and (min-width: 761px) {
+  .tour-bar { left: max(8px, env(safe-area-inset-left)); right: max(8px, env(safe-area-inset-right)); }
+  .intro-copy { left: max(24px, env(safe-area-inset-left)); top: 44px; bottom: 10px; width: min(400px, 46vw); display: flex; flex-direction: column; overflow-y: auto; }
+  .intro-copy h1 { font-size: 30px; margin-bottom: 8px; }
+  .intro-copy p { font-size: 13.5px; line-height: 1.45; margin-bottom: 6px; }
+  .intro-copy .intro-action { margin-top: auto; width: 100%; height: 44px; flex-shrink: 0; }
+  .intro-link { padding: 4px 0 0; font-size: 15px; }
+  .intro-gallery, .story-polaroid { display: none; }
+  .anchored-note, .anchored-note.wide { left: auto; right: 0; top: 44px; bottom: 0; width: min(400px, 46vw); max-height: none; transform: none !important; transition: none;
+    background: var(--panel); border-width: 1px 0 0 1px; border-radius: 12px 0 0 0; padding: 0 max(18px, env(safe-area-inset-right)) 12px 18px; touch-action: pan-y; cursor: auto; overscroll-behavior: contain; }
+  .anchored-note .note-head { position: sticky; top: 0; z-index: 1; background: inherit; margin: 0 -18px 4px; padding: 12px 18px 6px; cursor: pointer; }
+  .anchored-note .note-head .grip { display: none; }
+  .anchored-note h2 { font-size: 22px; }
+  .anchored-note.collapsed { bottom: auto; }
+  .anchored-note.collapsed > :not(.note-head):not(h2) { display: none; }
+  .story-mode:has(.inspector:not([hidden])) .anchored-note { display: none; }
+  .story-mode .utility { display: none; }
+  .story-mode.exploring .utility { display: flex; left: max(8px, env(safe-area-inset-left)); right: auto; top: 44px; align-items: flex-start; }
+  .story-mode .inspector { display: grid; left: auto !important; right: 0 !important; top: 44px !important; bottom: 0 !important; width: min(400px, 46vw); transform: none !important;
+    max-height: none; overflow-y: auto; overscroll-behavior: contain; border-width: 1px 0 0 1px; border-radius: 12px 0 0 0; touch-action: pan-y; cursor: auto; align-content: start; }
+  .story-mode .inspector .ins-head { cursor: auto; }
+  .explore-drawer { width: min(420px, 48vw); }
+}
+@media (pointer: coarse) { .story-mode .intro-action kbd { display: none; } .story-mode .intro-action { justify-content: center; } }
 @media (prefers-reduced-motion: reduce) { .anchored-note { transition: none; } }
 
 /* Draggable overlays */
