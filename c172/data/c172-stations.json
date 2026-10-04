@@ -1,0 +1,775 @@
+{
+ "meta": {
+  "title": "Cessna 172P station system (FS/WS/BL/WL) and transform to the c172p AC3D model frame",
+  "source": {
+   "document": "Cessna Model 172 Series 1977 thru 1986 Service Manual D2065-3-13, Revision 3 (1995)",
+   "copyright": "Copyright Cessna Aircraft Company; facts and page references only",
+   "url": "https://www.aeroelectric.com/Reference_Docs/Cessna/cessna-maintenance-manuals/Cessna_172_1977-1986_MM_D2065-3-13.pdf",
+   "page_convention": "page = 1-based PDF page; manual_page = printed page"
+  },
+  "model_frame": "FlightGear c172p Models/c172-common.ac (commit 84477612): meters, +x aft, +y up, +z left; FG pitch offset -3 deg about the JSBSim VRP (34, 0, 35.75 in). See c172p-systems.json frames.transform.",
+  "generated": "2026-10-01"
+ },
+ "what_the_manual_defines": {
+  "summary": "Figure 1-2 \"Reference Stations\" (PDF pp. 14-15, manual pp. 1-4/1-5) gives fuselage stations (side view) and wing stations (standard wing, sheet 1; wet wing beginning 1981, sheet 2) only. There is NO water line or buttock line diagram anywhere in the manual. The only waterline statement is Fig 2-2 / para 2-5: the two longitudinal leveling screws on the left side of the tailcone are \"at zero waterline\". No numeric datum definition sentence is printed; FS 0.00 is drawn at the firewall.",
+  "para_1_5": "STATIONS. Station diagrams are shown in figure 1-2 to assist in locating equipment when a written description is inadequate or impractical. (PDF p11, manual p1-1)"
+ },
+ "datum_and_axes": {
+  "FS": {
+   "definition": "Fuselage station, inches, positive aft. FS 0.00 is drawn at the firewall (front face of firewall: E/C/F groups place firewall-mounted parts at FS 0.00).",
+   "zero": "firewall",
+   "confidence": "read from drawing (Fig 1-2 p14); the \"front face\" wording is the Cessna POH weight-and-balance datum convention, not printed in this manual",
+   "positive": "aft"
+  },
+  "WS": {
+   "definition": "Wing station, inches, measured outboard along the wing from the airplane centreline; root rib WS 23.62 (standard) / 22.875 (wet wing), tip rib WS 208.00.",
+   "confidence": "read from drawing (Fig 1-2); measurement origin (centreline) inferred from root rib WS 23.62 lying at the fuselage side (AC fuselage half-width at wing root 20.4 in)",
+   "positive": "outboard, each wing"
+  },
+  "BL": {
+   "definition": "Buttock line, inches from the plane of symmetry. NOT DEFINED IN THIS MANUAL. Adopted convention here: BL 0 = airplane centreline (Fig 5-6 plumb-bob alignment uses centreline points: tail tie-down ring and the inspection cover screw aft of the nose gear, p193); signed BL positive RIGHT (starboard), negative left, to match the JSBSim structural y axis. Write LBL/RBL in words.",
+   "confidence": "estimated (convention adopted)"
+  },
+  "WL": {
+   "definition": "Water line, inches, positive up. Only WL 0 is defined: the two leveling screws on the left side of the tailcone (Fig 2-2 p38, para 2-5 p40). No numeric WL is printed for any other feature.",
+   "zero": "tailcone leveling screws",
+   "confidence": "stated in text (definition); its height in the AC model is estimated",
+   "zero_height_estimate": {
+    "jsbsim_struct_z_in": 23.9,
+    "uncertainty_in": 3.0,
+    "method": "Fig 2-2 drawing: screw A1 just aft of baggage door at ~FS 112, ~0.46 of the local fuselage depth below the top; screw A2 at ~FS 155, ~0.65 below the top. Mapped onto the AC fuselage profile at those FS: struct z 26.0 and 21.8; mean used. The drawing is not to scale, so treat WL values as +/-3 in."
+   }
+  },
+  "level_attitude": "Longitudinal level = the two tailcone screws level; lateral level = corresponding points on both upper door sills (para 2-5). The WL axis is taken parallel to JSBSim structural z (no pitch correction fitted: FS fit points span only 9-41 in of height, too little to resolve a pitch difference)."
+ },
+ "fuselage_stations": [
+  {
+   "FS": 0.0,
+   "feature": "Firewall (front face). Engine mount (4 bolts), cowl shock-mount brackets, nose gear upper fitting, fuel strainer, vacuum relief valve/filter (aft face), heat valve, battery box.",
+   "basis": "read from drawing (Fig 1-2 p14); firewall attachment stated in Secs 5, 11, 12, 15"
+  },
+  {
+   "FS": 3.375,
+   "feature": "Upper fuselage deck at windshield forward edge / cowl aft edge (top). Interpretation of the pointer.",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 6.5,
+   "feature": "Rudder pedal pivot shafts at neutral (pedals 6.50 in from firewall)",
+   "basis": "stated in text (para 10-11c, p267), FS derived"
+  },
+  {
+   "FS": 8.12,
+   "feature": "Lower forward bulkhead (pointer at fuselage bottom just aft of firewall)",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 16.66,
+   "feature": "Forward cabin station at windshield (pointer into windshield; instrument panel / windshield area)",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 44.0,
+   "feature": "Floor bulkhead under cabin door (forward)",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 56.7,
+   "feature": "Forward landing gear bulkhead",
+   "basis": "read from drawing (Fig 5-1 sheet 1 p176, printed FS 56.70)"
+  },
+  {
+   "FS": 65.33,
+   "feature": "Aft landing gear bulkhead; aft door post (dashed roof-to-floor line in Fig 1-2)",
+   "basis": "read from drawing (Fig 5-1 sheet 1 p176; Fig 1-2 p14)"
+  },
+  {
+   "FS": 80.0,
+   "feature": "Cabin floor bulkhead (between door post and baggage door)",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 90.0,
+   "feature": "Baggage door forward edge / baggage area bulkhead",
+   "basis": "read from drawing (Fig 1-2 p14)"
+  },
+  {
+   "FS": 108.0,
+   "feature": "Aft cabin bulkhead: baggage door aft edge and rear-window aft tip",
+   "basis": "read from drawing (Fig 1-2 p14)"
+  },
+  {
+   "FS": 110.75,
+   "feature": "Tow-bar stowage strap (baggage area), 17275035 and on",
+   "basis": "stated in text (para 2-2 p40)"
+  },
+  {
+   "FS": 124.0,
+   "feature": "Tailcone bulkhead",
+   "basis": "read from drawing (Fig 1-2 p14)"
+  },
+  {
+   "FS": 130.0,
+   "feature": "Circulating fan supports (optional fan, above extended baggage), printed \"STATION 130.00\"",
+   "basis": "read from drawing (Fig 14-3 p370)"
+  },
+  {
+   "FS": 140.1,
+   "feature": "Tow-bar stowage bracket, 17275035 and on",
+   "basis": "stated in text (para 2-2 p40)"
+  },
+  {
+   "FS": 142.0,
+   "feature": "Tailcone bulkhead",
+   "basis": "read from drawing (Fig 1-2 p14)"
+  },
+  {
+   "FS": 178.0,
+   "feature": "Tailcone bulkhead",
+   "basis": "read from drawing (Fig 1-2 p14)"
+  },
+  {
+   "FS": 205.81,
+   "feature": "Tailcone bulkhead at stabilizer front spar (stabilizer forward attach); aft hoist sling goes at the first bulkhead forward of the stabilizer LE (para 2-3)",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated"
+  },
+  {
+   "FS": 228.68,
+   "feature": "Aft tailcone bulkhead at stabilizer rear spar / fin rear spar fittings",
+   "basis": "read from drawing (Fig 1-2 p14); function estimated; AC hstab root trailing edge at FS 228.7 after fit"
+  }
+ ],
+ "wing_stations": {
+  "standard_wing": {
+   "WS": [
+    23.62,
+    39.0,
+    57.12,
+    71.37,
+    85.87,
+    100.5,
+    118.0,
+    136.0,
+    154.0,
+    172.0,
+    190.0,
+    208.0
+   ],
+   "page": 14,
+   "notes": "Fig 1-2 sheet 1. WS 23.62 root rib; 100.50 lift-strut station (no twist inboard, para 18-8 / Fig 18-2); 118-190 leading-edge ribs (Fig 18-13 rivet table); 208.00 tip rib."
+  },
+  "wet_wing_1981_on": {
+   "WS": [
+    22.875,
+    23.65,
+    32.75,
+    39.0,
+    40.125,
+    49.0,
+    57.375,
+    65.125,
+    71.125,
+    83.375,
+    85.875,
+    100.0,
+    100.5,
+    118.0,
+    136.0,
+    154.0,
+    172.0,
+    190.0,
+    208.0
+   ],
+   "page": 15,
+   "notes": "Fig 1-2 sheet 2 (\"Wet wing option beginning with 1981 model year\"). Leading-edge stations 23.65-100.00 are labelled along the LE; 22.875 root rib (fuel-bay transmitter on root rib); 65.125 integral bay outboard limit (no skin repairs inboard, p492)."
+  },
+  "twist": "Washout 3 deg 00 min between WS 100.50 and 208.00; no twist root to WS 100.50 (para 18-8, Fig 18-2 p506). Stabilizer incidence -3 deg 30 min."
+ },
+ "reference_points": [
+  {
+   "name": "Firewall front face / datum",
+   "FS": 0.0,
+   "BL": 0.0,
+   "WL": null,
+   "page": 14,
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Engine mount-to-firewall bolts (4)",
+   "FS": 0.0,
+   "page": 281,
+   "confidence": "derived from stations",
+   "notes": "Fig 11-2; positions on firewall not dimensioned"
+  },
+  {
+   "name": "Nose gear upper fitting (riveted to firewall)",
+   "FS": 0.0,
+   "BL": 0.0,
+   "page": 196,
+   "confidence": "derived from stations"
+  },
+  {
+   "name": "Rudder pedal pivot shafts",
+   "FS": 6.5,
+   "page": 267,
+   "confidence": "derived from stations (6.50 in from firewall, stated)"
+  },
+  {
+   "name": "Forward cabin door post / door hinge line",
+   "FS": null,
+   "page": 14,
+   "confidence": "estimated",
+   "notes": "Not printed. AC door hinges (charniere3/4) at FS ~29.8 after the fit; D group scaled the Fig 1-2 drawing to FS ~28-30."
+  },
+  {
+   "name": "Wing attach fittings, front spar (AN8-23 bolt) and rear spar (AN7-24 bolt)",
+   "FS": null,
+   "WS": 23.62,
+   "page": 162,
+   "confidence": "estimated",
+   "notes": "Manual gives no FS/WL for the spar fittings. They sit at the root rib (WS 23.62 / 22.875 wet) at the cabin top; front spar between door posts, rear spar near the aft door post FS 65.33 region (not printed)."
+  },
+  {
+   "name": "Wing strut upper attach (wing fitting)",
+   "WS": 100.5,
+   "page": 506,
+   "confidence": "derived from stations (lift-strut station of para 18-8 / Fig 18-2)"
+  },
+  {
+   "name": "Wing strut lower attach (fuselage fitting)",
+   "FS": null,
+   "page": 165,
+   "confidence": "estimated",
+   "notes": "Fig 4-2: fitting on fuselage lower side near the landing gear bulkheads (FS 56.70-65.33); not printed"
+  },
+  {
+   "name": "Main gear spring strut forgings / attach bolt (1100-1300 lb-in)",
+   "FS": "56.70-65.33",
+   "page": 176,
+   "confidence": "read from drawing (bounding bulkheads printed)"
+  },
+  {
+   "name": "Main wheel centre",
+   "BL": "+/-50.18",
+   "page": 13,
+   "confidence": "derived from stations (track 100.36 in)"
+  },
+  {
+   "name": "Aft door post",
+   "FS": 65.33,
+   "page": 14,
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Baggage door forward / aft edge",
+   "FS": [
+    90.0,
+    108.0
+   ],
+   "page": 14,
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Leveling screws (WL 0)",
+   "FS": [
+    "~112 (est.)",
+    "~155 (est.)"
+   ],
+   "BL": "left side of tailcone",
+   "WL": 0.0,
+   "page": 38,
+   "confidence": "stated in text (WL 0); FS estimated from drawing"
+  },
+  {
+   "name": "Tailcone bulkheads",
+   "FS": [
+    124.0,
+    142.0,
+    178.0
+   ],
+   "page": 14,
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Stabilizer front spar attach bulkhead",
+   "FS": 205.81,
+   "page": 14,
+   "confidence": "read from drawing (function estimated)"
+  },
+  {
+   "name": "Stabilizer rear spar / fin rear spar attach bulkhead",
+   "FS": 228.68,
+   "page": 14,
+   "confidence": "read from drawing (function estimated)"
+  },
+  {
+   "name": "Tail tie-down ring",
+   "BL": 0.0,
+   "FS": null,
+   "page": 193,
+   "confidence": "read from drawing (on centreline); AC TieDownTail at FS ~219.4 after fit"
+  },
+  {
+   "name": "Wing tip rib",
+   "WS": 208.0,
+   "page": 14,
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Wing root rib",
+   "WS": [
+    23.62,
+    22.875
+   ],
+   "page": [
+    14,
+    15
+   ],
+   "confidence": "read from drawing"
+  },
+  {
+   "name": "Fuel vent outlet (left wing)",
+   "notes": "just inboard of strut-to-wing fairing, protrudes 3.75 in below lower skin (Fig 12-4 p337); WS not printed (inboard of WS 100.50)",
+   "confidence": "read from drawing"
+  }
+ ],
+ "transform": {
+  "description": "Cessna stations (inches) -> AC3D model meters. Step 1: Cessna -> JSBSim structural inches: x = FS + dx, y = BL (signed, + right), z = WL + z0. Step 2: c172p-systems.json frames.transform (structural -> AC; VRP origin, undo -3 deg pitch, axes (x, z, -y)).",
+  "fitted_parameters": {
+   "dx_in": 0.437,
+   "z0_in": 23.9,
+   "scale": 1.0,
+   "pitch_correction_deg": 0.0,
+   "dx_fit": "least squares over 4 FS correspondences (R1-R4); residual rms 0.55 in",
+   "free_scale_check": "fitting FS scale too gives k = 0.99793, dx = 0.66 in (residuals -0.12, 0.78, -0.68, 0.01) - scale 1 retained",
+   "z0": "estimated from the tailcone leveling screws (see datum_and_axes.WL); +/-3 in"
+  },
+  "formula_cessna_to_ac": "x_s = FS + 0.437; y_s = BL; z_s = WL + 23.9; ac_x = 0.0254*(cos3*(x_s-34) + sin3*(z_s-35.75)); ac_y = 0.0254*(-sin3*(x_s-34) + cos3*(z_s-35.75)); ac_z = -0.0254*y_s",
+  "matrix_cessna_in_to_ac_m": {
+   "row_major_4x4": [
+    [
+     0.0253652,
+     0.0,
+     0.0013293,
+     -0.8670941
+    ],
+    [
+     -0.0013293,
+     0.0,
+     0.0253652,
+     -0.2559606
+    ],
+    [
+     0.0,
+     -0.0254,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "applies_to": "[FS, BL(+right), WL, 1]"
+  },
+  "matrix_ac_m_to_cessna_in": {
+   "row_major_4x4": [
+    [
+     39.3161234,
+     -2.0604707,
+     0.0,
+     33.5633774
+    ],
+    [
+     -0.0,
+     -0.0,
+     -39.3700787,
+     -0.0
+    ],
+    [
+     2.0604707,
+     39.3161234,
+     0.0,
+     11.85
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "applies_to": "[ac_x, ac_y, ac_z, 1] -> [FS, BL(+right), WL, 1]"
+  },
+  "wing_and_tail_lateral_note": "The AC model is not to Cessna scale laterally. Wing: nav-light tip at BL 222.8 vs 216.5 (433.00/2) -> ratio 1.029 at the tip; the AC outer-panel joint (aileron inboard end) at BL 103.0 vs strut station WS 100.50 (ratio 1.025). Recommended for placing wing hardware on the AC wing: BL_ac = 1.025 * WS (residuals: WS 100.50 -> 103.0 = 0.0; WS 208.00 -> 213.2 vs AC LE-panel end 215.1; tip 216.5 -> 221.9 vs 222.8). Horizontal tail: AC tip 69.7 vs 67.57 -> scale 1.031 for stabilizer hardware. Main gear: AC wheels at BL +/-43.9 vs manual +/-50.18 (AC track 87.8 in vs 100.36 in, ratio 0.875): place wheel/brake/axle hardware relative to the AC wheel objects, not by manual BL.",
+  "reference_points": [
+   {
+    "id": "R1",
+    "name": "Upper cowl aft edge / windshield forward edge (deck at firewall top)",
+    "use": "fit",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 3.375
+    },
+    "cessna_basis": "Fig 1-2 sheet 1 (p14): FS 3.375 pointer at cowl/windshield junction on top of fuselage (read from drawing; function interpreted)",
+    "ac_feature": "fuselage_cowling_top: aft-most vertex",
+    "ac_m": [
+     -0.7561,
+     0.1772,
+     0.0001
+    ],
+    "ac_in_cessna": {
+     "FS": 3.47,
+     "BL": -0.0,
+     "WL": 17.26
+    },
+    "residual_in": 0.1,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "R2",
+    "name": "Baggage door forward edge",
+    "use": "fit",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 90.0
+    },
+    "cessna_basis": "Fig 1-2 sheet 1 (p14): FS 90.00 pointer at baggage door forward edge (read from drawing)",
+    "ac_feature": "baggagedoorexterior: mean of forward-edge vertices",
+    "ac_m": [
+     1.4329,
+     -0.4466,
+     0.4497
+    ],
+    "ac_in_cessna": {
+     "FS": 90.82,
+     "BL": -17.71,
+     "WL": -2.76
+    },
+    "residual_in": 0.82,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "R3",
+    "name": "Baggage door aft edge / aft cabin bulkhead",
+    "use": "fit",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 108.0
+    },
+    "cessna_basis": "Fig 1-2 sheet 1 (p14): FS 108.00 dashed bulkhead line just aft of baggage door (read from drawing)",
+    "ac_feature": "baggagedoorexterior: mean of aft-edge vertices",
+    "ac_m": [
+     1.8515,
+     -0.4698,
+     0.4241
+    ],
+    "ac_in_cessna": {
+     "FS": 107.32,
+     "BL": -16.7,
+     "WL": -2.81
+    },
+    "residual_in": -0.68,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "R4",
+    "name": "Horizontal stabilizer rear spar / elevator hinge line at root",
+    "use": "fit",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 228.68
+    },
+    "cessna_basis": "Fig 1-2 sheet 1 (p14): FS 228.68 bulkhead under stabilizer rear spar (read from drawing; function interpreted, agrees with Fig 4-4 rear attach at tailcone fitting)",
+    "ac_feature": "hstab: aft-most vertex within 0.15 m of centreline",
+    "ac_m": [
+     4.9339,
+     -0.4357,
+     -0.0656
+    ],
+    "ac_in_cessna": {
+     "FS": 228.44,
+     "BL": 2.58,
+     "WL": 4.89
+    },
+    "residual_in": -0.24,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C1",
+    "name": "Wrap-around rear window aft tip (cabin top)",
+    "use": "check",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 108.0
+    },
+    "cessna_basis": "Fig 1-2 sheet 1 (p14): FS 108.00 pointer touches the rear window aft tip",
+    "ac_feature": "glas: aft-most vertex",
+    "ac_m": [
+     2.0086,
+     0.0229,
+     0.0292
+    ],
+    "ac_in_cessna": {
+     "FS": 112.49,
+     "BL": -1.15,
+     "WL": 16.89
+    },
+    "residual_in": 4.49,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C2",
+    "name": "Aft door post (aft landing gear bulkhead)",
+    "use": "check",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 65.33
+    },
+    "cessna_basis": "Fig 1-2 (p14) dashed line roof-to-floor behind cabin door; Fig 5-1 sheet 1 (p176) aft landing gear bulkhead FS 65.33",
+    "ac_feature": "leftdoor: mean of aft-edge vertices (door laps the post)",
+    "ac_m": [
+     0.8288,
+     -0.014,
+     0.5142
+    ],
+    "ac_in_cessna": {
+     "FS": 66.18,
+     "BL": -20.24,
+     "WL": 13.01
+    },
+    "residual_in": 0.85,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C3",
+    "name": "Main gear strut inboard end (between landing gear bulkheads FS 56.70-65.33)",
+    "use": "check",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 61.0
+    },
+    "cessna_basis": "Fig 5-1 sheet 1 (p176): forgings between FS 56.70 and FS 65.33; 61.0 = midpoint (estimated)",
+    "ac_feature": "LeftWheelStrut: centre of vertices with |BL|<18 in",
+    "ac_m": [
+     0.6891,
+     -0.7815,
+     0.4068
+    ],
+    "ac_in_cessna": {
+     "FS": 62.27,
+     "BL": -16.02,
+     "WL": -17.46
+    },
+    "residual_in": 1.27,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C4",
+    "name": "Nose gear strut top (upper nose gear fitting on firewall)",
+    "use": "check",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 0.0,
+     "BL": 0.0
+    },
+    "cessna_basis": "Fig 5-7 (p196): upper fitting riveted to firewall; FS 0.00 from Fig 1-2 (derived)",
+    "ac_feature": "NoseWheelStrut: highest vertex",
+    "ac_m": [
+     -0.9905,
+     -0.656,
+     -0.0015
+    ],
+    "ac_in_cessna": {
+     "FS": -4.03,
+     "BL": 0.06,
+     "WL": -15.98
+    },
+    "residual_in": -4.03,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C5",
+    "name": "Stabilizer front spar at root",
+    "use": "check",
+    "constrained": "FS",
+    "cessna": {
+     "FS": 205.81
+    },
+    "cessna_basis": "Fig 1-2 (p14): FS 205.81 bulkhead under stabilizer front spar (function interpreted). AC has no spar; compared with root leading edge, spar expected a few inches aft of LE",
+    "ac_feature": "hstab: forward-most vertex near centreline (leading edge, not spar)",
+    "ac_m": [
+     4.2139,
+     -0.3876,
+     0.0
+    ],
+    "ac_in_cessna": {
+     "FS": 200.04,
+     "BL": 0.0,
+     "WL": 5.29
+    },
+    "residual_in": -5.77,
+    "residual_note": "AC minus manual, along FS"
+   },
+   {
+    "id": "C6",
+    "name": "Main wheel centre (track 100.36 in)",
+    "use": "check",
+    "constrained": "BL",
+    "cessna": {
+     "BL": -50.18
+    },
+    "cessna_basis": "Fig 1-1 sheet 2 (p13): track width 100.36 in (172/F172), BL = -track/2 (derived)",
+    "ac_feature": "LeftWheel: bbox centre",
+    "ac_m": [
+     0.5302,
+     -1.1469,
+     1.1141
+    ],
+    "ac_in_cessna": {
+     "FS": 56.77,
+     "BL": -43.86,
+     "WL": -32.15
+    },
+    "residual_in": 6.32,
+    "residual_note": "AC minus manual, along BL"
+   },
+   {
+    "id": "C7",
+    "name": "Stabilizer tip (tail span 135.14 in)",
+    "use": "check",
+    "constrained": "BL",
+    "cessna": {
+     "BL": -67.57
+    },
+    "cessna_basis": "Fig 1-1 sheet 2 (p13): tail span 135.14 in, half = 67.57 (derived)",
+    "ac_feature": "hstab: max +z (left) extent",
+    "ac_m": [
+     4.6003,
+     -0.4163,
+     1.7707
+    ],
+    "ac_in_cessna": {
+     "FS": 215.29,
+     "BL": -69.71,
+     "WL": 4.96
+    },
+    "residual_in": -2.14,
+    "residual_note": "AC minus manual, along BL"
+   },
+   {
+    "id": "C8",
+    "name": "Wing tip incl. strobe/nav light (span 433.00 in)",
+    "use": "check",
+    "constrained": "BL",
+    "cessna": {
+     "BL": -216.5
+    },
+    "cessna_basis": "Fig 1-1 sheet 2 (p13): wing span with strobe lights 433.00 in, half = 216.5 (derived)",
+    "ac_feature": "LeftNavLight: outermost vertex",
+    "ac_m": [
+     0.1461,
+     0.5227,
+     5.6594
+    ],
+    "ac_in_cessna": {
+     "FS": 38.23,
+     "BL": -222.81,
+     "WL": 32.7
+    },
+    "residual_in": -6.31,
+    "residual_note": "AC minus manual, along BL"
+   },
+   {
+    "id": "C9",
+    "name": "Lift strut wing station / aileron inboard end (WS 100.50)",
+    "use": "check",
+    "constrained": "BL",
+    "cessna": {
+     "BL": -100.5
+    },
+    "cessna_basis": "Fig 18-2 (p506) + para 18-8: no twist root to lift strut station; twist between WS 100.50 and 208.00 (derived strut station). That the AC outer-panel joint / aileron inboard end coincides with it is an assumption",
+    "ac_feature": "leftaileron: inboard-most vertex (AC outer wing panel joint)",
+    "ac_m": [
+     1.1528,
+     0.3781,
+     2.6162
+    ],
+    "ac_in_cessna": {
+     "FS": 78.11,
+     "BL": -103.0,
+     "WL": 29.09
+    },
+    "residual_in": -2.5,
+    "residual_note": "AC minus manual, along BL"
+   },
+   {
+    "id": "C10",
+    "name": "Wing tip rib (WS 208.00)",
+    "use": "check",
+    "constrained": "BL",
+    "cessna": {
+     "BL": -208.0
+    },
+    "cessna_basis": "Fig 1-2 (p14) tip rib WS 208.00; AC compared at outboard end of wing_leading_edge_left (start of tip cap) - assumption",
+    "ac_feature": "wing_leading_edge_left: outermost vertex",
+    "ac_m": [
+     0.1287,
+     0.6209,
+     5.4645
+    ],
+    "ac_in_cessna": {
+     "FS": 37.34,
+     "BL": -215.14,
+     "WL": 36.53
+    },
+    "residual_in": -7.14,
+    "residual_note": "AC minus manual, along BL"
+   },
+   {
+    "id": "C11",
+    "name": "Overall length 323.04 in (1981 and on)",
+    "use": "check",
+    "constrained": "length",
+    "cessna": {
+     "length": 323.04
+    },
+    "cessna_basis": "Fig 1-1 sheet 2 (p13)",
+    "ac_feature": "Spinner forward-most vertex to rudder_1 aft-most vertex, measured along FS",
+    "ac_m": [
+     [
+      -2.1407,
+      -0.0519,
+      -0.0013
+     ],
+     [
+      6.0852,
+      0.9962,
+      0.0
+     ]
+    ],
+    "residual_in": -1.79,
+    "residual_note": "AC minus manual"
+   }
+  ],
+  "residual_summary": {
+   "R1": 0.1,
+   "R2": 0.82,
+   "R3": -0.68,
+   "R4": -0.24,
+   "C1": 4.49,
+   "C2": 0.85,
+   "C3": 1.27,
+   "C4": -4.03,
+   "C5": -5.77,
+   "C6": 6.32,
+   "C7": -2.14,
+   "C8": -6.31,
+   "C9": -2.5,
+   "C10": -7.14,
+   "C11": -1.79
+  }
+ }
+}

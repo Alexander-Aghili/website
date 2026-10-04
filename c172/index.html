@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skyhawk Systems Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="explorer/explorer.css">
+<link rel="stylesheet" href="story.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/mp4-muxer@5.2.1/build/mp4-muxer.min.js"></script>
+<div id="app"></div>
+<script>
+// Renderer choice before any module loads: three's WebGPU build where the browser has a WebGPU adapter,
+// the classic WebGL build otherwise (three's own WebGL 2 fallback inside the WebGPU build drops textured parts).
+(async () => {
+  let gpu = false;
+  try { gpu = !!(navigator.gpu && await navigator.gpu.requestAdapter()); } catch (e) {}
+  const T = "https://cdn.jsdelivr.net/npm/three@0.170.0/";
+  const map = document.createElement("script"); map.type = "importmap";
+  map.textContent = JSON.stringify({ imports: { three: T + (gpu ? "build/three.webgpu.js" : "build/three.module.js"), "three/addons/": T + "examples/jsm/",
+    "three-mesh-bvh": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.8.3/build/index.module.js" } });
+  document.head.append(map);
+  const main = document.createElement("script"); main.type = "module"; main.src = "machine.js"; document.body.append(main);
+})();
+</script>
+</body>
+</html>

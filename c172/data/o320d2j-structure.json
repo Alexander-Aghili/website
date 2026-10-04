@@ -1,0 +1,2792 @@
+{
+ "source": {
+  "ipc": {
+   "title": "O-320-D2J Illustrated Parts Catalog",
+   "part_number": "PC-O-320-D2J",
+   "date": "October 21, 2016",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320-D2J%2520Parts%2520Catalog%2520PC-O-320-D2J.pdf"
+  },
+  "operator_manual": {
+   "title": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.)",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf"
+  },
+  "note": "Positions measured on drawings carry a method and tolerance; anything not shown in either document is marked basis \"estimated\". Catalog figure images are Lycoming copyright and are not stored in this repo."
+ },
+ "configuration": "default (flat tappet, Sky-Tec starter) - see o320d2j-ipc.json configurations",
+ "dimensions": {
+  "frame": "inches; origin on the crankshaft axis at the propeller-flange face; +x aft, +y up, +z engine left (matches the c172-explorer AC3D frame axes). Right/left as seen from behind the engine looking forward; odd cylinders right.",
+  "envelope": {
+   "width_in": 32.24,
+   "height_in": 23.0,
+   "length_in": 29.05,
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Table 1 Model Application, p.1-3 (row -D2J*)",
+   "note": "The IPC top view measures 30.9 in from the propeller flange to the end of the long oil filter and 28.5 in to the magneto caps, so the 29.05 in table length most likely excludes the filter (inference)."
+  },
+  "bore_in": {
+   "value": 5.125,
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2 (O-320-B, -D series)"
+  },
+  "stroke_in": {
+   "value": 3.875,
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2"
+  },
+  "displacement_cu_in": {
+   "value": 319.8,
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2"
+  },
+  "compression_ratio": {
+   "value": "8.5:1",
+   "basis": "operator manual + catalog",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2; IPC fig 7 item 6 piston 14D23912 \"8.50:1 compression ratio\""
+  },
+  "rated_power": {
+   "value": "160 hp at 2700 rpm (alternate 150 hp at 2500, 155 hp at 2600)",
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2"
+  },
+  "firing_order": {
+   "value": "1-3-2-4",
+   "basis": "operator manual + catalog",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-2; IPC p.ix"
+  },
+  "crankshaft_rotation": {
+   "value": "clockwise viewed from the rear",
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.1-1, 2-2"
+  },
+  "dry_weight_lb": {
+   "value": 275,
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-3 (includes carburetor, magnetos, plugs, harness, intercylinder baffles, starter, alternator and bracket)"
+  },
+  "cylinder_stations": {
+   "cylinders": {
+    "1": {
+     "side": "right",
+     "axis_x_in": 9.03,
+     "axis_y_in": 0.0
+    },
+    "2": {
+     "side": "left",
+     "axis_x_in": 11.34,
+     "axis_y_in": 0.0
+    },
+    "3": {
+     "side": "right",
+     "axis_x_in": 15.75,
+     "axis_y_in": 0.0
+    },
+    "4": {
+     "side": "left",
+     "axis_x_in": 18.06,
+     "axis_y_in": 0.0
+    }
+   },
+   "same_bank_spacing_in": 6.72,
+   "left_bank_stagger_aft_in": 2.31,
+   "note": "Right bank (1, 3) is forward of the left bank (2, 4). Cylinder axes are horizontal and pass through the crankshaft axis (horizontally opposed).",
+   "basis": "catalog figure",
+   "source": "IPC PC-O-320-D2J \"Top View of Engine\", PDF p.9 (catalog p.ix)",
+   "method": "measured on the drawing; scale 34.2 px/in from the operator manual width 32.24 in; about +/-0.3 in"
+  },
+  "crankcase": {
+   "split_line": "vertical plane through the crankshaft axis (z = 0): two halves, right half carries cylinders 1 and 3, left half 2 and 4; joined without gasket by through-studs, studs, bolts and nuts (manual p.1-1)",
+   "cylinder_pad_face_abs_z_in": 4.5,
+   "front_face_x_in": 3.16,
+   "rear_face_x_in": 20.26,
+   "top_y_in": 4.7,
+   "bottom_sump_flange_y_in": -6.7,
+   "lifting_strap_top_y_in": 5.9,
+   "x_basis": {
+    "basis": "catalog figure",
+    "source": "IPC PC-O-320-D2J \"Top View of Engine\", PDF p.9 (catalog p.ix)",
+    "method": "measured on the drawing; scale 34.2 px/in from the operator manual width 32.24 in; about +/-0.3 in"
+   },
+   "y_basis": [
+    {
+     "basis": "operator manual",
+     "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Fig. 7-6 Installation Drawing Left Side View (manual p.7-9, PDF p.73)",
+     "method": "measured on the drawing (typical O-320-D/-E, no printed dimensions); scale 16.8 pt/in from length 29.05 in; about +/-0.6 in"
+    },
+    {
+     "basis": "operator manual",
+     "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Fig. 7-7 Installation Drawing Rear View (manual p.7-10, PDF p.74)",
+     "method": "measured on the drawing (typical O-320-D/-E, no printed dimensions); scale 15.9 pt/in from width 32.24 in; about +/-0.5 in"
+    }
+   ],
+   "note": "top_y from the left-side drawing (4.7 in; 5.9 in to the lifting strap); sump flange from the rear drawing."
+  },
+  "cylinder": {
+   "head_tip_abs_z_in": 16.12,
+   "barrel_base_flange_abs_z_in": 4.5,
+   "length_pad_to_rocker_cover_in": 11.62,
+   "hold_down": {
+    "per_cylinder": "4 x 1/2-20 nuts (2 on 1/2-13 studs 50-15, 2 on the ends of 1/2-20 through-studs 76220) + 4 x 3/8-24 nuts on 3/8-16 studs 38-13",
+    "arrangement": "1/2-in positions at the four corners of the flange (front-upper, front-lower, rear-upper, rear-lower); 3/8-in studs in pairs above and below the bore",
+    "basis": "catalog figure",
+    "source": "IPC fig 2 (crankcase studs, PDF p.16), fig 6 item 18 through-studs (PDF p.24), fig 10 items 11-12 nuts (PDF p.32-33)",
+    "bolt_circle_in": {
+     "value": 6.9,
+     "basis": "estimated",
+     "note": "not printed anywhere; about 0.9 in outside the 5.125 bore radius, judged from the fig 2 and fig 8 drawings"
+    }
+   },
+   "basis": "catalog figure + operator manual",
+   "source": "IPC top view (PDF p.9) for lengths"
+  },
+  "propeller_flange": {
+   "face_x_in": 0.0,
+   "bushings": "6 (1 long LW-18817-S + 5 short LW-18815-S), IPC fig 4",
+   "starter_ring_gear": {
+    "part": "72566 GEAR, Starter ring, 12/14 pitch on 76628 support (fig 4 items 9-10)",
+    "plane_x_in": 1.64,
+    "outside_diameter_in": 12.7,
+    "basis": "catalog figure",
+    "source": "IPC PC-O-320-D2J \"Top View of Engine\", PDF p.9 (catalog p.ix)",
+    "method": "measured on the drawing; scale 34.2 px/in from the operator manual width 32.24 in; about +/-0.3 in"
+   }
+  },
+  "accessory_housing": {
+   "mount": "rear face of the crankcase and the top rear of the oil sump (manual p.1-1); gasket 73818",
+   "front_face_x_in": 20.26,
+   "rear_face_x_in": 23.47,
+   "layout_viewed_from_rear": {
+    "tachometer drive": "top centre (y about +3.6 in)",
+    "magnetos (2)": "upper left and upper right, about 4.7 in either side of centre, axes near crankshaft height",
+    "vacuum pump / dual drive pad (covered by fig 18 adapter and cover on 4 long 1/4-20 studs)": "upper, right of centre (about z -2.2, y +4.4 in)",
+    "breather fitting (fig 19 item 3)": "upper left of centre",
+    "oil filter (fig 19) on adapter": "centre, filter axis aft; filter end about x 30.8 in",
+    "oil cooler bypass valve / oil cooler ports (fig 19 items 2, 4, 13)": "left of centre, mid height",
+    "propeller governor drive pad (covered, fig 18 items 1-5, 4 x 5/16 studs)": "lower right",
+    "fuel pump pad (covered, fig 17, 2 x 3/8-16 bolts)": "lower left",
+    "oil pump (fig 16) inside the housing": "lower centre, driven from the crankshaft gear"
+   },
+   "basis": "operator manual + catalog figure",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) Fig. 7-7 (labels: tachometer, oil temp, vacuum pump pad, dual drive pad, breather, oil pressure screen, magnetos); IPC figs 15-19 (PDF p.42-51); IPC top view for x stations",
+   "note": "The installation drawing is a typical O-320-D/-E: the D2J has covers on the governor and fuel pump pads (IPC figs 17, 18) and a spin-on filter (fig 19)."
+  },
+  "magnetos": {
+   "model": "Slick 4371 (IPC fig 21 item 6, Lycoming P/N 66GC20SFNN, impulse coupling), qty 2",
+   "discrepancy": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) Table 1 lists Slick 4251 for left and right on the -D2J; the 2016 IPC lists vendor part 4371. Both are Slick 4300-series impulse magnetos.",
+   "positions": {
+    "left": {
+     "z_in": 4.91,
+     "x_cap_end_in": 28.44,
+     "y_in": 0.3
+    },
+    "right": {
+     "z_in": -4.59,
+     "x_cap_end_in": 28.44,
+     "y_in": 0.3
+    }
+   },
+   "mounting": "each on the accessory housing pad: gasket LW-12681 + adapter LW-12706 + gasket 62224, held by 2 clamps 66M21195 on 2 studs 31C-19 with lock washer + nut",
+   "basis": [
+    {
+     "basis": "catalog figure",
+     "source": "IPC PC-O-320-D2J \"Top View of Engine\", PDF p.9 (catalog p.ix)",
+     "method": "measured on the drawing; scale 34.2 px/in from the operator manual width 32.24 in; about +/-0.3 in"
+    },
+    {
+     "basis": "operator manual",
+     "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Fig. 7-7 Installation Drawing Rear View (manual p.7-10, PDF p.74)",
+     "method": "measured on the drawing (typical O-320-D/-E, no printed dimensions); scale 15.9 pt/in from width 32.24 in; about +/-0.5 in"
+    }
+   ],
+   "note": "z and x from the IPC top view, y (height) from the rear installation drawing: cap centres sit at about crankshaft height."
+  },
+  "carburetor": {
+   "model": "Precision/Marvel-Schebler MA-4SPA family, Lycoming P/N 61B26214 (vendor AV 10-5217), catalog text \"LVC-5-4PA\"",
+   "mounting": "bottom of the oil sump (induction riser): 4 x 5/16-18 studs 31C-15 (fig 14 item 5), gasket 66224, plain + lock washer + nut each",
+   "flange": "square 4-hole flange (IPC fig 20 drawing)",
+   "flange_hole_square_in": {
+    "value": 2.6,
+    "basis": "estimated",
+    "note": "not printed; typical for this carburetor family"
+   },
+   "position": {
+    "x_in": 17.0,
+    "z_in": 0.0,
+    "flange_y_in": -11.7,
+    "bottom_y_in": -17.1,
+    "basis": "estimated",
+    "note": "flange at the sump bottom (operator-manual drawings); x taken mid-sump; bottom_y from envelope height 23.00 minus the 5.9 in strap height"
+   },
+   "source": "IPC figs 14, 20; operator manual p.1-1 (sump incorporates the carburetor mounting pad)"
+  },
+  "oil_sump": {
+   "shape": "cast aluminium box under the rear half of the crankcase with an internal induction riser and four intake-pipe connections (two each side, front and rear), drain plugs at the bottom, suction screen entering from the rear",
+   "length_in": 8.9,
+   "width_in": 15.0,
+   "top_y_in": -6.7,
+   "bottom_y_in": -11.7,
+   "front_x_in": 12.4,
+   "rear_x_in": 21.3,
+   "drain_plugs": "2 x STD-551 square-head drilled plugs, bottom; 1 STD-91 allen plug",
+   "suction_screen": "70484, horizontal, inserted from the rear, plug LW-12545 (5/8 hex, 1.00-20) + gasket",
+   "basis": [
+    {
+     "basis": "operator manual",
+     "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Fig. 7-6 Installation Drawing Left Side View (manual p.7-9, PDF p.73)",
+     "method": "measured on the drawing (typical O-320-D/-E, no printed dimensions); scale 16.8 pt/in from length 29.05 in; about +/-0.6 in"
+    },
+    {
+     "basis": "operator manual",
+     "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), Fig. 7-7 Installation Drawing Rear View (manual p.7-10, PDF p.74)",
+     "method": "measured on the drawing (typical O-320-D/-E, no printed dimensions); scale 15.9 pt/in from width 32.24 in; about +/-0.5 in"
+    }
+   ],
+   "source_catalog": "IPC fig 14 (PDF p.40-41)",
+   "note": "width from the rear drawing, length and x from the left drawing, heights averaged between the two; about +/-0.7 in"
+  },
+  "starter": {
+   "location": "front of the crankcase, bottom, LEFT side; pad just aft of the propeller-end main bearing boss; motor axis parallel to the crankshaft, pinion forward to the ring gear",
+   "attach": "3 x 5/16-18 studs in the crankcase (fig 2 items 6, 7) with nuts + 1 bolt LW-31-0.94 (LW-31-1.16 with Kelly), lock washer on each (+ plain washers with Kelly)",
+   "basis": "catalog figure",
+   "source": "IPC fig 22 (PDF p.56) shows the pad on the crankcase next to the front cylinder pad, the case drawn inverted; side inferred from that view and from the OM 3/4 right-front photo (no starter on the right)"
+  },
+  "alternator": {
+   "location": "front, lower RIGHT side: bracket 07A21443 on the bottom of the crankcase near the front, adjusting link LW-10729 to the front right of the case, belt-driven from the ring-gear support pulley",
+   "drive_ratio": "3.250:1 clockwise (manual p.2-3)",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 1 (PDF p.14) and top view (PDF p.9: link at x 4.47 in, reaching z -6.78 in); Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) p.vi 3/4 right-front photo",
+   "note": "The alternator itself is not in the IPC (vendor/airframe part)."
+  },
+  "oil_filler_and_gage": {
+   "location": "right rear of the crankcase, low boss behind cylinder 3; tube 56C23075 (10-9/16 long) angled up and outboard/aft; gage LW-14798",
+   "basis": "catalog figure",
+   "source": "IPC fig 13 (PDF p.38) and top view (PDF p.9), OM Fig. 7-7 label \"oil filler tube and oil level gage\""
+  },
+  "intake_pipes": {
+   "route": "from the four sump connections (78914) up and outboard to the bottom of each cylinder head; each pipe is a bent tube 74084 with a hose 69603 (1-3/4 I.D. x 1-3/4 long) and two hose clamps at the sump end and a 2-bolt flange 73346 at the head",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC figs 12, 14 (PDF p.36, 40); OM Fig. 7-6, 7-7"
+  },
+  "accessory_drive_ratios": {
+   "value": {
+    "starter": "13.556:1 / 16.556:1 CCW",
+    "alternator": "3.250:1 CW",
+    "tachometer": "0.500:1 CW",
+    "magneto": "1.000:1 CW",
+    "vacuum pump": "1.300:1 CCW",
+    "propeller governor (accessory housing)": "0.866:1 CW",
+    "fuel pump AN20003": "1.000:1 CCW"
+   },
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.), p.2-3 (rotation viewed facing the drive pad)"
+  },
+  "not_in_ipc": [
+   "exhaust system (airframe)",
+   "engine mounts and mount bolts (airframe)",
+   "alternator, belt and pulley hardware (vendor/airframe)",
+   "cooling baffles other than the 2 intercylinder baffles (airframe)",
+   "propeller bolts",
+   "primer lines",
+   "oil cooler (optional, airframe)"
+  ]
+ },
+ "groups": [
+  {
+   "id": "alt.bracket",
+   "kind": "fastener_group",
+   "title": "Alternator bracket to crankcase",
+   "figure": "1",
+   "allocations": [
+    {
+     "figure": "1",
+     "ref": "1",
+     "part_number": "07A21443",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "5",
+     "part_number": "LW-31-0.94",
+     "units": 2
+    },
+    {
+     "figure": "1",
+     "ref": "3",
+     "part_number": "73383",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 5/16-18 x 15/16": 2,
+    "LOCKPLATE 73383 (one plate under both bolt heads)": 1
+   },
+   "location": "bottom of the crankcase near the front, right side",
+   "geometry": "two bolts 1.00 in apart (lockplate \"5/16 bolt x 1.00\"), bolts vertical, heads down",
+   "basis": "catalog figure",
+   "source": "IPC fig 1 (PDF p.14)",
+   "note": "lockplate tabs bend against the bolt heads (lockwire-tab function)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "alt.brace",
+   "kind": "fastener_group",
+   "title": "Alternator brace",
+   "figure": "1",
+   "allocations": [
+    {
+     "figure": "1",
+     "ref": "2",
+     "part_number": "LW-13365",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "5",
+     "part_number": "LW-31-0.94",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "4",
+     "part_number": "STD-475",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 5/16-18 x 15/16": 1,
+    "WASHER 5/16 lock internal teeth": 1
+   },
+   "location": "beside the bracket, bottom front right",
+   "geometry": "one bolt, vertical",
+   "basis": "catalog figure",
+   "source": "IPC fig 1",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "alt.link",
+   "kind": "fastener_group",
+   "title": "Alternator adjusting link to crankcase",
+   "figure": "1",
+   "allocations": [
+    {
+     "figure": "1",
+     "ref": "6",
+     "part_number": "LW-10729",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "8",
+     "part_number": "LW-31H0.88",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "7",
+     "part_number": "STD-35",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 5/16-18 x 7/8 drilled (safety-wired)": 1,
+    "WASHER 5/16 plain": 1
+   },
+   "location": "front right face of the crankcase, upper; slotted link curves down to the alternator",
+   "geometry": "bolt axis lateral (z); link reaches z -6.78 in at x 4.47 in in the top view",
+   "basis": "catalog figure",
+   "source": "IPC fig 1, top view PDF p.9",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "alt.strut",
+   "kind": "fastener_group",
+   "title": "Alternator support strut",
+   "figure": "1",
+   "allocations": [
+    {
+     "figure": "1",
+     "ref": "9",
+     "part_number": "76908",
+     "units": 1
+    },
+    {
+     "figure": "1",
+     "ref": "10",
+     "part_number": "LW-31H0.88",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 5/16-18 x 7/8 drilled": 1
+   },
+   "location": "front right, below the link",
+   "geometry": "single bolt",
+   "basis": "catalog figure",
+   "source": "IPC fig 1",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.cyl_studs_half_inch",
+   "kind": "fastener_group",
+   "title": "Cylinder hold-down 1/2-13 studs (short)",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "3",
+     "part_number": "50-15",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "STUD 1/2-13 x 1-7/8": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "per cylinder pad: front-upper and front-lower corners of the flange (right half view, fig 2); axis along the cylinder axis (horizontal, lateral)",
+   "basis": "catalog figure",
+   "source": "IPC fig 2 top-right view (PDF p.16)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.cyl_studs_3_8",
+   "kind": "fastener_group",
+   "title": "Cylinder hold-down 3/8-16 studs",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "4",
+     "part_number": "38-13",
+     "units": 16
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "STUD 3/8-16 x 1-5/8": 4
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "per cylinder pad: two above and two below the bore, in horizontal pairs",
+   "basis": "catalog figure",
+   "source": "IPC fig 2 (PDF p.16)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.front_studs_3_8",
+   "kind": "fastener_group",
+   "title": "Three extra 3/8-16 studs on the left-front boss",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "4",
+     "part_number": "38-13",
+     "units": 3
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 3/8-16 x 1-5/8": 3
+   },
+   "location": "left half, outer face forward of the cylinder 2 pad (triangle of three studs)",
+   "geometry": "triangle about 1.5 in on a side (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 2 top-right view; IPC top view shows stud ends at the left front",
+   "note": "purpose not stated in the catalog; 19 - 16 cylinder studs = 3 (count inference)",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "case.long_studs",
+   "kind": "fastener_group",
+   "title": "Long crankcase studs 75154 (with spacers and nuts)",
+   "figure": "2/10",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "2",
+     "part_number": "75154",
+     "units": 2
+    },
+    {
+     "figure": "10",
+     "ref": "10",
+     "part_number": "74887",
+     "units": 2
+    },
+    {
+     "figure": "10",
+     "ref": "12",
+     "part_number": "STD-2090",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 2,
+   "count_per_instance": {
+    "STUD 1/2-13 x 10-1/32 (screwed into one half, through the other)": 1,
+    "SPACER 33/64 I.D. x 7/8 O.D. x 3/8": 1,
+    "NUT 1/2-20 plain": 1
+   },
+   "location": "across the crankcase at a main-bearing web, upper and lower (fig 2 top-left view); nut and spacer on the outside of the case (fig 10 inset)",
+   "geometry": "lateral axis (z), length 10.03 in; upper and lower about 3 in above/below the crankshaft axis (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 2 (PDF p.16), fig 10 inset (PDF p.32)",
+   "note": "which web (front or rear) is not certain from the drawings; 18 1/2-20 nuts = 16 cylinder positions + these 2",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "case.misc_studs",
+   "kind": "fastener_group",
+   "title": "Crankcase front stud 38-22 and drilled stud 38D-17",
+   "figure": "2/6",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "13",
+     "part_number": "38-22",
+     "units": 1
+    },
+    {
+     "figure": "2",
+     "ref": "5",
+     "part_number": "38D-17",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 3/8-16 x 2-3/4": 1,
+    "STUD 3/8-16 x 2-1/8 drilled": 1
+   },
+   "location": "front of the crankcase near the nose (38-22 on the parting face, 38D-17 inside, see fig 6 View A)",
+   "geometry": "lateral studs",
+   "basis": "catalog figure",
+   "source": "IPC fig 2, fig 6",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.starter_studs",
+   "kind": "fastener_group",
+   "title": "Starter pad studs",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "6",
+     "part_number": "31C-12",
+     "units": 2
+    },
+    {
+     "figure": "2",
+     "ref": "7",
+     "part_number": "31C-13",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 5/16-18 x 1-1/2": 2,
+    "STUD 5/16-18 x 1-5/8": 1
+   },
+   "location": "bottom front of the left crankcase half (starter pad)",
+   "geometry": "rectangular pad, studs pointing down, 4th corner is a tapped hole for the bolt",
+   "basis": "catalog figure",
+   "source": "IPC fig 2 bottom-left view, fig 22",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.idler_stud",
+   "kind": "fastener_group",
+   "title": "Idler-gear shaft drilled stud",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "11",
+     "part_number": "LW-13793",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 5/16-18 x 15/16 drilled": 1
+   },
+   "location": "rear face of the crankcase, upper idler shaft flange position",
+   "geometry": "axis fore-aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 2, fig 5 (shear nut item 7)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.dowels",
+   "kind": "fastener_group",
+   "title": "Crankcase dowels and helicoils",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "8",
+     "part_number": "STD-557",
+     "units": 2
+    },
+    {
+     "figure": "2",
+     "ref": "9",
+     "part_number": "STD-514",
+     "units": 2
+    },
+    {
+     "figure": "2",
+     "ref": "12",
+     "part_number": "69796",
+     "units": 2
+    },
+    {
+     "figure": "2",
+     "ref": "10",
+     "part_number": "STD-1623",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "DOWEL 1/2 hollow x 11/16": 2,
+    "DOWEL 5/16 x 1/2": 2,
+    "DOWEL crankshaft bearing": 2,
+    "INSERT 1/4-20 helicoil": 2
+   },
+   "location": "hollow dowels on the parting faces; 5/16 dowels on the rear face (accessory housing location); bearing dowels in the main bearing saddles (fig 2 item 12, lower-right view)",
+   "geometry": "internal/joint features",
+   "basis": "catalog figure",
+   "source": "IPC fig 2",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.plugs",
+   "kind": "fastener_group",
+   "title": "Crankcase pipe plugs",
+   "figure": "2",
+   "allocations": [
+    {
+     "figure": "2",
+     "ref": "14",
+     "part_number": "1102",
+     "units": 5
+    },
+    {
+     "figure": "2",
+     "ref": "15",
+     "part_number": "STD-1339",
+     "units": 5
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "PLUG 1/8-27 NPT allen": 5,
+    "PLUG 1/16-27 NPT allen": 5
+   },
+   "location": "oil-gallery plugs on both halves (top and inner faces, see callouts 14, 15 in fig 2)",
+   "geometry": "flush hex-socket plugs",
+   "basis": "catalog figure",
+   "source": "IPC fig 2",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.flange_bolts_nutted",
+   "kind": "fastener_group",
+   "title": "Crankcase parting-flange bolts with nuts",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "1",
+     "part_number": "LW-25-1.50",
+     "units": 8
+    },
+    {
+     "figure": "6",
+     "ref": "2",
+     "part_number": "STD-8",
+     "units": 16
+    },
+    {
+     "figure": "6",
+     "ref": "6",
+     "part_number": "STD-160",
+     "units": 8
+    },
+    {
+     "figure": "6",
+     "ref": "7",
+     "part_number": "STD-1411",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 8,
+   "count_per_instance": {
+    "BOLT 1/4-20 x 1-1/2": 1,
+    "WASHER 1/4 plain": 2,
+    "WASHER 1/4 lock": 1,
+    "NUT 1/4-20": 1
+   },
+   "location": "top parting flange: 6 (pairs at the front, between the cylinder pads and at the rear, see fig 6 callouts 1,2,6,7); bottom flange: 2 (under the left pads)",
+   "geometry": "bolt axes lateral (z) through both flange halves at y about +4.7 (top) and -6.7 (bottom); top stations at about 18, 26, 36, 47, 68, 79 % of the crankcase length from the front (estimated from the perspective drawing)",
+   "basis": "catalog figure",
+   "source": "IPC fig 6 (PDF p.24)",
+   "note": "plain-washer split (2 per bolt) is inferred so that the figure totals close: 16 + 4 = 20 STD-8",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "case.lifting_strap",
+   "kind": "fastener_group",
+   "title": "Lifting strap bolt",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "3",
+     "part_number": "60803",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "4",
+     "part_number": "LW-25-1.75",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "6",
+     "part_number": "STD-160",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "7",
+     "part_number": "STD-1411",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STRAP lifting": 1,
+    "BOLT 1/4-20 x 1-3/4": 1,
+    "WASHER 1/4 lock": 1,
+    "NUT 1/4-20": 1
+   },
+   "location": "top parting flange, middle (between the cylinder pairs)",
+   "geometry": "strap stands up to y about 5.9 in; station about x 12.9 in (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 6, OM Fig. 7-6",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "case.flange_bolts_tapped",
+   "kind": "fastener_group",
+   "title": "Crankcase bolts into tapped holes",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "5",
+     "part_number": "LW-25-1.13",
+     "units": 4
+    },
+    {
+     "figure": "6",
+     "ref": "2",
+     "part_number": "STD-8",
+     "units": 4
+    },
+    {
+     "figure": "6",
+     "ref": "6",
+     "part_number": "STD-160",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "BOLT 1/4-20 x 1-1/8": 1,
+    "WASHER 1/4 plain": 1,
+    "WASHER 1/4 lock": 1
+   },
+   "location": "1 on the lower flange of the left half; 3 on the right half front (1 upper near the nose, 2 lower)",
+   "geometry": "lateral",
+   "basis": "catalog figure",
+   "source": "IPC fig 6",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.drilled_bolts",
+   "kind": "fastener_group",
+   "title": "Crankcase bottom bolts with slotted nuts",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "8",
+     "part_number": "LW-25S1.50",
+     "units": 3
+    },
+    {
+     "figure": "6",
+     "ref": "9",
+     "part_number": "STD-8",
+     "units": 9
+    },
+    {
+     "figure": "6",
+     "ref": "10",
+     "part_number": "STD-2249",
+     "units": 3
+    }
+   ],
+   "instances_per_engine": 3,
+   "count_per_instance": {
+    "BOLT 1/4-20 x 1-1/2 drilled end": 1,
+    "WASHER 1/4 plain": 3,
+    "NUT 1/4-20 slotted (cotter/safety)": 1
+   },
+   "location": "bottom parting flange, rear, under cylinder 3 (sump flange area), in a row",
+   "geometry": "lateral, about 1.2 in apart (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 6 callout 8,9,10",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "case.front_bolt_3_8",
+   "kind": "fastener_group",
+   "title": "Crankcase front 3/8 through-bolt",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "14",
+     "part_number": "AN6-34A",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "11",
+     "part_number": "STD-33",
+     "units": 2
+    },
+    {
+     "figure": "6",
+     "ref": "16",
+     "part_number": "STD-678",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "17",
+     "part_number": "STD-596",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 3/8-24 x 3-19/32": 1,
+    "WASHER 3/8 plain": 2,
+    "WASHER 3/8 lock": 1,
+    "NUT 3/8-24": 1
+   },
+   "location": "front of the crankcase, lower, through both halves below the nose bearing (fig 6 callout 11,14,16,17 on the left half)",
+   "geometry": "lateral bolt, 3.59 in long",
+   "basis": "catalog figure",
+   "source": "IPC fig 6",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.front_stud_nut",
+   "kind": "fastener_group",
+   "title": "Nut on the front 3/8 stud",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "11",
+     "part_number": "STD-33",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "16",
+     "part_number": "STD-678",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "17",
+     "part_number": "STD-596",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "WASHER 3/8 plain": 1,
+    "WASHER 3/8 lock": 1,
+    "NUT 3/8-24": 1
+   },
+   "location": "right half, front, upper (on stud 38-22)",
+   "geometry": "lateral",
+   "basis": "catalog figure",
+   "source": "IPC fig 6 callout 11,16,17",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.front_inner_nut",
+   "kind": "fastener_group",
+   "title": "Slotted nut inside the nose (View A)",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "12",
+     "part_number": "AN960-616L",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "13",
+     "part_number": "STD-872",
+     "units": 1
+    },
+    {
+     "figure": "6",
+     "ref": "15",
+     "part_number": "STD-33",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "WASHER 3/8 thin": 1,
+    "NUT 3/8-24 slotted": 1,
+    "WASHER 3/8 plain": 2
+   },
+   "location": "inside the front of the crankcase (View A), on drilled stud 38D-17",
+   "geometry": "lateral",
+   "basis": "catalog figure",
+   "source": "IPC fig 6 View A",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "case.through_studs",
+   "kind": "fastener_group",
+   "title": "Cylinder through-studs",
+   "figure": "6",
+   "allocations": [
+    {
+     "figure": "6",
+     "ref": "18",
+     "part_number": "76220",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "STUD 1/2-20 x 10-11/16": 1
+   },
+   "location": "one upper and one lower at the rear corners of each right-bank pad (cyl 1, cyl 3), passing through both halves to the opposite pads",
+   "geometry": "lateral (z), length 10.69 in, both ends carry cylinder hold-down nuts",
+   "basis": "catalog figure",
+   "source": "IPC fig 6 lower view callout 18",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.relief_valve",
+   "kind": "fastener_group",
+   "title": "Oil pressure relief valve",
+   "figure": "3",
+   "allocations": [
+    {
+     "figure": "3",
+     "ref": "3",
+     "part_number": "06E19769-1.25",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET 1-1/4 annular": 1
+   },
+   "location": "upper right side of the crankcase in front of the accessory housing (manual p.1-2)",
+   "geometry": "valve 77808 screwed in laterally from the right with ball 1028-B and select spring",
+   "basis": "operator manual",
+   "source": "Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) p.1-2; IPC fig 3",
+   "geometry_basis": "operator manual"
+  },
+  {
+   "id": "internal.seals",
+   "kind": "fastener_group",
+   "title": "Crankcase seals and seal rings",
+   "figure": "3",
+   "allocations": [
+    {
+     "figure": "3",
+     "ref": "8",
+     "part_number": "72075",
+     "units": 2
+    },
+    {
+     "figure": "3",
+     "ref": "9",
+     "part_number": "72091",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "SEAL oil 3/32 section": 2,
+    "RING oil seal 23/64 I.D.": 2
+   },
+   "location": "between the case halves at oil passages (fig 3 callouts 8 at the through-studs, 9 at the left half)",
+   "geometry": "small O-rings",
+   "basis": "catalog figure",
+   "source": "IPC fig 3",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.crank_gear",
+   "kind": "fastener_group",
+   "title": "Crankshaft gear attachment",
+   "figure": "4",
+   "allocations": [
+    {
+     "figure": "4",
+     "ref": "8",
+     "part_number": "STD-2246",
+     "units": 1
+    },
+    {
+     "figure": "4",
+     "ref": "7",
+     "part_number": "LW-18639",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "BOLT 5/16-24 x 1.00": 1,
+    "LOCKPLATE crankshaft gear": 1
+   },
+   "location": "rear end of the crankshaft, on the axis",
+   "geometry": "one central bolt, axis fore-aft, lockplate tab bent over",
+   "basis": "catalog figure",
+   "source": "IPC fig 4",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.crank_parts",
+   "kind": "fastener_group",
+   "title": "Crankshaft dowel and expansion plug",
+   "figure": "4",
+   "allocations": [
+    {
+     "figure": "4",
+     "ref": "2",
+     "part_number": "STD-1065",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "DOWEL stepped 5/16-1/4": 1
+   },
+   "location": "rear flange of the crankshaft (gear location dowel)",
+   "geometry": "parallel to the axis",
+   "basis": "catalog figure",
+   "source": "IPC fig 4",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.idler_shafts",
+   "kind": "fastener_group",
+   "title": "Crankshaft idler gear shafts",
+   "figure": "5",
+   "allocations": [
+    {
+     "figure": "5",
+     "ref": "6",
+     "part_number": "LW-31H0.88",
+     "units": 3
+    },
+    {
+     "figure": "5",
+     "ref": "7",
+     "part_number": "STD-2168",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 2,
+   "count_per_instance": {
+    "shaft flange fasteners": 2
+   },
+   "location": "rear face of the crankcase, two idler gears either side of the crankshaft gear, below the camshaft gear",
+   "geometry": "each shaft flange held by 2 fasteners: 3 drilled bolts + 1 shear nut on stud LW-13793 in total; axes fore-aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 5 (PDF p.22)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.tach_shaft",
+   "kind": "fastener_group",
+   "title": "Tachometer shaft retaining ring and pin",
+   "figure": "5",
+   "allocations": [
+    {
+     "figure": "5",
+     "ref": "4",
+     "part_number": "STD-2231",
+     "units": 1
+    },
+    {
+     "figure": "5",
+     "ref": "3",
+     "part_number": "LW-18667",
+     "units": 1
+    },
+    {
+     "figure": "5",
+     "ref": "9",
+     "part_number": "76118",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "RING internal retaining": 1,
+    "PIN 3/16 x 2-11/32": 1,
+    "SPACER": 1
+   },
+   "location": "camshaft rear, on the camshaft axis above the crankshaft",
+   "geometry": "coaxial with the camshaft",
+   "basis": "catalog figure",
+   "source": "IPC fig 5",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "internal.conrod_bolts",
+   "kind": "fastener_group",
+   "title": "Connecting rod cap bolts",
+   "figure": "7",
+   "allocations": [
+    {
+     "figure": "7",
+     "ref": "3",
+     "part_number": "78027",
+     "units": 8
+    },
+    {
+     "figure": "7",
+     "ref": "4",
+     "part_number": "LW-12186",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "BOLT connecting rod": 2,
+    "NUT connecting rod": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "two bolts per rod cap, parallel, either side of the crankpin",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 7; Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) p.1-1 (\"retained by two bolts and nuts through each cap\")",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "internal.piston_pin_plugs",
+   "kind": "assembly",
+   "title": "Piston pin plugs",
+   "figure": "7",
+   "allocations": [],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "PLUG piston pin (non-hardware, both pin ends)": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "one at each end of the full-floating pin",
+   "basis": "catalog figure",
+   "source": "IPC fig 7",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.exhaust_flange",
+   "kind": "fastener_group",
+   "title": "Exhaust port studs and nuts",
+   "figure": "8",
+   "allocations": [
+    {
+     "figure": "8",
+     "ref": "8",
+     "part_number": "31C-12",
+     "units": 8
+    },
+    {
+     "figure": "8",
+     "ref": "13",
+     "part_number": "77611",
+     "units": 4
+    },
+    {
+     "figure": "8",
+     "ref": "14",
+     "part_number": "STD-35",
+     "units": 8
+    },
+    {
+     "figure": "8",
+     "ref": "15",
+     "part_number": "STD-475",
+     "units": 8
+    },
+    {
+     "figure": "8",
+     "ref": "16",
+     "part_number": "STD-1410",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "STUD 5/16-18 x 1-1/2": 2,
+    "GASKET exhaust flange": 1,
+    "WASHER 5/16 plain": 2,
+    "WASHER 5/16 lock": 2,
+    "NUT 5/16-18": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "exhaust port on the bottom of each head (rear-facing on the O-320-D); two studs across the port, axes pointing down",
+   "basis": "catalog figure",
+   "source": "IPC fig 8 (PDF p.28)",
+   "note": "stud spacing about 2.4 in (estimated from the gasket drawing); exhaust pipes are airframe parts",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.head_fittings",
+   "kind": "fastener_group",
+   "title": "Cylinder head inserts, studs and fittings",
+   "figure": "8",
+   "allocations": [
+    {
+     "figure": "8",
+     "ref": "6",
+     "part_number": "66796",
+     "units": 8
+    },
+    {
+     "figure": "8",
+     "ref": "7",
+     "part_number": "STD-1353",
+     "units": 4
+    },
+    {
+     "figure": "8",
+     "ref": "9",
+     "part_number": "25C-8",
+     "units": 4
+    },
+    {
+     "figure": "8",
+     "ref": "10",
+     "part_number": "MS20823-6D",
+     "units": 4
+    },
+    {
+     "figure": "8",
+     "ref": "12",
+     "part_number": "1102",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "INSERT spark plug 18 mm x 1.5 (top and bottom)": 2,
+    "INSERT No. 10-24": 1,
+    "STUD 1/4-20 x 1.00 (shroud tube lockplate, rocker box)": 1,
+    "ELBOW 45 deg 3/8 flared (drain)": 1,
+    "PLUG 1/8-27 NPT (primer boss, when unused)": 1
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "spark plug bosses: one on the top and one on the bottom of each head; 1/4 stud inside the rocker box between the push-rod holes; elbow at the head bottom for the drain tube",
+   "basis": "catalog figure",
+   "source": "IPC fig 8",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.hold_down_nuts",
+   "kind": "fastener_group",
+   "title": "Cylinder base hold-down nuts",
+   "figure": "10",
+   "allocations": [
+    {
+     "figure": "10",
+     "ref": "11",
+     "part_number": "383-B",
+     "units": 16
+    },
+    {
+     "figure": "10",
+     "ref": "12",
+     "part_number": "STD-2090",
+     "units": 16
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "NUT 3/8-24 plain": 4,
+    "NUT 1/2-20 plain": 4
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "on the cylinder base flange: 1/2-in nuts at the 4 corners, 3/8-in nuts in pairs above and below the barrel; bolt circle about 6.9 in (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 10 items 11, 12 (PDF p.32-33); stud positions from fig 2 and fig 6",
+   "note": "the other 2 of the 18 STD-2090 nuts are in group case.long_studs",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "cyl.base_seal",
+   "kind": "fastener_group",
+   "title": "Cylinder base O-ring",
+   "figure": "10",
+   "allocations": [
+    {
+     "figure": "10",
+     "ref": "9",
+     "part_number": "71481",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "RING oil seal 3/32 x 4-27/32 I.D.": 1
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "around the barrel skirt at the base flange",
+   "basis": "catalog figure",
+   "source": "IPC fig 10",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.shroud_tubes",
+   "kind": "fastener_group",
+   "title": "Push-rod shroud tubes",
+   "figure": "9",
+   "allocations": [
+    {
+     "figure": "9",
+     "ref": "15",
+     "part_number": "LW-14995",
+     "units": 4
+    },
+    {
+     "figure": "9",
+     "ref": "16",
+     "part_number": "LW-12272",
+     "units": 4
+    },
+    {
+     "figure": "9",
+     "ref": "17",
+     "part_number": "STD-1411",
+     "units": 4
+    },
+    {
+     "figure": "9",
+     "ref": "19",
+     "part_number": "LW-18661",
+     "units": 8
+    },
+    {
+     "figure": "9",
+     "ref": "21",
+     "part_number": "70310",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "SHROUD TUBE (2, non-hardware)": 2,
+    "SPRING shroud tube": 1,
+    "LOCKPLATE shroud tube (on stud 25C-8)": 1,
+    "NUT 1/4-20": 1,
+    "SEAL LW-18661 (crankcase end, FT)": 2,
+    "SEAL 70310 (head end)": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "two tubes per cylinder running under the barrel from the crankcase (above the camshaft line) out to the rocker box at the head bottom; lockplate and nut inside the rocker box",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 9 (PDF p.30); Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) p.1-1 (camshaft above the crankshaft); roller-tappet build uses 06A23493 + washer 01L23459 instead of LW-18661",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "cyl.valve_keys",
+   "kind": "assembly",
+   "title": "Valve keys (split keepers)",
+   "figure": "9",
+   "allocations": [],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "KEY intake (non-hardware)": 2,
+    "KEY exhaust rotator type (non-hardware)": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "at the top of each valve stem under the spring seat",
+   "basis": "catalog figure",
+   "source": "IPC fig 9",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.rocker_cover",
+   "kind": "fastener_group",
+   "title": "Rocker box cover screws",
+   "figure": "10",
+   "allocations": [
+    {
+     "figure": "10",
+     "ref": "6",
+     "part_number": "75906",
+     "units": 4
+    },
+    {
+     "figure": "10",
+     "ref": "8",
+     "part_number": "STD-1925",
+     "units": 24
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "GASKET rocker box cover": 1,
+    "SCREW 1/4-20 x 5/8 pan head": 6
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "cover on the outboard end of each head; 6 screws around a near-octagonal cover (2 top, 1 each side, 2 bottom per OM side view); screw axes along the cylinder axis",
+   "basis": "operator manual + catalog",
+   "source": "IPC fig 10 (count 24/4); Lycoming O-320 Operator's Manual 60297-30 (3rd ed.) Fig. 7-6 left side view shows 6 screws per cover",
+   "note": "the harness bag adds 6 \"SCREW, 1/4 lock (rocker box)\" STD-1874 for clip mounting; whether they replace 6 of these 24 is not stated",
+   "geometry_basis": "operator manual + catalog"
+  },
+  {
+   "id": "cyl.drain_tubes",
+   "kind": "fastener_group",
+   "title": "Cylinder head oil drain tubes",
+   "figure": "11",
+   "allocations": [
+    {
+     "figure": "11",
+     "ref": "1",
+     "part_number": "STD-684",
+     "units": 4
+    },
+    {
+     "figure": "11",
+     "ref": "3",
+     "part_number": "LW-15592-5-05",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "NIPPLE 3/8 hose": 1,
+    "HOSE 3/8 x 1-7/8 (non-hardware)": 1,
+    "CLAMP hose": 2,
+    "TUBE (non-hardware)": 1
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "from the elbow at the bottom of each rocker box (fig 8 item 10) down to a nipple on the crankcase/sump, joined by a short hose with a clamp at each end",
+   "basis": "catalog figure",
+   "source": "IPC fig 11 (PDF p.34)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "cyl.intercylinder_baffles",
+   "kind": "fastener_group",
+   "title": "Intercylinder baffles",
+   "figure": "11",
+   "allocations": [
+    {
+     "figure": "11",
+     "ref": "8",
+     "part_number": "71611",
+     "units": 2
+    },
+    {
+     "figure": "11",
+     "ref": "9",
+     "part_number": "71610",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 2,
+   "count_per_instance": {
+    "BAFFLE (non-hardware)": 1,
+    "RETAINER (strip over the barrels)": 1,
+    "HOOK (rod through the fins)": 1
+   },
+   "location": [
+    {
+     "side": "right",
+     "between": "cyl 1 and 3",
+     "x_in": 12.39
+    },
+    {
+     "side": "left",
+     "between": "cyl 2 and 4",
+     "x_in": 14.7
+    }
+   ],
+   "geometry": "baffle under the gap between the two barrels of a bank, hook rod up between the barrels to the retainer on top",
+   "basis": "catalog figure",
+   "source": "IPC fig 11",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "intake.pipe_joints",
+   "kind": "fastener_group",
+   "title": "Intake pipe: hose joint at the sump and 2-bolt flange at the head",
+   "figure": "12",
+   "allocations": [
+    {
+     "figure": "12",
+     "ref": "3",
+     "part_number": "LW-15592-8-28",
+     "units": 8
+    },
+    {
+     "figure": "12",
+     "ref": "4",
+     "part_number": "71973",
+     "units": 4
+    },
+    {
+     "figure": "12",
+     "ref": "6",
+     "part_number": "STD-8",
+     "units": 8
+    },
+    {
+     "figure": "12",
+     "ref": "7",
+     "part_number": "STD-160",
+     "units": 8
+    },
+    {
+     "figure": "12",
+     "ref": "8",
+     "part_number": "LW-25-1.25",
+     "units": 8
+    }
+   ],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "HOSE 1-3/4 I.D. (non-hardware)": 1,
+    "CLAMP hose": 2,
+    "GASKET 2-bolt flange": 1,
+    "BOLT 1/4-20 x 1-1/4": 2,
+    "WASHER 1/4 plain": 2,
+    "WASHER 1/4 lock": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "lower end: hose over the sump connection 78914 with a clamp on each side; upper end: flange 73346 bolted to the intake port on the bottom of the head; bolts vertical (up into the head)",
+   "basis": "catalog figure",
+   "source": "IPC fig 12 (PDF p.36); flange bolt spacing about 2.6 in (estimated)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "oil.gage",
+   "kind": "fastener_group",
+   "title": "Oil filler tube and gage",
+   "figure": "13",
+   "allocations": [
+    {
+     "figure": "13",
+     "ref": "2",
+     "part_number": "72059",
+     "units": 1
+    },
+    {
+     "figure": "13",
+     "ref": "3",
+     "part_number": "74065",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET": 1,
+    "RING seal (cap)": 1
+   },
+   "location": "right rear lower boss of the crankcase",
+   "geometry": "tube 10-9/16 long angled up/out/aft at about 45 deg (estimated from top view)",
+   "basis": "catalog figure",
+   "source": "IPC fig 13, top view",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "sump.flange",
+   "kind": "fastener_group",
+   "title": "Oil sump to crankcase and accessory housing",
+   "figure": "14",
+   "allocations": [
+    {
+     "figure": "14",
+     "ref": "1",
+     "part_number": "LW-13353",
+     "units": 1
+    },
+    {
+     "figure": "14",
+     "ref": "4",
+     "part_number": "61400",
+     "units": 4
+    },
+    {
+     "figure": "14",
+     "ref": "10",
+     "part_number": "LW-25-0.94",
+     "units": 14
+    },
+    {
+     "figure": "14",
+     "ref": "11",
+     "part_number": "LW-25-1.13",
+     "units": 2
+    },
+    {
+     "figure": "14",
+     "ref": "8",
+     "part_number": "STD-8",
+     "units": 28
+    },
+    {
+     "figure": "14",
+     "ref": "9",
+     "part_number": "STD-160",
+     "units": 20
+    },
+    {
+     "figure": "14",
+     "ref": "12",
+     "part_number": "STD-1411",
+     "units": 12
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "fastener positions": 20,
+    "BOLT 1/4-20 x 15/16": 14,
+    "BOLT 1/4-20 x 1-1/8 (rear, with nut)": 2,
+    "STUD 1/4-20 x 1-3/16 (in sump flange, nut on top)": 4,
+    "NUT 1/4-20": 12,
+    "WASHER 1/4 lock (one per position)": 20,
+    "WASHER 1/4 plain": 28
+   },
+   "location": "around the sump top flange (y about -6.7 in) under the rear half of the crankcase and the accessory housing",
+   "geometry": "perimeter pattern, bolts vertical; 20 positions = 16 bolts + 4 studs (= the 20 lock washers); 12 nuts = 4 studs + 8 through-bolted positions; plain washers 28 = 20 + 8 (head side of nutted bolts)",
+   "basis": "catalog figure",
+   "source": "IPC fig 14 (PDF p.40)",
+   "note": "per-position split of nuts/plain washers is inferred from the totals",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "sump.plugs_screen",
+   "kind": "fastener_group",
+   "title": "Sump plugs and suction screen",
+   "figure": "14",
+   "allocations": [
+    {
+     "figure": "14",
+     "ref": "6",
+     "part_number": "STD-91",
+     "units": 1
+    },
+    {
+     "figure": "14",
+     "ref": "7",
+     "part_number": "STD-551",
+     "units": 2
+    },
+    {
+     "figure": "14",
+     "ref": "14",
+     "part_number": "06E19769-1.00",
+     "units": 1
+    },
+    {
+     "figure": "14",
+     "ref": "15",
+     "part_number": "LW-12545",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "PLUG 1/2-14 NPT allen": 1,
+    "PLUG 1/2-14 NPT square drilled (drains, safety-wired)": 2,
+    "GASKET 1.00 annular": 1,
+    "PLUG 1.00-20 hex (screen cap)": 1
+   },
+   "location": "drain plugs on the sump bottom, front and rear (OM Fig. 7-6: two drains); screen cap at the rear face of the sump",
+   "geometry": "drains vertical; screen horizontal fore-aft",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 14; OM Fig. 7-6, 7-7",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "sump.carb_studs",
+   "kind": "fastener_group",
+   "title": "Carburetor mounting studs",
+   "figure": "14",
+   "allocations": [
+    {
+     "figure": "14",
+     "ref": "5",
+     "part_number": "31C-15",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 5/16-18 x 1-7/8": 4
+   },
+   "location": "bottom of the sump, on the induction riser pad",
+   "geometry": "square pattern, studs pointing down; about 2.6 in square (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 14, fig 20",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "sump.intake_connections",
+   "kind": "assembly",
+   "title": "Intake pipe connections",
+   "figure": "14",
+   "allocations": [],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "CONNECTION 78914 (non-hardware)": 1
+   },
+   "location": "sump sides: right-front, right-rear, left-front, left-rear (one per cylinder)",
+   "geometry": "short horizontal stubs pointing outboard, about y -8 in",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 14; OM Fig. 7-7",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "acc.housing_studs",
+   "kind": "fastener_group",
+   "title": "Accessory housing studs",
+   "figure": "15",
+   "allocations": [
+    {
+     "figure": "15",
+     "ref": "3",
+     "part_number": "25C-22",
+     "units": 4
+    },
+    {
+     "figure": "15",
+     "ref": "4",
+     "part_number": "31C-12",
+     "units": 4
+    },
+    {
+     "figure": "15",
+     "ref": "5",
+     "part_number": "31CD-17",
+     "units": 3
+    },
+    {
+     "figure": "15",
+     "ref": "6",
+     "part_number": "31C-19",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "STUD 1/4-20 x 2-3/4 (vacuum pump pad, through adapter and cover)": 4,
+    "STUD 5/16-18 x 1-1/2 (governor pad)": 4,
+    "STUD 5/16-18 x 2-1/8 drilled (oil pump body, inside)": 3,
+    "STUD 5/16-18 x 2-3/8 (magneto clamps, 2 per magneto)": 4
+   },
+   "location": "rear face of the accessory housing: vacuum pad upper right of centre, governor pad lower right, magneto pads upper left/right, oil pump studs on the inner (front) face",
+   "geometry": "all studs fore-aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 15 (PDF p.42), fig 18",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.housing_plugs",
+   "kind": "fastener_group",
+   "title": "Accessory housing plugs",
+   "figure": "15",
+   "allocations": [
+    {
+     "figure": "15",
+     "ref": "7",
+     "part_number": "1102",
+     "units": 4
+    },
+    {
+     "figure": "15",
+     "ref": "8",
+     "part_number": "STD-784",
+     "units": 1
+    },
+    {
+     "figure": "15",
+     "ref": "1",
+     "part_number": "73818",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "PLUG 1/8-27 NPT": 4,
+    "PLUG 3/8-18 NPT": 1,
+    "GASKET accessory housing": 1
+   },
+   "location": "rear face and top of the housing (fig 15 callouts 7, 8)",
+   "geometry": "flush plugs",
+   "basis": "catalog figure",
+   "source": "IPC fig 15",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.housing_bolts",
+   "kind": "fastener_group",
+   "title": "Accessory housing to crankcase bolts",
+   "figure": "16",
+   "allocations": [
+    {
+     "figure": "16",
+     "ref": "11",
+     "part_number": "LW-25-0.94",
+     "units": 9
+    },
+    {
+     "figure": "16",
+     "ref": "12",
+     "part_number": "LW-25-1.13",
+     "units": 1
+    },
+    {
+     "figure": "16",
+     "ref": "13",
+     "part_number": "LW-25-1.44",
+     "units": 2
+    },
+    {
+     "figure": "16",
+     "ref": "9",
+     "part_number": "STD-8",
+     "units": 12
+    },
+    {
+     "figure": "16",
+     "ref": "10",
+     "part_number": "STD-160",
+     "units": 12
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "positions": 12,
+    "BOLT 1/4-20 x 15/16": 9,
+    "BOLT 1/4-20 x 1-1/8": 1,
+    "BOLT 1/4-20 x 1-7/16": 2,
+    "WASHER 1/4 plain": 12,
+    "WASHER 1/4 lock": 12
+   },
+   "location": "perimeter of the accessory housing flange: arc over the top and down both sides; the 1-1/8 bolt lower left and the two 1-7/16 bolts lower right (fig 16 callouts)",
+   "geometry": "bolts fore-aft into the crankcase rear face",
+   "basis": "catalog figure",
+   "source": "IPC fig 16 (PDF p.44)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.oil_pump",
+   "kind": "fastener_group",
+   "title": "Oil pump body nuts",
+   "figure": "16",
+   "allocations": [
+    {
+     "figure": "16",
+     "ref": "6",
+     "part_number": "STD-35",
+     "units": 3
+    },
+    {
+     "figure": "16",
+     "ref": "7",
+     "part_number": "STD-1420",
+     "units": 3
+    },
+    {
+     "figure": "16",
+     "ref": "8",
+     "part_number": "LW-14260",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "WASHER 5/16 plain": 3,
+    "NUT 5/16-18 slotted": 3,
+    "SEAL tachometer drive": 1
+   },
+   "location": "oil pump body on the front face of the accessory housing, lower centre (studs 31CD-17)",
+   "geometry": "triangle of 3 studs, fore-aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 16",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.fuel_pump_cover",
+   "kind": "fastener_group",
+   "title": "Fuel pump pad cover",
+   "figure": "17",
+   "allocations": [
+    {
+     "figure": "17",
+     "ref": "1",
+     "part_number": "60096",
+     "units": 1
+    },
+    {
+     "figure": "17",
+     "ref": "3",
+     "part_number": "STD-678",
+     "units": 2
+    },
+    {
+     "figure": "17",
+     "ref": "4",
+     "part_number": "STD-33",
+     "units": 2
+    },
+    {
+     "figure": "17",
+     "ref": "5",
+     "part_number": "LW-38-0.75",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET": 1,
+    "BOLT 3/8-16 x 3/4": 2,
+    "WASHER 3/8 plain": 2,
+    "WASHER 3/8 lock": 2
+   },
+   "location": "lower LEFT of the accessory housing rear face",
+   "geometry": "two bolts on the diagonal of the oval cover, about 2.6 in apart (estimated)",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 17 (PDF p.46); OM Fig. 7-6 \"fuel pump outlet\" lower rear",
+   "geometry_basis": "estimated (counts and placement: catalog figure + operator manual)"
+  },
+  {
+   "id": "acc.governor_cover",
+   "kind": "fastener_group",
+   "title": "Propeller governor drive pad cover",
+   "figure": "18",
+   "allocations": [
+    {
+     "figure": "18",
+     "ref": "1",
+     "part_number": "69551",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "3",
+     "part_number": "STD-35",
+     "units": 4
+    },
+    {
+     "figure": "18",
+     "ref": "4",
+     "part_number": "STD-475",
+     "units": 4
+    },
+    {
+     "figure": "18",
+     "ref": "5",
+     "part_number": "STD-1410",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET": 1,
+    "WASHER 5/16 plain": 4,
+    "WASHER 5/16 lock": 4,
+    "NUT 5/16-18": 4
+   },
+   "location": "lower right of the accessory housing rear face",
+   "geometry": "square 4-stud pattern, about 2.25 in square (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 18 (PDF p.48)",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  },
+  {
+   "id": "acc.front_plug",
+   "kind": "fastener_group",
+   "title": "Front crankcase plug",
+   "figure": "18",
+   "allocations": [
+    {
+     "figure": "18",
+     "ref": "6",
+     "part_number": "STD-783",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "PLUG 1/4-18 NPT allen": 1
+   },
+   "location": "crankcase front (footnote \"Assemble in crankcase, front\")",
+   "geometry": "flush",
+   "basis": "catalog figure",
+   "source": "IPC fig 18",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.vacuum_adapter",
+   "kind": "fastener_group",
+   "title": "Vacuum pump drive adapter and cover",
+   "figure": "18",
+   "allocations": [
+    {
+     "figure": "18",
+     "ref": "7",
+     "part_number": "61183",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "9",
+     "part_number": "STD-1774",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "10",
+     "part_number": "06A19956",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "12",
+     "part_number": "71596",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "13",
+     "part_number": "8313",
+     "units": 1
+    },
+    {
+     "figure": "18",
+     "ref": "15",
+     "part_number": "STD-8",
+     "units": 4
+    },
+    {
+     "figure": "18",
+     "ref": "16",
+     "part_number": "STD-160",
+     "units": 4
+    },
+    {
+     "figure": "18",
+     "ref": "17",
+     "part_number": "STD-1411",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET adapter": 1,
+    "ADAPTER (non-hardware)": 1,
+    "PIN 1/8 x 1/4": 1,
+    "OIL SEAL": 1,
+    "WASHER gear": 1,
+    "GASKET vacuum pump": 1,
+    "COVER (non-hardware)": 1,
+    "WASHER 1/4 plain": 4,
+    "WASHER 1/4 lock": 4,
+    "NUT 1/4-20": 4
+   },
+   "location": "upper right of centre on the accessory housing rear face, stacked adapter + cover on 4 long studs 25C-22",
+   "geometry": "square 4-stud pattern about 2.2 in (estimated)",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC fig 18; OM Fig. 7-7 \"vacuum pump pad\"",
+   "geometry_basis": "estimated (counts and placement: catalog figure + operator manual)"
+  },
+  {
+   "id": "acc.oil_filter",
+   "kind": "fastener_group",
+   "title": "Oil filter adapter",
+   "figure": "19",
+   "allocations": [
+    {
+     "figure": "19",
+     "ref": "5",
+     "part_number": "06B23862",
+     "units": 1
+    },
+    {
+     "figure": "19",
+     "ref": "11",
+     "part_number": "LW-25-1.00",
+     "units": 3
+    },
+    {
+     "figure": "19",
+     "ref": "12",
+     "part_number": "STD-160",
+     "units": 3
+    },
+    {
+     "figure": "19",
+     "ref": "14",
+     "part_number": "25C-10",
+     "units": 1
+    },
+    {
+     "figure": "19",
+     "ref": "8",
+     "part_number": "STD-8",
+     "units": 4
+    },
+    {
+     "figure": "19",
+     "ref": "9",
+     "part_number": "STD-160",
+     "units": 1
+    },
+    {
+     "figure": "19",
+     "ref": "10",
+     "part_number": "STD-1411",
+     "units": 1
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET adapter": 1,
+    "BOLT 1/4-20 x 1.00": 3,
+    "STUD 1/4-20 x 1-1/4 with nut": 1,
+    "WASHER 1/4 plain": 4,
+    "WASHER 1/4 lock": 4,
+    "NUT 1/4-20": 1
+   },
+   "location": "oil filter base 77852 on the rear of the accessory housing, centre; filter LW-13216 (CH48111-1) points aft",
+   "geometry": "4 fasteners around the adapter flange, fore-aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 19 (PDF p.50), top view",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "acc.oil_fittings",
+   "kind": "fastener_group",
+   "title": "Oil cooler, bypass and breather fittings",
+   "figure": "19",
+   "allocations": [
+    {
+     "figure": "19",
+     "ref": "1",
+     "part_number": "06E19769-0.63",
+     "units": 1
+    },
+    {
+     "figure": "19",
+     "ref": "4",
+     "part_number": "MS20823-8",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET 5/8 annular (bypass plug)": 1,
+    "ELBOW 1/2 flared - 3/8 NPT (oil cooler lines)": 2
+   },
+   "location": "accessory housing: bypass plug upper left; cooler elbows left of centre, mid and lower",
+   "geometry": "elbows point outboard/aft",
+   "basis": "catalog figure",
+   "source": "IPC fig 19",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "carb.mount",
+   "kind": "fastener_group",
+   "title": "Carburetor to sump",
+   "figure": "20",
+   "allocations": [
+    {
+     "figure": "20",
+     "ref": "1",
+     "part_number": "66224",
+     "units": 1
+    },
+    {
+     "figure": "20",
+     "ref": "3",
+     "part_number": "STD-35",
+     "units": 4
+    },
+    {
+     "figure": "20",
+     "ref": "4",
+     "part_number": "STD-475",
+     "units": 4
+    },
+    {
+     "figure": "20",
+     "ref": "5",
+     "part_number": "STD-1410",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "GASKET carburetor": 1,
+    "WASHER 5/16 plain": 4,
+    "WASHER 5/16 lock": 4,
+    "NUT 5/16-18": 4
+   },
+   "location": "under the oil sump, centre",
+   "geometry": "on the 4 studs 31C-15, nuts face down",
+   "basis": "catalog figure",
+   "source": "IPC fig 20 (PDF p.52)",
+   "geometry_basis": "catalog figure"
+  },
+  {
+   "id": "ign.magneto_mount",
+   "kind": "fastener_group",
+   "title": "Magneto drive and mounting",
+   "figure": "21",
+   "allocations": [
+    {
+     "figure": "21",
+     "ref": "2",
+     "part_number": "MS-9245-44",
+     "units": 2
+    },
+    {
+     "figure": "21",
+     "ref": "3",
+     "part_number": "62224",
+     "units": 2
+    },
+    {
+     "figure": "21",
+     "ref": "5",
+     "part_number": "LW-12681",
+     "units": 2
+    },
+    {
+     "figure": "21",
+     "ref": "9",
+     "part_number": "66M21195",
+     "units": 4
+    },
+    {
+     "figure": "21",
+     "ref": "10",
+     "part_number": "STD-475",
+     "units": 4
+    },
+    {
+     "figure": "21",
+     "ref": "11",
+     "part_number": "STD-1410",
+     "units": 4
+    }
+   ],
+   "instances_per_engine": 2,
+   "count_per_instance": {
+    "GEAR impulse coupling (non-hardware) with castle nut and COTTER PIN 3/32 x 5/8": 1,
+    "GASKET adapter": 1,
+    "ADAPTER (non-hardware)": 1,
+    "GASKET magneto": 1,
+    "CLAMP magneto": 2,
+    "WASHER 5/16 lock": 2,
+    "NUT 5/16-18": 2
+   },
+   "location": [
+    {
+     "side": "left",
+     "z_in": 4.91
+    },
+    {
+     "side": "right",
+     "z_in": -4.59
+    }
+   ],
+   "geometry": "magneto flange on the accessory housing pad; two clamps on studs on opposite sides of the flange (fig 15 stud pairs above and below each pad), magneto body pointing aft",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC figs 15, 21 (PDF p.42, 54); OM Fig. 7-7",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "ign.spark_plugs",
+   "kind": "assembly",
+   "title": "Spark plugs",
+   "figure": "21",
+   "allocations": [],
+   "instances_per_engine": 4,
+   "count_per_instance": {
+    "SPARK PLUG Champion REM38E (non-hardware)": 2
+   },
+   "location": [
+    {
+     "cylinder": 1,
+     "side": "right",
+     "axis_x_in": 9.03
+    },
+    {
+     "cylinder": 2,
+     "side": "left",
+     "axis_x_in": 11.34
+    },
+    {
+     "cylinder": 3,
+     "side": "right",
+     "axis_x_in": 15.75
+    },
+    {
+     "cylinder": 4,
+     "side": "left",
+     "axis_x_in": 18.06
+    }
+   ],
+   "geometry": "one in the top and one in the bottom of each head (inserts 66796), leads from both magnetos (manual Fig. 5-1 wiring)",
+   "basis": "catalog figure + operator manual",
+   "source": "IPC figs 8, 21; OM p.5-2 Fig. 5-1",
+   "geometry_basis": "catalog figure + operator manual"
+  },
+  {
+   "id": "ign.harness_bag",
+   "kind": "fastener_group",
+   "title": "Harness attaching parts (bag 01P19762-1-43)",
+   "figure": "21",
+   "allocations": [
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "LW-16266-25-25",
+     "units": 4
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "LW-14060",
+     "units": 3
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "STD-8",
+     "units": 8
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "STD-1874",
+     "units": 6
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "76734",
+     "units": 8
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "LW-16266-25-50",
+     "units": 1
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "STD-696",
+     "units": 4
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "STD-1916",
+     "units": 3
+    },
+    {
+     "figure": "21",
+     "ref": null,
+     "part_number": "LW-M-2375",
+     "units": 2
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "CLIP one wire": 4,
+    "CLIP two wire": 3,
+    "CLIP four wire": 1,
+    "WASHER 1/4 plain STD-8": 8,
+    "SCREW 1/4 lock (rocker box)": 6,
+    "ZIP STRAP": 8,
+    "WASHER 1/4 plain STD-696": 4,
+    "SCREW 1/4-20 x 1-1/8 fillister": 3,
+    "SET OF 2 PLATES 2-wire": 2
+   },
+   "location": "clip positions are given only on the \"engine line drawing included in each bag\", which is not in the catalog. Plausible layout: rocker-box screws carry the one/two-wire clips on each head (6 rocker box lock screws), the four-wire clip and fillister screws on the crankcase/accessory housing where the two harnesses leave the magnetos, zip straps along the leads",
+   "geometry": "estimated layout",
+   "basis": "estimated",
+   "source": "IPC p.41 bag table (PDF p.55)",
+   "note": "only the counts are sourced",
+   "geometry_basis": "estimated (counts and placement: estimated)"
+  },
+  {
+   "id": "starter.mount",
+   "kind": "fastener_group",
+   "title": "Starter to crankcase pad",
+   "figure": "22",
+   "allocations": [
+    {
+     "figure": "22",
+     "ref": "2",
+     "part_number": "STD-35",
+     "units": 0
+    },
+    {
+     "figure": "22",
+     "ref": "3",
+     "part_number": "STD-475",
+     "units": 4
+    },
+    {
+     "figure": "22",
+     "ref": "4",
+     "part_number": "LW-31-0.94",
+     "units": 1
+    },
+    {
+     "figure": "22",
+     "ref": "5",
+     "part_number": "STD-1410",
+     "units": 3
+    }
+   ],
+   "instances_per_engine": 1,
+   "count_per_instance": {
+    "NUT 5/16-18 (on studs)": 3,
+    "BOLT 5/16-18 x 15/16 (Sky-Tec; Kelly uses LW-31-1.16)": 1,
+    "WASHER 5/16 lock": 4,
+    "WASHER 5/16 plain (Kelly only)": 0
+   },
+   "location": "bottom front of the left crankcase half",
+   "geometry": "rectangular 4-hole flange, fasteners vertical; about 2.5 x 2.0 in (estimated)",
+   "basis": "catalog figure",
+   "source": "IPC fig 22 (PDF p.56)",
+   "geometry_basis": "estimated (counts and placement: catalog figure)"
+  }
+ ],
+ "allocation_check": {
+  "config": "default",
+  "hardware_units_in_ipc": 671,
+  "hardware_units_allocated": 671,
+  "mismatches": [],
+  "note": "Every hardware line of o320d2j-ipc.json (default configuration) is allocated to a group above; counts must match exactly."
+ },
+ "basis_summary": {
+  "groups_by_basis": {
+   "catalog figure": 48,
+   "operator manual": 1,
+   "catalog figure + operator manual": 8,
+   "operator manual + catalog": 1,
+   "estimated": 1
+  }
+ }
+}

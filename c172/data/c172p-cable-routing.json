@@ -1,0 +1,3346 @@
+{
+ "meta": {
+  "title": "Cessna 172P flight-control cable, fuel line, brake line and pitot-static routing (Service Manual D2065-3-13)",
+  "source": {
+   "document": "Cessna Model 172 Series 1977 thru 1986 Service Manual, D2065-3-13, Revision 3 (1995), incl. Temporary Revisions 4 and 5",
+   "copyright": "Copyright Cessna Aircraft Company. Facts and page references only; no manual images are reproduced.",
+   "url": "https://www.aeroelectric.com/Reference_Docs/Cessna/cessna-maintenance-manuals/Cessna_172_1977-1986_MM_D2065-3-13.pdf",
+   "page_convention": "'page' = 1-based PDF page index of the 639-page scan; 'manual_page' = page number printed on the sheet (e.g. '4-2')"
+  },
+  "applicability": "Model 172P = 1981-1986, serials 17274010 thru 17276654 (manual cross-reference listing, PDF page 8). Figures often cover 1977-1986 (172N/172P/172Q/F172); serial effectivity is recorded per figure/item as printed.",
+  "routing_order": "Each routing list runs in order from the cockpit control (or source) to the surface (or consumer).",
+  "stations_ref": "c172-stations.json",
+  "generated": "2026-10-01"
+ },
+ "control_cables": [
+  {
+   "system": "aileron",
+   "cable": "primary cable (control U, chain to cable drum)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "not specified (rig so chains have no slack without binding)",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "control wheel / control tube / sprocket (LH)",
+     "callout": "1",
+     "figure": "6-2",
+     "page": 223,
+     "location": "top LH of control U behind instrument panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "chain (LH)",
+     "callout": "4",
+     "figure": "6-2",
+     "page": 223,
+     "location": "down LH arm of control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "primary cable turnbuckle",
+     "callout": "15",
+     "figure": "6-2",
+     "page": 223,
+     "location": "on primary cable (callout not visible in drawing)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 4,
+     "component": "cable drum (aft groove, wrapped once, lock 9 on bottom)",
+     "callout": "8",
+     "figure": "6-2",
+     "page": 223,
+     "location": "bottom center of control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 5,
+     "component": "chain (RH) / sprocket (RH)",
+     "callout": "4/1",
+     "figure": "6-2",
+     "page": 223,
+     "location": "RH arm of control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Secondary cable (5) with turnbuckles (6) closes the chain loop between LH and RH chains."
+  },
+  {
+   "system": "aileron",
+   "cable": "secondary cable (control U)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "enough to remove slack from chains without binding (para 6-18c)",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "chain (LH)",
+     "callout": "4",
+     "figure": "6-2",
+     "page": 223,
+     "location": "LH arm",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "secondary cable turnbuckles",
+     "callout": "6",
+     "figure": "6-2",
+     "page": 223,
+     "location": "along control U arms / center",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "chain (RH)",
+     "callout": "4",
+     "figure": "6-2",
+     "page": 223,
+     "location": "RH arm",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "system": "aileron",
+   "cable": "aileron direct cable, LH (172P: 17269875 & on)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "not specified separately (disregard during rigging); Fig 6-1 caution: direct and follow-thru cables 40 +/- 10 lb at average temperature",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "cable drum forward groove (direct cable lock 14 on top)",
+     "callout": "8/14",
+     "figure": "6-2",
+     "page": 223,
+     "location": "bottom center of control U behind instrument panel, approx FS 10-20 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 2,
+     "component": "direct cable turnbuckle below control U",
+     "callout": "17",
+     "figure": "6-2",
+     "page": 223,
+     "location": "below control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 3,
+     "component": "pulleys at lower end of control U",
+     "callout": "G, H",
+     "figure": "6-1",
+     "page": 221,
+     "location": "lower control U area, near floor",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "horizontal pulleys, forward cabin floor",
+     "callout": "F",
+     "figure": "6-1",
+     "page": 221,
+     "location": "forward cabin floor aft of control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "pulley at bottom of forward doorpost",
+     "callout": "E (or unlettered corner pulley)",
+     "figure": "6-1",
+     "page": 221,
+     "location": "bottom of forward doorpost (LH side as drawn), approx FS 28-30 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "pulley at top of forward doorpost",
+     "callout": "D / B",
+     "figure": "6-1",
+     "page": 221,
+     "location": "top of forward doorpost at cabin top/wing root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 7,
+     "component": "LH direct cable turnbuckle (above headliner)",
+     "callout": "13",
+     "figure": "6-1",
+     "page": 221,
+     "location": "cabin top above headliner near center",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 8,
+     "component": "triple pulley cluster (bolt, bushing 8, guard 3)",
+     "callout": "Detail C (2)",
+     "figure": "6-1",
+     "page": 222,
+     "location": "cabin top center above headliner",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 9,
+     "component": "pulley on pulley bracket in wing root",
+     "callout": "Detail A (2, 12)",
+     "figure": "6-1",
+     "page": 221,
+     "location": "wing, inboard",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 10,
+     "component": "LH aileron bellcrank (cable attach with spacers 12, bushing 14)",
+     "callout": "6 / 7",
+     "figure": "6-3",
+     "page": 226,
+     "location": "in wing near aileron inboard end; access plate inboard of bellcrank on wing underside; WS not printed (estimated ~100-118)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 11,
+     "component": "aileron push-pull rod",
+     "callout": "8",
+     "figure": "6-3",
+     "page": 226,
+     "location": "bellcrank to aileron",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 12,
+     "component": "aileron",
+     "callout": "1/7",
+     "figure": "6-3",
+     "page": 226,
+     "location": "wing trailing edge outboard",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Exact crossing of LH/RH direct cables at the cabin-top cluster C is not determinable from the drawing; Fig 6-1 shows both 13/14 turnbuckles above headliner and Fig 6-2 also shows turnbuckles (17) below control U. Node order G/H->F->E->D/B->C->A follows the drawing path."
+  },
+  {
+   "system": "aileron",
+   "cable": "aileron direct cable, RH (172P: 17269875 & on)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "not specified separately (disregard during rigging); Fig 6-1 caution: direct and follow-thru cables 40 +/- 10 lb at average temperature",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "cable drum forward groove (direct cable lock 14 on top)",
+     "callout": "8/14",
+     "figure": "6-2",
+     "page": 223,
+     "location": "bottom center of control U behind instrument panel, approx FS 10-20 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 2,
+     "component": "direct cable turnbuckle below control U",
+     "callout": "17",
+     "figure": "6-2",
+     "page": 223,
+     "location": "below control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 3,
+     "component": "pulleys at lower end of control U",
+     "callout": "G, H",
+     "figure": "6-1",
+     "page": 221,
+     "location": "lower control U area, near floor",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "horizontal pulleys, forward cabin floor",
+     "callout": "F",
+     "figure": "6-1",
+     "page": 221,
+     "location": "forward cabin floor aft of control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "pulley at bottom of forward doorpost",
+     "callout": "E (or unlettered corner pulley)",
+     "figure": "6-1",
+     "page": 221,
+     "location": "bottom of forward doorpost (RH side as drawn), approx FS 28-30 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "pulley at top of forward doorpost",
+     "callout": "D / B",
+     "figure": "6-1",
+     "page": 221,
+     "location": "top of forward doorpost at cabin top/wing root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 7,
+     "component": "RH direct cable turnbuckle (above headliner)",
+     "callout": "14",
+     "figure": "6-1",
+     "page": 221,
+     "location": "cabin top above headliner near center",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 8,
+     "component": "triple pulley cluster (bolt, bushing 8, guard 3)",
+     "callout": "Detail C (2)",
+     "figure": "6-1",
+     "page": 222,
+     "location": "cabin top center above headliner",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 9,
+     "component": "pulley on pulley bracket in wing root",
+     "callout": "Detail A (2, 12)",
+     "figure": "6-1",
+     "page": 221,
+     "location": "wing, inboard",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 10,
+     "component": "RH aileron bellcrank (cable attach with spacers 12, bushing 14)",
+     "callout": "6 / 7",
+     "figure": "6-3",
+     "page": 226,
+     "location": "in wing near aileron inboard end; access plate inboard of bellcrank on wing underside; WS not printed (estimated ~100-118)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 11,
+     "component": "aileron push-pull rod",
+     "callout": "8",
+     "figure": "6-3",
+     "page": 226,
+     "location": "bellcrank to aileron",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 12,
+     "component": "aileron",
+     "callout": "1/7",
+     "figure": "6-3",
+     "page": 226,
+     "location": "wing trailing edge outboard",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Exact crossing of LH/RH direct cables at the cabin-top cluster C is not determinable from the drawing; Fig 6-1 shows both 13/14 turnbuckles above headliner and Fig 6-2 also shows turnbuckles (17) below control U. Node order G/H->F->E->D/B->C->A follows the drawing path."
+  },
+  {
+   "system": "aileron",
+   "cable": "aileron carry-thru cable",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "40 +/- 10 lb (para 6-18e), average temperature for the area",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "LH aileron bellcrank",
+     "callout": "7",
+     "figure": "6-3",
+     "page": 226,
+     "location": "LH wing",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "pulley (wing root bracket)",
+     "callout": "Detail A",
+     "figure": "6-1",
+     "page": 221,
+     "location": "LH wing root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "triple pulley cluster",
+     "callout": "Detail C",
+     "figure": "6-1",
+     "page": 222,
+     "location": "cabin top center above headliner",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "carry-thru cable turnbuckle (172P position: above headliner)",
+     "callout": "4 (fig 6-1) / 17 (fig 6-3)",
+     "figure": "6-1",
+     "page": 221,
+     "location": "cabin top above headliner between clusters C and D",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 5,
+     "component": "pulley (wing root bracket)",
+     "callout": "Detail A",
+     "figure": "6-1",
+     "page": 221,
+     "location": "RH wing root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 6,
+     "component": "RH aileron bellcrank",
+     "callout": "6",
+     "figure": "6-1",
+     "page": 221,
+     "location": "RH wing",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Thru 17269874 the turnbuckle was at the RH bellcrank."
+  },
+  {
+   "system": "elevator",
+   "cable": "elevator UP cable (forward up 8 + rear up 3)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "30 +/- 10 lb at average temperature for the area",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "control U lower end -> push-pull tube",
+     "callout": "18 (6-2) / 10",
+     "figure": "8-1",
+     "page": 244,
+     "location": "lower end of control U behind panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "forward bellcrank",
+     "callout": "11",
+     "figure": "8-1",
+     "page": 244,
+     "location": "under floor/pedestal below control U (Detail F), approx FS 10-15 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 3,
+     "component": "pulley (Detail E, bracket 12)",
+     "callout": "E/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "cabin floor just aft of forward bellcrank, approx FS 15-20 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 4,
+     "component": "pulley (Detail A, pair on one bolt)",
+     "callout": "A/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "floor, aft cabin, approx FS 90-100 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 5,
+     "component": "turnbuckle",
+     "callout": "13 (Detail D)",
+     "figure": "8-1",
+     "page": 244,
+     "location": "just aft of pulleys A",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 6,
+     "component": "pulley (Detail B)",
+     "callout": "B/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "mid tailcone, approx FS 150 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 7,
+     "component": "pulley (Detail C)",
+     "callout": "C/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "aft tailcone near stabilizer, approx FS 210 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 8,
+     "component": "rear bellcrank (cable bolt, clevis free to swivel)",
+     "callout": "7 (8-1) / 9 (8-2)",
+     "figure": "8-2",
+     "page": 246,
+     "location": "between elevators at stabilizer rear spar centerline",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 9,
+     "component": "elevator tube assemblies / elevators",
+     "callout": "7",
+     "figure": "8-2",
+     "page": 246,
+     "location": "",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Details B and C are drawn with rear up cable (3); allocation of B/C to up vs down cable is read from the drawing labels."
+  },
+  {
+   "system": "elevator",
+   "cable": "elevator DOWN cable (forward down 9 + rear down 6)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "30 +/- 10 lb at average temperature for the area",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "forward bellcrank",
+     "callout": "11",
+     "figure": "8-1",
+     "page": 244,
+     "location": "under floor below control U",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "pulley (Detail E)",
+     "callout": "E/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "cabin floor aft of forward bellcrank",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "pulley (Detail A)",
+     "callout": "A/1",
+     "figure": "8-1",
+     "page": 244,
+     "location": "floor, aft cabin, approx FS 90-100 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 4,
+     "component": "turnbuckle",
+     "callout": "13",
+     "figure": "8-1",
+     "page": 244,
+     "location": "just aft of pulleys A",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "rear bellcrank",
+     "callout": "7",
+     "figure": "8-1",
+     "page": 244,
+     "location": "stabilizer rear centerline",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "No tailcone pulley drawn exclusively for the down cable."
+  },
+  {
+   "system": "elevator trim",
+   "cable": "elevator trim cable, left (6 Left Forward Cable + 5 Left Aft Cable)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "15 to 20 lbs at average temperature for the area",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "trim wheel and sprocket (pedestal), forward/rear chain",
+     "callout": "14/15/12/13",
+     "figure": "9-1",
+     "page": 252,
+     "location": "pedestal, approx FS 15-25 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "pulley pair J1",
+     "callout": "J1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "under floor below pedestal",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "pulley pair H1 (triangular bracket)",
+     "callout": "H1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "under floor aft of pedestal",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "pulley pair A1 (bulkhead)",
+     "callout": "A1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "aft cabin floor bulkhead, approx FS 85-95 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 5,
+     "component": "stop blocks (cable A: 2,3; cable B: 1,4)",
+     "callout": "10 / Fig 9-2",
+     "figure": "9-2",
+     "page": 256,
+     "location": "near turnbuckle, aft cabin/baggage area, approx FS 110-120 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "cable-end joint bolt (Detail E)",
+     "callout": "8 / E",
+     "figure": "9-1",
+     "page": 252,
+     "location": "right cable: turnbuckle aft of stop blocks; left cable: joint near tailcone",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 7,
+     "component": "pulley pair B1 (tailcone bulkhead)",
+     "callout": "B1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "tailcone bulkhead, approx FS 180-200 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 8,
+     "component": "pulley pair D1",
+     "callout": "D1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "aft tailcone at stabilizer attach area, approx FS 205-215 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 9,
+     "component": "aft chain over actuator sprocket",
+     "callout": "4",
+     "figure": "9-1",
+     "page": 252,
+     "location": "right horizontal stabilizer",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 10,
+     "component": "trim tab actuator -> push-pull channel -> trim tab horn",
+     "callout": "3 / 8-2:3,4",
+     "figure": "8-2",
+     "page": 246,
+     "location": "right stabilizer / right elevator trim tab",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Pulley groups each carry both cables (tab up / tab down sides labeled on sheet 2)."
+  },
+  {
+   "system": "elevator trim",
+   "cable": "elevator trim cable, right (9 Right Forward Cable + 7 Right Aft Cable)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "15 to 20 lbs at average temperature for the area",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "trim wheel and sprocket (pedestal), forward/rear chain",
+     "callout": "14/15/12/13",
+     "figure": "9-1",
+     "page": 252,
+     "location": "pedestal, approx FS 15-25 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "pulley pair J1",
+     "callout": "J1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "under floor below pedestal",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "pulley pair H1 (triangular bracket)",
+     "callout": "H1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "under floor aft of pedestal",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "pulley pair A1 (bulkhead)",
+     "callout": "A1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "aft cabin floor bulkhead, approx FS 85-95 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 5,
+     "component": "stop blocks (cable A: 2,3; cable B: 1,4)",
+     "callout": "10 / Fig 9-2",
+     "figure": "9-2",
+     "page": 256,
+     "location": "near turnbuckle, aft cabin/baggage area, approx FS 110-120 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "turnbuckle 8 (Detail F)",
+     "callout": "8 / E",
+     "figure": "9-1",
+     "page": 252,
+     "location": "right cable: turnbuckle aft of stop blocks; left cable: joint near tailcone",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 7,
+     "component": "pulley pair B1 (tailcone bulkhead)",
+     "callout": "B1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "tailcone bulkhead, approx FS 180-200 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 8,
+     "component": "pulley pair D1",
+     "callout": "D1",
+     "figure": "9-1",
+     "page": 253,
+     "location": "aft tailcone at stabilizer attach area, approx FS 205-215 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 9,
+     "component": "aft chain over actuator sprocket",
+     "callout": "4",
+     "figure": "9-1",
+     "page": 252,
+     "location": "right horizontal stabilizer",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 10,
+     "component": "trim tab actuator -> push-pull channel -> trim tab horn",
+     "callout": "3 / 8-2:3,4",
+     "figure": "8-2",
+     "page": 246,
+     "location": "right stabilizer / right elevator trim tab",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Pulley groups each carry both cables (tab up / tab down sides labeled on sheet 2)."
+  },
+  {
+   "system": "rudder",
+   "cable": "rudder cable, left (16 Left Front Cable + 5 Left Rear Cable)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "set automatically by rudder bar return springs with pedals 6.50 in from firewall (para 10-11c); no numeric tension given",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "rudder bar arm (bolt, nut, cotter pin, Detail E)",
+     "callout": "9",
+     "figure": "10-1",
+     "page": 262,
+     "location": "rudder bars at firewall/tunnel, approx FS 5-10",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "pulley D1 (pair, shaded = rudder only)",
+     "callout": "D1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "under floor just aft of rudder bars, approx FS 10-15 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 3,
+     "component": "pulley C1 (pair, typical)",
+     "callout": "C1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "floor/bulkhead structure aft cabin, approx FS 100-110 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 4,
+     "component": "turnbuckle",
+     "callout": "6",
+     "figure": "10-1",
+     "page": 262,
+     "location": "just aft of pulleys C1",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "pulley B1 (pair, typical)",
+     "callout": "B1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "tailcone bulkhead, approx FS 150-160 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "clevis with stop nut, shackle, bolt, washer, bushing",
+     "callout": "11/14/1/13/12/13",
+     "figure": "10-1",
+     "page": 262,
+     "location": "aft end at rudder bellcrank (rigging adjustment)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 7,
+     "component": "rudder bellcrank",
+     "callout": "2 (10-1) / 12 (10-3)",
+     "figure": "10-3",
+     "page": 265,
+     "location": "bottom of rudder at tailcone stern; travel stops (3) safety wired",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "system": "rudder",
+   "cable": "rudder cable, right (15 Right Front Cable + 4 Right Rear Cable)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "set automatically by rudder bar return springs with pedals 6.50 in from firewall (para 10-11c); no numeric tension given",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "rudder bar arm (bolt, nut, cotter pin, Detail E)",
+     "callout": "9",
+     "figure": "10-1",
+     "page": 262,
+     "location": "rudder bars at firewall/tunnel, approx FS 5-10",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "pulley D1 (pair, shaded = rudder only)",
+     "callout": "D1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "under floor just aft of rudder bars, approx FS 10-15 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 3,
+     "component": "pulley C1 (pair, typical)",
+     "callout": "C1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "floor/bulkhead structure aft cabin, approx FS 100-110 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 4,
+     "component": "turnbuckle",
+     "callout": "6",
+     "figure": "10-1",
+     "page": 262,
+     "location": "just aft of pulleys C1",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "pulley B1 (pair, typical)",
+     "callout": "B1/8",
+     "figure": "10-1",
+     "page": 262,
+     "location": "tailcone bulkhead, approx FS 150-160 (estimated)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 6,
+     "component": "clevis with stop nut, shackle, bolt, washer, bushing",
+     "callout": "11/14/1/13/12/13",
+     "figure": "10-1",
+     "page": 262,
+     "location": "aft end at rudder bellcrank (rigging adjustment)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 7,
+     "component": "rudder bellcrank",
+     "callout": "2 (10-1) / 12 (10-3)",
+     "figure": "10-3",
+     "page": 265,
+     "location": "bottom of rudder at tailcone stern; travel stops (3) safety wired",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "system": "flap",
+   "cable": "flap direct cable (4) and retract cable (5)",
+   "part_number": null,
+   "size": null,
+   "construction": null,
+   "length": null,
+   "tension": "30 +/- 10 lb at average temperature for the area, flaps full up; adjust retract cable first; recheck at ~20 deg",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "right drive pulley (cable locks 12), driven by motor actuating tube",
+     "callout": "13",
+     "figure": "7-2",
+     "page": 235,
+     "location": "right wing forward of flap; access plate adjacent; WS not printed",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "idler pulley (Detail A)",
+     "callout": "A/2",
+     "figure": "7-1",
+     "page": 232,
+     "location": "right wing inboard of drive pulley",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "pulley pair on bracket 9 with spacer 14 (Detail B)",
+     "callout": "B/2",
+     "figure": "7-1",
+     "page": 232,
+     "location": "cabin top above headliner",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "turnbuckles (one per cable)",
+     "callout": "6",
+     "figure": "7-1",
+     "page": 232,
+     "location": "cabin top above headliner near center (unzip headliner)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 5,
+     "component": "idler pulley (left wing)",
+     "callout": "Fig 7-4",
+     "figure": "7-4",
+     "page": 239,
+     "location": "left wing inboard of left drive pulley",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 6,
+     "component": "left drive pulley -> left push-pull rod -> left flap",
+     "callout": "13/14",
+     "figure": "7-4",
+     "page": 239,
+     "location": "left wing",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": "Fig 7-4 schematic (viewed from above) shows one idler per wing and the two turnbuckles at center; Fig 7-1 Detail B shows an additional pair of pulleys at the cabin top. Follow-up cable clamps to the direct cable above headliner in rear cabin area."
+  },
+  {
+   "system": "flap",
+   "cable": "flap follow-up control (sheathed cable)",
+   "part_number": null,
+   "size": null,
+   "construction": "sheathed (push-pull) cable",
+   "length": null,
+   "tension": null,
+   "routing": [
+    {
+     "seq": 1,
+     "component": "clamp (7) on flap direct cable, bellcrank (2) in guide (1)",
+     "callout": "7/2/1",
+     "figure": "7-5",
+     "page": 240,
+     "location": "cabin ceiling above headliner, rear cabin area",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 2,
+     "component": "mounting bracket (cable housing anchor)",
+     "callout": "3",
+     "figure": "7-5",
+     "page": 240,
+     "location": "cabin ceiling",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "follow-up cable run down to instrument panel",
+     "callout": "4",
+     "figure": "7-5",
+     "page": 240,
+     "location": "along cabin side/forward",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "clamp bolt (17) on switch mounting arm (16), operating switches 18/20, cam 19 on flap lever 13",
+     "callout": "17",
+     "figure": "7-5",
+     "page": 240,
+     "location": "behind instrument panel, flap lever",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ],
+   "notes": null
+  }
+ ],
+ "control_travel_limits": [
+  {
+   "surface": "aileron",
+   "up": "20 deg +/- 1",
+   "down": "15 deg +/- 1",
+   "page": 12,
+   "source": "Fig 1-1",
+   "stops": "bellcrank stop bushings in bellcrank slots (Fig 6-3 items 15/16)"
+  },
+  {
+   "surface": "flap",
+   "range": "0 to 30 deg +0 -2 (1981 & on); 0-40 thru 1980",
+   "page": 13,
+   "source": "Fig 1-1",
+   "stops": "up/down limit switches at actuator (Fig 7-2 items 23/26)"
+  },
+  {
+   "surface": "elevator",
+   "up": "28 deg +1 -0",
+   "down": "23 deg +1 -0",
+   "page": 13,
+   "source": "Fig 1-1",
+   "stops": "travel stop bolts with jamnuts at rear bellcrank (Fig 8-2 items 14/15)"
+  },
+  {
+   "surface": "elevator trim tab",
+   "up": "22 deg +1 -0",
+   "down": "19 deg +1 -0",
+   "note": "1981 & on landplane",
+   "page": 13,
+   "source": "Fig 1-1",
+   "stops": "stop blocks on cables (Fig 9-2)"
+  },
+  {
+   "surface": "rudder",
+   "right": "16 deg 10 min +/- 1 (parallel to WL) / 17 deg 44 min +/- 1 (perpendicular to hinge)",
+   "left": "same",
+   "page": 13,
+   "source": "Fig 1-1",
+   "stops": "travel stop bolts (Fig 10-1 item 3), check 5.29-5.91 in at trailing edge (Fig 10-4)"
+  }
+ ],
+ "control_rigging": [
+  {
+   "system": "aileron",
+   "paragraph": "6-18",
+   "page": 225,
+   "summary": "Primary cable in aft drum groove wrapped once; chain ends equidistant; secondary turnbuckles synchronize wheels; bar across wheels; direct and carry-thru turnbuckles center bellcrank stop bushings at 40 +/- 10 lb carry-thru tension; push-pull rods set ailerons neutral to flap TE (flaps up); single-wrap safety."
+  },
+  {
+   "system": "flap",
+   "paragraph": "7-16, 7-20",
+   "page": 236,
+   "summary": "Push-pull rods 8.83 +/- .12 in; actuating tube collar .12 +/- .05 in; setscrew 60 lb-in Loctite CV; up limit switch set at full up; cables 30 +/- 10 lb; down limit at Fig 1-1 travel; follow-up indicator .03 in max clearance, 10 and 20 deg detents."
+  },
+  {
+   "system": "elevator",
+   "paragraph": "8-14",
+   "page": 247,
+   "summary": "Lock column with neutral rigging tool (Fig 8-3); streamline elevators; turnbuckles equally to 30 +/- 10 lb; set stop bolts to travel; check control U clears panel and firewall."
+  },
+  {
+   "system": "elevator trim",
+   "paragraph": "9-18",
+   "page": 258,
+   "summary": "Wheel full nose-down; tab up with max 2 deg overtravel; set stop blocks per Fig 9-2; pointer centered in slot; tension 15-20 lb."
+  },
+  {
+   "system": "rudder",
+   "paragraph": "10-11",
+   "page": 263,
+   "summary": "Set travel stops; clevises adjusted so pedals neutral at 6.50 in from firewall to pivot shafts (tension automatic via return springs); steering tube rod ends 1.00 in; rig rudder trim per 10-14."
+  },
+  {
+   "system": "rudder trim",
+   "paragraph": "10-14",
+   "page": 268,
+   "summary": "Bungee between rudder bar and bellcrank; lever in center hole of bracket; pushrod ball ends adjusted to align. Linkage: lever (3) -> pushrod (8) -> bellcrank (7) -> trim bungee (5) -> rudder bar (6)."
+  }
+ ],
+ "fuel": {
+  "configurations": [
+   {
+    "name": "standard (43 gal total / 40 usable) and long-range (54 / 50) aluminum tanks",
+    "applicability": "172P: 17274010-17275034 per Fig 12-2 sh1 (angled selector shaft with universal joint); 17275035 and on per Fig 12-2 sh2 with selector per Fig 12-8 sh4/5",
+    "lines": [
+     {
+      "line": "Left tank forward and aft outlets to selector valve left inlet port",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "tank outlet with finger screen (forward and aft outlets at inboard end)",
+        "callout": "screen",
+        "figure": "12-1 / 12-9",
+        "page": 331,
+        "location": "inboard end of left tank, forward and aft corners",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel supply line (forward) down forward door post",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "left forward door post (windshield post), cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "fuel supply line (aft) down aft door post",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "left aft door post, cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "lines run along cabin floor/lower door sill inboard to selector (forward and aft lines join per side - junction not called out)",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "cabin floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 5,
+        "component": "nipple + O-ring into selector valve inlet port",
+        "callout": "17/18 (Fig 12-2) or 7/8 (Fig 12-8 sh4)",
+        "figure": "12-2",
+        "page": 333,
+        "location": "selector valve inlet",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 6,
+        "component": "selector valve (4-position OFF/LEFT/BOTH ON/RIGHT)",
+        "callout": "15",
+        "figure": "12-2",
+        "page": 333,
+        "location": "beneath floorboard just aft and slightly left of pedestal",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "Right tank forward and aft outlets to selector valve right inlet port",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "tank outlet with finger screen (forward and aft outlets at inboard end)",
+        "callout": "screen",
+        "figure": "12-1 / 12-9",
+        "page": 331,
+        "location": "inboard end of right tank, forward and aft corners",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel supply line (forward) down forward door post",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "right forward door post (windshield post), cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "fuel supply line (aft) down aft door post",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "right aft door post, cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "lines run along cabin floor/lower door sill inboard to selector (forward and aft lines join per side - junction not called out)",
+        "callout": "4",
+        "figure": "12-2",
+        "page": 333,
+        "location": "cabin floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 5,
+        "component": "nipple + O-ring into selector valve inlet port",
+        "callout": "17/18 (Fig 12-2) or 7/8 (Fig 12-8 sh4)",
+        "figure": "12-2",
+        "page": 333,
+        "location": "selector valve inlet",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 6,
+        "component": "selector valve (4-position OFF/LEFT/BOTH ON/RIGHT)",
+        "callout": "15",
+        "figure": "12-2",
+        "page": 333,
+        "location": "beneath floorboard just aft and slightly left of pedestal",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "selector valve outlet to strainer",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "selector valve outlet nipple",
+        "callout": "18",
+        "figure": "12-2",
+        "page": 333,
+        "location": "under floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel line forward under floor to firewall",
+        "callout": "12",
+        "figure": "12-6",
+        "page": 342,
+        "location": "cabin floor to lower firewall",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 3,
+        "component": "firewall pass-through shield + grommet",
+        "callout": "8/10",
+        "figure": "12-6",
+        "page": 342,
+        "location": "lower firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "elbow into strainer top assembly",
+        "callout": "11",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall front face, lower engine compartment",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 5,
+        "component": "fuel strainer (quick-drain, drain tube overboard)",
+        "callout": "2",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall front face lower",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "strainer to carburetor",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "strainer outlet",
+        "callout": "15",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel line to carburetor inlet (line hardware in Section 11/11A, not in Section 12)",
+        "callout": null,
+        "figure": "12-1",
+        "page": 331,
+        "location": "lower engine compartment",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 3,
+        "component": "carburetor (inlet elbow / inlet screen per 12-4 trouble shooting)",
+        "callout": null,
+        "figure": "12-1",
+        "page": 331,
+        "location": "bottom of engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "line": "primer supply and delivery",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "strainer primer port",
+        "callout": "15",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "primer supply line aft through firewall to panel",
+        "callout": "9",
+        "figure": "12-2",
+        "page": 333,
+        "location": "firewall to lower left instrument panel",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "primer (plunger) fittings (1)",
+        "callout": "7",
+        "figure": "12-7",
+        "page": 343,
+        "location": "lower left instrument panel",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "primer delivery line forward through firewall to engine",
+        "callout": "10",
+        "figure": "12-2",
+        "page": 333,
+        "location": "panel to firewall to engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 5,
+        "component": "intake port No. 4 cylinder (standard 1-cyl) / all except No. 3 (optional 3-cyl)",
+        "callout": null,
+        "figure": "text 12-23",
+        "page": 344,
+        "location": "engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     }
+    ],
+    "vents": [
+     {
+      "name": "left tank overboard vent",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "vent valve (hinge at top) on inboard end of vent line, inside left tank",
+        "callout": "22",
+        "figure": "12-3",
+        "page": 336,
+        "location": "inside left tank, inboard end of vent tube; tube extends forward and slightly upward",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       },
+       {
+        "seq": 2,
+        "component": "vent valve tube through tank outboard end (gasket, washer, nut)",
+        "callout": "21",
+        "figure": "12-3",
+        "page": 336,
+        "location": "outboard end of left tank",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "overboard vent line down through lower wing skin (angle 19 on skin)",
+        "callout": "6/20",
+        "figure": "12-2 / 12-3",
+        "page": 333,
+        "location": "left wing lower skin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "vent tip: 3.75 in below lower skin, grommet, just inboard of strut fairing, 1.19 in dimension from strut",
+        "callout": "2",
+        "figure": "12-4",
+        "page": 337,
+        "location": "left wing lower surface inboard of strut",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "name": "vent crossover and interconnect",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "vent crossover line between top of left and right tank airspaces, tee each end",
+        "callout": "2",
+        "figure": "12-2",
+        "page": 333,
+        "location": "cabin top / wing root area",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "tank vent interconnect line from each tee to the aft fuel supply line of same side",
+        "callout": "3",
+        "figure": "12-2",
+        "page": 333,
+        "location": "aft door post tops",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "name": "RH vented filler cap",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "vented cap with check valve (opens <=4.0 in H2O vacuum; holds 0.5 psi)",
+        "callout": "19 (12-3) / 2 (12-12)",
+        "figure": "12-12",
+        "page": 361,
+        "location": "top of right tank",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     }
+    ],
+    "drains": [
+     {
+      "name": "tank sump drain valve",
+      "qty": "1 per tank (+1 SK172-116, +4 SK172-135)",
+      "figure": "12-3",
+      "page": 336,
+      "location": "tank bottom (Detail A)",
+      "location_confidence": "read from drawing"
+     },
+     {
+      "name": "selector valve drain (plug thru 17275034; drain valve assembly beginning 17275035)",
+      "qty": 1,
+      "figure": "12-5",
+      "page": 339,
+      "location": "bottom of selector body",
+      "location_confidence": "read from drawing"
+     },
+     {
+      "name": "strainer quick-drain with drain control and drain tube",
+      "qty": 1,
+      "figure": "12-6",
+      "page": 342,
+      "location": "firewall lower; control at oil dipstick door",
+      "location_confidence": "stated in text"
+     }
+    ]
+   },
+   {
+    "name": "integral bay / wet wing (68 gal total / 62 usable; 34 gal per bay, 24.0 gal to bottom of filler collar)",
+    "applicability": "optional beginning 17274010 / F17202070: Fig 12-8 sh1 (thru 17275034) and sh2 (17275035 and on)",
+    "lines": [
+     {
+      "line": "Left integral bay forward and aft outlets to selector valve left inlet port",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "integral bay outlet with finger screen (forward and aft outlets at inboard end)",
+        "callout": "screen",
+        "figure": "12-1 / 12-9",
+        "page": 331,
+        "location": "inboard end of left integral bay, forward and aft corners",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel supply line (forward) down forward door post",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "left forward door post (windshield post), cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "fuel supply line (aft) down aft door post",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "left aft door post, cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "lines run along cabin floor/lower door sill inboard to selector (forward and aft lines join per side - junction not called out)",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "cabin floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 5,
+        "component": "nipple + O-ring into selector valve inlet port",
+        "callout": "17/18 (Fig 12-2) or 7/8 (Fig 12-8 sh4)",
+        "figure": "12-2",
+        "page": 333,
+        "location": "selector valve inlet",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 6,
+        "component": "selector valve (4-position OFF/LEFT/BOTH ON/RIGHT)",
+        "callout": "15",
+        "figure": "12-2",
+        "page": 333,
+        "location": "beneath floorboard just aft and slightly left of pedestal",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "Right integral bay forward and aft outlets to selector valve right inlet port",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "integral bay outlet with finger screen (forward and aft outlets at inboard end)",
+        "callout": "screen",
+        "figure": "12-1 / 12-9",
+        "page": 331,
+        "location": "inboard end of right integral bay, forward and aft corners",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel supply line (forward) down forward door post",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "right forward door post (windshield post), cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "fuel supply line (aft) down aft door post",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "right aft door post, cabin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "lines run along cabin floor/lower door sill inboard to selector (forward and aft lines join per side - junction not called out)",
+        "callout": "4",
+        "figure": "12-8",
+        "page": 346,
+        "location": "cabin floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 5,
+        "component": "nipple + O-ring into selector valve inlet port",
+        "callout": "17/18 (Fig 12-2) or 7/8 (Fig 12-8 sh4)",
+        "figure": "12-2",
+        "page": 333,
+        "location": "selector valve inlet",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 6,
+        "component": "selector valve (4-position OFF/LEFT/BOTH ON/RIGHT)",
+        "callout": "15",
+        "figure": "12-2",
+        "page": 333,
+        "location": "beneath floorboard just aft and slightly left of pedestal",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "selector valve outlet to strainer",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "selector valve outlet nipple",
+        "callout": "18",
+        "figure": "12-2",
+        "page": 333,
+        "location": "under floor",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel line forward under floor to firewall",
+        "callout": "12",
+        "figure": "12-6",
+        "page": 342,
+        "location": "cabin floor to lower firewall",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 3,
+        "component": "firewall pass-through shield + grommet",
+        "callout": "8/10",
+        "figure": "12-6",
+        "page": 342,
+        "location": "lower firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "elbow into strainer top assembly",
+        "callout": "11",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall front face, lower engine compartment",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 5,
+        "component": "fuel strainer (quick-drain, drain tube overboard)",
+        "callout": "2",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall front face lower",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     },
+     {
+      "line": "strainer to carburetor",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "strainer outlet",
+        "callout": "15",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "fuel line to carburetor inlet (line hardware in Section 11/11A, not in Section 12)",
+        "callout": null,
+        "figure": "12-1",
+        "page": 331,
+        "location": "lower engine compartment",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "estimated"
+       },
+       {
+        "seq": 3,
+        "component": "carburetor (inlet elbow / inlet screen per 12-4 trouble shooting)",
+        "callout": null,
+        "figure": "12-1",
+        "page": 331,
+        "location": "bottom of engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "line": "primer supply and delivery",
+      "size": null,
+      "part_number": null,
+      "routing": [
+       {
+        "seq": 1,
+        "component": "strainer primer port",
+        "callout": "15",
+        "figure": "12-6",
+        "page": 342,
+        "location": "firewall",
+        "stations": {
+         "FS": 0.0,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "primer supply line aft through firewall to panel",
+        "callout": "9",
+        "figure": "12-2",
+        "page": 333,
+        "location": "firewall to lower left instrument panel",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "primer (plunger) fittings (1)",
+        "callout": "7",
+        "figure": "12-7",
+        "page": 343,
+        "location": "lower left instrument panel",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "primer delivery line forward through firewall to engine",
+        "callout": "10",
+        "figure": "12-2",
+        "page": 333,
+        "location": "panel to firewall to engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 5,
+        "component": "intake port No. 4 cylinder (standard 1-cyl) / all except No. 3 (optional 3-cyl)",
+        "callout": null,
+        "figure": "text 12-23",
+        "page": 344,
+        "location": "engine",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     }
+    ],
+    "vents": [
+     {
+      "name": "left bay overboard vent",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "fuel vent valve on inboard side of left outboard fuel bay rib (hinge at top)",
+        "callout": "1",
+        "figure": "12-9",
+        "page": 352,
+        "location": "left bay outboard rib",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       },
+       {
+        "seq": 2,
+        "component": "tube through rib (inner gasket, rib, outer gasket, washer, nut), bend down",
+        "callout": "2-7",
+        "figure": "12-9",
+        "page": 352,
+        "location": "left outboard bay rib",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 3,
+        "component": "overboard vent line through lower skin near strut",
+        "callout": "8",
+        "figure": "12-8",
+        "page": 346,
+        "location": "left wing lower skin",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 4,
+        "component": "vent tip per Fig 12-4",
+        "callout": "2",
+        "figure": "12-4",
+        "page": 337,
+        "location": "inboard of strut fairing",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "name": "crossover + interconnect with hoses/clamps",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "vent crossover line with hose (5) + clamps (6) at each wing root, 8-10 lb-in max, 4 places",
+        "callout": "2/5/6",
+        "figure": "12-8",
+        "page": 346,
+        "location": "wing roots / cabin top",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       },
+       {
+        "seq": 2,
+        "component": "vent interconnect lines to aft supply lines",
+        "callout": "3",
+        "figure": "12-8",
+        "page": 346,
+        "location": "cabin top",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "read from drawing"
+       }
+      ]
+     },
+     {
+      "name": "RH vented cap / LH non-vented",
+      "routing": [
+       {
+        "seq": 1,
+        "component": "caps",
+        "callout": "8",
+        "figure": "12-9",
+        "page": 352,
+        "location": "bay fillers",
+        "stations": {
+         "FS": null,
+         "WS": null,
+         "BL": null,
+         "WL": null
+        },
+        "location_confidence": "stated in text"
+       }
+      ]
+     }
+    ],
+    "drains": [
+     {
+      "name": "integral bay sump drain valve",
+      "qty": "1 per bay + 4 quick drains with SK182-100",
+      "figure": "12-9",
+      "page": 351,
+      "location": "bottom inboard end of each bay",
+      "location_confidence": "stated in text"
+     },
+     {
+      "name": "selector valve drain (plug thru 17275034; drain valve assembly beginning 17275035)",
+      "qty": 1,
+      "figure": "12-5",
+      "page": 339,
+      "location": "bottom of selector body",
+      "location_confidence": "read from drawing"
+     },
+     {
+      "name": "strainer quick-drain with drain control and drain tube",
+      "qty": 1,
+      "figure": "12-6",
+      "page": 342,
+      "location": "firewall lower; control at oil dipstick door",
+      "location_confidence": "stated in text"
+     }
+    ]
+   }
+  ]
+ },
+ "brake_lines": [
+  {
+   "line": "Left (pilot) master cylinder to left main wheel brake cylinder",
+   "size": null,
+   "part_number": null,
+   "routing": [
+    {
+     "seq": 1,
+     "component": "Brake master cylinder (5-13 sheet 2 for 172P), clevis to left pilot rudder pedal",
+     "callout": "2",
+     "figure": "5-14",
+     "page": 217,
+     "location": "immediately forward of pilot's rudder pedals, lower firewall area, left of centerline",
+     "stations": {
+      "FS": "~0-10 (estimated)"
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "Brake hose",
+     "callout": "1",
+     "figure": "5-14",
+     "page": 217,
+     "location": "master cylinder outlet (Detail D)",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "Rigid brake line (21)",
+     "callout": "21",
+     "figure": "5-14",
+     "page": 217,
+     "location": "aft along cabin floor/side",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "Bulkhead fitting with washers and nut, union (Detail C)",
+     "callout": "Detail C",
+     "figure": "5-14",
+     "page": 217,
+     "location": "where line passes through floor/skin near main gear (fitting 'where brake line emerges from fuselage skin', para 5-6e)",
+     "stations": {
+      "FS": "56.70-65.33 region (estimated)"
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 5,
+     "component": "Brake line (7) clamped to tubular strut by clamp (8)",
+     "callout": "7, 8",
+     "figure": "5-1 sheet 2",
+     "page": 177,
+     "location": "down main gear strut",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 6,
+     "component": "Elbow (thru 1981: elbow *, 60 lb.in max; 1982 on: elbow 21 + nut 22 + O-ring 23) into wheel brake cylinder",
+     "callout": "21-23",
+     "figure": "5-1 sheet 2 / 5-3",
+     "page": 177,
+     "location": "top of brake cylinder, inboard of wheel",
+     "stations": {
+      "BL": "~+/-50 (inboard of wheel center; estimated)"
+     },
+     "location_confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "line": "Right master cylinder to right main wheel brake cylinder",
+   "size": null,
+   "part_number": null,
+   "routing": [
+    {
+     "seq": 1,
+     "component": "Brake master cylinder (second of pair) on pilot's right rudder pedal",
+     "callout": "2",
+     "figure": "5-14",
+     "page": 217,
+     "location": "forward of pilot rudder pedals",
+     "stations": {},
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 2,
+     "component": "Brake hose",
+     "callout": "1",
+     "figure": "5-14",
+     "page": 217,
+     "location": "Detail D",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "Rigid brake line (21) across/aft under floor",
+     "callout": "21",
+     "figure": "5-14",
+     "page": 217,
+     "location": "cabin floor",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "Bulkhead fitting with washers and nut (Detail B)",
+     "callout": "Detail B",
+     "figure": "5-14",
+     "page": 217,
+     "location": "floor/skin pass-through near main gear",
+     "stations": {
+      "FS": "56.70-65.33 region (estimated)"
+     },
+     "location_confidence": "estimated"
+    },
+    {
+     "seq": 5,
+     "component": "Brake line clamped down strut",
+     "callout": "7, 8",
+     "figure": "5-1",
+     "page": 177,
+     "location": "strut",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 6,
+     "component": "Elbow into wheel brake cylinder",
+     "callout": "21-23",
+     "figure": "5-1",
+     "page": 177,
+     "location": "brake cylinder",
+     "stations": {},
+     "location_confidence": "read from drawing"
+    }
+   ]
+  }
+ ],
+ "pitot_static_vacuum": [
+  {
+   "line": "pitot",
+   "size": "plastic tubing (size not printed)",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "pitot mast body + heater (opt) under left wing",
+     "callout": "14/15",
+     "figure": "15-2",
+     "page": 377,
+     "location": "left wing lower surface; access opening just inboard of mast",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "connector (4 screws on side)",
+     "callout": "13",
+     "figure": "15-2",
+     "page": 377,
+     "location": "left wing",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 3,
+     "component": "pitot line inboard through left wing (behind wing access plates / lower wing fairing strip)",
+     "callout": "5",
+     "figure": "15-2",
+     "page": 377,
+     "location": "left wing to root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 4,
+     "component": "down left forward door post to panel",
+     "callout": "5",
+     "figure": "15-2",
+     "page": 377,
+     "location": "left forward door post",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "airspeed indicator",
+     "callout": "4",
+     "figure": "15-2",
+     "page": 377,
+     "location": "shock-mounted panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ]
+  },
+  {
+   "line": "static",
+   "size": "plastic tubing (size not printed)",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "static port + flange (static source button)",
+     "callout": "22/21",
+     "figure": "15-2",
+     "page": 377,
+     "location": "left side of forward fuselage, forward of door (Detail E arrow)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "static sump (plastic thru 17276468; metal 17276469 and on)",
+     "callout": "20/31",
+     "figure": "15-2",
+     "page": 377,
+     "location": "inside fuselage at static port",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 3,
+     "component": "line (to sump) up to tee / alternate static valve",
+     "callout": "19/18",
+     "figure": "15-2",
+     "page": 377,
+     "location": "behind lower left panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "alternate static source valve + knob (if installed)",
+     "callout": "16/17",
+     "figure": "15-2",
+     "page": 377,
+     "location": "lower instrument panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "static line to ASI, altimeter, VSI (+ encoding altimeter tee)",
+     "callout": "6/26/29",
+     "figure": "15-2",
+     "page": 377,
+     "location": "behind shock-mounted panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ]
+  },
+  {
+   "line": "vacuum (engine-driven, with optional standby)",
+   "size": "hose (size not printed)",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "central air filter (cabin side of firewall)",
+     "callout": "5",
+     "figure": "15-4",
+     "page": 387,
+     "location": "cabin side of firewall, behind panel",
+     "stations": {
+      "FS": 0.0,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 2,
+     "component": "hoses to gyro horizon and directional gyro",
+     "callout": "5/6 (15-4A)",
+     "figure": "15-4",
+     "page": 387,
+     "location": "behind panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "suction gage across gyro circuit",
+     "callout": "8",
+     "figure": "15-4",
+     "page": 387,
+     "location": "panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 4,
+     "component": "hoses from gyros to suction relief valve",
+     "callout": "-",
+     "figure": "15-4",
+     "page": 387,
+     "location": "behind panel to firewall",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 5,
+     "component": "suction relief valve on aft face of firewall (manifold with standby pump if installed)",
+     "callout": "9 / 22 (15-4A)",
+     "figure": "15-4",
+     "page": 387,
+     "location": "firewall cabin side",
+     "stations": {
+      "FS": 0.0,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 6,
+     "component": "firewall fitting (nut, washer)",
+     "callout": "10",
+     "figure": "15-4",
+     "page": 387,
+     "location": "firewall",
+     "stations": {
+      "FS": 0.0,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 7,
+     "component": "pump inlet hose",
+     "callout": "-",
+     "figure": "15-4",
+     "page": 387,
+     "location": "engine compartment",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 8,
+     "component": "vacuum pump (4 nuts 50-70 lb-in) -> overboard vent tube",
+     "callout": "1/2",
+     "figure": "15-4",
+     "page": 387,
+     "location": "rear accessory pad of engine",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    }
+   ]
+  },
+  {
+   "line": "stall warning",
+   "size": "plastic tubing",
+   "routing": [
+    {
+     "seq": 1,
+     "component": "adjustable plate + scoop (screen, felt seal, adapter) in left wing leading edge",
+     "callout": "6/3/7/5/4",
+     "figure": "15-5",
+     "page": 404,
+     "location": "left wing leading edge (spanwise station not printed)",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 2,
+     "component": "plastic tubing inboard in leading edge",
+     "callout": "-",
+     "figure": "15-5",
+     "page": 404,
+     "location": "left wing LE to root",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    },
+    {
+     "seq": 3,
+     "component": "reed horn behind left doorpost cover",
+     "callout": "2/1",
+     "figure": "15-5",
+     "page": 404,
+     "location": "left forward door post",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "read from drawing"
+    }
+   ]
+  },
+  {
+   "line": "oil pressure (gage line)",
+   "size": null,
+   "routing": [
+    {
+     "seq": 1,
+     "component": "engine main oil gallery pickup, rear of engine below engine mount (1984 and on / kit 0509087: front of engine near upper right corner)",
+     "callout": null,
+     "figure": "text 15-40",
+     "page": 395,
+     "location": "engine",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    },
+    {
+     "seq": 2,
+     "component": "line through firewall to oil pressure gage (cluster); fill with kerosene",
+     "callout": null,
+     "figure": "text 15-40",
+     "page": 395,
+     "location": "panel",
+     "stations": {
+      "FS": null,
+      "WS": null,
+      "BL": null,
+      "WL": null
+     },
+     "location_confidence": "stated in text"
+    }
+   ]
+  }
+ ]
+}

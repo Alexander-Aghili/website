@@ -1,0 +1,493 @@
+{
+ "meta": {
+  "title": "FlightGear objects on the wing skin moved onto the new true-dimension wing (tools/build_structure_wing.py)",
+  "frame": "raw AC3D frame: meters, +x aft, +y up, +z left; translate applied in world space; no rotations needed (all moves < 0.2 m, surfaces locally parallel)",
+  "method": "contact objects: the vertex nearest FlightGear's skin is mapped by meta.refit of c172p-structure-wing-3d.json (z / 1.025, same fraction of the local depth), snapped to the nearest point of the new skin and offset along its normal by its old stand-off; the LE light group moves with its lens centroid under the refit rule and the new LH outer skin has an opening for it",
+  "hide": [
+   "landinglight",
+   "taxilight",
+   "fuelcompartment",
+   "wingventhole",
+   "wing_1Ledge",
+   "wing_1Redge",
+   "wing_1C"
+  ],
+  "endpoints_note": "positions of the electrical endpoints of data/cockpit-parts.json after the move (fg_light position when given, else object centre); strobes use their nav-light housing",
+  "not_moved_note": "the FlightGear strut is drawn inside the fuselage object and keeps its place; its upper end now enters the deeper wing (fitting on the strut bolt in c172p-structure-wing-3d.json)"
+ },
+ "objects": {
+  "LeftNavLight": {
+   "translate": [
+    0.0002,
+    0.0056,
+    -0.1389
+   ],
+   "basis": "nav light (and strobe) at the LH tip, real span BL 216.50 (Fig 1-1)",
+   "figure": "1-1",
+   "page": 13,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.0,
+    "buried_vertices": 6,
+    "max_depth_below_new_skin_mm": 5.1,
+    "vertices": 576,
+    "before_min_abs_dist_to_old_skin_mm": 0.1,
+    "before_buried_vertices": 27,
+    "before_max_depth_mm": 5.6
+   }
+  },
+  "RightNavLight": {
+   "translate": [
+    0.0013,
+    -0.0182,
+    0.1571
+   ],
+   "basis": "nav light (and strobe) at the RH tip, real span BL 216.50 (Fig 1-1)",
+   "figure": "1-1",
+   "page": 13,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.0,
+    "buried_vertices": 39,
+    "max_depth_below_new_skin_mm": 10.4,
+    "vertices": 576,
+    "before_min_abs_dist_to_old_skin_mm": 0.0,
+    "before_buried_vertices": 12,
+    "before_max_depth_mm": 6.5
+   }
+  },
+  "PitotTube": {
+   "translate": [
+    0.0,
+    0.0005,
+    -0.0372
+   ],
+   "basis": "pitot mast under the LH wing; station not printed in the manual (Fig 15-2) - FlightGear station kept (z / 1.025)",
+   "figure": "15-2",
+   "page": 377,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.0,
+    "buried_vertices": 96,
+    "max_depth_below_new_skin_mm": 17.0,
+    "vertices": 2112,
+    "before_min_abs_dist_to_old_skin_mm": 3.7,
+    "before_buried_vertices": 96,
+    "before_max_depth_mm": 12.0
+   }
+  },
+  "FuelCapPort": {
+   "translate": [
+    0.0,
+    0.0355,
+    -0.0194
+   ],
+   "basis": "LH filler cap and neck on the upper skin over the tank (Fig 4-1 items 5/6, Fig 12-3)",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.2,
+    "buried_vertices": 96,
+    "max_depth_below_new_skin_mm": 36.8,
+    "vertices": 114,
+    "before_min_abs_dist_to_old_skin_mm": 1.9,
+    "before_buried_vertices": 69,
+    "before_max_depth_mm": 39.1
+   }
+  },
+  "fuelportport": {
+   "translate": [
+    0.0,
+    0.0355,
+    -0.0194
+   ],
+   "basis": "LH filler cap and neck on the upper skin over the tank (Fig 4-1 items 5/6, Fig 12-3)",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 20.3,
+    "buried_vertices": 384,
+    "max_depth_below_new_skin_mm": 63.9,
+    "vertices": 384,
+    "before_min_abs_dist_to_old_skin_mm": 20.5,
+    "before_buried_vertices": 204,
+    "before_max_depth_mm": 65.8
+   }
+  },
+  "fuelportstarporthole": {
+   "translate": [
+    0.0,
+    0.0355,
+    -0.0194
+   ],
+   "basis": "LH filler cap and neck on the upper skin over the tank (Fig 4-1 items 5/6, Fig 12-3)",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 20.3,
+    "buried_vertices": 282,
+    "max_depth_below_new_skin_mm": 57.8,
+    "vertices": 282,
+    "before_min_abs_dist_to_old_skin_mm": 20.5,
+    "before_buried_vertices": 139,
+    "before_max_depth_mm": 59.6
+   }
+  },
+  "FuelCapStarboard": {
+   "translate": [
+    0.0,
+    0.0355,
+    0.0195
+   ],
+   "basis": "RH filler cap and neck on the upper skin over the tank",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.1,
+    "buried_vertices": 96,
+    "max_depth_below_new_skin_mm": 37.2,
+    "vertices": 114,
+    "before_min_abs_dist_to_old_skin_mm": 1.6,
+    "before_buried_vertices": 105,
+    "before_max_depth_mm": 39.5
+   }
+  },
+  "fuelportstarboard": {
+   "translate": [
+    0.0,
+    0.0355,
+    0.0195
+   ],
+   "basis": "RH filler cap and neck on the upper skin over the tank",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 20.4,
+    "buried_vertices": 384,
+    "max_depth_below_new_skin_mm": 63.6,
+    "vertices": 384,
+    "before_min_abs_dist_to_old_skin_mm": 20.7,
+    "before_buried_vertices": 384,
+    "before_max_depth_mm": 65.6
+   }
+  },
+  "fuelportstarboardhole": {
+   "translate": [
+    0.0,
+    0.0355,
+    0.0195
+   ],
+   "basis": "RH filler cap and neck on the upper skin over the tank",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 20.4,
+    "buried_vertices": 282,
+    "max_depth_below_new_skin_mm": 57.6,
+    "vertices": 282,
+    "before_min_abs_dist_to_old_skin_mm": 20.7,
+    "before_buried_vertices": 282,
+    "before_max_depth_mm": 59.5
+   }
+  },
+  "fuelvent": {
+   "translate": [
+    0.0,
+    -0.0299,
+    -0.0521
+   ],
+   "basis": "LH fuel vent tube under the wing, just inboard of the strut fairing (Fig 12-4)",
+   "figure": "12-4",
+   "page": 337,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 6.5,
+    "buried_vertices": 186,
+    "max_depth_below_new_skin_mm": 7.2,
+    "vertices": 1524,
+    "before_min_abs_dist_to_old_skin_mm": 6.3,
+    "before_buried_vertices": 186,
+    "before_max_depth_mm": 6.5
+   }
+  },
+  "TieDownLeft": {
+   "translate": [
+    0.0,
+    -0.0252,
+    -0.0546
+   ],
+   "basis": "LH tie-down ring under the wing at the strut (Fig 4-2 item 2)",
+   "figure": "4-2",
+   "page": 165,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 43.4,
+    "buried_vertices": 0,
+    "max_depth_below_new_skin_mm": -0.0,
+    "vertices": 3060,
+    "before_min_abs_dist_to_old_skin_mm": 44.0,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "TieDownRight": {
+   "translate": [
+    0.0,
+    -0.0246,
+    0.0547
+   ],
+   "basis": "RH tie-down ring under the wing at the strut",
+   "figure": "4-2",
+   "page": 165,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 40.8,
+    "buried_vertices": 0,
+    "max_depth_below_new_skin_mm": -0.0,
+    "vertices": 3060,
+    "before_min_abs_dist_to_old_skin_mm": 41.2,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "landinglightcover": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.9,
+    "buried_vertices": 26,
+    "max_depth_below_new_skin_mm": 19.5,
+    "vertices": 57,
+    "before_min_abs_dist_to_old_skin_mm": 0.0,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "wing_0": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.9,
+    "buried_vertices": 32,
+    "max_depth_below_new_skin_mm": 19.5,
+    "vertices": 57,
+    "before_min_abs_dist_to_old_skin_mm": 0.0,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "lightlanding": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 14.7,
+    "buried_vertices": 960,
+    "max_depth_below_new_skin_mm": 65.9,
+    "vertices": 1866,
+    "before_min_abs_dist_to_old_skin_mm": 20.9,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "lighttaxi": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 16.7,
+    "buried_vertices": 984,
+    "max_depth_below_new_skin_mm": 67.3,
+    "vertices": 1866,
+    "before_min_abs_dist_to_old_skin_mm": 19.9,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "landinglight": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "hide": true,
+   "hide_reason": "FlightGear light-cone billboard (lights.png, ~0.75 m disc ahead of the LE); shown only when the light is on in FlightGear - it is the pale disc in the renders",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 93.4,
+    "buried_vertices": 0,
+    "max_depth_below_new_skin_mm": -0.0,
+    "vertices": 48,
+    "before_min_abs_dist_to_old_skin_mm": 94.7,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "taxilight": {
+   "translate": [
+    0.0,
+    0.0051,
+    -0.0698
+   ],
+   "basis": "LH leading-edge landing and taxi lights (Fig 4-1 item 15, beginning 17275035): lens, recess and lamps keep their place in the LE depth; the new skin has a matching opening",
+   "figure": "4-1",
+   "page": 162,
+   "hide": true,
+   "hide_reason": "FlightGear light-cone billboard (lights.png, ~0.75 m disc ahead of the LE); shown only when the light is on in FlightGear - it is the pale disc in the renders",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 44.6,
+    "buried_vertices": 0,
+    "max_depth_below_new_skin_mm": -0.0,
+    "vertices": 48,
+    "before_min_abs_dist_to_old_skin_mm": 45.1,
+    "before_buried_vertices": 0,
+    "before_max_depth_mm": -0.0
+   }
+  },
+  "fuelcompartment": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": true,
+   "hide_reason": "old interior detail between the roots; now inside the deeper wing and fairings",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 31.8,
+    "buried_vertices": 564,
+    "vertices": 564
+   }
+  },
+  "wingventhole": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": true,
+   "hide_reason": "old LE air-vent openings at the roots; inside the new root fairing",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.3,
+    "buried_vertices": 598,
+    "vertices": 900
+   }
+  },
+  "VHFAntenna": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": false,
+   "hide_reason": null,
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.8,
+    "buried_vertices": 0,
+    "vertices": 9012
+   }
+  },
+  "wing_1Ledge": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": true,
+   "hide_reason": "old wing-root edge strip (replaced by the root fairing)",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.1,
+    "buried_vertices": 12,
+    "vertices": 72
+   }
+  },
+  "wing_1Redge": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": true,
+   "hide_reason": "old wing-root edge strip (replaced by the root fairing)",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.1,
+    "buried_vertices": 12,
+    "vertices": 72
+   }
+  },
+  "wing_1C": {
+   "translate": [
+    0,
+    0,
+    0
+   ],
+   "basis": "spans both wings / the cabin roof (kept) - not moved",
+   "hide": true,
+   "hide_reason": "old carry-through face (inside the new structure)",
+   "check": {
+    "min_abs_dist_to_new_skin_mm": 0.0,
+    "buried_vertices": 6,
+    "vertices": 12
+   }
+  }
+ },
+ "endpoints": {
+  "nav-light-left": [
+   0.1082,
+   0.5392,
+   5.5211
+  ],
+  "nav-light-right": [
+   0.1033,
+   0.5164,
+   -5.5029
+  ],
+  "strobe-left": [
+   0.1502,
+   0.5392,
+   5.5211
+  ],
+  "strobe-right": [
+   0.1513,
+   0.5164,
+   -5.5029
+  ],
+  "landing-light": [
+   -0.0482,
+   0.5108,
+   2.8508
+  ],
+  "taxi-light": [
+   -0.0516,
+   0.5086,
+   2.7377
+  ],
+  "pitot-heat": [
+   -0.124,
+   0.4153,
+   1.4892
+  ]
+ }
+}

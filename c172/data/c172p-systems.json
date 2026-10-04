@@ -1,0 +1,8576 @@
+{
+ "meta": {
+  "title": "Cessna 172P (FlightGear c172p-team model) systems ground truth",
+  "repo": "https://github.com/c172p-team/c172p",
+  "commit": "84477612bba340ab98004a10f8b28a81c18e6169 2026-09-02T09:48:29-05:00",
+  "generated": "2026-09-30",
+  "conventions": {
+   "structural": "JSBSim structural frame, inches: +x aft, +y right, +z up",
+   "ac": "AC3D raw file frame (Models/c172-common.ac), meters: +x aft, +y up, +z left",
+   "fg_model": "FlightGear model/animation XML frame, meters: +x aft, +y right, +z up (pre pitch offset)",
+   "source_field": "\"file:line-range\" = value read from repo (relative to repo root); \"illustrative\" = placed without a source; derived values say how they were derived"
+  },
+  "illustrative_index": [
+   {
+    "path": "$.fuel.diagram.nodes[strainer].location",
+    "note": "fuel strainer at firewall lower left (engine side); not modelled in repo"
+   },
+   {
+    "path": "$.fuel.diagram.edges[selector->strainer]",
+    "note": "routing through strainer not modelled; JSBSim goes tank -> tank 4 directly"
+   },
+   {
+    "path": "$.fuel.diagram.edges[strainer->float_chamber]",
+    "note": "JSBSim transfer tank[n] -> tank[4]: Systems/fuel.xml:89-97"
+   },
+   {
+    "path": "$.fuel.diagram.edges[strainer->primer]",
+    "note": null
+   },
+   {
+    "path": "$.fuel.diagram.edges[primer->engine]",
+    "note": "primer effect modelled as start condition only (Nasal/engine.nas:398-415)"
+   },
+   {
+    "path": "$.fuel.diagram.edges[cap_left->tank_left]",
+    "note": null
+   },
+   {
+    "path": "$.fuel.diagram.edges[cap_right->tank_right]",
+    "note": null
+   },
+   {
+    "path": "$.fuel.diagram.edges[vent->tank_left]",
+    "note": null
+   },
+   {
+    "path": "$.fuel.diagram.edges[tank_left->tank_right]",
+    "note": "interconnecting vent line typical of C172; not in repo"
+   },
+   {
+    "path": "$.electrical.battery.location",
+    "note": "battery on engine side of firewall, upper left (C172P); not in repo geometry"
+   },
+   {
+    "path": "$.electrical.alternator.location",
+    "note": "belt-driven alternator at front lower engine; not in repo geometry"
+   },
+   {
+    "path": "$.electrical.external_power.location",
+    "note": "ground power receptacle, left cowling aft (C172 typical)"
+   },
+   {
+    "path": "$.electrical.loads[flaps_motor].location",
+    "note": "flap motor in right wing root (C172 typical); not modelled geometrically"
+   },
+   {
+    "path": "$.electrical.loads[starter].location",
+    "note": "starter at rear-lower engine"
+   },
+   {
+    "path": "$.electrical.loads[cabin_lights].location",
+    "note": "panel lighting at instrument panel"
+   },
+   {
+    "path": "$.electrical.loads[radio_lighting].location",
+    "note": "radio stack lighting"
+   },
+   {
+    "path": "$.electrical.loads[avionics_fan].location",
+    "note": "avionics fan behind radio stack"
+   },
+   {
+    "path": "$.electrical.loads[gear_select].location",
+    "note": "amphibian gear selector (panel)"
+   },
+   {
+    "path": "$.electrical.loads[gear_advisory].location",
+    "note": "amphibian gear advisory (panel)"
+   },
+   {
+    "path": "$.electrical.loads[hydraulic_pump].location",
+    "note": "amphibian hydraulic pump under cabin floor"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[battery].location",
+    "note": "battery on engine side of firewall, upper left (C172P); not in repo geometry"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[alternator].location",
+    "note": "belt-driven alternator at front lower engine; not in repo geometry"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[ext_power].location",
+    "note": "ground power receptacle, left cowling aft (C172 typical)"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[virtual_bus].location",
+    "note": "master contactor near battery (firewall)"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[bus1].location",
+    "note": "bus bar directly behind the circuit-breaker row (breakers are on the lower LEFT panel in this model)"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[avionics_bus].location",
+    "note": "avionics bus bar behind the lower breaker row"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[flaps_motor].location",
+    "note": "flap motor in right wing root (C172 typical); not modelled geometrically"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[starter].location",
+    "note": "starter at rear-lower engine"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[cabin_lights].location",
+    "note": "panel lighting at instrument panel"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[radio_lighting].location",
+    "note": "radio stack lighting"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[avionics_fan].location",
+    "note": "avionics fan behind radio stack"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[gear_select].location",
+    "note": "amphibian gear selector (panel)"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[gear_advisory].location",
+    "note": "amphibian gear advisory (panel)"
+   },
+   {
+    "path": "$.electrical.diagram.nodes[hydraulic_pump].location",
+    "note": "amphibian hydraulic pump under cabin floor"
+   },
+   {
+    "path": "$.controls.diagram.nodes[control_column_crossbar].location",
+    "note": "yoke tube crossover under panel"
+   },
+   {
+    "path": "$.controls.diagram.nodes[elevator_bellcrank_floor].location",
+    "note": "cable quadrant under cabin floor"
+   },
+   {
+    "path": "$.controls.diagram.nodes[aileron_cable_left_root].location",
+    "note": "aileron cable up left door post into wing root"
+   },
+   {
+    "path": "$.controls.diagram.nodes[aileron_cable_right_root].location",
+    "note": "aileron cable up right door post into wing root"
+   },
+   {
+    "path": "$.controls.diagram.nodes[aileron_bellcrank_left].location",
+    "note": "left aileron bellcrank just forward of aileron hinge midpoint"
+   },
+   {
+    "path": "$.controls.diagram.nodes[aileron_bellcrank_right].location",
+    "note": "right aileron bellcrank just forward of aileron hinge midpoint"
+   },
+   {
+    "path": "$.controls.diagram.nodes[aft_fuselage_pulleys].location",
+    "note": "cable run along tailcone floor"
+   },
+   {
+    "path": "$.controls.diagram.nodes[trim_tab_actuator].location",
+    "note": "trim tab screw actuator in right elevator, just forward of trim tab hinge"
+   },
+   {
+    "path": "$.controls.diagram.nodes[flap_motor].location",
+    "note": "flap motor in right wing root"
+   },
+   {
+    "path": "$.controls.diagram.edges[yoke_left->control_column_crossbar]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[yoke_right->control_column_crossbar]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[control_column_crossbar->elevator_bellcrank_floor]",
+    "note": "elevator push-pull/cable"
+   },
+   {
+    "path": "$.controls.diagram.edges[elevator_bellcrank_floor->aft_fuselage_pulleys]",
+    "note": "elevator cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[aft_fuselage_pulleys->elevator_horn]",
+    "note": "elevator cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[elevator_horn->elevator]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[control_column_crossbar->aileron_cable_left_root]",
+    "note": "aileron cable"
+   },
+   {
+    "path": "$.controls.diagram.edges[control_column_crossbar->aileron_cable_right_root]",
+    "note": "aileron cable"
+   },
+   {
+    "path": "$.controls.diagram.edges[aileron_cable_left_root->aileron_bellcrank_left]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[aileron_cable_right_root->aileron_bellcrank_right]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[aileron_bellcrank_left->aileron_left]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[aileron_bellcrank_right->aileron_right]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[aileron_bellcrank_left->aileron_bellcrank_right]",
+    "note": "aileron balance cable through wings"
+   },
+   {
+    "path": "$.controls.diagram.edges[pedals_pilot->elevator_bellcrank_floor]",
+    "note": "rudder cables under floor"
+   },
+   {
+    "path": "$.controls.diagram.edges[pedals_copilot->pedals_pilot]",
+    "note": "interconnected pedals"
+   },
+   {
+    "path": "$.controls.diagram.edges[elevator_bellcrank_floor->aft_fuselage_pulleys#2]",
+    "note": "rudder cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[aft_fuselage_pulleys->rudder_cable_ports]",
+    "note": "rudder cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[rudder_horn_left->rudder]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[rudder_horn_right->rudder]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[pedals_pilot->nose_gear_steering]",
+    "note": "steering rods; JSBSim NWS table c172p.xml:1150-1162"
+   },
+   {
+    "path": "$.controls.diagram.edges[trim_wheel->aft_fuselage_pulleys]",
+    "note": "trim cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[aft_fuselage_pulleys->trim_tab_actuator]",
+    "note": "trim cables"
+   },
+   {
+    "path": "$.controls.diagram.edges[trim_tab_actuator->trim_tab]",
+    "note": "push rod"
+   },
+   {
+    "path": "$.controls.diagram.edges[rudder_trim_knob->pedals_pilot]",
+    "note": "rudder trim bias spring"
+   },
+   {
+    "path": "$.controls.diagram.edges[flap_switch->flap_motor]",
+    "note": null
+   },
+   {
+    "path": "$.controls.diagram.edges[flap_motor->flaps]",
+    "note": null
+   },
+   {
+    "path": "$.pitot_static.static_primary.location",
+    "note": "primary static port on left fuselage side ahead of the door; no AC object in repo"
+   },
+   {
+    "path": "$.pitot_static.diagram.nodes[static_port].location",
+    "note": "primary static port on left fuselage side ahead of the door; no AC object in repo"
+   },
+   {
+    "path": "$.pitot_static.diagram.nodes[static_selector].location",
+    "note": "static line tee behind panel"
+   },
+   {
+    "path": "$.pitot_static.diagram.nodes[encoder].location",
+    "note": "blind encoder behind panel"
+   }
+  ]
+ },
+ "frames": {
+  "structural_frame": {
+   "description": "JSBSim structural frame: x positive aft, y positive right (starboard), z positive up; inches. x origin is near the firewall (Cessna datum style; CG 39 in aft).",
+   "unit": "IN",
+   "source": "c172p.xml:20-61 (all locations given in unit=\"IN\"; JSBSim structural-frame convention)"
+  },
+  "metrics": {
+   "wingarea": {
+    "value": 174,
+    "unit": "FT2",
+    "source": "c172p.xml:21"
+   },
+   "wingspan": {
+    "value": 35.8,
+    "unit": "FT",
+    "source": "c172p.xml:22"
+   },
+   "chord": {
+    "value": 4.9,
+    "unit": "FT",
+    "source": "c172p.xml:23"
+   },
+   "htailarea": {
+    "value": 21.9,
+    "unit": "FT2",
+    "source": "c172p.xml:24"
+   },
+   "htailarm": {
+    "value": 15.7,
+    "unit": "FT",
+    "source": "c172p.xml:25"
+   },
+   "vtailarea": {
+    "value": 16.5,
+    "unit": "FT2",
+    "source": "c172p.xml:26"
+   },
+   "vtailarm": {
+    "value": 0,
+    "unit": "FT",
+    "source": "c172p.xml:27"
+   }
+  },
+  "reference_points": {
+   "AERORP": {
+    "x": 41.2,
+    "y": 0,
+    "z": 29.3,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:28-32"
+   },
+   "EYEPOINT": {
+    "x": 37,
+    "y": 0,
+    "z": 48,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:33-37"
+   },
+   "VRP": {
+    "x": 34,
+    "y": 0,
+    "z": 35.75,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:38-42"
+   },
+   "CG_empty": {
+    "x": 39.06,
+    "y": 0,
+    "z": 25,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:57-61"
+   }
+  },
+  "mass_balance": {
+   "emptywt": {
+    "value": 1467,
+    "unit": "LBS",
+    "source": "c172p.xml:56"
+   },
+   "ixx": {
+    "value": 948,
+    "unit": "SLUG*FT2",
+    "source": "c172p.xml:50"
+   },
+   "iyy": {
+    "value": 1285,
+    "unit": "SLUG*FT2",
+    "source": "c172p.xml:51"
+   },
+   "izz": {
+    "value": 1906,
+    "unit": "SLUG*FT2",
+    "source": "c172p.xml:52"
+   },
+   "ixz": {
+    "value": 0,
+    "unit": "SLUG*FT2",
+    "source": "c172p.xml:54"
+   },
+   "pointmasses": [
+    {
+     "name": "Pilot",
+     "weight": {
+      "value": 180,
+      "unit": "LBS"
+     },
+     "location": {
+      "x": 36,
+      "y": -14,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:63-70"
+     },
+     "source": "c172p.xml:63-70"
+    },
+    {
+     "name": "Co-Pilot",
+     "weight": {
+      "value": 0,
+      "unit": "LBS"
+     },
+     "location": {
+      "x": 36,
+      "y": 14,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:72-79"
+     },
+     "source": "c172p.xml:72-79"
+    },
+    {
+     "name": "Left Passenger",
+     "weight": {
+      "value": 0,
+      "unit": "LBS"
+     },
+     "location": {
+      "x": 70,
+      "y": -14,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:81-88"
+     },
+     "source": "c172p.xml:81-88"
+    },
+    {
+     "name": "Right Passenger",
+     "weight": {
+      "value": 0,
+      "unit": "LBS"
+     },
+     "location": {
+      "x": 70,
+      "y": 14,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:90-97"
+     },
+     "source": "c172p.xml:90-97"
+    },
+    {
+     "name": "Baggage",
+     "weight": {
+      "value": 0,
+      "unit": "LBS"
+     },
+     "location": {
+      "x": 95,
+      "y": 0,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:99-106"
+     },
+     "source": "c172p.xml:99-106"
+    }
+   ]
+  },
+  "fg_model": {
+   "model_xml": {
+    "value": "Models/c172p.xml",
+    "source": "c172p-main.xml:110-111"
+   },
+   "ac_file": {
+    "value": "Models/c172-common.ac",
+    "unit": "m",
+    "source": "Models/c172p.xml:5"
+   },
+   "offsets": {
+    "x_m": 0,
+    "y_m": 0,
+    "z_m": 0,
+    "pitch_deg": -3.0,
+    "note": "Only pitch-deg is set (z-m -0.065 is commented out). No <offsets> on the <model> entry in c172p-main.xml or c172p-set.xml.",
+    "source": "Models/c172p.xml:7-10"
+   },
+   "origin": {
+    "value": "The FlightGear 3D model origin (after <offsets>) coincides with the JSBSim VRP (34, 0, 35.75 in).",
+    "source": "FlightGear/JSBSim convention (FDM reports the VRP position to FG); verified numerically, see transform.verification"
+   },
+   "ac_raw_axes": {
+    "value": "AC3D file raw vertex axes: +x aft, +y up, +z LEFT (port). Right-handed, y-up; can be loaded directly into three.js (which is y-up).",
+    "source": "Models/c172-common.ac (verified: Spinner x=-2.14 nose, rudder_1 x up to 6.09 tail; wheels at y~-1.3; wing_left/LeftWheel/FuelCapPort at +z)"
+   },
+   "fg_model_axes": {
+    "value": "FlightGear model/animation XML axes: +x aft, +y right, +z up (meters). Relation: fg = (ac_x, -ac_z, ac_y); ac = (fg_x, fg_z, -fg_y). Animation axes/centers in Models/c172p.xml are in this frame BEFORE the pitch offset is applied (same frame as the AC geometry).",
+    "source": "Models/c172p.xml:5398-5418 (NoseWheel spin center (-1.1149, 0, -1.1889) == NoseWheel AC bbox center (x=-1.1149, y=-1.1889) in Models/c172-common.ac)"
+   }
+  },
+  "transform": {
+   "description": "Structural inches (JSBSim) -> AC3D raw meters (Models/c172-common.ac). Steps: (1) b = 0.0254*(p - VRP) [body m, x aft,y right,z up, origin VRP]; (2) undo the FG pitch offset (-3 deg = model rendered 3 deg nose-down): m_x = b_x*cos3 + b_z*sin3, m_y = b_y, m_z = b_z*cos3 - b_x*sin3; (3) ac = (m_x, m_z, -m_y).",
+   "formula_struct_to_ac": "ac_x = 0.0254*( cos3*(x-34) + sin3*(z-35.75) ); ac_y = 0.0254*( -sin3*(x-34) + cos3*(z-35.75) ); ac_z = -0.0254*y",
+   "formula_ac_to_struct": "x = 34 + (cos3*ac_x - sin3*ac_y)/0.0254; y = -ac_z/0.0254; z = 35.75 + (sin3*ac_x + cos3*ac_y)/0.0254",
+   "matrix_struct_in_to_ac_m": {
+    "row_major_4x4": [
+     [
+      0.0253652,
+      0.0,
+      0.0013293,
+      -0.9099401
+     ],
+     [
+      -0.0013293,
+      0.0,
+      0.0253652,
+      -0.8616082
+     ],
+     [
+      0.0,
+      -0.0254,
+      0.0,
+      0.0
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "applies_to": "[x_in, y_in, z_in, 1]"
+   },
+   "matrix_ac_m_to_struct_in": {
+    "row_major_4x4": [
+     [
+      39.31612,
+      -2.06047,
+      0.0,
+      34.0
+     ],
+     [
+      0.0,
+      0.0,
+      -39.37008,
+      0.0
+     ],
+     [
+      2.06047,
+      39.31612,
+      0.0,
+      35.75
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "applies_to": "[ac_x, ac_y, ac_z, 1]"
+   },
+   "fg_model_frame_to_ac": "ac = (fg_x, fg_z, -fg_y)  (use for animation axes/centers)",
+   "pitch_offset_sign_check": {
+    "rms_gear_residual_m": {
+     "pitch_-3_deg_rms_m": 0.0198,
+     "pitch_0_deg_rms_m": 0.0777,
+     "pitch_+3_deg_rms_m": 0.1574
+    },
+    "note": "RMS of (JSBSim BOGEY contact mapped to AC) minus (AC tyre bottom) over NOSE/LEFT_MAIN/RIGHT_MAIN; -3 deg (as in the XML) gives the best fit."
+   },
+   "verification": [
+    {
+     "name": "nose gear contact vs NoseWheel tyre bottom",
+     "jsbsim_struct_in": [
+      -7.3,
+      0,
+      -20.3
+     ],
+     "jsbsim_source": "c172p.xml:276-290",
+     "jsbsim_mapped_to_ac_m": [
+      -1.122,
+      -1.367,
+      -0.0
+     ],
+     "ac_feature": "Models/c172-common.ac:61567-65610 (NoseWheel: x/z bbox center, min y)",
+     "ac_feature_m": [
+      -1.115,
+      -1.368,
+      0.0
+     ],
+     "residual_m": [
+      0.007,
+      -0.001,
+      0.0
+     ],
+     "residual_norm_m": 0.007
+    },
+    {
+     "name": "left main contact vs LeftWheel tyre bottom",
+     "jsbsim_struct_in": [
+      57.3,
+      -43,
+      -15.3
+     ],
+     "jsbsim_source": "c172p.xml:291-305",
+     "jsbsim_mapped_to_ac_m": [
+      0.523,
+      -1.326,
+      1.092
+     ],
+     "ac_feature": "Models/c172-common.ac:55570-59427 (LeftWheel: x/z bbox center, min y)",
+     "ac_feature_m": [
+      0.53,
+      -1.326,
+      1.114
+     ],
+     "residual_m": [
+      0.007,
+      -0.0,
+      0.022
+     ],
+     "residual_norm_m": 0.023
+    },
+    {
+     "name": "right main contact vs RightWheel tyre bottom",
+     "jsbsim_struct_in": [
+      57.3,
+      43,
+      -15.1
+     ],
+     "jsbsim_source": "c172p.xml:306-320",
+     "jsbsim_mapped_to_ac_m": [
+      0.523,
+      -1.321,
+      -1.092
+     ],
+     "ac_feature": "Models/c172-common.ac:70629-74486 (RightWheel: x/z bbox center, min y)",
+     "ac_feature_m": [
+      0.53,
+      -1.326,
+      -1.115
+     ],
+     "residual_m": [
+      0.007,
+      -0.005,
+      -0.023
+     ],
+     "residual_norm_m": 0.024
+    },
+    {
+     "name": "thruster vs Propeller/Spinner spin center (x differs only because the FG spin center is an arbitrary point on the prop axis; y/z match)",
+     "jsbsim_struct_in": [
+      -37.7,
+      0,
+      29.3
+     ],
+     "jsbsim_source": "c172p.xml:639-643",
+     "jsbsim_mapped_to_ac_m": [
+      -1.827,
+      -0.068,
+      -0.0
+     ],
+     "ac_feature": "Models/c172p.xml:5528-5544 (spin center, FG model frame -> AC)",
+     "ac_feature_m": [
+      -1.961,
+      -0.052,
+      -0.001
+     ],
+     "residual_m": [
+      -0.134,
+      0.016,
+      -0.001
+     ],
+     "residual_norm_m": 0.135
+    },
+    {
+     "name": "TOP_VS contact vs top of vstab.001",
+     "jsbsim_struct_in": [
+      253.5,
+      0,
+      90
+     ],
+     "jsbsim_source": "c172p.xml:427-437",
+     "jsbsim_mapped_to_ac_m": [
+      5.64,
+      1.084,
+      -0.0
+     ],
+     "ac_feature": "Models/c172-common.ac:159805-160648 (vstab.001 max x, max y)",
+     "ac_feature_m": [
+      5.665,
+      1.061,
+      0.0
+     ],
+     "residual_m": [
+      0.025,
+      -0.023,
+      0.0
+     ],
+     "residual_norm_m": 0.034
+    },
+    {
+     "name": "LEFT_TIP crash contact vs wing_left tip (coarse STRUCTURE point, large residual expected)",
+     "jsbsim_struct_in": [
+      20,
+      -232,
+      50
+     ],
+     "jsbsim_source": "c172p.xml:335-345",
+     "jsbsim_mapped_to_ac_m": [
+      -0.336,
+      0.38,
+      5.893
+     ],
+     "ac_feature": "Models/c172-common.ac:182048-183429 (wing_left: mid chord x, max y, max z = tip)",
+     "ac_feature_m": [
+      0.559,
+      0.621,
+      5.636
+     ],
+     "residual_m": [
+      0.895,
+      0.241,
+      -0.257
+     ],
+     "residual_norm_m": 0.962
+    }
+   ],
+   "source": "derived from c172p.xml:38-42 (VRP) and Models/c172p.xml:7-10 (pitch-deg), verified against Models/c172-common.ac geometry"
+  }
+ },
+ "gear": {
+  "contacts": [
+   {
+    "name": "NOSE",
+    "type": "BOGEY",
+    "location": {
+     "x": -7.3,
+     "y": 0,
+     "z": -20.3,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:277-281"
+    },
+    "spring_coeff": {
+     "value": 3600,
+     "unit": "LBS/FT",
+     "source": "c172p.xml:285"
+    },
+    "max_steer": {
+     "value": 30,
+     "unit": "DEG",
+     "source": "c172p.xml:287"
+    },
+    "brake_group": "NONE",
+    "source": "c172p.xml:276-290"
+   },
+   {
+    "name": "LEFT_MAIN",
+    "type": "BOGEY",
+    "location": {
+     "x": 57.3,
+     "y": -43,
+     "z": -15.3,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:292-296"
+    },
+    "spring_coeff": {
+     "value": 5400,
+     "unit": "LBS/FT",
+     "source": "c172p.xml:300"
+    },
+    "brake_group": "LEFT",
+    "source": "c172p.xml:291-305"
+   },
+   {
+    "name": "RIGHT_MAIN",
+    "type": "BOGEY",
+    "location": {
+     "x": 57.3,
+     "y": 43,
+     "z": -15.1,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:307-311"
+    },
+    "spring_coeff": {
+     "value": 5400,
+     "unit": "LBS/FT",
+     "source": "c172p.xml:315"
+    },
+    "brake_group": "RIGHT",
+    "source": "c172p.xml:306-320"
+   }
+  ],
+  "structure_contacts": [
+   {
+    "name": "TAIL_SKID",
+    "location": {
+     "x": 226.7,
+     "y": 0,
+     "z": 17,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:324-334"
+    }
+   },
+   {
+    "name": "LEFT_TIP",
+    "location": {
+     "x": 20,
+     "y": -232,
+     "z": 50,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:335-345"
+    }
+   },
+   {
+    "name": "RIGHT_TIP",
+    "location": {
+     "x": 20,
+     "y": 232,
+     "z": 50,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:346-356"
+    }
+   },
+   {
+    "name": "NOSE (structure)",
+    "location": {
+     "x": -119,
+     "y": 0,
+     "z": 8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:405-415"
+    }
+   },
+   {
+    "name": "TOP_VS",
+    "location": {
+     "x": 253.5,
+     "y": 0,
+     "z": 90,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:427-437"
+    }
+   }
+  ],
+  "nose_wheel_steering": {
+   "table_deg": {
+    "rows_brake_sum": [
+     -1,
+     0,
+     1
+    ],
+    "cols_rudder": [
+     -1,
+     0,
+     1
+    ],
+    "data": [
+     [
+      -30,
+      0,
+      10
+     ],
+     [
+      -10,
+      0,
+      10
+     ],
+     [
+      -10,
+      0,
+      30
+     ]
+    ],
+    "source": "c172p.xml:1150-1162"
+   },
+   "rate_limit": {
+    "value": 80,
+    "unit": "DEG/SEC",
+    "source": "c172p.xml:1173-1177"
+   },
+   "enabled_when": {
+    "value": "gear[0] compression-norm > 0.001 (mechanically centred when strut fully extended)",
+    "source": "c172p.xml:1103-1108"
+   }
+  },
+  "alignment_note": "See frames.transform.verification: all three BOGEY contacts land within ~1-2 cm of the AC tyre bottoms after the transform."
+ },
+ "propulsion": {
+  "engine": {
+   "file": {
+    "value": "Engines/eng_io320.xml",
+    "source": "c172p.xml:623"
+   },
+   "name": {
+    "value": "IO320",
+    "source": "Engines/eng_io320.xml:15"
+   },
+   "type": {
+    "value": "piston",
+    "source": "Engines/eng_io320.xml:9"
+   },
+   "injected": {
+    "value": false,
+    "note": "file header says injected? no; fuel metered through a float chamber (tank 4) i.e. carburettor",
+    "source": "Engines/eng_io320.xml:12"
+   },
+   "maxhp": {
+    "value": 160.0,
+    "unit": "HP",
+    "source": "Engines/eng_io320.xml:19"
+   },
+   "displacement": {
+    "value": 320.0,
+    "unit": "IN3",
+    "source": "Engines/eng_io320.xml:18"
+   },
+   "cycles": {
+    "value": 4,
+    "source": "Engines/eng_io320.xml:21"
+   },
+   "idlerpm": {
+    "value": 600.0,
+    "unit": "RPM",
+    "source": "Engines/eng_io320.xml:22"
+   },
+   "maxrpm": {
+    "value": 2700.0,
+    "unit": "RPM",
+    "source": "Engines/eng_io320.xml:23"
+   },
+   "maxmp": {
+    "value": 28.5,
+    "unit": "INHG",
+    "source": "Engines/eng_io320.xml:17"
+   },
+   "minmp": {
+    "value": 8.3,
+    "unit": "INHG",
+    "note": "marked deprecated",
+    "source": "Engines/eng_io320.xml:16"
+   },
+   "feed": {
+    "value": 4,
+    "note": "engine is fed only from tank 4 (float chamber)",
+    "source": "c172p.xml:636"
+   },
+   "location": {
+    "x": -19.7,
+    "y": 0,
+    "z": 26.6,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:624-635",
+    "note": "This <location>/<orient> block is COMMENTED OUT in the FDM (JSBSim piston engine location is not used). The same point is used for the \"lacking oil weight\" pointmass (c172p.xml:203-210)."
+   },
+   "orient": {
+    "roll": 0,
+    "pitch": 0,
+    "yaw": 0,
+    "unit": "DEG",
+    "note": "commented out",
+    "source": "c172p.xml:630-634"
+   },
+   "alternate_engine": {
+    "file": "Engines/eng_io360.xml",
+    "name": "IO360",
+    "maxhp": 180.0,
+    "displacement_in3": 360.0,
+    "maxrpm": 2700.0,
+    "thruster": "prop_76in2f_NACA_20deg (76 in, 2 blades, 20 deg fixed pitch)",
+    "selected_by": "/controls/engines/active-engine (0 = 160 hp IO320, 1 = 180 hp IO360)",
+    "source": "c172p.xml:654-683; Engines/eng_io360.xml:15-23; Engines/prop_76in2f_NACA_20deg.xml:10-16; c172p-set.xml:154"
+   }
+  },
+  "thruster": {
+   "file": {
+    "value": "Engines/prop_75in2f.xml",
+    "source": "c172p.xml:637"
+   },
+   "name": {
+    "value": "Fixed-Pitch 75-inch Two-Blade Propeller",
+    "source": "Engines/prop_75in2f.xml:3"
+   },
+   "location": {
+    "x": -37.7,
+    "y": 0,
+    "z": 29.3,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "c172p.xml:639-643"
+   },
+   "orient": {
+    "roll": 0.0,
+    "pitch": 0.0,
+    "yaw": 0.0,
+    "unit": "DEG",
+    "source": "c172p.xml:644-648"
+   },
+   "sense": {
+    "value": 1,
+    "source": "c172p.xml:649"
+   },
+   "p_factor": {
+    "value": 15,
+    "source": "c172p.xml:650"
+   },
+   "diameter": {
+    "value": 75.0,
+    "unit": "IN",
+    "source": "Engines/prop_75in2f.xml:6"
+   },
+   "numblades": {
+    "value": 2,
+    "source": "Engines/prop_75in2f.xml:7"
+   },
+   "pitch": {
+    "value": 22,
+    "unit": "DEG",
+    "note": "minpitch = maxpitch = 22 (fixed pitch)",
+    "source": "Engines/prop_75in2f.xml:8-9"
+   },
+   "ixx": {
+    "value": 1.67,
+    "unit": "SLUG*FT2",
+    "source": "Engines/prop_75in2f.xml:5"
+   },
+   "fg_spin_animation_center_m": {
+    "fg_model": [
+     -1.96139,
+     0.00127,
+     -0.0519
+    ],
+    "ac": [
+     -1.96139,
+     -0.0519,
+     -0.00127
+    ],
+    "axis_fg_model": [
+     1,
+     0,
+     0
+    ],
+    "property": "/params/engine/rpm -> engines/engine[2]/rpm",
+    "factor": -1,
+    "source": "Models/c172p.xml:5528-5544; Models/c172p.xml:313-314"
+   }
+  }
+ },
+ "fuel": {
+  "tanks": [
+   {
+    "index": 0,
+    "name": "Left Tank (standard)",
+    "location": {
+     "x": 48,
+     "y": -44,
+     "z": 55,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:686-695"
+    },
+    "capacity": {
+     "value": 129.43,
+     "unit": "LBS",
+     "source": "c172p.xml:692"
+    },
+    "capacity_gal_derived": {
+     "value": 21.5,
+     "unit": "GAL_US",
+     "source": "c172p.xml:692 (divided by 6.02 lb/gal, JSBSim AVGAS density; derived)"
+    },
+    "type": {
+     "value": "AVGAS",
+     "source": "c172p.xml:686-695"
+    },
+    "initial_contents": {
+     "value": 0.0,
+     "unit": "LBS",
+     "source": "c172p.xml:686-695"
+    },
+    "unusable": {
+     "value": 1.5,
+     "unit": "GAL_US",
+     "source": "c172p-main.xml:778"
+    },
+    "priority": {
+     "value": "set from /consumables/fuel/tank[0]/selected (1 if selected else 0)",
+     "source": "Nasal/tanks.nas:5-7"
+    },
+    "fg_name_source": "c172p-main.xml:771-779"
+   },
+   {
+    "index": 1,
+    "name": "Right Tank (standard)",
+    "location": {
+     "x": 48,
+     "y": 44,
+     "z": 55,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:698-707"
+    },
+    "capacity": {
+     "value": 129.43,
+     "unit": "LBS",
+     "source": "c172p.xml:704"
+    },
+    "capacity_gal_derived": {
+     "value": 21.5,
+     "unit": "GAL_US",
+     "source": "c172p.xml:704 (divided by 6.02 lb/gal, JSBSim AVGAS density; derived)"
+    },
+    "type": {
+     "value": "AVGAS",
+     "source": "c172p.xml:698-707"
+    },
+    "initial_contents": {
+     "value": 0.0,
+     "unit": "LBS",
+     "source": "c172p.xml:698-707"
+    },
+    "unusable": {
+     "value": 1.5,
+     "unit": "GAL_US",
+     "source": "c172p-main.xml:787"
+    },
+    "priority": {
+     "value": "set from /consumables/fuel/tank[1]/selected",
+     "source": "Nasal/tanks.nas:9-11"
+    }
+   },
+   {
+    "index": 2,
+    "name": "Integral Left Tank (long-range option)",
+    "location": {
+     "x": 48,
+     "y": -44,
+     "z": 55,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:710-719"
+    },
+    "capacity": {
+     "value": 204,
+     "unit": "LBS",
+     "source": "c172p.xml:716"
+    },
+    "capacity_gal_derived": {
+     "value": 33.89,
+     "unit": "GAL_US",
+     "source": "c172p.xml:716 (divided by 6.02 lb/gal, JSBSim AVGAS density; derived)"
+    },
+    "type": {
+     "value": "AVGAS",
+     "source": "c172p.xml:710-719"
+    },
+    "initial_contents": {
+     "value": 0.0,
+     "unit": "LBS",
+     "source": "c172p.xml:710-719"
+    },
+    "unusable": {
+     "value": 1.5,
+     "unit": "GAL_US",
+     "source": "c172p-main.xml:793"
+    },
+    "priority": {
+     "value": "set from /consumables/fuel/tank[2]/selected",
+     "source": "Nasal/tanks.nas:13-15"
+    }
+   },
+   {
+    "index": 3,
+    "name": "Integral Right Tank (long-range option)",
+    "location": {
+     "x": 48,
+     "y": 44,
+     "z": 55,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:722-731"
+    },
+    "capacity": {
+     "value": 204,
+     "unit": "LBS",
+     "source": "c172p.xml:728"
+    },
+    "capacity_gal_derived": {
+     "value": 33.89,
+     "unit": "GAL_US",
+     "source": "c172p.xml:728 (divided by 6.02 lb/gal, JSBSim AVGAS density; derived)"
+    },
+    "type": {
+     "value": "AVGAS",
+     "source": "c172p.xml:722-731"
+    },
+    "initial_contents": {
+     "value": 0.0,
+     "unit": "LBS",
+     "source": "c172p.xml:722-731"
+    },
+    "unusable": {
+     "value": 1.5,
+     "unit": "GAL_US",
+     "source": "c172p-main.xml:799"
+    },
+    "priority": {
+     "value": "set from /consumables/fuel/tank[3]/selected",
+     "source": "Nasal/tanks.nas:17-19"
+    }
+   },
+   {
+    "index": 4,
+    "name": "Float Chamber (carburettor collector)",
+    "location": {
+     "x": -10,
+     "y": 0,
+     "z": 26,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "c172p.xml:734-744"
+    },
+    "capacity": {
+     "value": 0.1,
+     "unit": "LBS",
+     "source": "c172p.xml:740"
+    },
+    "capacity_gal_derived": {
+     "value": 0.02,
+     "unit": "GAL_US",
+     "source": "c172p.xml:740 (divided by 6.02 lb/gal, JSBSim AVGAS density; derived)"
+    },
+    "type": {
+     "value": "AVGAS",
+     "source": "c172p.xml:734-744"
+    },
+    "initial_contents": {
+     "value": 0.0,
+     "unit": "LBS",
+     "source": "c172p.xml:734-744"
+    },
+    "priority": {
+     "value": 1,
+     "note": "forced to 1 unless /engines/active-engine/killed (then 0)",
+     "source": "c172p.xml:742; Systems/fuel.xml:19-28"
+    },
+    "hidden": {
+     "value": true,
+     "source": "c172p-main.xml:801-806"
+    }
+   }
+  ],
+  "tank_set_switch": {
+   "property": "/fdm/jsbsim/fuel/tank",
+   "values": {
+    "0": "standard tanks 0+1 active",
+    "1": "integral long-range tanks 2+3 active"
+   },
+   "note": "tanks 0/1 and 2/3 occupy the same wing locations; only one pair is ever selectable (engine.xml filters force the other pair unselected)",
+   "source": "Systems/engine.xml:797-864; Models/c172p.xml:2965-3042"
+  },
+  "selector_valve": {
+   "property_model": "Selector is represented by the four booleans /consumables/fuel/tank[0..3]/selected (no single enum property).",
+   "positions": [
+    {
+     "position": "OFF",
+     "tanks_selected": [],
+     "binding": "all four selected=false",
+     "hotspot": "FuelHotspotOff",
+     "source": "Models/c172p.xml:2936-2964"
+    },
+    {
+     "position": "LEFT",
+     "tanks_selected": [
+      0
+     ],
+     "tanks_selected_integral": [
+      2
+     ],
+     "hotspot": "FuelHotspotLeft",
+     "source": "Models/c172p.xml:2965-2990"
+    },
+    {
+     "position": "RIGHT",
+     "tanks_selected": [
+      1
+     ],
+     "tanks_selected_integral": [
+      3
+     ],
+     "hotspot": "FuelHotspotRight",
+     "source": "Models/c172p.xml:2991-3016"
+    },
+    {
+     "position": "BOTH",
+     "tanks_selected": [
+      0,
+      1
+     ],
+     "tanks_selected_integral": [
+      2,
+      3
+     ],
+     "hotspot": "FuelHotspotBoth",
+     "source": "Models/c172p.xml:3017-3042"
+    }
+   ],
+   "indicator_objects": {
+    "value": [
+     "FuelSelectorOff",
+     "FuelSelectorLeft",
+     "FuelSelectorRight",
+     "FuelSelectorBoth"
+    ],
+    "note": "select animations show the handle for the current state",
+    "source": "Models/c172p.xml:2855-2935"
+   },
+   "selected_to_priority": {
+    "value": "tank[n].selected -> /fdm/jsbsim/propulsion/tank[n]/priority = 1/0",
+    "source": "Nasal/tanks.nas:1-19"
+   },
+   "location": {
+    "x": 25.8,
+    "y": 0.0,
+    "z": 10.0,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:10496-10986 (object 'FuelSelectorFace', bbox center; cabin floor between front seats, converted via frames.transform)"
+   }
+  },
+  "flow_logic": {
+   "engine_feed": {
+    "value": "Engine draws only from tank 4 (float chamber, 0.1 lb). Each selected main tank refills tank 4 at a fixed transfer rate whenever tank 4 drops below 0.05 lb.",
+    "source": "c172p.xml:636; Systems/fuel.xml:30-97"
+   },
+   "transfer_rate_per_tank": {
+    "value": 0.1,
+    "unit": "LBS/SEC",
+    "source": "Systems/fuel.xml:37"
+   },
+   "transfer_conditions": {
+    "value": [
+     "source tank priority == 1 (selected)",
+     "source tank level-gal_us > unusable-vol-gal",
+     "tank[4] level-lbs < 0.05",
+     "tank[4] priority == 1",
+     "accelerations/Nz >= 0 (no feed under negative g)",
+     "fuel/tank == 0 for tanks 0/1, == 1 for tanks 2/3"
+    ],
+    "source": "Systems/fuel.xml:35-84"
+   },
+   "tank4_inflow": {
+    "value": "sum of from-tankN-to-tank4 -> propulsion/tank[4]/external-flow-rate-pps",
+    "source": "Systems/fuel.xml:89-97"
+   },
+   "tank_outflow": {
+    "value": "propulsion/tank[n]/external-flow-rate-pps = -from-tankN-to-tank4",
+    "source": "Systems/fuel.xml:104-122"
+   },
+   "both_position": {
+    "value": "With BOTH selected, each tank independently supplies 0.1 lb/s while the float chamber needs fuel, so both drain in parallel (~equally).",
+    "source": "Systems/fuel.xml:35-58 (derived reading)"
+   },
+   "out_of_fuel_detection": {
+    "value": "outOfFuel = no selected tank with level-gal_us > 0 -> \"Out of fuel!\" popup",
+    "source": "Nasal/engine.nas:380-397"
+   },
+   "crossfeed": {
+    "value": "Not modelled (no crossfeed/transfer between left and right tanks; only tank->float-chamber transfer).",
+    "source": "Systems/fuel.xml:1-141 (absence)"
+   },
+   "vent": {
+    "value": "Not modelled in the FDM/systems; the vent exists only as 3D geometry (AC object fuelvent, left wing).",
+    "source": "Systems/fuel.xml:1-141 (absence); Models/c172-common.ac fuelvent"
+   },
+   "fuel_pump": {
+    "value": "None on the c172p (gravity feed). controls/fuel/fuel-pump only appears in the separate c172sp/FG1000 panel.",
+    "source": "Models/Interior/Panel/c172sp-panel/c172sp.xml:915 (absence in c172p-panel/c172p.xml)"
+   }
+  },
+  "primer": {
+   "value": "Manual plunger. Each push/pull cycle increments /controls/engines/engine/primer; start needs 3..6 strokes (<3 \"Use the primer!\", >6 \"Flooded engine!\") when oil temp <= 75 degF; primer count resets 5 s after starter release.",
+   "properties": [
+    "/controls/engines/engine/primer",
+    "/controls/engines/engine/primer-lever",
+    "/controls/engines/engine/use-primer"
+   ],
+   "source": "Nasal/engine.nas:66-98; Nasal/engine.nas:398-415; Nasal/engine.nas:430-446",
+   "location": {
+    "x": 18.8,
+    "y": -17.6,
+    "z": 25.2,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:104581-106800 (object 'PrimerLever', bbox center; instrument panel lower left, converted via frames.transform)"
+   }
+  },
+  "sumps": {
+   "value": "Wing-tank drain sumps are modelled: taking a sample removes 50 ml (0.0132086 gal) and up to 0.2 of the water contamination; returning puts it back. Water contamination >0.2 on a selected tank kills the engine, >0 makes it cough.",
+   "source": "Nasal/c172p.nas:243-279; Systems/engine.xml:514-663; Models/c172p.xml:8466-8700",
+   "left_location": {
+    "x": 49.1,
+    "y": -35.2,
+    "z": 50.6,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/c172-common.ac:78512-78569 (object 'SumpHotSpotLeft', hotspot bbox center (large pick box, under left wing root), converted via frames.transform)"
+   },
+   "right_location": {
+    "x": 49.0,
+    "y": 33.5,
+    "z": 50.5,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/c172-common.ac:78570-78627 (object 'SumpHotSpotRight', hotspot bbox center (large pick box, under right wing root), converted via frames.transform)"
+   }
+  },
+  "strainer": {
+   "value": "Not modelled (no strainer/gascolator logic in repo).",
+   "source": "repo-wide search (absence)"
+  },
+  "carb_icing": {
+   "value": "carb ice accumulates per temperature/dewpoint formula; carb heat removes it; engine killed at carb_ice >= 0.32",
+   "source": "Nasal/engine.nas:239-292; Systems/engine.xml:566-570"
+  },
+  "indication": {
+   "value": "fuel gauges show level of the selected tank of each side, only when instr-ignition-switch bus > 12 V",
+   "source": "Systems/instruments.xml:75-145"
+  },
+  "diagram": {
+   "nodes": [
+    {
+     "id": "tank_left",
+     "label": "Left wing tank (tank 0 / integral 2)",
+     "kind": "tank",
+     "location": {
+      "x": 48,
+      "y": -44,
+      "z": 55,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:687-691"
+     },
+     "ref": "tanks[0]"
+    },
+    {
+     "id": "tank_right",
+     "label": "Right wing tank (tank 1 / integral 3)",
+     "kind": "tank",
+     "location": {
+      "x": 48,
+      "y": 44,
+      "z": 55,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:699-703"
+     },
+     "ref": "tanks[1]"
+    },
+    {
+     "id": "cap_left",
+     "label": "Left fuel filler cap",
+     "kind": "filler",
+     "location": {
+      "x": 41.0,
+      "y": -31.4,
+      "z": 56.0,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:33098-33302 (object 'FuelCapPort', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cap_right",
+     "label": "Right fuel filler cap",
+     "kind": "filler",
+     "location": {
+      "x": 41.1,
+      "y": 31.5,
+      "z": 56.0,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:163314-163518 (object 'FuelCapStarboard', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "vent",
+     "label": "Fuel tank vent (left wing)",
+     "kind": "vent",
+     "location": {
+      "x": 40.6,
+      "y": -84.2,
+      "z": 51.1,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:165357-167260 (object 'fuelvent', bbox center, converted via frames.transform)"
+     },
+     "modelled": false
+    },
+    {
+     "id": "sump_left",
+     "label": "Left tank drain sump",
+     "kind": "sump",
+     "location": {
+      "x": 49.1,
+      "y": -35.2,
+      "z": 50.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:78512-78569 (object 'SumpHotSpotLeft', hotspot bbox center (large pick box, under left wing root), converted via frames.transform)"
+     }
+    },
+    {
+     "id": "sump_right",
+     "label": "Right tank drain sump",
+     "kind": "sump",
+     "location": {
+      "x": 49.0,
+      "y": 33.5,
+      "z": 50.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:78570-78627 (object 'SumpHotSpotRight', hotspot bbox center (large pick box, under right wing root), converted via frames.transform)"
+     }
+    },
+    {
+     "id": "selector",
+     "label": "Fuel selector valve (OFF/LEFT/RIGHT/BOTH)",
+     "kind": "valve",
+     "location": {
+      "x": 25.8,
+      "y": 0.0,
+      "z": 10.0,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:10496-10986 (object 'FuelSelectorFace', bbox center; cabin floor between front seats, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "strainer",
+     "label": "Fuel strainer / gascolator",
+     "kind": "filter",
+     "location": {
+      "x": 1.5,
+      "y": -8,
+      "z": 12,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "fuel strainer at firewall lower left (engine side); not modelled in repo"
+     },
+     "modelled": false
+    },
+    {
+     "id": "primer",
+     "label": "Primer pump",
+     "kind": "pump",
+     "location": {
+      "x": 18.8,
+      "y": -17.6,
+      "z": 25.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:104581-106800 (object 'PrimerLever', bbox center; instrument panel lower left, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "float_chamber",
+     "label": "Carburettor float chamber (tank 4)",
+     "kind": "carburettor",
+     "location": {
+      "x": -10,
+      "y": 0,
+      "z": 26,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:735-739"
+     },
+     "ref": "tanks[4]"
+    },
+    {
+     "id": "engine",
+     "label": "Engine IO320 (160 hp)",
+     "kind": "engine",
+     "location": {
+      "x": -19.7,
+      "y": 0,
+      "z": 26.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "c172p.xml:624-635",
+      "note": "commented-out JSBSim engine location"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "from": "tank_left",
+     "to": "selector",
+     "kind": "fuel-line",
+     "source": "Systems/fuel.xml:35-45",
+     "id": "tank_left->selector"
+    },
+    {
+     "from": "tank_right",
+     "to": "selector",
+     "kind": "fuel-line",
+     "source": "Systems/fuel.xml:48-58",
+     "id": "tank_right->selector"
+    },
+    {
+     "from": "selector",
+     "to": "strainer",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "note": "routing through strainer not modelled; JSBSim goes tank -> tank 4 directly",
+     "id": "selector->strainer"
+    },
+    {
+     "from": "strainer",
+     "to": "float_chamber",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "note": "JSBSim transfer tank[n] -> tank[4]: Systems/fuel.xml:89-97",
+     "id": "strainer->float_chamber"
+    },
+    {
+     "from": "strainer",
+     "to": "primer",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "id": "strainer->primer"
+    },
+    {
+     "from": "primer",
+     "to": "engine",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "note": "primer effect modelled as start condition only (Nasal/engine.nas:398-415)",
+     "id": "primer->engine"
+    },
+    {
+     "from": "float_chamber",
+     "to": "engine",
+     "kind": "fuel-line",
+     "source": "c172p.xml:636",
+     "id": "float_chamber->engine"
+    },
+    {
+     "from": "cap_left",
+     "to": "tank_left",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "id": "cap_left->tank_left"
+    },
+    {
+     "from": "cap_right",
+     "to": "tank_right",
+     "kind": "fuel-line",
+     "source": "illustrative",
+     "id": "cap_right->tank_right"
+    },
+    {
+     "from": "tank_left",
+     "to": "sump_left",
+     "kind": "fuel-line",
+     "source": "Nasal/c172p.nas:243-260",
+     "id": "tank_left->sump_left"
+    },
+    {
+     "from": "tank_right",
+     "to": "sump_right",
+     "kind": "fuel-line",
+     "source": "Nasal/c172p.nas:243-260",
+     "id": "tank_right->sump_right"
+    },
+    {
+     "from": "vent",
+     "to": "tank_left",
+     "kind": "vent-line",
+     "source": "illustrative",
+     "modelled": false,
+     "id": "vent->tank_left"
+    },
+    {
+     "from": "tank_left",
+     "to": "tank_right",
+     "kind": "vent-line",
+     "source": "illustrative",
+     "modelled": false,
+     "note": "interconnecting vent line typical of C172; not in repo",
+     "id": "tank_left->tank_right"
+    }
+   ]
+  }
+ },
+ "electrical": {
+  "implementation": {
+   "value": "Nasal procedural model (Nasal/electrical.nas, loaded by c172p-set.xml); FG generic electrical path is nulled. Systems/electrical.xml is a property-rule file for derived outputs (low-voltage LED, battery capacity temperature factor, hydraulics, avionics fan).",
+   "source": "c172p-set.xml:133-147; Systems/systems.xml:22-28; Systems/electrical.xml:1-156"
+  },
+  "battery": {
+   "ideal_volts": {
+    "value": 24.0,
+    "unit": "V",
+    "source": "Nasal/electrical.nas:57"
+   },
+   "ideal_amps": {
+    "value": 30.0,
+    "unit": "A",
+    "source": "Nasal/electrical.nas:58"
+   },
+   "capacity": {
+    "value": 13.36,
+    "unit": "AH",
+    "source": "Nasal/electrical.nas:59"
+   },
+   "charge_rate": {
+    "value": 7.0,
+    "unit": "A",
+    "source": "Nasal/electrical.nas:61"
+   },
+   "volts_curve": {
+    "value": "V = 24 * ((-(3*(1-charge)-1))^5 + 32)/32",
+    "source": "Nasal/electrical.nas:96-101"
+   },
+   "capacity_temperature_factor": {
+    "value": "table vs cowling-air-temperature-degf: -40F 0.3 ... 25F 1.0",
+    "source": "Systems/electrical.xml:134-154"
+   },
+   "location": {
+    "x": 0.5,
+    "y": -12,
+    "z": 36,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "illustrative",
+    "note": "battery on engine side of firewall, upper left (C172P); not in repo geometry"
+   }
+  },
+  "alternator": {
+   "ideal_volts": {
+    "value": 28.0,
+    "unit": "V",
+    "source": "Nasal/electrical.nas:136"
+   },
+   "ideal_amps": {
+    "value": 60.0,
+    "unit": "A",
+    "source": "Nasal/electrical.nas:137"
+   },
+   "rpm_source": {
+    "value": "/engines/active-engine/rpm",
+    "source": "Nasal/electrical.nas:134"
+   },
+   "rpm_threshold": {
+    "value": 800.0,
+    "unit": "RPM",
+    "note": "output scales linearly with rpm/800, full output >= 800 rpm",
+    "source": "Nasal/electrical.nas:135; Nasal/electrical.nas:146-193"
+   },
+   "location": {
+    "x": -30,
+    "y": -6,
+    "z": 20,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "illustrative",
+    "note": "belt-driven alternator at front lower engine; not in repo geometry"
+   }
+  },
+  "external_power": {
+   "volts": {
+    "value": 28,
+    "unit": "V",
+    "source": "Nasal/electrical.nas:279-282"
+   },
+   "property": "/controls/electric/external-power",
+   "location": {
+    "x": -1.5,
+    "y": -18,
+    "z": 24,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "illustrative",
+    "note": "ground power receptacle, left cowling aft (C172 typical)"
+   }
+  },
+  "master_switch_logic": {
+   "value": "Split master: BAT half (/controls/switches/master-bat) connects battery; ALT half (/controls/switches/master-alt) connects alternator if its voltage exceeds the battery bus voltage; external power (28 V) wins if higher. Bus volts < 12 -> treated as 0. Battery charges at 7 A only when master-bat ON and bus volts > battery volts; ammeter filtered 0.8/0.2.",
+   "source": "Nasal/electrical.nas:264-354",
+   "bat_switch_location": {
+    "x": 19.9,
+    "y": -16.0,
+    "z": 26.9,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:95112-95202 (object 'MasterSwitch', bbox center, converted via frames.transform)"
+   },
+   "alt_switch_location": {
+    "x": 19.9,
+    "y": -16.6,
+    "z": 26.9,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:92279-92369 (object 'GenSwitch', bbox center, converted via frames.transform)"
+   },
+   "bat_switch_property_source": "Models/Interior/Panel/c172p-panel/c172p.xml:3177-3179",
+   "alt_switch_property_source": "Models/Interior/Panel/c172p-panel/c172p.xml:3195-3197"
+  },
+  "master_breaker_trip": {
+   "value": "master breaker opens if total load > 330 A",
+   "source": "Nasal/electrical.nas:312-315"
+  },
+  "buses": [
+   {
+    "id": "virtual_bus",
+    "label": "Virtual bus (battery/alternator/external selection)",
+    "source": "Nasal/electrical.nas:264-354"
+   },
+   {
+    "id": "bus1",
+    "label": "Electrical bus 1 (fed from virtual bus via master breaker)",
+    "source": "Nasal/electrical.nas:356-538"
+   },
+   {
+    "id": "avionics",
+    "label": "Avionics bus 1 (fed from bus 1 via avionics master switch, breaker integrated in switch)",
+    "source": "Nasal/electrical.nas:540-624; Nasal/electrical.nas:33-45"
+   }
+  ],
+  "circuit_breakers": [
+   {
+    "id": "cb_master",
+    "property": "/controls/circuit-breakers/master",
+    "object": "master_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -12.5,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80538-80812 (object 'master_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_flaps",
+    "property": "/controls/circuit-breakers/flaps",
+    "object": "flaps_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -11.9,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79438-79712 (object 'flaps_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_pitot-heat",
+    "property": "/controls/circuit-breakers/pitot-heat",
+    "object": "pitot-heat_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -11.3,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81088-81362 (object 'pitot-heat_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_instr",
+    "property": "/controls/circuit-breakers/instr",
+    "object": "instr_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -10.7,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79713-79987 (object 'instr_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_intlt",
+    "property": "/controls/circuit-breakers/intlt",
+    "object": "intlt_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -10.1,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79988-80262 (object 'intlt_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_navlt",
+    "property": "/controls/circuit-breakers/navlt",
+    "object": "navlt_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -9.5,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80813-81087 (object 'navlt_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_landing",
+    "property": "/controls/circuit-breakers/landing",
+    "object": "landing_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -8.9,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80263-80537 (object 'landing_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_bcnlt",
+    "property": "/controls/circuit-breakers/bcnlt",
+    "object": "bcnlt_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -8.3,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:70432-70706 (object 'bcnlt_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_strobe",
+    "property": "/controls/circuit-breakers/strobe",
+    "object": "strobe_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -7.7,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82738-83012 (object 'strobe_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_turn-coordinator",
+    "property": "/controls/circuit-breakers/turn-coordinator",
+    "object": "turn-coordinator_breaker",
+    "location": {
+     "x": 20.1,
+     "y": -7.1,
+     "z": 27.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:83013-83287 (object 'turn-coordinator_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_radio1",
+    "property": "/controls/circuit-breakers/radio1",
+    "object": "radio1_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -11.9,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81363-81637 (object 'radio1_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_radio2",
+    "property": "/controls/circuit-breakers/radio2",
+    "object": "radio2_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -11.3,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81638-81912 (object 'radio2_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_radio3",
+    "property": "/controls/circuit-breakers/radio3",
+    "object": "radio3_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -10.7,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81913-82187 (object 'radio3_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_radio4",
+    "property": "/controls/circuit-breakers/radio4",
+    "object": "radio4_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -10.1,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82188-82462 (object 'radio4_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_radio5",
+    "property": "/controls/circuit-breakers/radio5",
+    "object": "radio5_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -9.5,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82463-82737 (object 'radio5_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_autopilot",
+    "property": "/controls/circuit-breakers/autopilot",
+    "object": "autopilot_breaker",
+    "location": {
+     "x": 20.2,
+     "y": -8.9,
+     "z": 25.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:70157-70431 (object 'autopilot_breaker', bbox center, converted via frames.transform)"
+    },
+    "source": "Nasal/electrical.nas:198-225"
+   },
+   {
+    "id": "cb_gear-select",
+    "property": "/controls/circuit-breakers/gear-select",
+    "object": null,
+    "note": "amphibian (bushkit 4) only; no breaker object in c172p panel",
+    "location": null,
+    "source": "Nasal/electrical.nas:220-224"
+   },
+   {
+    "id": "cb_gear-advisory",
+    "property": "/controls/circuit-breakers/gear-advisory",
+    "object": null,
+    "note": "amphibian (bushkit 4) only; no breaker object in c172p panel",
+    "location": null,
+    "source": "Nasal/electrical.nas:220-224"
+   },
+   {
+    "id": "cb_hydraulic-pump",
+    "property": "/controls/circuit-breakers/hydraulic-pump",
+    "object": null,
+    "note": "amphibian (bushkit 4) only; no breaker object in c172p panel",
+    "location": null,
+    "source": "Nasal/electrical.nas:220-224"
+   }
+  ],
+  "loads": [
+   {
+    "id": "flaps_motor",
+    "label": "Flap motor",
+    "amps": "4.5 (only while flaps are moving)",
+    "bus": "bus1",
+    "breaker": "flaps",
+    "switch": null,
+    "source": "Nasal/electrical.nas:367-379",
+    "location": {
+     "x": 46,
+     "y": 20,
+     "z": 48,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "flap motor in right wing root (C172 typical); not modelled geometrically"
+    }
+   },
+   {
+    "id": "pitot_heat",
+    "label": "Pitot heat",
+    "amps": 5,
+    "bus": "bus1",
+    "breaker": null,
+    "switch": "/controls/anti-ice/pitot-heat (note: breaker not checked in code)",
+    "source": "Nasal/electrical.nas:381-387",
+    "location": {
+     "x": 28.3,
+     "y": -60.1,
+     "z": 51.8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:173035-175892 (object 'PitotTube', bbox center, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "instr_ignition",
+    "label": "Instruments / ignition switch feed (fuel & oil gauges, starter feed)",
+    "amps": "n/a (no load)",
+    "bus": "bus1",
+    "breaker": "instr",
+    "switch": null,
+    "source": "Nasal/electrical.nas:389-407",
+    "location": {
+     "x": 19.5,
+     "y": -15.9,
+     "z": 35.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel.ac (union bbox center of all objects; fuel quantity gauge, a consumer of the instr bus output; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "starter",
+    "label": "Starter motor",
+    "amps": "n/a (no load modelled)",
+    "bus": "bus1",
+    "breaker": "instr",
+    "switch": "controls/switches/starter, bus > 12 V",
+    "source": "Nasal/electrical.nas:392-403",
+    "location": {
+     "x": -26,
+     "y": 0,
+     "z": 20,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "starter at rear-lower engine"
+    }
+   },
+   {
+    "id": "cabin_lights",
+    "label": "Instrument/panel post lights",
+    "amps": "5 * instruments-norm",
+    "bus": "bus1",
+    "breaker": "intlt",
+    "switch": "/controls/lighting/instruments-norm",
+    "source": "Nasal/electrical.nas:409-416",
+    "location": {
+     "x": 8,
+     "y": 0,
+     "z": 40,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "panel lighting at instrument panel"
+    }
+   },
+   {
+    "id": "dome_white",
+    "label": "Dome light (white)",
+    "amps": "5 * dome-white-norm",
+    "bus": "bus1",
+    "breaker": "intlt",
+    "switch": "/controls/switches/dome-white",
+    "source": "Nasal/electrical.nas:417-421",
+    "location": {
+     "x": 52.4,
+     "y": 0.0,
+     "z": 53.4,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:9954-9974 (object 'DomeLightWhite', bbox center, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "radio_lighting",
+    "label": "Radio lighting",
+    "amps": "radio_lighting_load * radio-norm (radio_lighting_load = count of powered radios)",
+    "bus": "bus1",
+    "breaker": "intlt",
+    "switch": "/controls/lighting/radio-norm",
+    "source": "Nasal/electrical.nas:423-430",
+    "location": {
+     "x": 8,
+     "y": 0,
+     "z": 36,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "radio stack lighting"
+    }
+   },
+   {
+    "id": "landing_light",
+    "label": "Landing light",
+    "amps": 14.5,
+    "bus": "bus1",
+    "breaker": "landing",
+    "switch": "/controls/lighting/landing-lights",
+    "source": "Nasal/electrical.nas:432-438",
+    "location": {
+     "x": 31.1,
+     "y": -115.0,
+     "z": 55.5,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:168209-170621 (object 'lightlanding', bbox center, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "taxi_light",
+    "label": "Taxi light",
+    "amps": 14.5,
+    "bus": "bus1",
+    "breaker": "landing",
+    "switch": "/controls/lighting/taxi-light (shares landing breaker)",
+    "source": "Nasal/electrical.nas:440-447",
+    "location": {
+     "x": 30.9,
+     "y": -110.5,
+     "z": 55.4,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:170622-173034 (object 'lighttaxi', bbox center, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "beacon",
+    "label": "Beacon",
+    "amps": 4.5,
+    "bus": "bus1",
+    "breaker": "bcnlt",
+    "switch": "/controls/lighting/beacon",
+    "source": "Nasal/electrical.nas:449-455",
+    "location": {
+     "x": 248.1,
+     "y": -0.0,
+     "z": 88.5,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:157026-157527 (object 'Beacon', bbox center, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "nav_lights",
+    "label": "Navigation lights (L/R/tail)",
+    "amps": 5,
+    "bus": "bus1",
+    "breaker": "navlt",
+    "switch": "/controls/lighting/nav-lights",
+    "source": "Nasal/electrical.nas:457-463",
+    "location": {
+     "x": 271.0,
+     "y": -0.0,
+     "z": 86.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:130573-130831 (object 'RearNavLight', bbox center of tail nav light; wing-tip lights are LeftNavLight/RightNavLight, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "strobe",
+    "label": "Strobe lights",
+    "amps": 5,
+    "bus": "bus1",
+    "breaker": "strobe",
+    "switch": "/controls/lighting/strobe",
+    "source": "Nasal/electrical.nas:465-473",
+    "location": {
+     "x": 38.6,
+     "y": -222.0,
+     "z": 56.8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172-common.ac:167384-168208 (object 'LeftNavLight', strobes co-located with wing-tip nav lights, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "turn_coordinator",
+    "label": "Turn coordinator",
+    "amps": 14,
+    "bus": "bus1",
+    "breaker": "turn-coordinator",
+    "switch": null,
+    "source": "Nasal/electrical.nas:484-490",
+    "location": {
+     "x": 18.9,
+     "y": -12.3,
+     "z": 34.8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/tc/tc.ac (union bbox center of all objects; turn coordinator; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "avionics_fan",
+    "label": "Avionics fan",
+    "amps": "bus_volts/28 W (~0.036 A)",
+    "bus": "bus1",
+    "breaker": "strobe",
+    "switch": "bus > 12 V (powered through strobe breaker)",
+    "source": "Nasal/electrical.nas:524-531",
+    "location": {
+     "x": 10,
+     "y": 0,
+     "z": 30,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "avionics fan behind radio stack"
+    }
+   },
+   {
+    "id": "gear_select",
+    "label": "Gear select (amphibian only)",
+    "amps": 5,
+    "bus": "bus1",
+    "breaker": "gear-select",
+    "switch": "bushkit == 4",
+    "source": "Nasal/electrical.nas:492-498",
+    "location": {
+     "x": 8,
+     "y": 6,
+     "z": 30,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "amphibian gear selector (panel)"
+    }
+   },
+   {
+    "id": "gear_advisory",
+    "label": "Gear advisory (amphibian only)",
+    "amps": "2 (only 10-70 kt groundspeed)",
+    "bus": "bus1",
+    "breaker": "gear-advisory",
+    "switch": "bushkit == 4",
+    "source": "Nasal/electrical.nas:500-508",
+    "location": {
+     "x": 8,
+     "y": 8,
+     "z": 32,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "amphibian gear advisory (panel)"
+    }
+   },
+   {
+    "id": "hydraulic_pump",
+    "label": "Hydraulic pump (amphibian only)",
+    "amps": "40 (only on gear command change)",
+    "bus": "bus1",
+    "breaker": "hydraulic-pump",
+    "switch": "bushkit == 4",
+    "source": "Nasal/electrical.nas:510-522",
+    "location": {
+     "x": 70,
+     "y": 0,
+     "z": 10,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "illustrative",
+     "note": "amphibian hydraulic pump under cabin floor"
+    }
+   },
+   {
+    "id": "audio_panel",
+    "label": "Audio panel",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio1",
+    "switch": null,
+    "source": "Nasal/electrical.nas:553-561",
+    "location": {
+     "x": 19.9,
+     "y": 4.4,
+     "z": 40.3,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kma20/kma20.ac (union bbox center of all objects; KMA20 audio panel; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "navcom1",
+    "label": "NAV/COM 1",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio2",
+    "switch": "/instrumentation/nav[0]/power-btn",
+    "source": "Nasal/electrical.nas:563-572",
+    "location": {
+     "x": 20.0,
+     "y": 4.4,
+     "z": 38.3,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kx165/kx165-1.ac (union bbox center of all objects; KX165 NAV/COM 1; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "navcom2",
+    "label": "NAV/COM 2",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio3",
+    "switch": "/instrumentation/nav[1]/power-btn",
+    "source": "Nasal/electrical.nas:574-583",
+    "location": {
+     "x": 20.2,
+     "y": 4.4,
+     "z": 36.2,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kx165/kx165-2.ac (union bbox center of all objects; KX165 NAV/COM 2; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "transponder",
+    "label": "Transponder",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio4",
+    "switch": "/instrumentation/transponder/inputs/knob-mode",
+    "source": "Nasal/electrical.nas:585-592",
+    "location": {
+     "x": 20.3,
+     "y": 4.5,
+     "z": 29.4,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kt76a/kt76a.ac (union bbox center of all objects; KT76A transponder; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "adf",
+    "label": "ADF",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio5",
+    "switch": "/instrumentation/adf[0]/power-btn",
+    "source": "Nasal/electrical.nas:594-602",
+    "location": {
+     "x": 26.9,
+     "y": 2.9,
+     "z": 34.8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kr87-adf/kr87.ac (union bbox center of all objects; KR87 ADF receiver; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "dme",
+    "label": "DME",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "radio5",
+    "switch": "/instrumentation/dme[0]/power-btn",
+    "source": "Nasal/electrical.nas:603-611",
+    "location": {
+     "x": 20.2,
+     "y": 4.6,
+     "z": 32.9,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/dme/ki266.ac (union bbox center of all objects; KI266 DME; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   },
+   {
+    "id": "autopilot",
+    "label": "KAP140 autopilot",
+    "amps": 5,
+    "bus": "avionics",
+    "breaker": "autopilot",
+    "switch": "/autopilot/kap140/serviceable",
+    "source": "Nasal/electrical.nas:613-620",
+    "location": {
+     "x": 20.5,
+     "y": 4.5,
+     "z": 31.2,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/kap140/kap140.ac (union bbox center of all objects; KAP140 autopilot; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+    }
+   }
+  ],
+  "annunciations": {
+   "low_voltage_led": {
+    "value": "ON when volts > 0 and ammeter amps < 0 (discharging)",
+    "source": "Systems/electrical.xml:16-34"
+   },
+   "flaps_interlock": {
+    "value": "flap command frozen when /systems/electrical/outputs/flaps <= 16 V",
+    "source": "c172p.xml:1189-1200"
+   },
+   "pitot_heating": {
+    "value": "pitot heating active when pitot-heat switch ON and outputs/pitot-heat > 20 V",
+    "source": "Systems/indicated-airspeed.xml:96-104"
+   },
+   "fuel_gauges": {
+    "value": "fuel quantity indication requires instr-ignition-switch output > 12 V",
+    "source": "Systems/instruments.xml:75-145"
+   }
+  },
+  "diagram": {
+   "nodes": [
+    {
+     "id": "battery",
+     "label": "Battery 24 V 13.36 Ah",
+     "kind": "battery",
+     "location": {
+      "x": 0.5,
+      "y": -12,
+      "z": 36,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "battery on engine side of firewall, upper left (C172P); not in repo geometry"
+     }
+    },
+    {
+     "id": "alternator",
+     "label": "Alternator 28 V 60 A",
+     "kind": "alternator",
+     "location": {
+      "x": -30,
+      "y": -6,
+      "z": 20,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "belt-driven alternator at front lower engine; not in repo geometry"
+     }
+    },
+    {
+     "id": "ext_power",
+     "label": "External power receptacle 28 V",
+     "kind": "source",
+     "location": {
+      "x": -1.5,
+      "y": -18,
+      "z": 24,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "ground power receptacle, left cowling aft (C172 typical)"
+     }
+    },
+    {
+     "id": "sw_bat",
+     "label": "Master switch BAT",
+     "kind": "switch",
+     "location": {
+      "x": 19.9,
+      "y": -16.0,
+      "z": 26.9,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:95112-95202 (object 'MasterSwitch', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "sw_alt",
+     "label": "Master switch ALT",
+     "kind": "switch",
+     "location": {
+      "x": 19.9,
+      "y": -16.6,
+      "z": 26.9,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:92279-92369 (object 'GenSwitch', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "virtual_bus",
+     "label": "Virtual bus / master contactor",
+     "kind": "bus",
+     "location": {
+      "x": 2.5,
+      "y": -8,
+      "z": 34,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "master contactor near battery (firewall)"
+     }
+    },
+    {
+     "id": "cb_master",
+     "label": "Master breaker",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -12.5,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80538-80812 (object 'master_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "bus1",
+     "label": "Electrical bus 1",
+     "kind": "bus",
+     "location": {
+      "x": 16,
+      "y": -10,
+      "z": 27,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "bus bar directly behind the circuit-breaker row (breakers are on the lower LEFT panel in this model)"
+     }
+    },
+    {
+     "id": "sw_avionics",
+     "label": "Avionics master switch (with integral breaker)",
+     "kind": "switch",
+     "location": {
+      "x": 20.3,
+      "y": -12.8,
+      "z": 25.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:68373-68521 (object 'AvionicsSwitch', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "avionics_bus",
+     "label": "Avionics bus 1",
+     "kind": "bus",
+     "location": {
+      "x": 16,
+      "y": -10,
+      "z": 25,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "avionics bus bar behind the lower breaker row"
+     }
+    },
+    {
+     "id": "ammeter",
+     "label": "Ammeter / low-voltage LED",
+     "kind": "indicator",
+     "location": {
+      "x": 20.3,
+      "y": -14.4,
+      "z": 28.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:94248-94522 (object 'LowVoltageLed', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_flaps",
+     "label": "Breaker flaps",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -11.9,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79438-79712 (object 'flaps_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_pitot-heat",
+     "label": "Breaker pitot-heat",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -11.3,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81088-81362 (object 'pitot-heat_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_instr",
+     "label": "Breaker instr",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -10.7,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79713-79987 (object 'instr_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_intlt",
+     "label": "Breaker intlt",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -10.1,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:79988-80262 (object 'intlt_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_navlt",
+     "label": "Breaker navlt",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -9.5,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80813-81087 (object 'navlt_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_landing",
+     "label": "Breaker landing",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -8.9,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:80263-80537 (object 'landing_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_bcnlt",
+     "label": "Breaker bcnlt",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -8.3,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:70432-70706 (object 'bcnlt_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_strobe",
+     "label": "Breaker strobe",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -7.7,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82738-83012 (object 'strobe_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_turn-coordinator",
+     "label": "Breaker turn-coordinator",
+     "kind": "breaker",
+     "location": {
+      "x": 20.1,
+      "y": -7.1,
+      "z": 27.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:83013-83287 (object 'turn-coordinator_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_radio1",
+     "label": "Breaker radio1",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -11.9,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81363-81637 (object 'radio1_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_radio2",
+     "label": "Breaker radio2",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -11.3,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81638-81912 (object 'radio2_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_radio3",
+     "label": "Breaker radio3",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -10.7,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:81913-82187 (object 'radio3_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_radio4",
+     "label": "Breaker radio4",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -10.1,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82188-82462 (object 'radio4_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_radio5",
+     "label": "Breaker radio5",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -9.5,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:82463-82737 (object 'radio5_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "cb_autopilot",
+     "label": "Breaker autopilot",
+     "kind": "breaker",
+     "location": {
+      "x": 20.2,
+      "y": -8.9,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:70157-70431 (object 'autopilot_breaker', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "flaps_motor",
+     "label": "Flap motor",
+     "kind": "load",
+     "location": {
+      "x": 46,
+      "y": 20,
+      "z": 48,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "flap motor in right wing root (C172 typical); not modelled geometrically"
+     },
+     "amps": "4.5 (only while flaps are moving)"
+    },
+    {
+     "id": "pitot_heat",
+     "label": "Pitot heat (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 28.3,
+      "y": -60.1,
+      "z": 51.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:173035-175892 (object 'PitotTube', bbox center, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "instr_ignition",
+     "label": "Instruments / ignition switch feed (fuel & oil gauges, starter feed)",
+     "kind": "load",
+     "location": {
+      "x": 19.5,
+      "y": -15.9,
+      "z": 35.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel.ac (union bbox center of all objects; fuel quantity gauge, a consumer of the instr bus output; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": "n/a (no load)"
+    },
+    {
+     "id": "starter",
+     "label": "Starter motor",
+     "kind": "load",
+     "location": {
+      "x": -26,
+      "y": 0,
+      "z": 20,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "starter at rear-lower engine"
+     },
+     "amps": "n/a (no load modelled)"
+    },
+    {
+     "id": "cabin_lights",
+     "label": "Instrument/panel post lights",
+     "kind": "load",
+     "location": {
+      "x": 8,
+      "y": 0,
+      "z": 40,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "panel lighting at instrument panel"
+     },
+     "amps": "5 * instruments-norm"
+    },
+    {
+     "id": "dome_white",
+     "label": "Dome light (white)",
+     "kind": "load",
+     "location": {
+      "x": 52.4,
+      "y": 0.0,
+      "z": 53.4,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:9954-9974 (object 'DomeLightWhite', bbox center, converted via frames.transform)"
+     },
+     "amps": "5 * dome-white-norm"
+    },
+    {
+     "id": "radio_lighting",
+     "label": "Radio lighting",
+     "kind": "load",
+     "location": {
+      "x": 8,
+      "y": 0,
+      "z": 36,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "radio stack lighting"
+     },
+     "amps": "radio_lighting_load * radio-norm (radio_lighting_load = count of powered radios)"
+    },
+    {
+     "id": "landing_light",
+     "label": "Landing light (14.5 A)",
+     "kind": "load",
+     "location": {
+      "x": 31.1,
+      "y": -115.0,
+      "z": 55.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:168209-170621 (object 'lightlanding', bbox center, converted via frames.transform)"
+     },
+     "amps": 14.5
+    },
+    {
+     "id": "taxi_light",
+     "label": "Taxi light (14.5 A)",
+     "kind": "load",
+     "location": {
+      "x": 30.9,
+      "y": -110.5,
+      "z": 55.4,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:170622-173034 (object 'lighttaxi', bbox center, converted via frames.transform)"
+     },
+     "amps": 14.5
+    },
+    {
+     "id": "beacon",
+     "label": "Beacon (4.5 A)",
+     "kind": "load",
+     "location": {
+      "x": 248.1,
+      "y": -0.0,
+      "z": 88.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:157026-157527 (object 'Beacon', bbox center, converted via frames.transform)"
+     },
+     "amps": 4.5
+    },
+    {
+     "id": "nav_lights",
+     "label": "Navigation lights (L/R/tail) (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 271.0,
+      "y": -0.0,
+      "z": 86.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:130573-130831 (object 'RearNavLight', bbox center of tail nav light; wing-tip lights are LeftNavLight/RightNavLight, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "strobe",
+     "label": "Strobe lights (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 38.6,
+      "y": -222.0,
+      "z": 56.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:167384-168208 (object 'LeftNavLight', strobes co-located with wing-tip nav lights, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "turn_coordinator",
+     "label": "Turn coordinator (14 A)",
+     "kind": "load",
+     "location": {
+      "x": 18.9,
+      "y": -12.3,
+      "z": 34.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/tc/tc.ac (union bbox center of all objects; turn coordinator; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 14
+    },
+    {
+     "id": "avionics_fan",
+     "label": "Avionics fan",
+     "kind": "load",
+     "location": {
+      "x": 10,
+      "y": 0,
+      "z": 30,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "avionics fan behind radio stack"
+     },
+     "amps": "bus_volts/28 W (~0.036 A)"
+    },
+    {
+     "id": "gear_select",
+     "label": "Gear select (amphibian only) (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 8,
+      "y": 6,
+      "z": 30,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "amphibian gear selector (panel)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "gear_advisory",
+     "label": "Gear advisory (amphibian only)",
+     "kind": "load",
+     "location": {
+      "x": 8,
+      "y": 8,
+      "z": 32,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "amphibian gear advisory (panel)"
+     },
+     "amps": "2 (only 10-70 kt groundspeed)"
+    },
+    {
+     "id": "hydraulic_pump",
+     "label": "Hydraulic pump (amphibian only)",
+     "kind": "load",
+     "location": {
+      "x": 70,
+      "y": 0,
+      "z": 10,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "amphibian hydraulic pump under cabin floor"
+     },
+     "amps": "40 (only on gear command change)"
+    },
+    {
+     "id": "audio_panel",
+     "label": "Audio panel (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 19.9,
+      "y": 4.4,
+      "z": 40.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kma20/kma20.ac (union bbox center of all objects; KMA20 audio panel; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "navcom1",
+     "label": "NAV/COM 1 (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 20.0,
+      "y": 4.4,
+      "z": 38.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kx165/kx165-1.ac (union bbox center of all objects; KX165 NAV/COM 1; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "navcom2",
+     "label": "NAV/COM 2 (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 20.2,
+      "y": 4.4,
+      "z": 36.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kx165/kx165-2.ac (union bbox center of all objects; KX165 NAV/COM 2; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "transponder",
+     "label": "Transponder (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 20.3,
+      "y": 4.5,
+      "z": 29.4,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kt76a/kt76a.ac (union bbox center of all objects; KT76A transponder; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "adf",
+     "label": "ADF (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 26.9,
+      "y": 2.9,
+      "z": 34.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kr87-adf/kr87.ac (union bbox center of all objects; KR87 ADF receiver; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "dme",
+     "label": "DME (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 20.2,
+      "y": 4.6,
+      "z": 32.9,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/dme/ki266.ac (union bbox center of all objects; KI266 DME; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "autopilot",
+     "label": "KAP140 autopilot (5 A)",
+     "kind": "load",
+     "location": {
+      "x": 20.5,
+      "y": 4.5,
+      "z": 31.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/kap140/kap140.ac (union bbox center of all objects; KAP140 autopilot; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml, converted via frames.transform)"
+     },
+     "amps": 5
+    },
+    {
+     "id": "sw_pitot_heat",
+     "label": "Pitot heat switch",
+     "kind": "switch",
+     "location": {
+      "x": 20.0,
+      "y": -8.1,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:104490-104580 (object 'PitotHeatSwitch', bbox center, converted via frames.transform)"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "from": "battery",
+     "to": "sw_bat",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:287-290",
+     "id": "battery->sw_bat"
+    },
+    {
+     "from": "sw_bat",
+     "to": "virtual_bus",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:287-290",
+     "id": "sw_bat->virtual_bus"
+    },
+    {
+     "from": "alternator",
+     "to": "sw_alt",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:291-294",
+     "id": "alternator->sw_alt"
+    },
+    {
+     "from": "sw_alt",
+     "to": "virtual_bus",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:291-294",
+     "id": "sw_alt->virtual_bus"
+    },
+    {
+     "from": "ext_power",
+     "to": "virtual_bus",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:295-302",
+     "id": "ext_power->virtual_bus"
+    },
+    {
+     "from": "virtual_bus",
+     "to": "battery",
+     "kind": "wire",
+     "note": "charging path (7 A) when master-bat ON",
+     "source": "Nasal/electrical.nas:329-338",
+     "id": "virtual_bus->battery"
+    },
+    {
+     "from": "virtual_bus",
+     "to": "cb_master",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:360-364",
+     "id": "virtual_bus->cb_master"
+    },
+    {
+     "from": "cb_master",
+     "to": "bus1",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:360-364",
+     "id": "cb_master->bus1"
+    },
+    {
+     "from": "bus1",
+     "to": "sw_avionics",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:544-548",
+     "id": "bus1->sw_avionics"
+    },
+    {
+     "from": "sw_avionics",
+     "to": "avionics_bus",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:544-548",
+     "id": "sw_avionics->avionics_bus"
+    },
+    {
+     "from": "virtual_bus",
+     "to": "ammeter",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:343-347; Systems/electrical.xml:16-34",
+     "id": "virtual_bus->ammeter"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_flaps",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_flaps"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_pitot-heat",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_pitot-heat"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_instr",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_instr"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_intlt",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_intlt"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_navlt",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_navlt"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_landing",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_landing"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_bcnlt",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_bcnlt"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_strobe",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_strobe"
+    },
+    {
+     "from": "bus1",
+     "to": "cb_turn-coordinator",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "bus1->cb_turn-coordinator"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_radio1",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_radio1"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_radio2",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_radio2"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_radio3",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_radio3"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_radio4",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_radio4"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_radio5",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_radio5"
+    },
+    {
+     "from": "avionics_bus",
+     "to": "cb_autopilot",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:198-225",
+     "id": "avionics_bus->cb_autopilot"
+    },
+    {
+     "from": "cb_flaps",
+     "to": "flaps_motor",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:367-379",
+     "id": "cb_flaps->flaps_motor"
+    },
+    {
+     "from": "cb_instr",
+     "to": "instr_ignition",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:389-407",
+     "id": "cb_instr->instr_ignition"
+    },
+    {
+     "from": "cb_instr",
+     "to": "starter",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:392-403",
+     "id": "cb_instr->starter"
+    },
+    {
+     "from": "cb_intlt",
+     "to": "cabin_lights",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:409-416",
+     "id": "cb_intlt->cabin_lights"
+    },
+    {
+     "from": "cb_intlt",
+     "to": "dome_white",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:417-421",
+     "id": "cb_intlt->dome_white"
+    },
+    {
+     "from": "cb_intlt",
+     "to": "radio_lighting",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:423-430",
+     "id": "cb_intlt->radio_lighting"
+    },
+    {
+     "from": "cb_landing",
+     "to": "landing_light",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:432-438",
+     "id": "cb_landing->landing_light"
+    },
+    {
+     "from": "cb_landing",
+     "to": "taxi_light",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:440-447",
+     "id": "cb_landing->taxi_light"
+    },
+    {
+     "from": "cb_bcnlt",
+     "to": "beacon",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:449-455",
+     "id": "cb_bcnlt->beacon"
+    },
+    {
+     "from": "cb_navlt",
+     "to": "nav_lights",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:457-463",
+     "id": "cb_navlt->nav_lights"
+    },
+    {
+     "from": "cb_strobe",
+     "to": "strobe",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:465-473",
+     "id": "cb_strobe->strobe"
+    },
+    {
+     "from": "cb_turn-coordinator",
+     "to": "turn_coordinator",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:484-490",
+     "id": "cb_turn-coordinator->turn_coordinator"
+    },
+    {
+     "from": "cb_strobe",
+     "to": "avionics_fan",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:524-531",
+     "id": "cb_strobe->avionics_fan"
+    },
+    {
+     "from": "bus1",
+     "to": "gear_select",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:492-498",
+     "note": "no physical breaker object",
+     "id": "bus1->gear_select"
+    },
+    {
+     "from": "bus1",
+     "to": "gear_advisory",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:500-508",
+     "note": "no physical breaker object",
+     "id": "bus1->gear_advisory"
+    },
+    {
+     "from": "bus1",
+     "to": "hydraulic_pump",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:510-522",
+     "note": "no physical breaker object",
+     "id": "bus1->hydraulic_pump"
+    },
+    {
+     "from": "cb_radio1",
+     "to": "audio_panel",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:553-561",
+     "id": "cb_radio1->audio_panel"
+    },
+    {
+     "from": "cb_radio2",
+     "to": "navcom1",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:563-572",
+     "id": "cb_radio2->navcom1"
+    },
+    {
+     "from": "cb_radio3",
+     "to": "navcom2",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:574-583",
+     "id": "cb_radio3->navcom2"
+    },
+    {
+     "from": "cb_radio4",
+     "to": "transponder",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:585-592",
+     "id": "cb_radio4->transponder"
+    },
+    {
+     "from": "cb_radio5",
+     "to": "adf",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:594-602",
+     "id": "cb_radio5->adf"
+    },
+    {
+     "from": "cb_radio5",
+     "to": "dme",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:603-611",
+     "id": "cb_radio5->dme"
+    },
+    {
+     "from": "cb_autopilot",
+     "to": "autopilot",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:613-620",
+     "id": "cb_autopilot->autopilot"
+    },
+    {
+     "from": "bus1",
+     "to": "sw_pitot_heat",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:381-387",
+     "id": "bus1->sw_pitot_heat"
+    },
+    {
+     "from": "sw_pitot_heat",
+     "to": "pitot_heat",
+     "kind": "wire",
+     "source": "Nasal/electrical.nas:381-387",
+     "id": "sw_pitot_heat->pitot_heat"
+    }
+   ]
+  }
+ },
+ "controls": {
+  "surfaces": [
+   {
+    "name": "Elevator",
+    "ac_object": "elevatorleft + elevatorright",
+    "deflection": {
+     "min": -28,
+     "max": 23,
+     "unit": "DEG",
+     "source": "c172p.xml:830-838"
+    },
+    "hinge_midpoint": {
+     "x": 224.1,
+     "y": -36.6,
+     "z": 29.0,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4585-4611 (midpoint of hinge axis, converted)"
+    },
+    "actuation_rate": {
+     "value": "full travel -1..1 in 0.30 s",
+     "source": "c172p.xml:750-762"
+    },
+    "inputs": {
+     "value": "elevator-cmd-norm (+ optional stick-force-per-g gain) + pitch-trim-cmd-norm, clipped to +/-1",
+     "source": "c172p.xml:750-828"
+    },
+    "fg_visual": "elevator-pos-norm -1 -> +28 deg, +1 -> -23 deg rotation about hinge (Models/c172p.xml:4585-4639)"
+   },
+   {
+    "name": "Left aileron",
+    "ac_object": "leftaileron",
+    "deflection": {
+     "min": -20,
+     "max": 15,
+     "unit": "DEG",
+     "source": "c172p.xml:936-944"
+    },
+    "hinge_midpoint": {
+     "x": 72.8,
+     "y": -159.1,
+     "z": 53.5,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4382-4419 (midpoint of hinge axis, converted)"
+    },
+    "actuation_rate": {
+     "value": "full travel in 0.15 s",
+     "source": "c172p.xml:854-866"
+    },
+    "inputs": {
+     "value": "aileron-cmd-norm + roll-trim-cmd-norm",
+     "source": "c172p.xml:909-918"
+    }
+   },
+   {
+    "name": "Right aileron",
+    "ac_object": "rightaileron",
+    "deflection": {
+     "min": -20,
+     "max": 15,
+     "unit": "DEG",
+     "source": "c172p.xml:959-967"
+    },
+    "hinge_midpoint": {
+     "x": 72.8,
+     "y": 159.1,
+     "z": 53.5,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4462-4499 (midpoint of hinge axis, converted)"
+    },
+    "note": "input is -roll-trim-sum (antisymmetric)",
+    "source": "c172p.xml:959-967"
+   },
+   {
+    "name": "Rudder",
+    "ac_object": "rudder_1",
+    "deflection": {
+     "min": -16,
+     "max": 16,
+     "unit": "DEG",
+     "source": "c172p.xml:1050-1058"
+    },
+    "hinge_midpoint": {
+     "x": 244.1,
+     "y": -0.2,
+     "z": 60.5,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4655-4672 (midpoint of hinge axis, converted)"
+    },
+    "actuation_rate": {
+     "value": "full travel in 0.15 s",
+     "source": "c172p.xml:983-995"
+    },
+    "inputs": {
+     "value": "rudder-cmd-norm + yaw-trim-cmd-norm + yaw-trim-cockpit",
+     "source": "c172p.xml:1038-1048"
+    }
+   },
+   {
+    "name": "Flaps",
+    "ac_object": "flaps",
+    "deflection": {
+     "min": 0,
+     "max": 30,
+     "unit": "DEG",
+     "source": "c172p.xml:1225-1236"
+    },
+    "detents": {
+     "value": [
+      0,
+      10,
+      20,
+      30
+     ],
+     "unit": "DEG",
+     "transit_time_s": {
+      "0-10": 2,
+      "10-20": 1,
+      "20-30": 1
+     },
+     "source": "c172p.xml:1202-1223"
+    },
+    "electric": {
+     "value": "electrically driven; frozen if flaps bus output <= 16 V; draws 4.5 A while moving",
+     "source": "c172p.xml:1189-1200; Nasal/electrical.nas:367-379"
+    },
+    "fg_visual": "translate 0.08 m aft, -0.10 m (down) and rotate 30 deg about y through (1.152,-0.53,0.32) per unit flap-pos-norm (Models/c172p.xml:4541-4584)",
+    "hinge_center": {
+     "x": 78.6,
+     "y": -20.9,
+     "z": 50.7,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4567-4584 (rotation center, converted)"
+    }
+   },
+   {
+    "name": "Elevator trim tab",
+    "ac_object": "elevatortrim",
+    "deflection": {
+     "value": "-25 deg * controls/flight/elevator-trim (visual)",
+     "source": "Models/c172p.xml:4640-4653"
+    },
+    "fdm": {
+     "value": "pitch trim is summed into the elevator command (fcs/pitch-trim-cmd-norm), not a separate aero surface",
+     "source": "c172p.xml:819-828"
+    },
+    "hinge_midpoint": {
+     "x": 243.6,
+     "y": 33.6,
+     "z": 29.6,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/c172p.xml:4640-4653 (midpoint of trim tab hinge, converted)"
+    }
+   },
+   {
+    "name": "Rudder trim",
+    "ac_object": null,
+    "value": "cockpit rudder trim knob (controls/flight/rudder-trim) -> fcs/yaw-trim-cmd-norm / fcs/yaw-trim-cockpit",
+    "source": "Models/Interior/Panel/c172p-panel/c172p.xml:2270; c172p.xml:1038-1048; c172p-main.xml:1280"
+   }
+  ],
+  "animations_ref": "see top-level animations[]",
+  "diagram": {
+   "nodes": [
+    {
+     "id": "yoke_left",
+     "label": "Pilot control wheel (yoke)",
+     "kind": "input",
+     "location": {
+      "x": 25.7,
+      "y": -8.7,
+      "z": 32.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Yoke/yoke.ac:6-8024 (object 'LeftYoke', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "yoke_right",
+     "label": "Co-pilot control wheel (yoke)",
+     "kind": "input",
+     "location": {
+      "x": 25.7,
+      "y": 9.4,
+      "z": 32.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Yoke/yoke.ac:10392-18410 (object 'RightYoke', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "pedals_pilot",
+     "label": "Pilot rudder pedals",
+     "kind": "input",
+     "location": {
+      "x": 12.9,
+      "y": -12.9,
+      "z": 12.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Pedals/pedals.ac:7-1346 (object 'LeftPedal' bbox center) + offsets Models/c172p.xml:768-776, converted"
+     }
+    },
+    {
+     "id": "pedals_copilot",
+     "label": "Co-pilot rudder pedals",
+     "kind": "input",
+     "location": {
+      "x": 12.9,
+      "y": 12.9,
+      "z": 12.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Pedals/pedals.ac:1945-3309 (object 'RightPedal' bbox center) + offsets Models/c172p.xml:777-785, converted"
+     }
+    },
+    {
+     "id": "trim_wheel",
+     "label": "Elevator trim wheel",
+     "kind": "input",
+     "location": {
+      "x": 19.0,
+      "y": -1.7,
+      "z": 17.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:114225-210640 (object 'TrimWheel', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "rudder_trim_knob",
+     "label": "Rudder trim knob",
+     "kind": "input",
+     "location": {
+      "x": 22.7,
+      "y": 0.0,
+      "z": 13.0,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:35452-39513 (object 'RudderTrimKnob', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "flap_switch",
+     "label": "Flap selector lever",
+     "kind": "input",
+     "location": {
+      "x": 20.9,
+      "y": 7.0,
+      "z": 27.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Flaps/flaps.ac:117-230 (object 'FlapSwitch', bbox center; placed without offsets by Models/Interior/Panel/c172p-panel/c172p.xml:868-871, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "control_column_crossbar",
+     "label": "Control column / aileron crossover under panel",
+     "kind": "mechanism",
+     "location": {
+      "x": 4,
+      "y": 0,
+      "z": 30,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "yoke tube crossover under panel"
+     }
+    },
+    {
+     "id": "elevator_bellcrank_floor",
+     "label": "Elevator/aileron cable quadrant under floor",
+     "kind": "pulley",
+     "location": {
+      "x": 20,
+      "y": 0,
+      "z": 8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "cable quadrant under cabin floor"
+     }
+    },
+    {
+     "id": "aileron_cable_left_root",
+     "label": "Aileron cable at left door post / wing root",
+     "kind": "pulley",
+     "location": {
+      "x": 30,
+      "y": -24,
+      "z": 48,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "aileron cable up left door post into wing root"
+     }
+    },
+    {
+     "id": "aileron_cable_right_root",
+     "label": "Aileron cable at right door post / wing root",
+     "kind": "pulley",
+     "location": {
+      "x": 30,
+      "y": 24,
+      "z": 48,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "aileron cable up right door post into wing root"
+     }
+    },
+    {
+     "id": "aileron_bellcrank_left",
+     "label": "Left aileron bellcrank",
+     "kind": "bellcrank",
+     "location": {
+      "x": 64.8,
+      "y": -159.1,
+      "z": 52.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "left aileron bellcrank just forward of aileron hinge midpoint"
+     }
+    },
+    {
+     "id": "aileron_bellcrank_right",
+     "label": "Right aileron bellcrank",
+     "kind": "bellcrank",
+     "location": {
+      "x": 64.8,
+      "y": 159.1,
+      "z": 52.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "right aileron bellcrank just forward of aileron hinge midpoint"
+     }
+    },
+    {
+     "id": "aft_fuselage_pulleys",
+     "label": "Aft fuselage cable pulleys (tailcone)",
+     "kind": "pulley",
+     "location": {
+      "x": 150,
+      "y": 0,
+      "z": 22,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "cable run along tailcone floor"
+     }
+    },
+    {
+     "id": "elevator_horn",
+     "label": "Elevator horn/bellcrank",
+     "kind": "bellcrank",
+     "location": {
+      "x": 226.7,
+      "y": 0.0,
+      "z": 29.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4585-4639 (inboard ends of elevator hinge axes, converted)"
+     }
+    },
+    {
+     "id": "rudder_cable_ports",
+     "label": "Rudder cable fairleads (tail)",
+     "kind": "pulley",
+     "location": {
+      "x": 221.8,
+      "y": 0.0,
+      "z": 24.3,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:136116-136455 (object 'ruddercableports', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "rudder_horn_left",
+     "label": "Rudder horn L (cable attach)",
+     "kind": "bellcrank",
+     "location": {
+      "x": 229.8,
+      "y": -2.0,
+      "z": 24.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:131696-136115 (object 'ruddercablelefthinge', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "rudder_horn_right",
+     "label": "Rudder horn R (cable attach)",
+     "kind": "bellcrank",
+     "location": {
+      "x": 229.8,
+      "y": 1.9,
+      "z": 24.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:136632-141051 (object 'ruddercablerighthinge', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "trim_tab_actuator",
+     "label": "Elevator trim tab actuator",
+     "kind": "actuator",
+     "location": {
+      "x": 239.6,
+      "y": 33.6,
+      "z": 29.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "trim tab screw actuator in right elevator, just forward of trim tab hinge"
+     }
+    },
+    {
+     "id": "flap_motor",
+     "label": "Flap motor",
+     "kind": "actuator",
+     "location": {
+      "x": 46,
+      "y": 20,
+      "z": 48,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "flap motor in right wing root"
+     }
+    },
+    {
+     "id": "elevator",
+     "label": "Elevator (L+R)",
+     "kind": "surface",
+     "location": {
+      "x": 224.1,
+      "y": 0.0,
+      "z": 29.1,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4585-4639 (mean of hinge endpoints, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "aileron_left",
+     "label": "Left aileron",
+     "kind": "surface",
+     "location": {
+      "x": 72.8,
+      "y": -159.1,
+      "z": 53.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4382-4419 (hinge midpoint, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "aileron_right",
+     "label": "Right aileron",
+     "kind": "surface",
+     "location": {
+      "x": 72.8,
+      "y": 159.1,
+      "z": 53.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4462-4499 (hinge midpoint, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "rudder",
+     "label": "Rudder",
+     "kind": "surface",
+     "location": {
+      "x": 244.1,
+      "y": -0.2,
+      "z": 60.5,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4655-4672 (hinge midpoint, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "trim_tab",
+     "label": "Elevator trim tab",
+     "kind": "surface",
+     "location": {
+      "x": 243.6,
+      "y": 33.6,
+      "z": 29.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172p.xml:4640-4653 (midpoint of trim tab hinge, converted)"
+     }
+    },
+    {
+     "id": "flaps",
+     "label": "Flaps (L+R, single AC object)",
+     "kind": "surface",
+     "location": {
+      "x": 77.5,
+      "y": -0.0,
+      "z": 50.1,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:176934-179365 (object 'flaps', bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "nose_gear_steering",
+     "label": "Nose wheel steering (spring link from pedals)",
+     "kind": "mechanism",
+     "location": {
+      "x": -4.7,
+      "y": 0.1,
+      "z": -3.2,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:65611-66908 (object 'NoseWheelStrut', bbox center, converted via frames.transform)"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "from": "yoke_left",
+     "to": "control_column_crossbar",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "yoke_left->control_column_crossbar"
+    },
+    {
+     "from": "yoke_right",
+     "to": "control_column_crossbar",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "yoke_right->control_column_crossbar"
+    },
+    {
+     "from": "control_column_crossbar",
+     "to": "elevator_bellcrank_floor",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "elevator push-pull/cable",
+     "id": "control_column_crossbar->elevator_bellcrank_floor"
+    },
+    {
+     "from": "elevator_bellcrank_floor",
+     "to": "aft_fuselage_pulleys",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "elevator cables",
+     "id": "elevator_bellcrank_floor->aft_fuselage_pulleys"
+    },
+    {
+     "from": "aft_fuselage_pulleys",
+     "to": "elevator_horn",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "elevator cables",
+     "id": "aft_fuselage_pulleys->elevator_horn"
+    },
+    {
+     "from": "elevator_horn",
+     "to": "elevator",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "elevator_horn->elevator"
+    },
+    {
+     "from": "control_column_crossbar",
+     "to": "aileron_cable_left_root",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "aileron cable",
+     "id": "control_column_crossbar->aileron_cable_left_root"
+    },
+    {
+     "from": "control_column_crossbar",
+     "to": "aileron_cable_right_root",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "aileron cable",
+     "id": "control_column_crossbar->aileron_cable_right_root"
+    },
+    {
+     "from": "aileron_cable_left_root",
+     "to": "aileron_bellcrank_left",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "aileron_cable_left_root->aileron_bellcrank_left"
+    },
+    {
+     "from": "aileron_cable_right_root",
+     "to": "aileron_bellcrank_right",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "aileron_cable_right_root->aileron_bellcrank_right"
+    },
+    {
+     "from": "aileron_bellcrank_left",
+     "to": "aileron_left",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "aileron_bellcrank_left->aileron_left"
+    },
+    {
+     "from": "aileron_bellcrank_right",
+     "to": "aileron_right",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "aileron_bellcrank_right->aileron_right"
+    },
+    {
+     "from": "aileron_bellcrank_left",
+     "to": "aileron_bellcrank_right",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "aileron balance cable through wings",
+     "id": "aileron_bellcrank_left->aileron_bellcrank_right"
+    },
+    {
+     "from": "pedals_pilot",
+     "to": "elevator_bellcrank_floor",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "rudder cables under floor",
+     "id": "pedals_pilot->elevator_bellcrank_floor"
+    },
+    {
+     "from": "pedals_copilot",
+     "to": "pedals_pilot",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "interconnected pedals",
+     "id": "pedals_copilot->pedals_pilot"
+    },
+    {
+     "from": "elevator_bellcrank_floor",
+     "to": "aft_fuselage_pulleys",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "rudder cables",
+     "id": "elevator_bellcrank_floor->aft_fuselage_pulleys#2"
+    },
+    {
+     "from": "aft_fuselage_pulleys",
+     "to": "rudder_cable_ports",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "rudder cables",
+     "id": "aft_fuselage_pulleys->rudder_cable_ports"
+    },
+    {
+     "from": "rudder_cable_ports",
+     "to": "rudder_horn_left",
+     "kind": "cable",
+     "source": "Models/c172-common.ac ruddercableleft/ruddercablelefthinge geometry",
+     "note": "left rudder cable (AC object ruddercableleft)",
+     "id": "rudder_cable_ports->rudder_horn_left"
+    },
+    {
+     "from": "rudder_cable_ports",
+     "to": "rudder_horn_right",
+     "kind": "cable",
+     "source": "Models/c172-common.ac ruddercableright/ruddercablerighthinge geometry",
+     "note": "right rudder cable (AC object ruddercableright)",
+     "id": "rudder_cable_ports->rudder_horn_right"
+    },
+    {
+     "from": "rudder_horn_left",
+     "to": "rudder",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "rudder_horn_left->rudder"
+    },
+    {
+     "from": "rudder_horn_right",
+     "to": "rudder",
+     "kind": "cable",
+     "source": "illustrative",
+     "id": "rudder_horn_right->rudder"
+    },
+    {
+     "from": "pedals_pilot",
+     "to": "nose_gear_steering",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "steering rods; JSBSim NWS table c172p.xml:1150-1162",
+     "id": "pedals_pilot->nose_gear_steering"
+    },
+    {
+     "from": "trim_wheel",
+     "to": "aft_fuselage_pulleys",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "trim cables",
+     "id": "trim_wheel->aft_fuselage_pulleys"
+    },
+    {
+     "from": "aft_fuselage_pulleys",
+     "to": "trim_tab_actuator",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "trim cables",
+     "id": "aft_fuselage_pulleys->trim_tab_actuator"
+    },
+    {
+     "from": "trim_tab_actuator",
+     "to": "trim_tab",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "push rod",
+     "id": "trim_tab_actuator->trim_tab"
+    },
+    {
+     "from": "rudder_trim_knob",
+     "to": "pedals_pilot",
+     "kind": "cable",
+     "source": "illustrative",
+     "note": "rudder trim bias spring",
+     "id": "rudder_trim_knob->pedals_pilot"
+    },
+    {
+     "from": "flap_switch",
+     "to": "flap_motor",
+     "kind": "wire",
+     "source": "illustrative",
+     "id": "flap_switch->flap_motor"
+    },
+    {
+     "from": "flap_motor",
+     "to": "flaps",
+     "kind": "push-rod",
+     "source": "illustrative",
+     "id": "flap_motor->flaps"
+    }
+   ],
+   "note": "Cable routing (pulleys, bellcranks, crossover) is illustrative; endpoints (yoke, pedals, trim wheel, surface hinges, rudder horns/cable ports) are sourced from model geometry/animations."
+  }
+ },
+ "pitot_static": {
+  "pitot": {
+   "fg_system": {
+    "value": "pitot[0], stall-deg 60",
+    "source": "Systems/systems.xml:30-36"
+   },
+   "property": "/systems/pitot/total-pressure-inhg",
+   "location": {
+    "x": 28.3,
+    "y": -60.1,
+    "z": 51.8,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/c172-common.ac:173035-175892 (object 'PitotTube', bbox center; under left wing, converted via frames.transform)"
+   },
+   "heat": {
+    "value": "pitot heat 5 A; heating when switch ON and pitot-heat bus > 20 V; heat-applied-norm ramps 0->1 in 30 s",
+    "source": "Nasal/electrical.nas:381-387; Systems/indicated-airspeed.xml:96-119"
+   },
+   "serviceable": {
+    "value": "set 0 when (pitot cover visible AND pitot icing > 0.03) [AND logic as written]",
+    "source": "Systems/indicated-airspeed.xml:86-94"
+   },
+   "cover_property": "/sim/model/c172p/securing/pitot-cover-visible"
+  },
+  "static_primary": {
+   "fg_system": {
+    "value": "static[0]: tau 0.1, type 1 (exterior port, side-slip influence), error-factor 0.2",
+    "source": "Systems/systems.xml:38-47"
+   },
+   "property": "/systems/static[0]/pressure-inhg",
+   "location": {
+    "x": -2,
+    "y": -22,
+    "z": 30,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "illustrative",
+    "note": "primary static port on left fuselage side ahead of the door; no AC object in repo"
+   }
+  },
+  "static_alternate": {
+   "fg_system": {
+    "value": "static[1]: cabin source, tau 0.3, type 0, error-factor 0; cabin venturi correction table (POH 5-11)",
+    "source": "Systems/systems.xml:48-54; Systems/static-sources.xml:30-73"
+   },
+   "selector": {
+    "value": "/systems/static-selected-source (0 primary, 1 alternate), knob kinematic 0.35 s; selected pressure = p0 + norm*(p1_venturi - p0)",
+    "source": "Systems/static-sources.xml:75-109"
+   },
+   "knob_location": {
+    "x": 19.9,
+    "y": 1.9,
+    "z": 24.6,
+    "unit": "IN",
+    "frame": "structural",
+    "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:66984-68372 (object 'AltStaticAir', bbox center; lower panel, converted via frames.transform)"
+   }
+  },
+  "instruments": {
+   "airspeed_indicator": {
+    "total": "/systems/pitot/total-pressure-inhg",
+    "static": "/systems/static-pressure-inhg-selected",
+    "source": "Systems/instrumentation.xml:33-38",
+    "calibration": {
+     "value": "KCAS->KIAS table vs flap deg (POH 5-9) output velocities/vias-kts",
+     "source": "Systems/indicated-airspeed.xml:49-84"
+    },
+    "location": {
+     "x": 18.6,
+     "y": -12.3,
+     "z": 38.9,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/asi/asi.ac:8-593 (object 'Case', ASI case bbox center, converted via frames.transform)"
+    }
+   },
+   "altimeter": {
+    "static": "/systems/static-pressure-inhg-selected",
+    "source": "Systems/instrumentation.xml:40-46",
+    "location": {
+     "x": 18.6,
+     "y": -5.2,
+     "z": 38.9,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/alt/alt.ac:9-594 (object 'Case', altimeter case bbox center, converted via frames.transform)"
+    }
+   },
+   "altimeter_kap140_internal": {
+    "static": "/systems/static-pressure-inhg-selected",
+    "source": "Systems/instrumentation.xml:48-54"
+   },
+   "encoder": {
+    "static": "/systems/static-pressure-inhg-selected",
+    "quantum_ft": 10,
+    "feeds": "transponder mode C",
+    "source": "Systems/instrumentation.xml:81-87; Systems/instrumentation.xml:150-155"
+   },
+   "vertical_speed_indicator": {
+    "static": "/systems/static-pressure-inhg-selected",
+    "source": "Systems/instrumentation.xml:165-169",
+    "location": {
+     "x": 18.9,
+     "y": -5.2,
+     "z": 34.8,
+     "unit": "IN",
+     "frame": "structural",
+     "source": "Models/Interior/Panel/Instruments/VSI/VSI.ac:9-594 (object 'Case', VSI case bbox center, converted via frames.transform)"
+    }
+   }
+  },
+  "diagram": {
+   "nodes": [
+    {
+     "id": "pitot_tube",
+     "label": "Pitot tube (left wing)",
+     "kind": "sensor",
+     "location": {
+      "x": 28.3,
+      "y": -60.1,
+      "z": 51.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/c172-common.ac:173035-175892 (object 'PitotTube', bbox center; under left wing, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "static_port",
+     "label": "Primary static port",
+     "kind": "sensor",
+     "location": {
+      "x": -2,
+      "y": -22,
+      "z": 30,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "primary static port on left fuselage side ahead of the door; no AC object in repo"
+     },
+     "modelled_geometry": false
+    },
+    {
+     "id": "alt_static",
+     "label": "Alternate static source (cabin)",
+     "kind": "valve",
+     "location": {
+      "x": 19.9,
+      "y": 1.9,
+      "z": 24.6,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:66984-68372 (object 'AltStaticAir', bbox center; lower panel, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "static_selector",
+     "label": "Static source selection (mix)",
+     "kind": "junction",
+     "location": {
+      "x": 4,
+      "y": -10,
+      "z": 26,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "static line tee behind panel"
+     }
+    },
+    {
+     "id": "asi",
+     "label": "Airspeed indicator",
+     "kind": "instrument",
+     "location": {
+      "x": 18.6,
+      "y": -12.3,
+      "z": 38.9,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/asi/asi.ac:8-593 (object 'Case', ASI case bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "altimeter",
+     "label": "Altimeter",
+     "kind": "instrument",
+     "location": {
+      "x": 18.6,
+      "y": -5.2,
+      "z": 38.9,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/alt/alt.ac:9-594 (object 'Case', altimeter case bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "vsi",
+     "label": "Vertical speed indicator",
+     "kind": "instrument",
+     "location": {
+      "x": 18.9,
+      "y": -5.2,
+      "z": 34.8,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/Instruments/VSI/VSI.ac:9-594 (object 'Case', VSI case bbox center, converted via frames.transform)"
+     }
+    },
+    {
+     "id": "encoder",
+     "label": "Altitude encoder (mode C)",
+     "kind": "instrument",
+     "location": {
+      "x": 6,
+      "y": 6,
+      "z": 30,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "illustrative",
+      "note": "blind encoder behind panel"
+     }
+    },
+    {
+     "id": "pitot_heat_switch",
+     "label": "Pitot heat switch",
+     "kind": "switch",
+     "location": {
+      "x": 20.0,
+      "y": -8.1,
+      "z": 25.7,
+      "unit": "IN",
+      "frame": "structural",
+      "source": "Models/Interior/Panel/c172p-panel/c172p-interior.ac:104490-104580 (object 'PitotHeatSwitch', bbox center, converted via frames.transform)"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "from": "pitot_tube",
+     "to": "asi",
+     "kind": "pitot-line",
+     "source": "Systems/instrumentation.xml:36",
+     "id": "pitot_tube->asi"
+    },
+    {
+     "from": "static_port",
+     "to": "static_selector",
+     "kind": "static-line",
+     "source": "Systems/static-sources.xml:94-109",
+     "id": "static_port->static_selector"
+    },
+    {
+     "from": "alt_static",
+     "to": "static_selector",
+     "kind": "static-line",
+     "source": "Systems/static-sources.xml:94-109",
+     "id": "alt_static->static_selector"
+    },
+    {
+     "from": "static_selector",
+     "to": "asi",
+     "kind": "static-line",
+     "source": "Systems/instrumentation.xml:37",
+     "id": "static_selector->asi"
+    },
+    {
+     "from": "static_selector",
+     "to": "altimeter",
+     "kind": "static-line",
+     "source": "Systems/instrumentation.xml:43",
+     "id": "static_selector->altimeter"
+    },
+    {
+     "from": "static_selector",
+     "to": "vsi",
+     "kind": "static-line",
+     "source": "Systems/instrumentation.xml:168",
+     "id": "static_selector->vsi"
+    },
+    {
+     "from": "static_selector",
+     "to": "encoder",
+     "kind": "static-line",
+     "source": "Systems/instrumentation.xml:84",
+     "id": "static_selector->encoder"
+    },
+    {
+     "from": "pitot_heat_switch",
+     "to": "pitot_tube",
+     "kind": "wire",
+     "source": "Systems/indicated-airspeed.xml:96-104",
+     "id": "pitot_heat_switch->pitot_tube"
+    }
+   ]
+  }
+ },
+ "parts_meta": {
+  "groups_allowed": [
+   "airframe",
+   "wing",
+   "empennage",
+   "controls",
+   "propulsion",
+   "gear",
+   "cabin",
+   "fuel",
+   "electrical",
+   "pitot-static",
+   "lights",
+   "antennas"
+  ],
+  "ac_group_nodes": {
+   "value": [
+    "antennas",
+    "doors",
+    "fuselage_1",
+    "hotspots",
+    "interior",
+    "panel_up",
+    "prop",
+    "rudder",
+    "tiedowns",
+    "transperant",
+    "vstab",
+    "wing",
+    "wing_1"
+   ],
+   "note": "empty AC3D group objects (no geometry)",
+   "source": "Models/c172-common.ac"
+  },
+  "labels_source": "labels are human-readable names derived from AC object names, positions and Models/c172p.xml usage; items marked \"label inferred\" are best guesses",
+  "note": "No electrical components (battery, alternator, bus) exist as geometry in c172-common.ac; the electrical group is therefore empty in parts{}. Cockpit switches/breakers live in Models/Interior/Panel/c172p-panel/c172p-interior.ac (see electrical.diagram)."
+ },
+ "parts": {
+  "Antenna_ADF": {
+   "group": "antennas",
+   "label": "ADF sense antenna",
+   "ac_bbox_m": {
+    "min": [
+     0.58,
+     -0.891,
+     -0.04
+    ],
+    "max": [
+     0.764,
+     -0.859,
+     0.071
+    ]
+   },
+   "center_struct_in": [
+    62.2,
+    -0.6,
+    2.7
+   ],
+   "source": "Models/c172-common.ac:35-1805"
+  },
+  "Antenna_VOR": {
+   "group": "antennas",
+   "label": "VOR antenna (tail)",
+   "ac_bbox_m": {
+    "min": [
+     5.482,
+     0.906,
+     -0.514
+    ],
+    "max": [
+     5.817,
+     0.988,
+     0.515
+    ]
+   },
+   "center_struct_in": [
+    254.1,
+    -0.0,
+    84.6
+   ],
+   "source": "Models/c172-common.ac:1806-2133"
+  },
+  "ELTAntenna": {
+   "group": "antennas",
+   "label": "ELT antenna",
+   "ac_bbox_m": {
+    "min": [
+     2.365,
+     -0.034,
+     -0.007
+    ],
+    "max": [
+     2.578,
+     0.247,
+     0.004
+    ]
+   },
+   "center_struct_in": [
+    131.0,
+    0.0,
+    45.0
+   ],
+   "source": "Models/c172-common.ac:2134-4151"
+  },
+  "MarkerAntenna": {
+   "group": "antennas",
+   "label": "Marker beacon antenna",
+   "ac_bbox_m": {
+    "min": [
+     2.345,
+     -0.861,
+     -0.008
+    ],
+    "max": [
+     2.401,
+     -0.772,
+     0.01
+    ]
+   },
+   "center_struct_in": [
+    129.0,
+    -0.1,
+    8.5
+   ],
+   "source": "Models/c172-common.ac:4152-4332"
+  },
+  "TransponderAntenna": {
+   "group": "antennas",
+   "label": "Transponder antenna",
+   "ac_bbox_m": {
+    "min": [
+     0.453,
+     -0.944,
+     -0.008
+    ],
+    "max": [
+     0.505,
+     -0.855,
+     0.01
+    ]
+   },
+   "center_struct_in": [
+    54.7,
+    -0.0,
+    1.4
+   ],
+   "source": "Models/c172-common.ac:4333-4513"
+  },
+  "VHFAntenna": {
+   "group": "antennas",
+   "label": "VHF COM antenna",
+   "ac_bbox_m": {
+    "min": [
+     0.675,
+     0.458,
+     -0.369
+    ],
+    "max": [
+     1.178,
+     0.898,
+     0.354
+    ]
+   },
+   "center_struct_in": [
+    69.0,
+    0.3,
+    64.3
+   ],
+   "source": "Models/c172-common.ac:4514-16433"
+  },
+  "BeaconOff": {
+   "group": "lights",
+   "label": "Beacon (off-state lens)",
+   "ac_bbox_m": {
+    "min": [
+     5.469,
+     1.037,
+     -0.03
+    ],
+    "max": [
+     5.528,
+     1.09,
+     0.03
+    ]
+   },
+   "center_struct_in": [
+    248.0,
+    -0.0,
+    88.9
+   ],
+   "source": "Models/c172-common.ac:16434-18046"
+  },
+  "BeaconOffX": {
+   "group": "lights",
+   "label": "Beacon light halo (effect, hidden when off)",
+   "ac_bbox_m": {
+    "min": [
+     -0.98,
+     -0.498,
+     0.142
+    ],
+    "max": [
+     1.02,
+     0.958,
+     1.138
+    ]
+   },
+   "center_struct_in": [
+    34.3,
+    -25.2,
+    44.8
+   ],
+   "source": "Models/c172-common.ac:18047-18078"
+  },
+  "baggagedoorexterior": {
+   "group": "cabin",
+   "label": "Baggage door",
+   "ac_bbox_m": {
+    "min": [
+     1.395,
+     -0.743,
+     0.338
+    ],
+    "max": [
+     1.884,
+     -0.14,
+     0.479
+    ]
+   },
+   "center_struct_in": [
+    99.4,
+    -16.1,
+    21.8
+   ],
+   "source": "Models/c172-common.ac:18082-18302",
+   "animated_by": "Models/c172p.xml:2593-2611"
+  },
+  "baggagedoorhandle": {
+   "group": "cabin",
+   "label": "Baggage door handle",
+   "ac_bbox_m": {
+    "min": [
+     1.785,
+     -0.463,
+     0.441
+    ],
+    "max": [
+     1.85,
+     -0.41,
+     0.453
+    ]
+   },
+   "center_struct_in": [
+    106.4,
+    -17.6,
+    22.3
+   ],
+   "source": "Models/c172-common.ac:18303-18417"
+  },
+  "leftdoor": {
+   "group": "cabin",
+   "label": "Left cabin door",
+   "ac_bbox_m": {
+    "min": [
+     -0.154,
+     -0.703,
+     0.483
+    ],
+    "max": [
+     0.871,
+     0.362,
+     0.535
+    ]
+   },
+   "center_struct_in": [
+    48.4,
+    -20.0,
+    29.8
+   ],
+   "source": "Models/c172-common.ac:18418-19222",
+   "animated_by": "Models/c172p.xml:2311-2355"
+  },
+  "leftdoorhandle": {
+   "group": "cabin",
+   "label": "Left door handle",
+   "ac_bbox_m": {
+    "min": [
+     0.706,
+     -0.199,
+     0.512
+    ],
+    "max": [
+     0.771,
+     -0.146,
+     0.521
+    ]
+   },
+   "center_struct_in": [
+    63.4,
+    -20.3,
+    30.5
+   ],
+   "source": "Models/c172-common.ac:19223-19337",
+   "animated_by": "Models/c172p.xml:2311-2355"
+  },
+  "oildoor": {
+   "group": "propulsion",
+   "label": "Oil access door (cowling)",
+   "ac_bbox_m": {
+    "min": [
+     -0.957,
+     0.13,
+     -0.391
+    ],
+    "max": [
+     -0.805,
+     0.167,
+     -0.232
+    ]
+   },
+   "center_struct_in": [
+    -0.9,
+    12.3,
+    39.8
+   ],
+   "source": "Models/c172-common.ac:19338-19594"
+  },
+  "rightdoor": {
+   "group": "cabin",
+   "label": "Right cabin door",
+   "ac_bbox_m": {
+    "min": [
+     -0.156,
+     -0.704,
+     -0.536
+    ],
+    "max": [
+     0.871,
+     0.361,
+     -0.484
+    ]
+   },
+   "center_struct_in": [
+    48.4,
+    20.1,
+    29.8
+   ],
+   "source": "Models/c172-common.ac:19595-20399",
+   "animated_by": "Models/c172p.xml:2171-2215"
+  },
+  "rightdoorhandle": {
+   "group": "cabin",
+   "label": "Right door handle",
+   "ac_bbox_m": {
+    "min": [
+     0.707,
+     -0.199,
+     -0.521
+    ],
+    "max": [
+     0.772,
+     -0.146,
+     -0.513
+    ]
+   },
+   "center_struct_in": [
+    63.4,
+    20.4,
+    30.5
+   ],
+   "source": "Models/c172-common.ac:20400-20514",
+   "animated_by": "Models/c172p.xml:2171-2215"
+  },
+  "windowframeleftext": {
+   "group": "cabin",
+   "label": "Left window frame (exterior)",
+   "ac_bbox_m": {
+    "min": [
+     -0.011,
+     -0.112,
+     0.506
+    ],
+    "max": [
+     0.831,
+     0.317,
+     0.527
+    ]
+   },
+   "center_struct_in": [
+    49.9,
+    -20.3,
+    40.6
+   ],
+   "source": "Models/c172-common.ac:20515-20680",
+   "animated_by": "Models/c172p.xml:2311-2355"
+  },
+  "windowframerightext": {
+   "group": "cabin",
+   "label": "Right window frame (exterior)",
+   "ac_bbox_m": {
+    "min": [
+     -0.009,
+     -0.112,
+     -0.529
+    ],
+    "max": [
+     0.831,
+     0.318,
+     -0.507
+    ]
+   },
+   "center_struct_in": [
+    49.9,
+    20.4,
+    40.6
+   ],
+   "source": "Models/c172-common.ac:20681-20846",
+   "animated_by": "Models/c172p.xml:2171-2215"
+  },
+  "airvent": {
+   "group": "cabin",
+   "label": "Cabin fresh-air vent (wing root)",
+   "ac_bbox_m": {
+    "min": [
+     -0.577,
+     -0.303,
+     -0.525
+    ],
+    "max": [
+     -0.492,
+     -0.217,
+     -0.483
+    ]
+   },
+   "center_struct_in": [
+    13.5,
+    19.9,
+    24.4
+   ],
+   "source": "Models/c172-common.ac:20850-21491"
+  },
+  "airventhole": {
+   "group": "cabin",
+   "label": "Cabin air vent opening",
+   "ac_bbox_m": {
+    "min": [
+     -0.577,
+     -0.298,
+     -0.522
+    ],
+    "max": [
+     -0.492,
+     -0.222,
+     -0.487
+    ]
+   },
+   "center_struct_in": [
+    13.5,
+    19.9,
+    24.4
+   ],
+   "source": "Models/c172-common.ac:21492-21569"
+  },
+  "Axle": {
+   "group": "gear",
+   "label": "Nose gear axle",
+   "ac_bbox_m": {
+    "min": [
+     -1.137,
+     -1.208,
+     -0.08
+    ],
+    "max": [
+     -1.088,
+     -1.159,
+     0.078
+    ]
+   },
+   "center_struct_in": [
+    -7.3,
+    0.0,
+    -13.1
+   ],
+   "source": "Models/c172-common.ac:21570-21749",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "BottomLink": {
+   "group": "gear",
+   "label": "Nose gear torque link (lower)",
+   "ac_bbox_m": {
+    "min": [
+     -1.031,
+     -0.967,
+     -0.03
+    ],
+    "max": [
+     -0.831,
+     -0.876,
+     0.031
+    ]
+   },
+   "center_struct_in": [
+    -0.7,
+    -0.0,
+    -2.4
+   ],
+   "source": "Models/c172-common.ac:21750-22324",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "charniere3": {
+   "group": "cabin",
+   "label": "Left door hinge",
+   "ac_bbox_m": {
+    "min": [
+     -0.174,
+     -0.515,
+     0.522
+    ],
+    "max": [
+     -0.054,
+     -0.112,
+     0.535
+    ]
+   },
+   "center_struct_in": [
+    30.2,
+    -20.8,
+    23.2
+   ],
+   "source": "Models/c172-common.ac:22325-22520"
+  },
+  "charniere4": {
+   "group": "cabin",
+   "label": "Right door hinge",
+   "ac_bbox_m": {
+    "min": [
+     -0.176,
+     -0.518,
+     -0.536
+    ],
+    "max": [
+     -0.054,
+     -0.112,
+     -0.522
+    ]
+   },
+   "center_struct_in": [
+    30.1,
+    20.8,
+    23.1
+   ],
+   "source": "Models/c172-common.ac:22521-22716"
+  },
+  "Exhaust": {
+   "group": "propulsion",
+   "label": "Exhaust pipe",
+   "ac_bbox_m": {
+    "min": [
+     -1.388,
+     -0.718,
+     -0.324
+    ],
+    "max": [
+     -1.307,
+     -0.464,
+     -0.173
+    ]
+   },
+   "center_struct_in": [
+    -17.8,
+    9.8,
+    9.7
+   ],
+   "source": "Models/c172-common.ac:22717-22982"
+  },
+  "fairing1": {
+   "group": "gear",
+   "label": "Nose wheel fairing (spat)",
+   "ac_bbox_m": {
+    "min": [
+     -1.408,
+     -1.283,
+     -0.138
+    ],
+    "max": [
+     -0.61,
+     -1.0,
+     0.135
+    ]
+   },
+   "center_struct_in": [
+    -3.3,
+    0.0,
+    -11.2
+   ],
+   "source": "Models/c172-common.ac:22983-25581",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "fairing2": {
+   "group": "gear",
+   "label": "Left main wheel fairing (spat)",
+   "ac_bbox_m": {
+    "min": [
+     0.188,
+     -1.239,
+     0.98
+    ],
+    "max": [
+     1.079,
+     -0.917,
+     1.281
+    ]
+   },
+   "center_struct_in": [
+    61.1,
+    -44.5,
+    -5.3
+   ],
+   "source": "Models/c172-common.ac:25582-29339",
+   "animated_by": "Models/c172p.xml:4914-4947"
+  },
+  "fairing3": {
+   "group": "gear",
+   "label": "Right main wheel fairing (spat)",
+   "ac_bbox_m": {
+    "min": [
+     0.188,
+     -1.238,
+     -1.284
+    ],
+    "max": [
+     1.079,
+     -0.916,
+     -0.984
+    ]
+   },
+   "center_struct_in": [
+    61.1,
+    44.6,
+    -5.3
+   ],
+   "source": "Models/c172-common.ac:29340-33097",
+   "animated_by": "Models/c172p.xml:4880-4913"
+  },
+  "FuelCapPort": {
+   "group": "fuel",
+   "label": "Left fuel filler cap",
+   "ac_bbox_m": {
+    "min": [
+     0.171,
+     0.485,
+     0.762
+    ],
+    "max": [
+     0.24,
+     0.523,
+     0.831
+    ]
+   },
+   "center_struct_in": [
+    41.0,
+    -31.4,
+    56.0
+   ],
+   "source": "Models/c172-common.ac:33098-33302"
+  },
+  "fuselage": {
+   "group": "airframe",
+   "label": "Fuselage skin",
+   "ac_bbox_m": {
+    "min": [
+     -1.773,
+     -0.871,
+     -2.351
+    ],
+    "max": [
+     4.957,
+     0.517,
+     2.351
+    ]
+   },
+   "center_struct_in": [
+    96.9,
+    0.0,
+    32.1
+   ],
+   "source": "Models/c172-common.ac:33303-45752"
+  },
+  "fuselage_cowling": {
+   "group": "propulsion",
+   "label": "Engine cowling (lower/sides)",
+   "ac_bbox_m": {
+    "min": [
+     -1.605,
+     -0.795,
+     -0.524
+    ],
+    "max": [
+     -0.773,
+     -0.14,
+     0.524
+    ]
+   },
+   "center_struct_in": [
+    -11.8,
+    0.0,
+    14.9
+   ],
+   "source": "Models/c172-common.ac:45753-49413"
+  },
+  "fuselage_cowling_top": {
+   "group": "propulsion",
+   "label": "Engine cowling (top)",
+   "ac_bbox_m": {
+    "min": [
+     -1.613,
+     -0.186,
+     -0.526
+    ],
+    "max": [
+     -0.756,
+     0.177,
+     0.527
+    ]
+   },
+   "center_struct_in": [
+    -12.6,
+    -0.0,
+    33.1
+   ],
+   "source": "Models/c172-common.ac:49414-50252"
+  },
+  "fuselageexhausthole": {
+   "group": "propulsion",
+   "label": "Exhaust opening",
+   "ac_bbox_m": {
+    "min": [
+     -1.384,
+     -0.647,
+     -0.293
+    ],
+    "max": [
+     -1.313,
+     -0.501,
+     -0.195
+    ]
+   },
+   "center_struct_in": [
+    -17.8,
+    9.6,
+    10.4
+   ],
+   "source": "Models/c172-common.ac:50253-50747"
+  },
+  "handle": {
+   "group": "airframe",
+   "label": "Exterior grab handles (cowling/windshield junction; label inferred)",
+   "ac_bbox_m": {
+    "min": [
+     -0.712,
+     0.081,
+     -0.511
+    ],
+    "max": [
+     -0.585,
+     0.14,
+     0.506
+    ]
+   },
+   "center_struct_in": [
+    8.3,
+    0.1,
+    38.8
+   ],
+   "source": "Models/c172-common.ac:50748-55569"
+  },
+  "LeftWheel": {
+   "group": "gear",
+   "label": "Left main wheel",
+   "ac_bbox_m": {
+    "min": [
+     0.351,
+     -1.326,
+     1.044
+    ],
+    "max": [
+     0.709,
+     -0.968,
+     1.184
+    ]
+   },
+   "center_struct_in": [
+    57.2,
+    -43.9,
+    -8.3
+   ],
+   "source": "Models/c172-common.ac:55570-59427",
+   "animated_by": "Models/c172p.xml:4914-4947"
+  },
+  "LeftWheelBrake": {
+   "group": "gear",
+   "label": "Left main wheel brake",
+   "ac_bbox_m": {
+    "min": [
+     0.432,
+     -1.196,
+     1.03
+    ],
+    "max": [
+     0.625,
+     -1.098,
+     1.052
+    ]
+   },
+   "center_struct_in": [
+    57.1,
+    -41.0,
+    -8.3
+   ],
+   "source": "Models/c172-common.ac:59428-59845",
+   "animated_by": "Models/c172p.xml:4914-4947"
+  },
+  "LeftWheelStrut": {
+   "group": "gear",
+   "label": "Left main gear spring strut",
+   "ac_bbox_m": {
+    "min": [
+     0.502,
+     -1.164,
+     0.364
+    ],
+    "max": [
+     0.833,
+     -0.73,
+     1.058
+    ]
+   },
+   "center_struct_in": [
+    62.2,
+    -28.0,
+    -0.1
+   ],
+   "source": "Models/c172-common.ac:59846-61566",
+   "animated_by": "Models/c172p.xml:4914-4947"
+  },
+  "NoseWheel": {
+   "group": "gear",
+   "label": "Nose wheel",
+   "ac_bbox_m": {
+    "min": [
+     -1.294,
+     -1.368,
+     -0.052
+    ],
+    "max": [
+     -0.936,
+     -1.01,
+     0.052
+    ]
+   },
+   "center_struct_in": [
+    -7.4,
+    0.0,
+    -13.3
+   ],
+   "source": "Models/c172-common.ac:61567-65610",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "NoseWheelStrut": {
+   "group": "gear",
+   "label": "Nose gear oleo strut",
+   "ac_bbox_m": {
+    "min": [
+     -1.143,
+     -1.219,
+     -0.098
+    ],
+    "max": [
+     -0.927,
+     -0.656,
+     0.095
+    ]
+   },
+   "center_struct_in": [
+    -4.7,
+    0.1,
+    -3.2
+   ],
+   "source": "Models/c172-common.ac:65611-66908",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "OilCap": {
+   "group": "propulsion",
+   "label": "Oil filler cap",
+   "ac_bbox_m": {
+    "min": [
+     -0.915,
+     -0.114,
+     -0.327
+    ],
+    "max": [
+     -0.845,
+     0.149,
+     -0.257
+    ]
+   },
+   "center_struct_in": [
+    -0.6,
+    11.5,
+    34.6
+   ],
+   "source": "Models/c172-common.ac:66909-67723"
+  },
+  "oilcompartment": {
+   "group": "propulsion",
+   "label": "Oil compartment",
+   "ac_bbox_m": {
+    "min": [
+     -0.957,
+     0.072,
+     -0.391
+    ],
+    "max": [
+     -0.805,
+     0.166,
+     -0.232
+    ]
+   },
+   "center_struct_in": [
+    -0.9,
+    12.3,
+    38.6
+   ],
+   "source": "Models/c172-common.ac:67724-68490"
+  },
+  "oilcompartmenthole": {
+   "group": "propulsion",
+   "label": "Oil compartment opening",
+   "ac_bbox_m": {
+    "min": [
+     -0.906,
+     0.097,
+     -0.318
+    ],
+    "max": [
+     -0.853,
+     0.13,
+     -0.263
+    ]
+   },
+   "center_struct_in": [
+    -0.8,
+    11.4,
+    38.4
+   ],
+   "source": "Models/c172-common.ac:68491-68855"
+  },
+  "PropellerCowlPlugs": {
+   "group": "propulsion",
+   "label": "Cowl plugs (securing, shown when fitted)",
+   "ac_bbox_m": {
+    "min": [
+     -1.868,
+     -0.904,
+     -0.434
+    ],
+    "max": [
+     -1.757,
+     0.805,
+     0.42
+    ]
+   },
+   "center_struct_in": [
+    -37.2,
+    0.3,
+    30.1
+   ],
+   "source": "Models/c172-common.ac:68856-69797"
+  },
+  "radi_box": {
+   "group": "propulsion",
+   "label": "Lower cowl air inlet box (label inferred)",
+   "ac_bbox_m": {
+    "min": [
+     -1.661,
+     -0.719,
+     -0.148
+    ],
+    "max": [
+     -1.249,
+     -0.388,
+     0.148
+    ]
+   },
+   "center_struct_in": [
+    -22.1,
+    0.0,
+    11.0
+   ],
+   "source": "Models/c172-common.ac:69798-70607"
+  },
+  "radiator": {
+   "group": "propulsion",
+   "label": "Lower cowl inlet face (label inferred)",
+   "ac_bbox_m": {
+    "min": [
+     -1.595,
+     -0.558,
+     -0.049
+    ],
+    "max": [
+     -1.595,
+     -0.477,
+     0.047
+    ]
+   },
+   "center_struct_in": [
+    -27.6,
+    0.0,
+    12.1
+   ],
+   "source": "Models/c172-common.ac:70608-70628"
+  },
+  "RightWheel": {
+   "group": "gear",
+   "label": "Right main wheel",
+   "ac_bbox_m": {
+    "min": [
+     0.351,
+     -1.326,
+     -1.184
+    ],
+    "max": [
+     0.709,
+     -0.968,
+     -1.046
+    ]
+   },
+   "center_struct_in": [
+    57.2,
+    43.9,
+    -8.3
+   ],
+   "source": "Models/c172-common.ac:70629-74486",
+   "animated_by": "Models/c172p.xml:4880-4913"
+  },
+  "RightWheelBrake": {
+   "group": "gear",
+   "label": "Right main wheel brake",
+   "ac_bbox_m": {
+    "min": [
+     0.432,
+     -1.196,
+     -1.053
+    ],
+    "max": [
+     0.625,
+     -1.098,
+     -1.033
+    ]
+   },
+   "center_struct_in": [
+    57.1,
+    41.1,
+    -8.3
+   ],
+   "source": "Models/c172-common.ac:74487-74904",
+   "animated_by": "Models/c172p.xml:4880-4913"
+  },
+  "RightWheelStrut": {
+   "group": "gear",
+   "label": "Right main gear spring strut",
+   "ac_bbox_m": {
+    "min": [
+     0.502,
+     -1.166,
+     -1.06
+    ],
+    "max": [
+     0.812,
+     -0.728,
+     -0.385
+    ]
+   },
+   "center_struct_in": [
+    61.8,
+    28.4,
+    -0.1
+   ],
+   "source": "Models/c172-common.ac:74905-76625",
+   "animated_by": "Models/c172p.xml:4880-4913"
+  },
+  "TopLink": {
+   "group": "gear",
+   "label": "Nose gear torque link (upper)",
+   "ac_bbox_m": {
+    "min": [
+     -1.015,
+     -0.896,
+     -0.043
+    ],
+    "max": [
+     -0.835,
+     -0.752,
+     0.043
+    ]
+   },
+   "center_struct_in": [
+    -0.7,
+    -0.0,
+    1.4
+   ],
+   "source": "Models/c172-common.ac:76626-77200",
+   "animated_by": "Models/c172p.xml:4785-4817"
+  },
+  "vent": {
+   "group": "cabin",
+   "label": "Cabin air vent (fuselage side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.677,
+     -0.109,
+     -0.546
+    ],
+    "max": [
+     -0.612,
+     -0.049,
+     -0.524
+    ]
+   },
+   "center_struct_in": [
+    8.8,
+    21.1,
+    31.3
+   ],
+   "source": "Models/c172-common.ac:77201-77854"
+  },
+  "venthole": {
+   "group": "cabin",
+   "label": "Cabin air vent opening (fuselage side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.677,
+     -0.1,
+     -0.545
+    ],
+    "max": [
+     -0.621,
+     -0.057,
+     -0.526
+    ]
+   },
+   "center_struct_in": [
+    8.6,
+    21.1,
+    31.3
+   ],
+   "source": "Models/c172-common.ac:77855-77956"
+  },
+  "BaggageDoorHotSpot": {
+   "group": "cabin",
+   "label": "Baggage door pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     1.343,
+     -0.751,
+     0.456
+    ],
+    "max": [
+     1.586,
+     -0.112,
+     0.921
+    ]
+   },
+   "center_struct_in": [
+    92.5,
+    -27.1,
+    21.8
+   ],
+   "source": "Models/c172-common.ac:77960-78113"
+  },
+  "CowlPlugHotSpot": {
+   "group": "propulsion",
+   "label": "Cowl plug pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -1.748,
+     -0.167,
+     -0.401
+    ],
+    "max": [
+     -1.659,
+     0.067,
+     0.413
+    ]
+   },
+   "center_struct_in": [
+    -32.9,
+    -0.2,
+    30.3
+   ],
+   "source": "Models/c172-common.ac:78114-78221"
+  },
+  "DomeSliderHotSpot": {
+   "group": "cabin",
+   "label": "Dome light slider pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     0.436,
+     0.42,
+     -0.017
+    ],
+    "max": [
+     0.448,
+     0.423,
+     0.018
+    ]
+   },
+   "center_struct_in": [
+    50.5,
+    -0.0,
+    53.2
+   ],
+   "source": "Models/c172-common.ac:78222-78279"
+  },
+  "FuelHotspotBoth": {
+   "group": "fuel",
+   "label": "Fuel selector BOTH pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.32,
+     -0.632,
+     -0.016
+    ],
+    "max": [
+     -0.289,
+     -0.601,
+     0.015
+    ]
+   },
+   "center_struct_in": [
+    23.3,
+    0.0,
+    10.9
+   ],
+   "source": "Models/c172-common.ac:78280-78337"
+  },
+  "FuelHotspotLeft": {
+   "group": "fuel",
+   "label": "Fuel selector LEFT pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.259,
+     -0.632,
+     0.046
+    ],
+    "max": [
+     -0.228,
+     -0.601,
+     0.077
+    ]
+   },
+   "center_struct_in": [
+    25.7,
+    -2.4,
+    11.0
+   ],
+   "source": "Models/c172-common.ac:78338-78395"
+  },
+  "FuelHotspotOff": {
+   "group": "fuel",
+   "label": "Fuel selector OFF pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.194,
+     -0.632,
+     -0.017
+    ],
+    "max": [
+     -0.163,
+     -0.601,
+     0.015
+    ]
+   },
+   "center_struct_in": [
+    28.3,
+    0.0,
+    11.2
+   ],
+   "source": "Models/c172-common.ac:78396-78453"
+  },
+  "FuelHotspotRight": {
+   "group": "fuel",
+   "label": "Fuel selector RIGHT pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.257,
+     -0.632,
+     -0.075
+    ],
+    "max": [
+     -0.226,
+     -0.601,
+     -0.044
+    ]
+   },
+   "center_struct_in": [
+    25.8,
+    2.4,
+    11.0
+   ],
+   "source": "Models/c172-common.ac:78454-78511"
+  },
+  "SumpHotSpotLeft": {
+   "group": "fuel",
+   "label": "Left tank drain sump pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.131,
+     0.264,
+     0.527
+    ],
+    "max": [
+     0.936,
+     0.447,
+     1.262
+    ]
+   },
+   "center_struct_in": [
+    49.1,
+    -35.2,
+    50.6
+   ],
+   "source": "Models/c172-common.ac:78512-78569"
+  },
+  "SumpHotSpotRight": {
+   "group": "fuel",
+   "label": "Right tank drain sump pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     -0.131,
+     0.26,
+     -1.173
+    ],
+    "max": [
+     0.929,
+     0.448,
+     -0.528
+    ]
+   },
+   "center_struct_in": [
+    49.0,
+    33.5,
+    50.5
+   ],
+   "source": "Models/c172-common.ac:78570-78627"
+  },
+  "TiedownHotSpotLeft": {
+   "group": "airframe",
+   "label": "Left tie-down pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     0.033,
+     0.305,
+     2.171
+    ],
+    "max": [
+     0.189,
+     0.407,
+     2.317
+    ]
+   },
+   "center_struct_in": [
+    37.6,
+    -88.3,
+    50.0
+   ],
+   "source": "Models/c172-common.ac:78628-78685"
+  },
+  "TiedownHotSpotRight": {
+   "group": "airframe",
+   "label": "Right tie-down pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     0.03,
+     0.305,
+     -2.326
+    ],
+    "max": [
+     0.191,
+     0.418,
+     -2.183
+    ]
+   },
+   "center_struct_in": [
+    37.6,
+    88.8,
+    50.2
+   ],
+   "source": "Models/c172-common.ac:78686-78743"
+  },
+  "TiedownHotSpotTail": {
+   "group": "airframe",
+   "label": "Tail tie-down pick hotspot (invisible)",
+   "ac_bbox_m": {
+    "min": [
+     4.615,
+     -0.685,
+     -0.072
+    ],
+    "max": [
+     4.755,
+     -0.649,
+     0.066
+    ]
+   },
+   "center_struct_in": [
+    219.6,
+    0.1,
+    19.2
+   ],
+   "source": "Models/c172-common.ac:78744-78801"
+  },
+  "carpethole": {
+   "group": "cabin",
+   "label": "Carpet cut-out",
+   "ac_bbox_m": {
+    "min": [
+     -0.632,
+     -0.697,
+     -0.353
+    ],
+    "max": [
+     -0.524,
+     -0.669,
+     0.355
+    ]
+   },
+   "center_struct_in": [
+    12.7,
+    -0.0,
+    7.7
+   ],
+   "source": "Models/c172-common.ac:78805-79556"
+  },
+  "gloveboxdoor": {
+   "group": "cabin",
+   "label": "Glovebox door",
+   "ac_bbox_m": {
+    "min": [
+     -0.372,
+     -0.259,
+     -0.451
+    ],
+    "max": [
+     -0.367,
+     -0.184,
+     -0.312
+    ]
+   },
+   "center_struct_in": [
+    19.9,
+    15.0,
+    26.3
+   ],
+   "source": "Models/c172-common.ac:79557-79660"
+  },
+  "gloveboxlock": {
+   "group": "cabin",
+   "label": "Glovebox lock",
+   "ac_bbox_m": {
+    "min": [
+     -0.367,
+     -0.218,
+     -0.391
+    ],
+    "max": [
+     -0.36,
+     -0.197,
+     -0.37
+    ]
+   },
+   "center_struct_in": [
+    20.1,
+    15.0,
+    26.8
+   ],
+   "source": "Models/c172-common.ac:79661-81321"
+  },
+  "panel_blocker": {
+   "group": "cabin",
+   "label": "Panel back blocker (rendering)",
+   "ac_bbox_m": {
+    "min": [
+     -0.409,
+     -0.277,
+     -0.462
+    ],
+    "max": [
+     -0.369,
+     0.163,
+     0.457
+    ]
+   },
+   "center_struct_in": [
+    18.8,
+    0.1,
+    32.7
+   ],
+   "source": "Models/c172-common.ac:81322-81709"
+  },
+  "Panel_0": {
+   "group": "cabin",
+   "label": "Instrument panel (upper)",
+   "ac_bbox_m": {
+    "min": [
+     -0.623,
+     -0.002,
+     -0.496
+    ],
+    "max": [
+     -0.33,
+     0.22,
+     0.491
+    ]
+   },
+   "center_struct_in": [
+    15.0,
+    0.1,
+    39.1
+   ],
+   "source": "Models/c172-common.ac:81713-83535"
+  },
+  "Panel_1": {
+   "group": "cabin",
+   "label": "Instrument panel (face)",
+   "ac_bbox_m": {
+    "min": [
+     -0.597,
+     -0.023,
+     -0.498
+    ],
+    "max": [
+     -0.596,
+     0.159,
+     0.496
+    ]
+   },
+   "center_struct_in": [
+    10.4,
+    0.0,
+    37.2
+   ],
+   "source": "Models/c172-common.ac:83536-83688"
+  },
+  "SeatMounts.0": {
+   "group": "cabin",
+   "label": "Front seat mounts (pilot side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.15,
+     -0.693,
+     -0.358
+    ],
+    "max": [
+     0.284,
+     -0.518,
+     -0.088
+    ]
+   },
+   "center_struct_in": [
+    37.9,
+    8.8,
+    12.1
+   ],
+   "source": "Models/c172-common.ac:83689-100775"
+  },
+  "SeatMounts.1": {
+   "group": "cabin",
+   "label": "Front seat mounts (co-pilot side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.15,
+     -0.693,
+     0.104
+    ],
+    "max": [
+     0.284,
+     -0.518,
+     0.374
+    ]
+   },
+   "center_struct_in": [
+    37.9,
+    -9.4,
+    12.1
+   ],
+   "source": "Models/c172-common.ac:100776-117862"
+  },
+  "SeatMounts.2": {
+   "group": "cabin",
+   "label": "Rear seat mounts",
+   "ac_bbox_m": {
+    "min": [
+     0.686,
+     -0.719,
+     -0.298
+    ],
+    "max": [
+     1.0,
+     -0.593,
+     0.302
+    ]
+   },
+   "center_struct_in": [
+    68.5,
+    -0.1,
+    11.7
+   ],
+   "source": "Models/c172-common.ac:117863-125608"
+  },
+  "sun_and_view_blocker": {
+   "group": "cabin",
+   "label": "Sun/view blocker (rendering)",
+   "ac_bbox_m": {
+    "min": [
+     -0.737,
+     -0.283,
+     -0.462
+    ],
+    "max": [
+     -0.365,
+     0.007,
+     0.462
+    ]
+   },
+   "center_struct_in": [
+    12.6,
+    0.0,
+    29.2
+   ],
+   "source": "Models/c172-common.ac:125609-125763"
+  },
+  "Propeller": {
+   "group": "propulsion",
+   "label": "Propeller (static, < 500 rpm)",
+   "ac_bbox_m": {
+    "min": [
+     -1.868,
+     -0.904,
+     -0.434
+    ],
+    "max": [
+     -1.757,
+     0.805,
+     0.42
+    ]
+   },
+   "center_struct_in": [
+    -37.2,
+    0.3,
+    30.1
+   ],
+   "source": "Models/c172-common.ac:125767-126708",
+   "animated_by": "Models/c172p.xml:5528-5544; Models/c172p.xml:5474-5519; Models/c172p.xml:313-314"
+  },
+  "Propeller.Fast": {
+   "group": "propulsion",
+   "label": "Propeller disc (blurred, > 400 rpm)",
+   "ac_bbox_m": {
+    "min": [
+     -1.892,
+     -1.0,
+     -0.951
+    ],
+    "max": [
+     -1.753,
+     0.898,
+     0.949
+    ]
+   },
+   "center_struct_in": [
+    -37.5,
+    0.0,
+    30.0
+   ],
+   "source": "Models/c172-common.ac:126709-128798"
+  },
+  "Spinner": {
+   "group": "propulsion",
+   "label": "Spinner",
+   "ac_bbox_m": {
+    "min": [
+     -2.141,
+     -0.174,
+     -0.123
+    ],
+    "max": [
+     -1.727,
+     0.07,
+     0.121
+    ]
+   },
+   "center_struct_in": [
+    -41.9,
+    0.1,
+    29.7
+   ],
+   "source": "Models/c172-common.ac:128799-130569",
+   "animated_by": "Models/c172p.xml:5528-5544; Models/c172p.xml:5474-5519; Models/c172p.xml:313-314"
+  },
+  "RearNavLight": {
+   "group": "lights",
+   "label": "Tail navigation light (white)",
+   "ac_bbox_m": {
+    "min": [
+     6.065,
+     0.954,
+     -0.017
+    ],
+    "max": [
+     6.092,
+     0.996,
+     0.018
+    ]
+   },
+   "center_struct_in": [
+    271.0,
+    -0.0,
+    86.6
+   ],
+   "source": "Models/c172-common.ac:130573-130831",
+   "animated_by": "Models/c172p.xml:4655-4672"
+  },
+  "rudder_1": {
+   "group": "controls",
+   "label": "Rudder",
+   "ac_bbox_m": {
+    "min": [
+     4.933,
+     -0.641,
+     -0.062
+    ],
+    "max": [
+     6.085,
+     1.026,
+     0.062
+    ]
+   },
+   "center_struct_in": [
+    250.2,
+    0.0,
+    54.7
+   ],
+   "source": "Models/c172-common.ac:130832-131635",
+   "animated_by": "Models/c172p.xml:4655-4672"
+  },
+  "ruddercableleft": {
+   "group": "controls",
+   "label": "Left rudder cable",
+   "ac_bbox_m": {
+    "min": [
+     4.764,
+     -0.542,
+     0.055
+    ],
+    "max": [
+     4.942,
+     -0.539,
+     0.082
+    ]
+   },
+   "center_struct_in": [
+    225.9,
+    -2.7,
+    24.5
+   ],
+   "source": "Models/c172-common.ac:131636-131695"
+  },
+  "ruddercablelefthinge": {
+   "group": "controls",
+   "label": "Left rudder horn",
+   "ac_bbox_m": {
+    "min": [
+     4.923,
+     -0.551,
+     0.029
+    ],
+    "max": [
+     4.979,
+     -0.532,
+     0.071
+    ]
+   },
+   "center_struct_in": [
+    229.8,
+    -2.0,
+    24.7
+   ],
+   "source": "Models/c172-common.ac:131696-136115",
+   "animated_by": "Models/c172p.xml:4655-4672"
+  },
+  "ruddercableports": {
+   "group": "controls",
+   "label": "Rudder cable fairleads",
+   "ac_bbox_m": {
+    "min": [
+     4.669,
+     -0.573,
+     -0.101
+    ],
+    "max": [
+     4.826,
+     -0.507,
+     0.101
+    ]
+   },
+   "center_struct_in": [
+    221.8,
+    0.0,
+    24.3
+   ],
+   "source": "Models/c172-common.ac:136116-136455"
+  },
+  "ruddercableportshole": {
+   "group": "controls",
+   "label": "Rudder cable fairlead openings",
+   "ac_bbox_m": {
+    "min": [
+     4.679,
+     -0.565,
+     -0.1
+    ],
+    "max": [
+     4.826,
+     -0.515,
+     0.099
+    ]
+   },
+   "center_struct_in": [
+    222.0,
+    0.0,
+    24.3
+   ],
+   "source": "Models/c172-common.ac:136456-136571"
+  },
+  "ruddercableright": {
+   "group": "controls",
+   "label": "Right rudder cable",
+   "ac_bbox_m": {
+    "min": [
+     4.74,
+     -0.541,
+     -0.087
+    ],
+    "max": [
+     4.943,
+     -0.539,
+     -0.056
+    ]
+   },
+   "center_struct_in": [
+    225.5,
+    2.8,
+    24.5
+   ],
+   "source": "Models/c172-common.ac:136572-136631"
+  },
+  "ruddercablerighthinge": {
+   "group": "controls",
+   "label": "Right rudder horn",
+   "ac_bbox_m": {
+    "min": [
+     4.925,
+     -0.552,
+     -0.071
+    ],
+    "max": [
+     4.98,
+     -0.533,
+     -0.026
+    ]
+   },
+   "center_struct_in": [
+    229.8,
+    1.9,
+    24.6
+   ],
+   "source": "Models/c172-common.ac:136632-141051",
+   "animated_by": "Models/c172p.xml:4655-4672"
+  },
+  "TieDownLeft": {
+   "group": "airframe",
+   "label": "Left wing tie-down ring",
+   "ac_bbox_m": {
+    "min": [
+     0.102,
+     0.342,
+     2.225
+    ],
+    "max": [
+     0.115,
+     0.374,
+     2.254
+    ]
+   },
+   "center_struct_in": [
+    37.5,
+    -88.2,
+    50.1
+   ],
+   "source": "Models/c172-common.ac:141055-145006"
+  },
+  "TieDownRight": {
+   "group": "airframe",
+   "label": "Right wing tie-down ring",
+   "ac_bbox_m": {
+    "min": [
+     0.095,
+     0.345,
+     -2.259
+    ],
+    "max": [
+     0.108,
+     0.378,
+     -2.23
+    ]
+   },
+   "center_struct_in": [
+    37.2,
+    88.4,
+    50.2
+   ],
+   "source": "Models/c172-common.ac:145007-148958"
+  },
+  "TieDownTail": {
+   "group": "airframe",
+   "label": "Tail tie-down ring",
+   "ac_bbox_m": {
+    "min": [
+     4.677,
+     -0.688,
+     -0.001
+    ],
+    "max": [
+     4.707,
+     -0.656,
+     0.006
+    ]
+   },
+   "center_struct_in": [
+    219.9,
+    -0.1,
+    19.0
+   ],
+   "source": "Models/c172-common.ac:148959-152910"
+  },
+  "glas": {
+   "group": "cabin",
+   "label": "Windshield and windows (exterior glass)",
+   "ac_bbox_m": {
+    "min": [
+     -0.622,
+     -0.135,
+     -0.518
+    ],
+    "max": [
+     2.009,
+     0.542,
+     0.518
+    ]
+   },
+   "center_struct_in": [
+    60.8,
+    0.0,
+    45.2
+   ],
+   "source": "Models/c172-common.ac:152914-154233"
+  },
+  "glas_back_interior_left_side": {
+   "group": "cabin",
+   "label": "Rear left window (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     0.84,
+     -0.126,
+     0.515
+    ],
+    "max": [
+     1.055,
+     0.158,
+     1.255
+    ]
+   },
+   "center_struct_in": [
+    71.2,
+    -34.8,
+    38.3
+   ],
+   "source": "Models/c172-common.ac:154234-154389"
+  },
+  "glas_back_interior_right_side": {
+   "group": "cabin",
+   "label": "Rear right window (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     0.84,
+     -0.126,
+     -1.253
+    ],
+    "max": [
+     1.06,
+     0.158,
+     -0.513
+    ]
+   },
+   "center_struct_in": [
+    71.3,
+    34.8,
+    38.3
+   ],
+   "source": "Models/c172-common.ac:154390-154547"
+  },
+  "glas_front_interior_left_side": {
+   "group": "cabin",
+   "label": "Front left glass (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.59,
+     0.042,
+     0.492
+    ],
+    "max": [
+     -0.249,
+     0.444,
+     1.134
+    ]
+   },
+   "center_struct_in": [
+    17.0,
+    -32.0,
+    44.4
+   ],
+   "source": "Models/c172-common.ac:154548-154639"
+  },
+  "glas_front_interior_right_side": {
+   "group": "cabin",
+   "label": "Front right glass (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.586,
+     0.041,
+     -1.13
+    ],
+    "max": [
+     -0.245,
+     0.442,
+     -0.491
+    ]
+   },
+   "center_struct_in": [
+    17.2,
+    31.9,
+    44.4
+   ],
+   "source": "Models/c172-common.ac:154640-154731"
+  },
+  "glas_interior": {
+   "group": "cabin",
+   "label": "Windshield (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     -0.625,
+     0.109,
+     -0.516
+    ],
+    "max": [
+     0.131,
+     0.544,
+     0.516
+    ]
+   },
+   "center_struct_in": [
+    23.6,
+    -0.0,
+    48.1
+   ],
+   "source": "Models/c172-common.ac:154732-155468"
+  },
+  "glas_interior_back": {
+   "group": "cabin",
+   "label": "Rear window (interior side)",
+   "ac_bbox_m": {
+    "min": [
+     1.543,
+     -0.058,
+     -0.446
+    ],
+    "max": [
+     2.008,
+     0.25,
+     0.446
+    ]
+   },
+   "center_struct_in": [
+    103.6,
+    0.0,
+    43.2
+   ],
+   "source": "Models/c172-common.ac:155469-155662"
+  },
+  "landinglightcover": {
+   "group": "lights",
+   "label": "Landing/taxi light cover (left wing leading edge)",
+   "ac_bbox_m": {
+    "min": [
+     -0.154,
+     0.437,
+     2.68
+    ],
+    "max": [
+     -0.002,
+     0.561,
+     3.036
+    ]
+   },
+   "center_struct_in": [
+    29.9,
+    -112.5,
+    55.2
+   ],
+   "source": "Models/c172-common.ac:155663-155762"
+  },
+  "leftwindow": {
+   "group": "cabin",
+   "label": "Left door window",
+   "ac_bbox_m": {
+    "min": [
+     -0.009,
+     -0.111,
+     0.506
+    ],
+    "max": [
+     0.83,
+     0.317,
+     0.522
+    ]
+   },
+   "center_struct_in": [
+    49.9,
+    -20.2,
+    40.6
+   ],
+   "source": "Models/c172-common.ac:155763-156076",
+   "animated_by": "Models/c172p.xml:2311-2355"
+  },
+  "leftwindow_interior": {
+   "group": "cabin",
+   "label": "Left window (interior)",
+   "ac_bbox_m": {
+    "min": [
+     -0.066,
+     -0.09,
+     0.513
+    ],
+    "max": [
+     0.205,
+     0.241,
+     1.352
+    ]
+   },
+   "center_struct_in": [
+    36.6,
+    -36.7,
+    38.9
+   ],
+   "source": "Models/c172-common.ac:156077-156392"
+  },
+  "rightwindow": {
+   "group": "cabin",
+   "label": "Right door window",
+   "ac_bbox_m": {
+    "min": [
+     -0.009,
+     -0.111,
+     -0.525
+    ],
+    "max": [
+     0.83,
+     0.317,
+     -0.509
+    ]
+   },
+   "center_struct_in": [
+    49.9,
+    20.4,
+    40.6
+   ],
+   "source": "Models/c172-common.ac:156393-156706",
+   "animated_by": "Models/c172p.xml:2171-2215"
+  },
+  "rightwindow_interior": {
+   "group": "cabin",
+   "label": "Right window (interior)",
+   "ac_bbox_m": {
+    "min": [
+     -0.064,
+     -0.089,
+     -1.351
+    ],
+    "max": [
+     0.207,
+     0.242,
+     -0.511
+    ]
+   },
+   "center_struct_in": [
+    36.6,
+    36.7,
+    38.9
+   ],
+   "source": "Models/c172-common.ac:156707-157022"
+  },
+  "Beacon": {
+   "group": "lights",
+   "label": "Beacon (on-state lens)",
+   "ac_bbox_m": {
+    "min": [
+     5.478,
+     1.029,
+     -0.021
+    ],
+    "max": [
+     5.521,
+     1.076,
+     0.022
+    ]
+   },
+   "center_struct_in": [
+    248.1,
+    -0.0,
+    88.5
+   ],
+   "source": "Models/c172-common.ac:157026-157527"
+  },
+  "BeaconMount": {
+   "group": "lights",
+   "label": "Beacon mount",
+   "ac_bbox_m": {
+    "min": [
+     5.467,
+     1.025,
+     -0.03
+    ],
+    "max": [
+     5.528,
+     1.041,
+     0.03
+    ]
+   },
+   "center_struct_in": [
+    248.0,
+    -0.0,
+    87.7
+   ],
+   "source": "Models/c172-common.ac:157528-158081"
+  },
+  "elevatorleft": {
+   "group": "controls",
+   "label": "Left elevator",
+   "ac_bbox_m": {
+    "min": [
+     4.711,
+     -0.465,
+     0.05
+    ],
+    "max": [
+     5.495,
+     -0.382,
+     1.771
+    ]
+   },
+   "center_struct_in": [
+    235.5,
+    -35.8,
+    29.6
+   ],
+   "source": "Models/c172-common.ac:158082-158390",
+   "animated_by": "Models/c172p.xml:4585-4611"
+  },
+  "elevatorright": {
+   "group": "controls",
+   "label": "Right elevator",
+   "ac_bbox_m": {
+    "min": [
+     4.732,
+     -0.465,
+     -1.771
+    ],
+    "max": [
+     5.495,
+     -0.383,
+     -0.05
+    ]
+   },
+   "center_struct_in": [
+    235.9,
+    35.8,
+    29.6
+   ],
+   "source": "Models/c172-common.ac:158391-158770",
+   "animated_by": "Models/c172p.xml:4612-4639"
+  },
+  "elevatortrim": {
+   "group": "controls",
+   "label": "Elevator trim tab (right elevator)",
+   "ac_bbox_m": {
+    "min": [
+     5.248,
+     -0.445,
+     -1.307
+    ],
+    "max": [
+     5.479,
+     -0.423,
+     -0.404
+    ]
+   },
+   "center_struct_in": [
+    245.8,
+    33.7,
+    29.7
+   ],
+   "source": "Models/c172-common.ac:158771-158845",
+   "animated_by": "Models/c172p.xml:4612-4639"
+  },
+  "hstab": {
+   "group": "empennage",
+   "label": "Horizontal stabilizer",
+   "ac_bbox_m": {
+    "min": [
+     4.214,
+     -0.46,
+     -1.771
+    ],
+    "max": [
+     4.934,
+     -0.367,
+     1.771
+    ]
+   },
+   "center_struct_in": [
+    214.7,
+    0.0,
+    28.9
+   ],
+   "source": "Models/c172-common.ac:158846-159804"
+  },
+  "vstab.001": {
+   "group": "empennage",
+   "label": "Vertical stabilizer (fin + dorsal)",
+   "ac_bbox_m": {
+    "min": [
+     2.326,
+     -0.391,
+     -0.062
+    ],
+    "max": [
+     5.665,
+     1.061,
+     0.062
+    ]
+   },
+   "center_struct_in": [
+    190.4,
+    0.0,
+    57.2
+   ],
+   "source": "Models/c172-common.ac:159805-160648"
+  },
+  "courtesyoff": {
+   "group": "lights",
+   "label": "Courtesy lights (under wing, off)",
+   "ac_bbox_m": {
+    "min": [
+     0.643,
+     0.322,
+     -1.751
+    ],
+    "max": [
+     0.831,
+     0.365,
+     1.738
+    ]
+   },
+   "center_struct_in": [
+    62.3,
+    0.3,
+    50.8
+   ],
+   "source": "Models/c172-common.ac:160652-163271"
+  },
+  "courtesyon-l": {
+   "group": "lights",
+   "label": "Left courtesy light (on)",
+   "ac_bbox_m": {
+    "min": [
+     0.712,
+     0.324,
+     1.617
+    ],
+    "max": [
+     0.766,
+     0.334,
+     1.668
+    ]
+   },
+   "center_struct_in": [
+    62.4,
+    -64.7,
+    50.2
+   ],
+   "source": "Models/c172-common.ac:163272-163292"
+  },
+  "courtesyon-r": {
+   "group": "lights",
+   "label": "Right courtesy light (on)",
+   "ac_bbox_m": {
+    "min": [
+     0.715,
+     0.326,
+     -1.682
+    ],
+    "max": [
+     0.767,
+     0.334,
+     -1.631
+    ]
+   },
+   "center_struct_in": [
+    62.5,
+    65.2,
+    50.2
+   ],
+   "source": "Models/c172-common.ac:163293-163313"
+  },
+  "FuelCapStarboard": {
+   "group": "fuel",
+   "label": "Right fuel filler cap",
+   "ac_bbox_m": {
+    "min": [
+     0.171,
+     0.485,
+     -0.834
+    ],
+    "max": [
+     0.24,
+     0.523,
+     -0.765
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    31.5,
+    56.0
+   ],
+   "source": "Models/c172-common.ac:163314-163518"
+  },
+  "fuelportport": {
+   "group": "fuel",
+   "label": "Left fuel filler port",
+   "ac_bbox_m": {
+    "min": [
+     0.177,
+     0.459,
+     0.768
+    ],
+    "max": [
+     0.234,
+     0.501,
+     0.825
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    -31.4,
+    55.0
+   ],
+   "source": "Models/c172-common.ac:163519-164104"
+  },
+  "fuelportstarboard": {
+   "group": "fuel",
+   "label": "Right fuel filler port",
+   "ac_bbox_m": {
+    "min": [
+     0.178,
+     0.459,
+     -0.829
+    ],
+    "max": [
+     0.235,
+     0.501,
+     -0.772
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    31.5,
+    55.0
+   ],
+   "source": "Models/c172-common.ac:164105-164690"
+  },
+  "fuelportstarboardhole": {
+   "group": "fuel",
+   "label": "Right fuel filler port hole",
+   "ac_bbox_m": {
+    "min": [
+     0.18,
+     0.465,
+     -0.827
+    ],
+    "max": [
+     0.233,
+     0.501,
+     -0.774
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    31.5,
+    55.2
+   ],
+   "source": "Models/c172-common.ac:164691-165023"
+  },
+  "fuelportstarporthole": {
+   "group": "fuel",
+   "label": "Left fuel filler port hole",
+   "ac_bbox_m": {
+    "min": [
+     0.179,
+     0.465,
+     0.77
+    ],
+    "max": [
+     0.232,
+     0.501,
+     0.823
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    -31.4,
+    55.2
+   ],
+   "source": "Models/c172-common.ac:165024-165356"
+  },
+  "fuelvent": {
+   "group": "fuel",
+   "label": "Fuel tank vent (left wing strut area)",
+   "ac_bbox_m": {
+    "min": [
+     0.171,
+     0.345,
+     2.132
+    ],
+    "max": [
+     0.202,
+     0.416,
+     2.144
+    ]
+   },
+   "center_struct_in": [
+    40.6,
+    -84.2,
+    51.1
+   ],
+   "source": "Models/c172-common.ac:165357-167260"
+  },
+  "landinglight": {
+   "group": "lights",
+   "label": "Landing light beam geometry",
+   "ac_bbox_m": {
+    "min": [
+     -0.347,
+     0.137,
+     2.579
+    ],
+    "max": [
+     -0.178,
+     0.887,
+     3.337
+    ]
+   },
+   "center_struct_in": [
+    22.6,
+    -116.5,
+    55.3
+   ],
+   "source": "Models/c172-common.ac:167261-167383"
+  },
+  "LeftNavLight": {
+   "group": "lights",
+   "label": "Left (red) navigation light",
+   "ac_bbox_m": {
+    "min": [
+     0.102,
+     0.503,
+     5.619
+    ],
+    "max": [
+     0.185,
+     0.554,
+     5.659
+    ]
+   },
+   "center_struct_in": [
+    38.6,
+    -222.0,
+    56.8
+   ],
+   "source": "Models/c172-common.ac:167384-168208"
+  },
+  "lightlanding": {
+   "group": "lights",
+   "label": "Landing light lamp",
+   "ac_bbox_m": {
+    "min": [
+     -0.074,
+     0.465,
+     2.878
+    ],
+    "max": [
+     -0.022,
+     0.546,
+     2.963
+    ]
+   },
+   "center_struct_in": [
+    31.1,
+    -115.0,
+    55.5
+   ],
+   "source": "Models/c172-common.ac:168209-170621"
+  },
+  "lighttaxi": {
+   "group": "lights",
+   "label": "Taxi light lamp",
+   "ac_bbox_m": {
+    "min": [
+     -0.078,
+     0.463,
+     2.765
+    ],
+    "max": [
+     -0.025,
+     0.544,
+     2.85
+    ]
+   },
+   "center_struct_in": [
+    30.9,
+    -110.5,
+    55.4
+   ],
+   "source": "Models/c172-common.ac:170622-173034"
+  },
+  "PitotTube": {
+   "group": "pitot-static",
+   "label": "Pitot tube",
+   "ac_bbox_m": {
+    "min": [
+     -0.184,
+     0.386,
+     1.513
+    ],
+    "max": [
+     -0.065,
+     0.443,
+     1.54
+    ]
+   },
+   "center_struct_in": [
+    28.3,
+    -60.1,
+    51.8
+   ],
+   "source": "Models/c172-common.ac:173035-175892"
+  },
+  "RightNavLight": {
+   "group": "lights",
+   "label": "Right (green) navigation light",
+   "ac_bbox_m": {
+    "min": [
+     0.101,
+     0.506,
+     -5.661
+    ],
+    "max": [
+     0.184,
+     0.557,
+     -5.62
+    ]
+   },
+   "center_struct_in": [
+    38.5,
+    222.1,
+    57.0
+   ],
+   "source": "Models/c172-common.ac:175893-176717"
+  },
+  "taxilight": {
+   "group": "lights",
+   "label": "Taxi light beam geometry",
+   "ac_bbox_m": {
+    "min": [
+     -0.308,
+     0.208,
+     2.484
+    ],
+    "max": [
+     -0.144,
+     0.785,
+     3.071
+    ]
+   },
+   "center_struct_in": [
+    24.1,
+    -109.4,
+    54.8
+   ],
+   "source": "Models/c172-common.ac:176718-176840"
+  },
+  "wing_0": {
+   "group": "lights",
+   "label": "Landing light cover (duplicate, damage variant)",
+   "ac_bbox_m": {
+    "min": [
+     -0.154,
+     0.437,
+     2.68
+    ],
+    "max": [
+     -0.002,
+     0.561,
+     3.036
+    ]
+   },
+   "center_struct_in": [
+    29.9,
+    -112.5,
+    55.2
+   ],
+   "source": "Models/c172-common.ac:176841-176930"
+  },
+  "flaps": {
+   "group": "wing",
+   "label": "Flaps (both wings, single object)",
+   "ac_bbox_m": {
+    "min": [
+     0.76,
+     0.214,
+     -2.615
+    ],
+    "max": [
+     1.483,
+     0.4,
+     2.615
+    ]
+   },
+   "center_struct_in": [
+    77.5,
+    -0.0,
+    50.1
+   ],
+   "source": "Models/c172-common.ac:176934-179365",
+   "animated_by": "Models/c172p.xml:4541-4553"
+  },
+  "fuelcompartment": {
+   "group": "fuel",
+   "label": "Fuel filler compartment (wing top, both sides)",
+   "ac_bbox_m": {
+    "min": [
+     0.15,
+     0.457,
+     -0.855
+    ],
+    "max": [
+     0.262,
+     0.528,
+     0.852
+    ]
+   },
+   "center_struct_in": [
+    41.1,
+    0.1,
+    55.5
+   ],
+   "source": "Models/c172-common.ac:179366-180021"
+  },
+  "leftaileron": {
+   "group": "controls",
+   "label": "Left aileron",
+   "ac_bbox_m": {
+    "min": [
+     0.86,
+     0.254,
+     2.616
+    ],
+    "max": [
+     1.483,
+     0.5,
+     5.464
+    ]
+   },
+   "center_struct_in": [
+    79.3,
+    -159.1,
+    53.0
+   ],
+   "source": "Models/c172-common.ac:180022-180065",
+   "animated_by": "Models/c172p.xml:4382-4419"
+  },
+  "rightaileron": {
+   "group": "controls",
+   "label": "Right aileron",
+   "ac_bbox_m": {
+    "min": [
+     0.86,
+     0.254,
+     -5.464
+    ],
+    "max": [
+     1.483,
+     0.5,
+     -2.616
+    ]
+   },
+   "center_struct_in": [
+    79.3,
+    159.1,
+    53.0
+   ],
+   "source": "Models/c172-common.ac:180066-180107",
+   "animated_by": "Models/c172p.xml:4462-4499"
+  },
+  "wing_1C": {
+   "group": "wing",
+   "label": "Wing root closure (center)",
+   "ac_bbox_m": {
+    "min": [
+     0.114,
+     0.466,
+     -0.518
+    ],
+    "max": [
+     0.115,
+     0.535,
+     0.518
+    ]
+   },
+   "center_struct_in": [
+    37.5,
+    0.0,
+    55.7
+   ],
+   "source": "Models/c172-common.ac:180108-180137"
+  },
+  "wing_1Ledge": {
+   "group": "wing",
+   "label": "Left wing root leading edge",
+   "ac_bbox_m": {
+    "min": [
+     -0.16,
+     0.387,
+     0.511
+    ],
+    "max": [
+     0.087,
+     0.533,
+     0.518
+    ]
+   },
+   "center_struct_in": [
+    31.6,
+    -20.3,
+    53.8
+   ],
+   "source": "Models/c172-common.ac:180138-180255"
+  },
+  "wing_1Redge": {
+   "group": "wing",
+   "label": "Right wing root leading edge",
+   "ac_bbox_m": {
+    "min": [
+     -0.16,
+     0.387,
+     -0.518
+    ],
+    "max": [
+     0.087,
+     0.533,
+     -0.512
+    ]
+   },
+   "center_struct_in": [
+    31.6,
+    20.3,
+    53.8
+   ],
+   "source": "Models/c172-common.ac:180256-180373"
+  },
+  "wing_center": {
+   "group": "wing",
+   "label": "Wing center section (cabin roof span)",
+   "ac_bbox_m": {
+    "min": [
+     -0.015,
+     0.214,
+     -2.616
+    ],
+    "max": [
+     1.483,
+     0.547,
+     2.616
+    ]
+   },
+   "center_struct_in": [
+    62.1,
+    0.0,
+    52.2
+   ],
+   "source": "Models/c172-common.ac:180374-181090"
+  },
+  "wing_leading_edge_center": {
+   "group": "wing",
+   "label": "Wing leading edge (center section)",
+   "ac_bbox_m": {
+    "min": [
+     -0.16,
+     0.403,
+     -2.616
+    ],
+    "max": [
+     0.089,
+     0.551,
+     2.616
+    ]
+   },
+   "center_struct_in": [
+    31.6,
+    0.0,
+    54.4
+   ],
+   "source": "Models/c172-common.ac:181091-181750"
+  },
+  "wing_leading_edge_left": {
+   "group": "wing",
+   "label": "Left wing leading edge (outboard)",
+   "ac_bbox_m": {
+    "min": [
+     -0.157,
+     0.436,
+     2.616
+    ],
+    "max": [
+     0.129,
+     0.621,
+     5.464
+    ]
+   },
+   "center_struct_in": [
+    32.3,
+    -159.1,
+    56.5
+   ],
+   "source": "Models/c172-common.ac:181751-181945"
+  },
+  "wing_leading_edge_right": {
+   "group": "wing",
+   "label": "Right wing leading edge (outboard)",
+   "ac_bbox_m": {
+    "min": [
+     -0.157,
+     0.436,
+     -5.464
+    ],
+    "max": [
+     0.129,
+     0.621,
+     -2.616
+    ]
+   },
+   "center_struct_in": [
+    32.3,
+    159.1,
+    56.5
+   ],
+   "source": "Models/c172-common.ac:181946-182047"
+  },
+  "wing_left": {
+   "group": "wing",
+   "label": "Left outer wing",
+   "ac_bbox_m": {
+    "min": [
+     -0.045,
+     0.296,
+     2.616
+    ],
+    "max": [
+     1.162,
+     0.621,
+     5.636
+    ]
+   },
+   "center_struct_in": [
+    55.0,
+    -162.4,
+    54.9
+   ],
+   "source": "Models/c172-common.ac:182048-183429"
+  },
+  "wing_right": {
+   "group": "wing",
+   "label": "Right outer wing",
+   "ac_bbox_m": {
+    "min": [
+     -0.045,
+     0.297,
+     -5.636
+    ],
+    "max": [
+     1.162,
+     0.621,
+     -2.616
+    ]
+   },
+   "center_struct_in": [
+    55.0,
+    162.4,
+    54.9
+   ],
+   "source": "Models/c172-common.ac:183430-184723"
+  },
+  "wingventhole": {
+   "group": "wing",
+   "label": "Wing root air-vent intakes",
+   "ac_bbox_m": {
+    "min": [
+     -0.16,
+     0.447,
+     -0.573
+    ],
+    "max": [
+     -0.072,
+     0.48,
+     0.573
+    ]
+   },
+   "center_struct_in": [
+    28.5,
+    -0.0,
+    53.7
+   ],
+   "source": "Models/c172-common.ac:184724-185756"
+  }
+ },
+ "animations_note": "All animation coordinates are given in three frames: fg_model (as written in Models/c172p.xml: x aft, y right, z up, m, pre-offset), ac (raw AC3D file frame: x aft, y up, z left; use this if you load c172-common.ac directly into three.js), struct_in (JSBSim structural inches, after applying the -3 deg pitch offset and VRP origin). Rotation sense follows FG: positive angle is right-handed about the p1->p2 vector (or axis).",
+ "animations": [
+  {
+   "objects": [
+    "leftaileron"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/left-aileron-pos-norm",
+   "interpolation": [
+    [
+     -1.0,
+     -15
+    ],
+    [
+     0.0,
+     0
+    ],
+    [
+     1.0,
+     20
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     0.862,
+     -5.464,
+     0.459
+    ],
+    "p2_fg_model_m": [
+     1.158,
+     -2.616,
+     0.337
+    ],
+    "p1_ac_m": [
+     0.862,
+     0.459,
+     5.464
+    ],
+    "p2_ac_m": [
+     1.158,
+     0.337,
+     2.616
+    ],
+    "p1_struct_in": [
+     66.9,
+     -215.1,
+     55.6
+    ],
+    "p2_struct_in": [
+     78.8,
+     -103.0,
+     51.4
+    ]
+   },
+   "condition": "wing not damaged",
+   "source": "Models/c172p.xml:4382-4419"
+  },
+  {
+   "objects": [
+    "rightaileron"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/right-aileron-pos-norm",
+   "interpolation": [
+    [
+     -1.0,
+     20
+    ],
+    [
+     0.0,
+     0
+    ],
+    [
+     1.0,
+     -15
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     1.158,
+     2.616,
+     0.337
+    ],
+    "p2_fg_model_m": [
+     0.862,
+     5.464,
+     0.459
+    ],
+    "p1_ac_m": [
+     1.158,
+     0.337,
+     -2.616
+    ],
+    "p2_ac_m": [
+     0.862,
+     0.459,
+     -5.464
+    ],
+    "p1_struct_in": [
+     78.8,
+     103.0,
+     51.4
+    ],
+    "p2_struct_in": [
+     66.9,
+     215.1,
+     55.6
+    ]
+   },
+   "condition": "wing not damaged",
+   "source": "Models/c172p.xml:4462-4499"
+  },
+  {
+   "objects": [
+    "flaps"
+   ],
+   "type": "translate",
+   "property": "surface-positions/flap-pos-norm",
+   "factor": 0.08,
+   "unit": "m",
+   "axis_fg_model": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_ac": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "source": "Models/c172p.xml:4541-4553"
+  },
+  {
+   "objects": [
+    "flaps"
+   ],
+   "type": "translate",
+   "property": "surface-positions/flap-pos-norm",
+   "factor": -0.1,
+   "unit": "m",
+   "axis_fg_model": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "axis_ac": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "source": "Models/c172p.xml:4554-4566"
+  },
+  {
+   "objects": [
+    "flaps"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/flap-pos-norm",
+   "factor": 30,
+   "unit": "DEG",
+   "center_axis": {
+    "center_fg_model_m": [
+     1.152,
+     -0.53,
+     0.32
+    ],
+    "axis_fg_model": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "center_ac_m": [
+     1.152,
+     0.32,
+     0.53
+    ],
+    "axis_ac": [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    "center_struct_in": [
+     78.6,
+     -20.9,
+     50.7
+    ]
+   },
+   "note": "single object spans both wings; FG applies translate x, translate z, then rotate in listed order",
+   "source": "Models/c172p.xml:4567-4584"
+  },
+  {
+   "objects": [
+    "elevatorleft"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/elevator-pos-norm",
+   "interpolation": [
+    [
+     -1.0,
+     28
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1.0,
+     -23
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     4.87869,
+     -0.135,
+     -0.42222
+    ],
+    "p2_fg_model_m": [
+     4.7439,
+     -1.7279,
+     -0.4222
+    ],
+    "p1_ac_m": [
+     4.87869,
+     -0.42222,
+     0.135
+    ],
+    "p2_ac_m": [
+     4.7439,
+     -0.4222,
+     1.7279
+    ],
+    "p1_struct_in": [
+     226.7,
+     -5.3,
+     29.2
+    ],
+    "p2_struct_in": [
+     221.4,
+     -68.0,
+     28.9
+    ]
+   },
+   "source": "Models/c172p.xml:4585-4611"
+  },
+  {
+   "objects": [
+    "elevatorright",
+    "elevatortrim"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/elevator-pos-norm",
+   "interpolation": [
+    [
+     -1.0,
+     28
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1.0,
+     -23
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     4.7439,
+     1.7279,
+     -0.4222
+    ],
+    "p2_fg_model_m": [
+     4.87869,
+     0.135,
+     -0.42222
+    ],
+    "p1_ac_m": [
+     4.7439,
+     -0.4222,
+     -1.7279
+    ],
+    "p2_ac_m": [
+     4.87869,
+     -0.42222,
+     -0.135
+    ],
+    "p1_struct_in": [
+     221.4,
+     68.0,
+     28.9
+    ],
+    "p2_struct_in": [
+     226.7,
+     5.3,
+     29.2
+    ]
+   },
+   "source": "Models/c172p.xml:4612-4639"
+  },
+  {
+   "objects": [
+    "elevatortrim"
+   ],
+   "type": "rotate",
+   "property": "controls/flight/elevator-trim",
+   "factor": -25,
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     5.37238,
+     0.40405,
+     -0.43873
+    ],
+    "p2_fg_model_m": [
+     5.24803,
+     1.30441,
+     -0.43157
+    ],
+    "p1_ac_m": [
+     5.37238,
+     -0.43873,
+     -0.40405
+    ],
+    "p2_ac_m": [
+     5.24803,
+     -0.43157,
+     -1.30441
+    ],
+    "p1_struct_in": [
+     246.1,
+     15.9,
+     29.6
+    ],
+    "p2_struct_in": [
+     241.2,
+     51.4,
+     29.6
+    ]
+   },
+   "note": "applied after (i.e. inside) the elevatorright rotation",
+   "source": "Models/c172p.xml:4640-4653"
+  },
+  {
+   "objects": [
+    "rudder_1",
+    "RearNavLight",
+    "nav-light-tail",
+    "ruddercablelefthinge",
+    "ruddercablerighthinge"
+   ],
+   "type": "rotate",
+   "property": "surface-positions/rudder-pos-norm",
+   "factor": 13,
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     4.918,
+     0,
+     -0.31
+    ],
+    "p2_fg_model_m": [
+     5.805,
+     -0.013,
+     1.007
+    ],
+    "p1_ac_m": [
+     4.918,
+     -0.31,
+     0
+    ],
+    "p2_ac_m": [
+     5.805,
+     1.007,
+     0.013
+    ],
+    "p1_struct_in": [
+     228.0,
+     0.0,
+     33.7
+    ],
+    "p2_struct_in": [
+     260.2,
+     -0.5,
+     87.3
+    ]
+   },
+   "note": "visual factor 13 deg vs JSBSim limit +/-16 deg",
+   "source": "Models/c172p.xml:4655-4672"
+  },
+  {
+   "objects": [
+    "fairing1",
+    "NoseWheel",
+    "NoseWheelStrut",
+    "TopLink",
+    "BottomLink",
+    "Axle"
+   ],
+   "type": "rotate",
+   "property": "fdm/jsbsim/fcs/steer-pos-deg",
+   "factor": 1,
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     -0.975,
+     0,
+     -0.6781
+    ],
+    "p2_fg_model_m": [
+     -1.123,
+     0.0,
+     -1.172
+    ],
+    "p1_ac_m": [
+     -0.975,
+     -0.6781,
+     0
+    ],
+    "p2_ac_m": [
+     -1.123,
+     -1.172,
+     -0.0
+    ],
+    "p1_struct_in": [
+     -2.9,
+     0.0,
+     7.1
+    ],
+    "p2_struct_in": [
+     -7.7,
+     0.0,
+     -12.6
+    ]
+   },
+   "source": "Models/c172p.xml:4785-4817"
+  },
+  {
+   "objects": [
+    "fairing1",
+    "NoseWheel",
+    "NoseWheelStrut",
+    "BottomLink",
+    "Axle"
+   ],
+   "type": "translate",
+   "property": "gear/gear[0]/compression-norm",
+   "factor": 0.3,
+   "unit": "m",
+   "axis_fg_model": [
+    0.3,
+    0,
+    1.0
+   ],
+   "axis_ac": [
+    0.3,
+    1.0,
+    0
+   ],
+   "source": "Models/c172p.xml:4818-4847"
+  },
+  {
+   "objects": [
+    "fairing3",
+    "RightWheelStrut",
+    "RightWheel",
+    "RightWheelBrake"
+   ],
+   "type": "rotate",
+   "property": "gear/gear[2]/compression-norm",
+   "interpolation_file": "Models/MainRotationInterpolation.xml",
+   "center_axis": {
+    "center_fg_model_m": [
+     0.711,
+     0.4518,
+     -0.7
+    ],
+    "axis_fg_model": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "center_ac_m": [
+     0.711,
+     -0.7,
+     -0.4518
+    ],
+    "axis_ac": [
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "center_struct_in": [
+     63.4,
+     17.8,
+     9.7
+    ]
+   },
+   "source": "Models/c172p.xml:4880-4913"
+  },
+  {
+   "objects": [
+    "fairing2",
+    "LeftWheelStrut",
+    "LeftWheel",
+    "LeftWheelBrake"
+   ],
+   "type": "rotate",
+   "property": "gear/gear[1]/compression-norm",
+   "interpolation_file": "Models/MainRotationInterpolation.xml",
+   "center_axis": {
+    "center_fg_model_m": [
+     0.711,
+     -0.4518,
+     -0.7
+    ],
+    "axis_fg_model": [
+     -1.0,
+     0.0,
+     0.0
+    ],
+    "center_ac_m": [
+     0.711,
+     -0.7,
+     0.4518
+    ],
+    "axis_ac": [
+     -1.0,
+     0.0,
+     -0.0
+    ],
+    "center_struct_in": [
+     63.4,
+     -17.8,
+     9.7
+    ]
+   },
+   "source": "Models/c172p.xml:4914-4947"
+  },
+  {
+   "objects": [
+    "RightWheel"
+   ],
+   "type": "spin",
+   "property": "fdm/jsbsim/gear/gear-spin-right",
+   "center_axis": {
+    "center_fg_model_m": [
+     0.53015,
+     1.127,
+     -1.14693
+    ],
+    "axis_fg_model": [
+     0,
+     -1,
+     0
+    ],
+    "center_ac_m": [
+     0.53015,
+     -1.14693,
+     -1.127
+    ],
+    "axis_ac": [
+     0,
+     0,
+     1
+    ],
+    "center_struct_in": [
+     57.2,
+     44.4,
+     -8.3
+    ]
+   },
+   "source": "Models/c172p.xml:5350-5373"
+  },
+  {
+   "objects": [
+    "LeftWheel"
+   ],
+   "type": "spin",
+   "property": "fdm/jsbsim/gear/gear-spin-left",
+   "center_axis": {
+    "center_fg_model_m": [
+     0.53015,
+     -1.127,
+     -1.14693
+    ],
+    "axis_fg_model": [
+     0,
+     -1,
+     0
+    ],
+    "center_ac_m": [
+     0.53015,
+     -1.14693,
+     1.127
+    ],
+    "axis_ac": [
+     0,
+     0,
+     1
+    ],
+    "center_struct_in": [
+     57.2,
+     -44.4,
+     -8.3
+    ]
+   },
+   "source": "Models/c172p.xml:5374-5396"
+  },
+  {
+   "objects": [
+    "NoseWheel"
+   ],
+   "type": "spin",
+   "property": "fdm/jsbsim/gear/gear-spin-nose",
+   "center_axis": {
+    "center_fg_model_m": [
+     -1.1149,
+     0.0,
+     -1.1889
+    ],
+    "axis_fg_model": [
+     0,
+     -1,
+     0
+    ],
+    "center_ac_m": [
+     -1.1149,
+     -1.1889,
+     -0.0
+    ],
+    "axis_ac": [
+     0,
+     0,
+     1
+    ],
+    "center_struct_in": [
+     -7.4,
+     0.0,
+     -13.3
+    ]
+   },
+   "source": "Models/c172p.xml:5397-5418"
+  },
+  {
+   "objects": [
+    "Propeller",
+    "Spinner"
+   ],
+   "type": "spin",
+   "property": "engines/engine[2]/rpm (alias /params/engine/rpm)",
+   "factor": -1,
+   "unit": "RPM",
+   "center_axis": {
+    "center_fg_model_m": [
+     -1.96139,
+     0.00127,
+     -0.0519
+    ],
+    "axis_fg_model": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "center_ac_m": [
+     -1.96139,
+     -0.0519,
+     -0.00127
+    ],
+    "axis_ac": [
+     1.0,
+     0.0,
+     -0.0
+    ],
+    "center_struct_in": [
+     -43.0,
+     0.1,
+     29.7
+    ]
+   },
+   "note": "Propeller shown < 500 rpm, Propeller.Fast (blurred disc) > 400 rpm",
+   "source": "Models/c172p.xml:5528-5544; Models/c172p.xml:5474-5519; Models/c172p.xml:313-314"
+  },
+  {
+   "objects": [
+    "rightdoor",
+    "rightdoorhandle",
+    "rightwindow",
+    "windowframerightext"
+   ],
+   "type": "rotate",
+   "property": "sim/model/door-positions/rightDoor (alias)",
+   "interpolation": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5,
+     0
+    ],
+    [
+     1,
+     70.0
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     -0.117,
+     0.53,
+     -0.376
+    ],
+    "p2_fg_model_m": [
+     -0.054,
+     0.535,
+     -0.117
+    ],
+    "p1_ac_m": [
+     -0.117,
+     -0.376,
+     -0.53
+    ],
+    "p2_ac_m": [
+     -0.054,
+     -0.117,
+     -0.535
+    ],
+    "p1_struct_in": [
+     30.2,
+     20.9,
+     20.7
+    ],
+    "p2_struct_in": [
+     32.1,
+     21.1,
+     31.0
+    ]
+   },
+   "source": "Models/c172p.xml:2171-2215"
+  },
+  {
+   "objects": [
+    "leftdoor",
+    "leftdoorhandle",
+    "leftwindow",
+    "windowframeleftext"
+   ],
+   "type": "rotate",
+   "property": "sim/model/door-positions/leftDoor (alias)",
+   "interpolation": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.5,
+     0
+    ],
+    [
+     1,
+     -70.0
+    ]
+   ],
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     -0.117,
+     -0.53,
+     -0.376
+    ],
+    "p2_fg_model_m": [
+     -0.054,
+     -0.535,
+     -0.117
+    ],
+    "p1_ac_m": [
+     -0.117,
+     -0.376,
+     0.53
+    ],
+    "p2_ac_m": [
+     -0.054,
+     -0.117,
+     0.535
+    ],
+    "p1_struct_in": [
+     30.2,
+     -20.9,
+     20.7
+    ],
+    "p2_struct_in": [
+     32.1,
+     -21.1,
+     31.0
+    ]
+   },
+   "source": "Models/c172p.xml:2311-2355"
+  },
+  {
+   "objects": [
+    "baggagedoorexterior"
+   ],
+   "type": "rotate",
+   "property": "sim/model/door-positions/baggageDoor (alias)",
+   "factor": -90,
+   "unit": "DEG",
+   "axis": {
+    "p1_fg_model_m": [
+     1.373,
+     -0.445,
+     -0.656
+    ],
+    "p2_fg_model_m": [
+     1.424,
+     -0.445,
+     -0.204
+    ],
+    "p1_ac_m": [
+     1.373,
+     -0.656,
+     0.445
+    ],
+    "p2_ac_m": [
+     1.424,
+     -0.204,
+     0.445
+    ],
+    "p1_struct_in": [
+     89.3,
+     -17.5,
+     12.8
+    ],
+    "p2_struct_in": [
+     90.4,
+     -17.5,
+     30.7
+    ]
+   },
+   "source": "Models/c172p.xml:2593-2611"
+  }
+ ]
+}

@@ -1,0 +1,1858 @@
+[
+ {
+  "name": "Antenna_ADF",
+  "path": "antennas/Antenna_ADF",
+  "texture": "fuselage.png",
+  "tris": 416,
+  "min": [
+   0.5796,
+   -0.8909,
+   -0.04
+  ],
+  "max": [
+   0.7639,
+   -0.8595,
+   0.0715
+  ]
+ },
+ {
+  "name": "Antenna_VOR",
+  "path": "antennas/Antenna_VOR",
+  "texture": "fuselage.png",
+  "tris": 80,
+  "min": [
+   5.4816,
+   0.906,
+   -0.5138
+  ],
+  "max": [
+   5.8166,
+   0.9879,
+   0.5146
+  ]
+ },
+ {
+  "name": "ELTAntenna",
+  "path": "antennas/ELTAntenna",
+  "texture": "fuselage.png",
+  "tris": 526,
+  "min": [
+   2.3653,
+   -0.0336,
+   -0.0068
+  ],
+  "max": [
+   2.5783,
+   0.2467,
+   0.0044
+  ]
+ },
+ {
+  "name": "MarkerAntenna",
+  "path": "antennas/MarkerAntenna",
+  "texture": "fuselage.png",
+  "tris": 56,
+  "min": [
+   2.3446,
+   -0.8615,
+   -0.0075
+  ],
+  "max": [
+   2.4008,
+   -0.7725,
+   0.0103
+  ]
+ },
+ {
+  "name": "TransponderAntenna",
+  "path": "antennas/TransponderAntenna",
+  "texture": "fuselage.png",
+  "tris": 56,
+  "min": [
+   0.4533,
+   -0.9442,
+   -0.0076
+  ],
+  "max": [
+   0.505,
+   -0.8546,
+   0.0095
+  ]
+ },
+ {
+  "name": "VHFAntenna",
+  "path": "antennas/VHFAntenna",
+  "texture": "fuselage.png",
+  "tris": 3004,
+  "min": [
+   0.6752,
+   0.4581,
+   -0.3687
+  ],
+  "max": [
+   1.1782,
+   0.8982,
+   0.3542
+  ]
+ },
+ {
+  "name": "baggagedoorexterior",
+  "path": "doors/baggagedoorexterior",
+  "texture": "fuselage.png",
+  "tris": 61,
+  "min": [
+   1.3955,
+   -0.7426,
+   0.3378
+  ],
+  "max": [
+   1.8839,
+   -0.1404,
+   0.4791
+  ]
+ },
+ {
+  "name": "baggagedoorhandle",
+  "path": "doors/baggagedoorhandle",
+  "texture": "fuselage.png",
+  "tris": 32,
+  "min": [
+   1.785,
+   -0.4628,
+   0.4414
+  ],
+  "max": [
+   1.8501,
+   -0.4097,
+   0.453
+  ]
+ },
+ {
+  "name": "leftdoor",
+  "path": "doors/leftdoor",
+  "texture": "fuselage.png",
+  "tris": 157,
+  "min": [
+   -0.1542,
+   -0.7034,
+   0.4826
+  ],
+  "max": [
+   0.8712,
+   0.3616,
+   0.5349
+  ]
+ },
+ {
+  "name": "leftdoorhandle",
+  "path": "doors/leftdoorhandle",
+  "texture": "fuselage.png",
+  "tris": 32,
+  "min": [
+   0.7062,
+   -0.1993,
+   0.5117
+  ],
+  "max": [
+   0.7714,
+   -0.1461,
+   0.5209
+  ]
+ },
+ {
+  "name": "oildoor",
+  "path": "doors/oildoor",
+  "texture": "fuselage.png",
+  "tris": 80,
+  "min": [
+   -0.9569,
+   0.1303,
+   -0.3915
+  ],
+  "max": [
+   -0.8048,
+   0.1671,
+   -0.2322
+  ]
+ },
+ {
+  "name": "rightdoor",
+  "path": "doors/rightdoor",
+  "texture": "fuselage.png",
+  "tris": 157,
+  "min": [
+   -0.1562,
+   -0.7035,
+   -0.5357
+  ],
+  "max": [
+   0.8708,
+   0.3614,
+   -0.4836
+  ]
+ },
+ {
+  "name": "rightdoorhandle",
+  "path": "doors/rightdoorhandle",
+  "texture": "fuselage.png",
+  "tris": 32,
+  "min": [
+   0.7067,
+   -0.199,
+   -0.5211
+  ],
+  "max": [
+   0.7719,
+   -0.1458,
+   -0.5133
+  ]
+ },
+ {
+  "name": "windowframeleftext",
+  "path": "doors/windowframeleftext",
+  "texture": "fuselage.png",
+  "tris": 49,
+  "min": [
+   -0.0106,
+   -0.1122,
+   0.5061
+  ],
+  "max": [
+   0.8308,
+   0.3172,
+   0.5273
+  ]
+ },
+ {
+  "name": "windowframerightext",
+  "path": "doors/windowframerightext",
+  "texture": "fuselage.png",
+  "tris": 49,
+  "min": [
+   -0.0089,
+   -0.1121,
+   -0.5286
+  ],
+  "max": [
+   0.8308,
+   0.3176,
+   -0.507
+  ]
+ },
+ {
+  "name": "airvent",
+  "path": "fuselage_1/airvent",
+  "texture": "fuselage.png",
+  "tris": 196,
+  "min": [
+   -0.5774,
+   -0.3027,
+   -0.5251
+  ],
+  "max": [
+   -0.492,
+   -0.217,
+   -0.4833
+  ]
+ },
+ {
+  "name": "airventhole",
+  "path": "fuselage_1/airventhole",
+  "texture": "fuselage.png",
+  "tris": 19,
+  "min": [
+   -0.5774,
+   -0.2975,
+   -0.5223
+  ],
+  "max": [
+   -0.492,
+   -0.2221,
+   -0.4874
+  ]
+ },
+ {
+  "name": "Axle",
+  "path": "fuselage_1/Axle",
+  "texture": "fuselage.png",
+  "tris": 32,
+  "min": [
+   -1.1375,
+   -1.2083,
+   -0.0801
+  ],
+  "max": [
+   -1.0879,
+   -1.1587,
+   0.0778
+  ]
+ },
+ {
+  "name": "BottomLink",
+  "path": "fuselage_1/BottomLink",
+  "texture": "fuselage.png",
+  "tris": 126,
+  "min": [
+   -1.0312,
+   -0.9672,
+   -0.0301
+  ],
+  "max": [
+   -0.8308,
+   -0.8764,
+   0.0308
+  ]
+ },
+ {
+  "name": "charniere3",
+  "path": "fuselage_1/charniere3",
+  "texture": "fuselage.png",
+  "tris": 38,
+  "min": [
+   -0.1736,
+   -0.5149,
+   0.5218
+  ],
+  "max": [
+   -0.0537,
+   -0.1115,
+   0.5349
+  ]
+ },
+ {
+  "name": "charniere4",
+  "path": "fuselage_1/charniere4",
+  "texture": "fuselage.png",
+  "tris": 38,
+  "min": [
+   -0.1765,
+   -0.5178,
+   -0.5358
+  ],
+  "max": [
+   -0.0539,
+   -0.1115,
+   -0.5216
+  ]
+ },
+ {
+  "name": "Exhaust",
+  "path": "fuselage_1/Exhaust",
+  "texture": "fuselage.png",
+  "tris": 64,
+  "min": [
+   -1.3882,
+   -0.7184,
+   -0.3237
+  ],
+  "max": [
+   -1.3071,
+   -0.4635,
+   -0.173
+  ]
+ },
+ {
+  "name": "fairing1",
+  "path": "fuselage_1/fairing1",
+  "texture": "fuselage.png",
+  "tris": 648,
+  "min": [
+   -1.4079,
+   -1.283,
+   -0.1376
+  ],
+  "max": [
+   -0.61,
+   -0.9995,
+   0.1353
+  ]
+ },
+ {
+  "name": "fairing2",
+  "path": "fuselage_1/fairing2",
+  "texture": "fuselage.png",
+  "tris": 932,
+  "min": [
+   0.1881,
+   -1.2392,
+   0.9798
+  ],
+  "max": [
+   1.0788,
+   -0.9174,
+   1.2813
+  ]
+ },
+ {
+  "name": "fairing3",
+  "path": "fuselage_1/fairing3",
+  "texture": "fuselage.png",
+  "tris": 932,
+  "min": [
+   0.1881,
+   -1.2383,
+   -1.284
+  ],
+  "max": [
+   1.0788,
+   -0.9164,
+   -0.9842
+  ]
+ },
+ {
+  "name": "FuelCapPort",
+  "path": "fuselage_1/FuelCapPort",
+  "texture": "fuselage.png",
+  "tris": 38,
+  "min": [
+   0.1711,
+   0.4853,
+   0.7621
+  ],
+  "max": [
+   0.2402,
+   0.5235,
+   0.8309
+  ]
+ },
+ {
+  "name": "fuselage",
+  "path": "fuselage_1/fuselage",
+  "texture": "fuselage.png",
+  "tris": 3159,
+  "min": [
+   -1.7733,
+   -0.8713,
+   -2.3508
+  ],
+  "max": [
+   4.9567,
+   0.517,
+   2.3508
+  ]
+ },
+ {
+  "name": "fuselage_cowling",
+  "path": "fuselage_1/fuselage_cowling",
+  "texture": "fuselage.png",
+  "tris": 895,
+  "min": [
+   -1.605,
+   -0.7951,
+   -0.5241
+  ],
+  "max": [
+   -0.7734,
+   -0.1401,
+   0.5241
+  ]
+ },
+ {
+  "name": "fuselage_cowling_top",
+  "path": "fuselage_1/fuselage_cowling_top",
+  "texture": "fuselage.png",
+  "tris": 214,
+  "min": [
+   -1.6135,
+   -0.1856,
+   -0.5257
+  ],
+  "max": [
+   -0.7561,
+   0.1772,
+   0.5271
+  ]
+ },
+ {
+  "name": "fuselageexhausthole",
+  "path": "fuselage_1/fuselageexhausthole",
+  "texture": "fuselage.png",
+  "tris": 143,
+  "min": [
+   -1.3843,
+   -0.6472,
+   -0.2934
+  ],
+  "max": [
+   -1.3127,
+   -0.5006,
+   -0.1946
+  ]
+ },
+ {
+  "name": "handle",
+  "path": "fuselage_1/handle",
+  "texture": "fuselage.png",
+  "tris": 1272,
+  "min": [
+   -0.7124,
+   0.0815,
+   -0.5109
+  ],
+  "max": [
+   -0.5853,
+   0.1397,
+   0.5058
+  ]
+ },
+ {
+  "name": "LeftWheel",
+  "path": "fuselage_1/LeftWheel",
+  "texture": "fuselage.png",
+  "tris": 956,
+  "min": [
+   0.3512,
+   -1.3259,
+   1.0438
+  ],
+  "max": [
+   0.7091,
+   -0.9679,
+   1.1844
+  ]
+ },
+ {
+  "name": "LeftWheelBrake",
+  "path": "fuselage_1/LeftWheelBrake",
+  "texture": "fuselage.png",
+  "tris": 136,
+  "min": [
+   0.4321,
+   -1.1957,
+   1.0299
+  ],
+  "max": [
+   0.6253,
+   -1.098,
+   1.0521
+  ]
+ },
+ {
+  "name": "LeftWheelStrut",
+  "path": "fuselage_1/LeftWheelStrut",
+  "texture": "fuselage.png",
+  "tris": 458,
+  "min": [
+   0.5019,
+   -1.1639,
+   0.3642
+  ],
+  "max": [
+   0.8329,
+   -0.7301,
+   1.0575
+  ]
+ },
+ {
+  "name": "NoseWheel",
+  "path": "fuselage_1/NoseWheel",
+  "texture": "fuselage.png",
+  "tris": 960,
+  "min": [
+   -1.2939,
+   -1.3679,
+   -0.0524
+  ],
+  "max": [
+   -0.9359,
+   -1.0099,
+   0.0524
+  ]
+ },
+ {
+  "name": "NoseWheelStrut",
+  "path": "fuselage_1/NoseWheelStrut",
+  "texture": "fuselage.png",
+  "tris": 320,
+  "min": [
+   -1.1426,
+   -1.2192,
+   -0.0978
+  ],
+  "max": [
+   -0.9267,
+   -0.656,
+   0.0947
+  ]
+ },
+ {
+  "name": "OilCap",
+  "path": "fuselage_1/OilCap",
+  "texture": "fuselage.png",
+  "tris": 244,
+  "min": [
+   -0.9152,
+   -0.1143,
+   -0.327
+  ],
+  "max": [
+   -0.8451,
+   0.149,
+   -0.2569
+  ]
+ },
+ {
+  "name": "oilcompartment",
+  "path": "fuselage_1/oilcompartment",
+  "texture": "fuselage.png",
+  "tris": 189,
+  "min": [
+   -0.9569,
+   0.0718,
+   -0.3915
+  ],
+  "max": [
+   -0.8048,
+   0.1656,
+   -0.2322
+  ]
+ },
+ {
+  "name": "oilcompartmenthole",
+  "path": "fuselage_1/oilcompartmenthole",
+  "texture": "fuselage.png",
+  "tris": 94,
+  "min": [
+   -0.9064,
+   0.0968,
+   -0.318
+  ],
+  "max": [
+   -0.8534,
+   0.13,
+   -0.2626
+  ]
+ },
+ {
+  "name": "PropellerCowlPlugs",
+  "path": "fuselage_1/PropellerCowlPlugs",
+  "texture": "fuselage.png",
+  "tris": 230,
+  "min": [
+   -1.8681,
+   -0.904,
+   -0.434
+  ],
+  "max": [
+   -1.7569,
+   0.8046,
+   0.4202
+  ]
+ },
+ {
+  "name": "radi_box",
+  "path": "fuselage_1/radi_box",
+  "texture": "fuselage.png",
+  "tris": 176,
+  "min": [
+   -1.6612,
+   -0.7186,
+   -0.1475
+  ],
+  "max": [
+   -1.2487,
+   -0.3876,
+   0.1475
+  ]
+ },
+ {
+  "name": "radiator",
+  "path": "fuselage_1/radiator",
+  "texture": "fuselage.png",
+  "tris": 2,
+  "min": [
+   -1.5947,
+   -0.5579,
+   -0.0485
+  ],
+  "max": [
+   -1.5947,
+   -0.4774,
+   0.0471
+  ]
+ },
+ {
+  "name": "RightWheel",
+  "path": "fuselage_1/RightWheel",
+  "texture": "fuselage.png",
+  "tris": 956,
+  "min": [
+   0.3512,
+   -1.3259,
+   -1.1844
+  ],
+  "max": [
+   0.7091,
+   -0.968,
+   -1.046
+  ]
+ },
+ {
+  "name": "RightWheelBrake",
+  "path": "fuselage_1/RightWheelBrake",
+  "texture": "fuselage.png",
+  "tris": 136,
+  "min": [
+   0.4321,
+   -1.1957,
+   -1.0526
+  ],
+  "max": [
+   0.6253,
+   -1.098,
+   -1.0332
+  ]
+ },
+ {
+  "name": "RightWheelStrut",
+  "path": "fuselage_1/RightWheelStrut",
+  "texture": "fuselage.png",
+  "tris": 458,
+  "min": [
+   0.502,
+   -1.166,
+   -1.0595
+  ],
+  "max": [
+   0.8117,
+   -0.728,
+   -0.3847
+  ]
+ },
+ {
+  "name": "TopLink",
+  "path": "fuselage_1/TopLink",
+  "texture": "fuselage.png",
+  "tris": 126,
+  "min": [
+   -1.0148,
+   -0.8964,
+   -0.0428
+  ],
+  "max": [
+   -0.8354,
+   -0.7519,
+   0.0431
+  ]
+ },
+ {
+  "name": "vent",
+  "path": "fuselage_1/vent",
+  "texture": "fuselage.png",
+  "tris": 156,
+  "min": [
+   -0.6773,
+   -0.1089,
+   -0.5461
+  ],
+  "max": [
+   -0.6116,
+   -0.0489,
+   -0.5235
+  ]
+ },
+ {
+  "name": "venthole",
+  "path": "fuselage_1/venthole",
+  "texture": "fuselage.png",
+  "tris": 31,
+  "min": [
+   -0.6773,
+   -0.1002,
+   -0.5446
+  ],
+  "max": [
+   -0.6214,
+   -0.057,
+   -0.5263
+  ]
+ },
+ {
+  "name": "carpethole",
+  "path": "interior/carpethole",
+  "texture": "interior.png",
+  "tris": 211,
+  "min": [
+   -0.6322,
+   -0.6972,
+   -0.3533
+  ],
+  "max": [
+   -0.524,
+   -0.6695,
+   0.3555
+  ]
+ },
+ {
+  "name": "gloveboxdoor",
+  "path": "interior/gloveboxdoor",
+  "texture": "panel.png",
+  "tris": 28,
+  "min": [
+   -0.3721,
+   -0.2592,
+   -0.4512
+  ],
+  "max": [
+   -0.3666,
+   -0.1843,
+   -0.3121
+  ]
+ },
+ {
+  "name": "gloveboxlock",
+  "path": "interior/gloveboxlock",
+  "texture": "panel_parts.png",
+  "tris": 392,
+  "min": [
+   -0.3668,
+   -0.2182,
+   -0.3911
+  ],
+  "max": [
+   -0.3602,
+   -0.1971,
+   -0.3705
+  ]
+ },
+ {
+  "name": "Panel_0",
+  "path": "interior/panel_up/Panel_0",
+  "texture": "panel_parts.png",
+  "tris": 455,
+  "min": [
+   -0.6229,
+   -0.0017,
+   -0.4956
+  ],
+  "max": [
+   -0.3305,
+   0.2202,
+   0.491
+  ]
+ },
+ {
+  "name": "Panel_1",
+  "path": "interior/panel_up/Panel_1",
+  "texture": "panel_parts.png",
+  "tris": 31,
+  "min": [
+   -0.5975,
+   -0.0233,
+   -0.4983
+  ],
+  "max": [
+   -0.596,
+   0.1592,
+   0.496
+  ]
+ },
+ {
+  "name": "SeatMounts.0",
+  "path": "interior/SeatMounts.0",
+  "texture": "interior.png",
+  "tris": 5088,
+  "min": [
+   -0.1501,
+   -0.6926,
+   -0.3585
+  ],
+  "max": [
+   0.2837,
+   -0.5181,
+   -0.0877
+  ]
+ },
+ {
+  "name": "SeatMounts.1",
+  "path": "interior/SeatMounts.1",
+  "texture": "interior.png",
+  "tris": 5088,
+  "min": [
+   -0.1501,
+   -0.6926,
+   0.1036
+  ],
+  "max": [
+   0.2837,
+   -0.5181,
+   0.3744
+  ]
+ },
+ {
+  "name": "SeatMounts.2",
+  "path": "interior/SeatMounts.2",
+  "texture": "interior.png",
+  "tris": 2608,
+  "min": [
+   0.686,
+   -0.7186,
+   -0.2977
+  ],
+  "max": [
+   1.0,
+   -0.5932,
+   0.302
+  ]
+ },
+ {
+  "name": "Propeller",
+  "path": "prop/Propeller",
+  "texture": "fuselage.png",
+  "tris": 230,
+  "min": [
+   -1.8681,
+   -0.904,
+   -0.434
+  ],
+  "max": [
+   -1.7569,
+   0.8046,
+   0.4202
+  ]
+ },
+ {
+  "name": "Spinner",
+  "path": "prop/Spinner",
+  "texture": "fuselage.png",
+  "tris": 416,
+  "min": [
+   -2.1407,
+   -0.174,
+   -0.1234
+  ],
+  "max": [
+   -1.727,
+   0.0702,
+   0.1208
+  ]
+ },
+ {
+  "name": "RearNavLight",
+  "path": "rudder/RearNavLight",
+  "texture": "fuselage.png",
+  "tris": 56,
+  "min": [
+   6.0647,
+   0.9539,
+   -0.0169
+  ],
+  "max": [
+   6.0923,
+   0.9962,
+   0.0177
+  ]
+ },
+ {
+  "name": "rudder_1",
+  "path": "rudder/rudder_1",
+  "texture": "tail.png",
+  "tris": 212,
+  "min": [
+   4.9327,
+   -0.6411,
+   -0.0616
+  ],
+  "max": [
+   6.0852,
+   1.0264,
+   0.0616
+  ]
+ },
+ {
+  "name": "ruddercableleft",
+  "path": "rudder/ruddercableleft",
+  "texture": "fuselage.png",
+  "tris": 12,
+  "min": [
+   4.7636,
+   -0.5416,
+   0.0548
+  ],
+  "max": [
+   4.9425,
+   -0.5394,
+   0.0822
+  ]
+ },
+ {
+  "name": "ruddercablelefthinge",
+  "path": "rudder/ruddercablelefthinge",
+  "texture": "fuselage.png",
+  "tris": 1096,
+  "min": [
+   4.9233,
+   -0.5506,
+   0.0287
+  ],
+  "max": [
+   4.9794,
+   -0.5319,
+   0.0707
+  ]
+ },
+ {
+  "name": "ruddercableports",
+  "path": "rudder/ruddercableports",
+  "texture": "fuselage.png",
+  "tris": 90,
+  "min": [
+   4.6689,
+   -0.5726,
+   -0.1009
+  ],
+  "max": [
+   4.8262,
+   -0.5074,
+   0.1006
+  ]
+ },
+ {
+  "name": "ruddercableportshole",
+  "path": "rudder/ruddercableportshole",
+  "texture": "fuselage.png",
+  "tris": 26,
+  "min": [
+   4.6787,
+   -0.5654,
+   -0.0998
+  ],
+  "max": [
+   4.8259,
+   -0.5153,
+   0.0987
+  ]
+ },
+ {
+  "name": "ruddercableright",
+  "path": "rudder/ruddercableright",
+  "texture": "fuselage.png",
+  "tris": 12,
+  "min": [
+   4.7405,
+   -0.541,
+   -0.0866
+  ],
+  "max": [
+   4.9428,
+   -0.5395,
+   -0.0562
+  ]
+ },
+ {
+  "name": "ruddercablerighthinge",
+  "path": "rudder/ruddercablerighthinge",
+  "texture": "fuselage.png",
+  "tris": 1096,
+  "min": [
+   4.9252,
+   -0.5517,
+   -0.0708
+  ],
+  "max": [
+   4.9801,
+   -0.5331,
+   -0.0264
+  ]
+ },
+ {
+  "name": "TieDownLeft",
+  "path": "tiedowns/TieDownLeft",
+  "texture": "fuselage.png",
+  "tris": 1020,
+  "min": [
+   0.1023,
+   0.3422,
+   2.2246
+  ],
+  "max": [
+   0.1155,
+   0.3742,
+   2.2544
+  ]
+ },
+ {
+  "name": "TieDownRight",
+  "path": "tiedowns/TieDownRight",
+  "texture": "fuselage.png",
+  "tris": 1020,
+  "min": [
+   0.0951,
+   0.3448,
+   -2.2591
+  ],
+  "max": [
+   0.1079,
+   0.3778,
+   -2.2296
+  ]
+ },
+ {
+  "name": "TieDownTail",
+  "path": "tiedowns/TieDownTail",
+  "texture": "fuselage.png",
+  "tris": 1020,
+  "min": [
+   4.6769,
+   -0.6884,
+   -0.0013
+  ],
+  "max": [
+   4.7072,
+   -0.6556,
+   0.0064
+  ]
+ },
+ {
+  "name": "glas",
+  "path": "transperant/glas",
+  "texture": null,
+  "tris": 312,
+  "min": [
+   -0.622,
+   -0.1348,
+   -0.5185
+  ],
+  "max": [
+   2.0086,
+   0.5422,
+   0.5185
+  ]
+ },
+ {
+  "name": "glas_back_interior_left_side",
+  "path": "transperant/glas_back_interior_left_side",
+  "texture": "glass-alpha.png",
+  "tris": 32,
+  "min": [
+   0.8398,
+   -0.1261,
+   0.515
+  ],
+  "max": [
+   1.0553,
+   0.1576,
+   1.2553
+  ]
+ },
+ {
+  "name": "glas_back_interior_right_side",
+  "path": "transperant/glas_back_interior_right_side",
+  "texture": "glass-alpha.png",
+  "tris": 31,
+  "min": [
+   0.8404,
+   -0.1256,
+   -1.253
+  ],
+  "max": [
+   1.0595,
+   0.1581,
+   -0.5127
+  ]
+ },
+ {
+  "name": "glas_front_interior_left_side",
+  "path": "transperant/glas_front_interior_left_side",
+  "texture": "glass-alpha.png",
+  "tris": 18,
+  "min": [
+   -0.5898,
+   0.0423,
+   0.4921
+  ],
+  "max": [
+   -0.2486,
+   0.4441,
+   1.1336
+  ]
+ },
+ {
+  "name": "glas_front_interior_right_side",
+  "path": "transperant/glas_front_interior_right_side",
+  "texture": "glass-alpha.png",
+  "tris": 18,
+  "min": [
+   -0.5857,
+   0.0412,
+   -1.1297
+  ],
+  "max": [
+   -0.2454,
+   0.4421,
+   -0.491
+  ]
+ },
+ {
+  "name": "glas_interior",
+  "path": "transperant/glas_interior",
+  "texture": "glass-alpha.png",
+  "tris": 174,
+  "min": [
+   -0.6245,
+   0.109,
+   -0.5163
+  ],
+  "max": [
+   0.1315,
+   0.5445,
+   0.5164
+  ]
+ },
+ {
+  "name": "glas_interior_back",
+  "path": "transperant/glas_interior_back",
+  "texture": "glass-alpha.png",
+  "tris": 44,
+  "min": [
+   1.5432,
+   -0.0583,
+   -0.4464
+  ],
+  "max": [
+   2.008,
+   0.2502,
+   0.4464
+  ]
+ },
+ {
+  "name": "landinglightcover",
+  "path": "transperant/landinglightcover",
+  "texture": "glass-alpha.png",
+  "tris": 19,
+  "min": [
+   -0.1535,
+   0.4373,
+   2.6799
+  ],
+  "max": [
+   -0.0025,
+   0.5609,
+   3.0363
+  ]
+ },
+ {
+  "name": "leftwindow",
+  "path": "transperant/leftwindow",
+  "texture": null,
+  "tris": 60,
+  "min": [
+   -0.0092,
+   -0.1112,
+   0.5064
+  ],
+  "max": [
+   0.83,
+   0.3167,
+   0.5222
+  ]
+ },
+ {
+  "name": "leftwindow_interior",
+  "path": "transperant/leftwindow_interior",
+  "texture": "glass-alpha.png",
+  "tris": 60,
+  "min": [
+   -0.0662,
+   -0.0898,
+   0.5132
+  ],
+  "max": [
+   0.2051,
+   0.2412,
+   1.3524
+  ]
+ },
+ {
+  "name": "rightwindow",
+  "path": "transperant/rightwindow",
+  "texture": null,
+  "tris": 60,
+  "min": [
+   -0.0092,
+   -0.1112,
+   -0.5249
+  ],
+  "max": [
+   0.83,
+   0.3167,
+   -0.5091
+  ]
+ },
+ {
+  "name": "rightwindow_interior",
+  "path": "transperant/rightwindow_interior",
+  "texture": "glass-alpha.png",
+  "tris": 60,
+  "min": [
+   -0.0643,
+   -0.0893,
+   -1.3506
+  ],
+  "max": [
+   0.207,
+   0.2417,
+   -0.5115
+  ]
+ },
+ {
+  "name": "Beacon",
+  "path": "vstab/Beacon",
+  "texture": "fuselage.png",
+  "tris": 184,
+  "min": [
+   5.4784,
+   1.0285,
+   -0.0212
+  ],
+  "max": [
+   5.5211,
+   1.0764,
+   0.0215
+  ]
+ },
+ {
+  "name": "BeaconMount",
+  "path": "vstab/BeaconMount",
+  "texture": "fuselage.png",
+  "tris": 128,
+  "min": [
+   5.4671,
+   1.0248,
+   -0.0304
+  ],
+  "max": [
+   5.5283,
+   1.0406,
+   0.0304
+  ]
+ },
+ {
+  "name": "elevatorleft",
+  "path": "vstab/elevatorleft",
+  "texture": "tail.png",
+  "tris": 67,
+  "min": [
+   4.7111,
+   -0.4649,
+   0.0501
+  ],
+  "max": [
+   5.4947,
+   -0.3818,
+   1.7707
+  ]
+ },
+ {
+  "name": "elevatorright",
+  "path": "vstab/elevatorright",
+  "texture": "tail.png",
+  "tris": 92,
+  "min": [
+   4.7321,
+   -0.4649,
+   -1.7707
+  ],
+  "max": [
+   5.4947,
+   -0.3833,
+   -0.0501
+  ]
+ },
+ {
+  "name": "elevatortrim",
+  "path": "vstab/elevatortrim",
+  "texture": "tail.png",
+  "tris": 18,
+  "min": [
+   5.2477,
+   -0.4452,
+   -1.3069
+  ],
+  "max": [
+   5.4792,
+   -0.423,
+   -0.4036
+  ]
+ },
+ {
+  "name": "hstab",
+  "path": "vstab/hstab",
+  "texture": "tail.png",
+  "tris": 239,
+  "min": [
+   4.2139,
+   -0.4596,
+   -1.7707
+  ],
+  "max": [
+   4.9339,
+   -0.3668,
+   1.7707
+  ]
+ },
+ {
+  "name": "vstab.001",
+  "path": "vstab/vstab.001",
+  "texture": "tail.png",
+  "tris": 209,
+  "min": [
+   2.3258,
+   -0.3905,
+   -0.0616
+  ],
+  "max": [
+   5.6645,
+   1.0611,
+   0.0616
+  ]
+ },
+ {
+  "name": "FuelCapStarboard",
+  "path": "wing/FuelCapStarboard",
+  "texture": "fuselage.png",
+  "tris": 38,
+  "min": [
+   0.1714,
+   0.4847,
+   -0.8344
+  ],
+  "max": [
+   0.2405,
+   0.5231,
+   -0.7652
+  ]
+ },
+ {
+  "name": "fuelportport",
+  "path": "wing/fuelportport",
+  "texture": "fuselage.png",
+  "tris": 128,
+  "min": [
+   0.177,
+   0.4585,
+   0.7681
+  ],
+  "max": [
+   0.234,
+   0.5009,
+   0.8251
+  ]
+ },
+ {
+  "name": "fuelportstarboard",
+  "path": "wing/fuelportstarboard",
+  "texture": "fuselage.png",
+  "tris": 128,
+  "min": [
+   0.1779,
+   0.4585,
+   -0.8287
+  ],
+  "max": [
+   0.2349,
+   0.5009,
+   -0.7717
+  ]
+ },
+ {
+  "name": "fuelportstarboardhole",
+  "path": "wing/fuelportstarboardhole",
+  "texture": "fuselage.png",
+  "tris": 94,
+  "min": [
+   0.18,
+   0.4646,
+   -0.8265
+  ],
+  "max": [
+   0.2328,
+   0.5009,
+   -0.7737
+  ]
+ },
+ {
+  "name": "fuelportstarporthole",
+  "path": "wing/fuelportstarporthole",
+  "texture": "fuselage.png",
+  "tris": 94,
+  "min": [
+   0.1791,
+   0.4646,
+   0.7702
+  ],
+  "max": [
+   0.232,
+   0.5009,
+   0.8231
+  ]
+ },
+ {
+  "name": "fuelvent",
+  "path": "wing/fuelvent",
+  "texture": "fuselage.png",
+  "tris": 508,
+  "min": [
+   0.1712,
+   0.3451,
+   2.132
+  ],
+  "max": [
+   0.2025,
+   0.4159,
+   2.1443
+  ]
+ },
+ {
+  "name": "landinglight",
+  "path": "wing/landinglight",
+  "texture": "lights.png",
+  "tris": 16,
+  "min": [
+   -0.3471,
+   0.1371,
+   2.579
+  ],
+  "max": [
+   -0.1782,
+   0.8874,
+   3.3372
+  ]
+ },
+ {
+  "name": "LeftNavLight",
+  "path": "wing/LeftNavLight",
+  "texture": "fuselage.png",
+  "tris": 192,
+  "min": [
+   0.1025,
+   0.5032,
+   5.6195
+  ],
+  "max": [
+   0.1848,
+   0.5536,
+   5.6594
+  ]
+ },
+ {
+  "name": "lightlanding",
+  "path": "wing/lightlanding",
+  "texture": "fuselage.png",
+  "tris": 622,
+  "min": [
+   -0.0743,
+   0.4652,
+   2.8784
+  ],
+  "max": [
+   -0.0222,
+   0.5462,
+   2.9628
+  ]
+ },
+ {
+  "name": "lighttaxi",
+  "path": "wing/lighttaxi",
+  "texture": "fuselage.png",
+  "tris": 622,
+  "min": [
+   -0.0784,
+   0.4634,
+   2.7653
+  ],
+  "max": [
+   -0.0248,
+   0.5436,
+   2.8497
+  ]
+ },
+ {
+  "name": "PitotTube",
+  "path": "wing/PitotTube",
+  "texture": "fuselage.png",
+  "tris": 704,
+  "min": [
+   -0.1835,
+   0.3862,
+   1.5128
+  ],
+  "max": [
+   -0.0645,
+   0.4435,
+   1.54
+  ]
+ },
+ {
+  "name": "RightNavLight",
+  "path": "wing/RightNavLight",
+  "texture": "fuselage.png",
+  "tris": 192,
+  "min": [
+   0.1012,
+   0.5063,
+   -5.661
+  ],
+  "max": [
+   0.1842,
+   0.5573,
+   -5.6202
+  ]
+ },
+ {
+  "name": "taxilight",
+  "path": "wing/taxilight",
+  "texture": "lights.png",
+  "tris": 16,
+  "min": [
+   -0.3076,
+   0.2082,
+   2.4835
+  ],
+  "max": [
+   -0.1436,
+   0.7849,
+   3.0715
+  ]
+ },
+ {
+  "name": "wing_0",
+  "path": "wing/wing_0",
+  "texture": "fuselage.png",
+  "tris": 19,
+  "min": [
+   -0.1535,
+   0.4373,
+   2.6799
+  ],
+  "max": [
+   -0.0025,
+   0.5609,
+   3.0363
+  ]
+ },
+ {
+  "name": "flaps",
+  "path": "wing/wing_1/flaps",
+  "texture": "wing.png",
+  "tris": 672,
+  "min": [
+   0.7597,
+   0.2138,
+   -2.6149
+  ],
+  "max": [
+   1.4832,
+   0.3997,
+   2.6152
+  ]
+ },
+ {
+  "name": "fuelcompartment",
+  "path": "wing/wing_1/fuelcompartment",
+  "texture": "fuselage.png",
+  "tris": 188,
+  "min": [
+   0.1497,
+   0.4573,
+   -0.8554
+  ],
+  "max": [
+   0.2616,
+   0.5276,
+   0.8524
+  ]
+ },
+ {
+  "name": "leftaileron",
+  "path": "wing/wing_1/leftaileron",
+  "texture": "wing.png",
+  "tris": 6,
+  "min": [
+   0.8602,
+   0.254,
+   2.6162
+  ],
+  "max": [
+   1.4832,
+   0.4996,
+   5.4645
+  ]
+ },
+ {
+  "name": "rightaileron",
+  "path": "wing/wing_1/rightaileron",
+  "texture": "wing.png",
+  "tris": 6,
+  "min": [
+   0.8602,
+   0.254,
+   -5.4645
+  ],
+  "max": [
+   1.4832,
+   0.4996,
+   -2.6162
+  ]
+ },
+ {
+  "name": "wing_1C",
+  "path": "wing/wing_1/wing_1C",
+  "texture": "interior.png",
+  "tris": 4,
+  "min": [
+   0.1138,
+   0.4664,
+   -0.5176
+  ],
+  "max": [
+   0.1148,
+   0.5347,
+   0.5176
+  ]
+ },
+ {
+  "name": "wing_1Ledge",
+  "path": "wing/wing_1/wing_1Ledge",
+  "texture": "wing.png",
+  "tris": 24,
+  "min": [
+   -0.1596,
+   0.3872,
+   0.5112
+  ],
+  "max": [
+   0.0874,
+   0.5326,
+   0.5176
+  ]
+ },
+ {
+  "name": "wing_1Redge",
+  "path": "wing/wing_1/wing_1Redge",
+  "texture": "wing.png",
+  "tris": 24,
+  "min": [
+   -0.1596,
+   0.3871,
+   -0.5176
+  ],
+  "max": [
+   0.0874,
+   0.5326,
+   -0.5122
+  ]
+ },
+ {
+  "name": "wing_center",
+  "path": "wing/wing_1/wing_center",
+  "texture": "wing.png",
+  "tris": 201,
+  "min": [
+   -0.0154,
+   0.2138,
+   -2.6162
+  ],
+  "max": [
+   1.4834,
+   0.5468,
+   2.6162
+  ]
+ },
+ {
+  "name": "wing_leading_edge_center",
+  "path": "wing/wing_1/wing_leading_edge_center",
+  "texture": "wing.png",
+  "tris": 209,
+  "min": [
+   -0.1596,
+   0.4028,
+   -2.6162
+  ],
+  "max": [
+   0.0887,
+   0.5505,
+   2.6162
+  ]
+ },
+ {
+  "name": "wing_leading_edge_left",
+  "path": "wing/wing_1/wing_leading_edge_left",
+  "texture": "wing.png",
+  "tris": 42,
+  "min": [
+   -0.1574,
+   0.4357,
+   2.6162
+  ],
+  "max": [
+   0.1287,
+   0.621,
+   5.4645
+  ]
+ },
+ {
+  "name": "wing_leading_edge_right",
+  "path": "wing/wing_1/wing_leading_edge_right",
+  "texture": "wing.png",
+  "tris": 20,
+  "min": [
+   -0.1574,
+   0.4357,
+   -5.4645
+  ],
+  "max": [
+   0.1287,
+   0.621,
+   -2.6162
+  ]
+ },
+ {
+  "name": "wing_left",
+  "path": "wing/wing_1/wing_left",
+  "texture": "wing.png",
+  "tris": 341,
+  "min": [
+   -0.0453,
+   0.2964,
+   2.6158
+  ],
+  "max": [
+   1.1625,
+   0.621,
+   5.636
+  ]
+ },
+ {
+  "name": "wing_right",
+  "path": "wing/wing_1/wing_right",
+  "texture": "wing.png",
+  "tris": 321,
+  "min": [
+   -0.0453,
+   0.2968,
+   -5.636
+  ],
+  "max": [
+   1.1625,
+   0.621,
+   -2.6162
+  ]
+ },
+ {
+  "name": "wingventhole",
+  "path": "wing/wing_1/wingventhole",
+  "texture": "fuselage.png",
+  "tris": 300,
+  "min": [
+   -0.1595,
+   0.4468,
+   -0.5728
+  ],
+  "max": [
+   -0.0724,
+   0.4798,
+   0.5729
+  ]
+ }
+]

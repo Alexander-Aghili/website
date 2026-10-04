@@ -8,6 +8,7 @@ on:
     paths:
       - ".gitmodules"
       - "atlas-projects/**"
+      - "c172/**"
       - "assets/**"
       - "**.bib"
       - "**.html"
@@ -37,6 +38,7 @@ on:
     paths:
       - ".gitmodules"
       - "atlas-projects/**"
+      - "c172/**"
       - "assets/**"
       - "**.bib"
       - "**.html"
