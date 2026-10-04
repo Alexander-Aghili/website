@@ -3,4 +3,4 @@
 	url = https://github.com/Alexander-Aghili/AbandondedAirfieldAtlas.git
 [submodule "atlas-projects/air-crashes"]
 	path = atlas-projects/air-crashes
-	url = https://github.com/Alexander-Aghili/AirCrashAtlas-.git
+	url = https://github.com/Alexander-Aghili/Air-Crash-Atlas.git

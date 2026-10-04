@@ -26,4 +26,4 @@ Explore abandoned and little-known airfields from Paul Freeman’s catalog. Sear
 
 Explore aviation crash records by date, aircraft, and location. Records with sourced crash-site coordinates appear on the map; other records remain searchable. Entries include Wikipedia links, available images, and location-quality notes.
 
-[Open the crash map]({{ '/air-crash-atlas/' | relative_url }}) · [Source code](https://github.com/Alexander-Aghili/AirCrashAtlas-)
+[Open the crash map]({{ '/air-crash-atlas/' | relative_url }}) · [Source code](https://github.com/Alexander-Aghili/Air-Crash-Atlas)

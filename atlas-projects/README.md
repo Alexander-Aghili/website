@@ -3,7 +3,7 @@
 These maps are maintained in separate Git repositories and pinned here as submodules:
 
 - `abandoned-airfields`: [AbandondedAirfieldAtlas](https://github.com/Alexander-Aghili/AbandondedAirfieldAtlas)
-- `air-crashes`: [AirCrashAtlas-](https://github.com/Alexander-Aghili/AirCrashAtlas-)
+- `air-crashes`: [Air-Crash-Atlas](https://github.com/Alexander-Aghili/Air-Crash-Atlas)
 
 Initialize them after cloning the website:
 
