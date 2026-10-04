@@ -10,22 +10,25 @@ giscus_comments: true
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/Sunset.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 
-Every aviator has a unique tale to tell about their journey into the world of aviation, but mine took a rather unconventional route. I started with a fear of flying, disliking the idea of being in a metal tube hurtling through the sky. However, this fear soon transformed into fascination, as I was driven to unravel the mysteries behind the incredible feat of human capability that allowed those airplanes to soar smoothly through the air. 
-Armed with the boundless knowledge of the internet, I began a quest to understand the intricacies of the aviation system. I delved into the mechanics of flight, the intricacies of air traffic control, the rigorous training required for pilots, the complexities of meteorology, the physics of aircraft, and much more. I became entrenched in the aviation world, an obsession I would never escape. In the course of my research, I stumbled upon Microsoft Flight Simulator X, a simulation game that became my portal to aviation adventures. From landing at St. Maarten airport to embarking on F-18 missions, I was hooked. 
-Soon, my virtual flights evolved into more sophisticated endeavors. I meticulously planned commercial routes, piloted realistic aircraft like the PMDG 737-800, and mastered standard instrument procedures. I found myself on Vatsim, an online network that united aviation enthusiasts in the virtual skies, where I polished my phraseology and technical skills. I would even make trips to SFO just to watch planes land, immersing myself in the world of controller communications via LiveATC.net.
+I used to be afraid of flying. Being in a metal tube high above the ground made me uneasy, but it also made me curious about how airplanes worked. Learning more about them gradually turned that fear into an interest in aviation.
+
+I started reading online about flight mechanics, air traffic control, pilot training, weather, and aircraft systems. Along the way, I found Microsoft Flight Simulator X. Whether I was landing at St. Maarten or flying F-18 missions, I kept coming back to it.
+
+Eventually, I started planning commercial routes, flying aircraft like the PMDG 737-800, and learning standard instrument procedures. I joined Vatsim, an online flight simulation network, to practice radio communications and flying with air traffic control. I also made trips to SFO to watch planes land while listening to controllers on LiveATC.net.
 
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/FrontView.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-I knew that I had to take my passion to the real skies. An opportunity came in the form of an introductory flight Palo Alto and south over the Santa Cruz mountains. I performed stalls, steep turns, and some pattern work. It was a defining moment, one that convinced me to pursue a pilot's license. 
-I threw myself into rigorous study, immersing myself in the depths of aviation systems, flight planning, meteorology, the national airspace system, and all the knowledge required to become a private pilot. My instructor, Ben, played a pivotal role in refining my knowledge for the written test. Milestones came and went during this phase, from my first solo flight, to cross-country journeys with my instructor, to the mesmerizing sights of wind turbines during a night flight to Modesto. I completed my first solo cross-country flight to Chico airport, even making a stop at Sacramento International. Finally, the culmination of my journey arrived with the checkride exam. As I successfully passed the preflight exam and executed the required maneuvers for the practical portion, I had realized my childhood dream. I had demonstrated both the knowledge and capability to achieve my goals. 
+After spending so much time in simulators, I wanted to try flying an actual airplane. I took an introductory flight from Palo Alto, heading south over the Santa Cruz mountains. We practiced stalls, steep turns, and pattern work. That flight convinced me to pursue a pilot's license.
+
+Training meant studying aircraft systems, flight planning, weather, and the national airspace system, then putting that knowledge into practice. My instructor, Ben, helped me prepare for the written test. Some moments stand out: my first solo, cross-country flights with Ben, and seeing wind turbines on a night flight to Modesto. My first solo cross-country was to Chico, with a stop at Sacramento International. Eventually, I passed my checkride, including the oral exam and flight maneuvers, and became a private pilot.
 
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/Mather.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-Yet, as I reflect on my aviation journey, I am keenly aware that this is merely the beginning. The vast realm of aviation knowledge remains largely uncharted for me, and there is always more to learn. I understand the dangers of complacency, especially during the hours when a pilot starts feeling overly confident, somewhere between 200 and 500 hours of flight time. Rather than seeing this as a deterrent, I view it as a source of motivation. The idea that there is infinite room for improvement in my aviation skills excites me. 
+Getting my license gave me a foundation, but there is still plenty to learn. I want to keep building experience without getting complacent as flying becomes more familiar. There are always skills to practice and things I can do better.
 
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/Airport.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-My aviation journey is a testament to the transformation of fear into a passionate love for the skies. It's a story of perseverance, dedication, and an unquenchable thirst for knowledge. As I continue to soar through the boundless realm of aviation, I am reminded that there is always something new to discover, and that the joy of learning and improving is an integral part of the pilot's journey.
+Flying has become something I enjoy after years of being afraid of it. I'm glad I followed that curiosity, and I look forward to learning more each time I fly.
 
 {% include figure.liquid loading="eager" path="assets/img/PrivatePilot/MeFlying.JPEG" class="img-fluid rounded z-depth-1" zoomable=true %}
 
