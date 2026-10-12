@@ -1,0 +1,5078 @@
+{
+"source": "Cessna Model 172 Series 1977-1986 Service Manual D2065-3-13, Section 20 (via data/c172p-wiring.json)",
+"note": "Endpoints mapped to model anchors by rule; physical paths are reconstructed in the explorer.",
+"runs": [
+{
+"circuit": "battery_master",
+"circuit_name": "Battery, battery contactor and master switch (BAT half)",
+"wire_number": "PA29",
+"awg": "22",
+"from": {
+"component": "battery contactor (item 9, S-2475-1)",
+"terminal": "coil terminal (diode anode side)",
+"anchor": "battery_contactor",
+"placed": true
+},
+"to": {
+"component": "master switch (item 6, S-1994-1-1)",
+"terminal": "BAT half",
+"anchor": "part:MasterBAT",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 590,
+"manual": "20-49"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "battery_master",
+"circuit_name": "Battery, battery contactor and master switch (BAT half)",
+"wire_number": "PA26",
+"awg": "4",
+"from": {
+"component": "battery (item 8, C614002-0101)",
+"terminal": "positive terminal",
+"anchor": "battery",
+"placed": true
+},
+"to": {
+"component": "battery contactor (item 9)",
+"terminal": "battery-side main terminal",
+"anchor": "battery_contactor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 590,
+"manual": "20-49"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "battery_master",
+"circuit_name": "Battery, battery contactor and master switch (BAT half)",
+"wire_number": "PA23",
+"awg": "4",
+"from": {
+"component": "battery contactor (item 9)",
+"terminal": "bus-side main terminal",
+"anchor": "battery_contactor",
+"placed": true
+},
+"to": {
+"component": "starter contactor (item 2)",
+"terminal": "battery-side main terminal",
+"anchor": "starter_contactor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 590,
+"manual": "20-49"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "battery_master",
+"circuit_name": "Battery, battery contactor and master switch (BAT half)",
+"wire_number": "PA11",
+"awg": "22",
+"from": {
+"component": "master switch (item 6)",
+"terminal": "BAT half, second terminal",
+"anchor": "part:MasterBAT",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 590,
+"manual": "20-49"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "starter",
+"circuit_name": "Starter",
+"wire_number": "KA12",
+"awg": "4",
+"from": {
+"component": "starter contactor (item 2, S-2443-1)",
+"terminal": "output terminal",
+"anchor": "starter_contactor",
+"placed": true
+},
+"to": {
+"component": "starter",
+"terminal": "terminal",
+"anchor": "starter",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 590,
+"manual": "20-49"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "starter",
+"circuit_name": "Starter",
+"wire_number": "KA11",
+"awg": "22",
+"from": {
+"component": "ignition switch (item 2)",
+"terminal": "S (start)",
+"anchor": "part:IgnitionSwitch",
+"placed": true
+},
+"to": {
+"component": "starter contactor (item 3, S-2443-1)",
+"terminal": "coil terminal",
+"anchor": "starter_contactor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "starter",
+"circuit_name": "Starter",
+"wire_number": "KA7",
+"awg": "22",
+"from": {
+"component": "starter contactor (item 3)",
+"terminal": "coil terminal (return)",
+"anchor": "starter_contactor",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "starter",
+"circuit_name": "Starter",
+"wire_number": "KA2",
+"awg": "22",
+"from": {
+"component": "ignition switch (item 2)",
+"terminal": "GND",
+"anchor": "part:IgnitionSwitch",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "starter",
+"circuit_name": "Starter",
+"wire_number": "KA1",
+"awg": "22",
+"from": {
+"component": "INST circuit breaker 5 A (item 1)",
+"terminal": "load terminal",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "ignition switch (item 2)",
+"terminal": "BAT",
+"anchor": "part:IgnitionSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ammeter_bus_feed",
+"circuit_name": "Ammeter and primary bus feed",
+"wire_number": "DA7",
+"awg": "8",
+"from": {
+"component": "battery contactor (item 6, S-2475-1)",
+"terminal": "bus-side main terminal (opposite 'TO BATTERY')",
+"anchor": "battery_contactor",
+"placed": true
+},
+"to": {
+"component": "ammeter (item 2, S-1320-5)",
+"terminal": "terminal 1",
+"anchor": "ammeter",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 591,
+"manual": "20-50"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "ammeter_bus_feed",
+"circuit_name": "Ammeter and primary bus feed",
+"wire_number": "DA6",
+"awg": "8",
+"from": {
+"component": "ammeter (item 2)",
+"terminal": "terminal 2",
+"anchor": "ammeter",
+"placed": true
+},
+"to": {
+"component": "primary bus bar (item 5, 0570451)",
+"terminal": "feed terminal",
+"anchor": "bus",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 591,
+"manual": "20-50"
+},
+"serials": "SER (SR9624)(SR9625) & ON"
+},
+{
+"circuit": "primary_avionics_bus",
+"circuit_name": "Primary bus bar and avionics master / avionics bus",
+"wire_number": "PA32",
+"awg": "10",
+"from": {
+"component": "primary bus bar (item 8, 0570451)",
+"terminal": "bus feed terminal at TURN COORD end, where DA6 from ammeter lands",
+"anchor": "ammeter",
+"placed": true
+},
+"to": {
+"component": "avionics master switch (item 5, CM3589-40)",
+"terminal": "input terminal",
+"anchor": "part:AvionicsMaster",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 587,
+"manual": "20-46, 20-47, 20-48"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "primary_avionics_bus",
+"circuit_name": "Primary bus bar and avionics master / avionics bus",
+"wire_number": "PA8",
+"awg": "10",
+"from": {
+"component": "avionics master switch (item 5)",
+"terminal": "output terminal",
+"anchor": "part:AvionicsMaster",
+"placed": true
+},
+"to": {
+"component": "avionics bus bar (item 6, 0570419)",
+"terminal": "RADIO 1 position",
+"anchor": "bus",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 587,
+"manual": "20-46, 20-47, 20-48"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ground_service",
+"circuit_name": "Ground service receptacle (optional)",
+"wire_number": "PC12",
+"awg": "22",
+"from": {
+"component": "ground service (ext pwr) contactor (item 8)",
+"terminal": "coil terminal",
+"anchor": "ground_service",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 593,
+"manual": "20-52"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ground_service",
+"circuit_name": "Ground service receptacle (optional)",
+"wire_number": "PC13",
+"awg": "4",
+"from": {
+"component": "ground service contactor (item 8)",
+"terminal": "main terminal",
+"anchor": "ground_service",
+"placed": true
+},
+"to": {
+"component": "starter contactor (item 1)",
+"terminal": "battery-side main terminal (junction with PA23)",
+"anchor": "starter_contactor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 593,
+"manual": "20-52"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ground_service",
+"circuit_name": "Ground service receptacle (optional)",
+"wire_number": "PC7",
+"awg": "22",
+"from": {
+"component": "fuse & diode assy (item 3)",
+"terminal": "fuse-resistor-diode branch output",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "battery contactor (item 4)",
+"terminal": "bus-side main terminal",
+"anchor": "battery_contactor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 593,
+"manual": "20-52"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ground_service",
+"circuit_name": "Ground service receptacle (optional)",
+"wire_number": "PC8",
+"awg": "4",
+"from": {
+"component": "ground service receptacle (item 6)",
+"terminal": "center (positive) pin",
+"anchor": "ground_service",
+"placed": true
+},
+"to": {
+"component": "ground service contactor (item 8)",
+"terminal": "main terminal",
+"anchor": "ground_service",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 593,
+"manual": "20-52"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "ground_service",
+"circuit_name": "Ground service receptacle (optional)",
+"wire_number": "PC9",
+"awg": "22",
+"from": {
+"component": "diode board (item 7)",
+"terminal": "diode output (from receptacle small pin)",
+"anchor": "ground_service",
+"placed": true
+},
+"to": {
+"component": "ground service contactor (item 8)",
+"terminal": "coil terminal",
+"anchor": "ground_service",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 593,
+"manual": "20-52"
+},
+"serials": "(none printed)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB37",
+"awg": "8",
+"from": {
+"component": "alternator (item 10, C611503-0102)",
+"terminal": "B (output)",
+"anchor": "alternator",
+"placed": true
+},
+"to": {
+"component": "terminal board (item 14, 0570314)",
+"terminal": "stud",
+"anchor": "terminal_block",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB36",
+"awg": "8",
+"from": {
+"component": "alternator (item 10)",
+"terminal": "G (ground) terminal",
+"anchor": "alternator",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB35",
+"awg": "16",
+"from": {
+"component": "ACU connector (items 2/3) pin 1",
+"terminal": "FIELD",
+"anchor": "acu",
+"placed": true
+},
+"to": {
+"component": "alternator (item 10)",
+"terminal": "F (field)",
+"anchor": "alternator",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB17",
+"awg": "20",
+"from": {
+"component": "ACU connector pin 2",
+"terminal": "SENSE (+)",
+"anchor": "acu",
+"placed": true
+},
+"to": {
+"component": "terminal board (item 14)",
+"terminal": "stud (alternator output)",
+"anchor": "terminal_block",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB34",
+"awg": "8",
+"from": {
+"component": "terminal board (item 14)",
+"terminal": "stud",
+"anchor": "terminal_block",
+"placed": true
+},
+"to": {
+"component": "ALT circuit breaker 60 A (item 8, S-1232-60)",
+"terminal": "load terminal",
+"anchor": "cb:ALT",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB33",
+"awg": "20",
+"from": {
+"component": "ACU connector pin 5",
+"terminal": "SENSE (-)",
+"anchor": "acu",
+"placed": true
+},
+"to": {
+"component": "alternator (item 10)",
+"terminal": "G terminal (ground)",
+"anchor": "alternator",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB32",
+"awg": "20",
+"from": {
+"component": "ACU connector pin 3",
+"terminal": "POWER IN",
+"anchor": "acu",
+"placed": true
+},
+"to": {
+"component": "master switch (item 9, S-1994-1-1)",
+"terminal": "ALT half",
+"anchor": "part:MasterALT",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB31",
+"awg": "20",
+"from": {
+"component": "ACU connector pin (stacked with YEL PB15 label at pin 4 LO VOLT OUT; label sits at pin 6 HI VOLT OUT row)",
+"terminal": "pin 4 or 6 - uncertain",
+"anchor": "acu",
+"placed": true
+},
+"to": {
+"component": "connector housing (items 4/5)",
+"terminal": "pin to low-voltage lamp VIO lead",
+"anchor": "cb:ALT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB14",
+"awg": "22",
+"from": {
+"component": "INST circuit breaker 5 A (item 7)",
+"terminal": "load terminal",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "connector housing (items 5/4)",
+"terminal": "pin to low-voltage lamp other VIO lead",
+"anchor": "cb:ALT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "alternator",
+"circuit_name": "Alternator system (60 A) with alternator control unit and low-voltage warning",
+"wire_number": "PB1",
+"awg": "22",
+"from": {
+"component": "master switch (item 9)",
+"terminal": "ALT half",
+"anchor": "part:MasterALT",
+"placed": true
+},
+"to": {
+"component": "ALT FIELD circuit breaker 5 A (item 7)",
+"terminal": "load terminal",
+"anchor": "cb:ALT FIELD",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 594,
+"manual": "20-53"
+},
+"serials": "(none)"
+},
+{
+"circuit": "ignition",
+"circuit_name": "Magnetos / ignition switch",
+"wire_number": "JA6",
+"awg": "18S",
+"from": {
+"component": "ignition switch (item 2)",
+"terminal": "R",
+"anchor": "part:IgnitionSwitch",
+"placed": true
+},
+"to": {
+"component": "RH magneto",
+"terminal": "P-lead (ground/kill) terminal",
+"anchor": "magneto_left",
+"placed": true
+},
+"via": [
+"shield grounded at mag end; shields also tied to switch GND"
+],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "ignition",
+"circuit_name": "Magnetos / ignition switch",
+"wire_number": "JA5",
+"awg": "18S",
+"from": {
+"component": "ignition switch (item 2)",
+"terminal": "L",
+"anchor": "part:IgnitionSwitch",
+"placed": true
+},
+"to": {
+"component": "LH magneto",
+"terminal": "P-lead terminal",
+"anchor": "magneto_left",
+"placed": true
+},
+"via": [
+"shield grounded at mag end; shields tied to switch GND"
+],
+"page": {
+"pdf": 596,
+"manual": "20-55"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE9",
+"awg": "18",
+"from": {
+"component": "inst cluster (item 3)",
+"terminal": "SL",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "oil temp sending unit (item 4, S1630-5)",
+"terminal": "terminal",
+"anchor": "engine_sensor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 598,
+"manual": "20-57"
+},
+"serials": "SER (SR9742) & ON"
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE8",
+"awg": "20",
+"from": {
+"component": "INST circuit breaker 5 A (item 1)",
+"terminal": "load terminal",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "inst cluster (item 3)",
+"terminal": "I",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 598,
+"manual": "20-57"
+},
+"serials": "SER (SR9742) & ON"
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE6",
+"awg": "18",
+"from": {
+"component": "inst cluster via connector (item 2)",
+"terminal": "oil temp",
+"anchor": "engine_sensor",
+"placed": true
+},
+"to": {
+"component": "oil temp sending unit (item 4)",
+"terminal": "terminal",
+"anchor": "engine_sensor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 598,
+"manual": "20-57"
+},
+"serials": "THRU SER (SR9742)"
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE7",
+"awg": "22",
+"from": {
+"component": "INST circuit breaker 5 A (item 1)",
+"terminal": "",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "connector (item 2) to inst cluster",
+"terminal": "",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 598,
+"manual": "20-57"
+},
+"serials": "THRU SER (SR9742)"
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE12",
+"awg": "18",
+"from": {
+"component": "INST CLUSTER (oil press/oil temp) item 2",
+"terminal": "SEND",
+"anchor": "engine_sensor",
+"placed": true
+},
+"to": {
+"component": "oil temperature SENDING UNIT item 3",
+"terminal": "single terminal",
+"anchor": "engine_sensor",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 600,
+"manual": "20-58A"
+},
+"serials": ""
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE11",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 1, 5 A, labelled INST on bus",
+"terminal": "breaker load side",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER item 2",
+"terminal": "A+",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 600,
+"manual": "20-58A"
+},
+"serials": ""
+},
+{
+"circuit": "oil_temp",
+"circuit_name": "Oil temperature indicating",
+"wire_number": "EE10",
+"awg": "18",
+"from": {
+"component": "INST CLUSTER item 2",
+"terminal": "GND",
+"anchor": "ground",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "engine accessory case, upper LH bolt of oil filter mounting assy (note 3)",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 600,
+"manual": "20-58A"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB9",
+"awg": "20",
+"from": {
+"component": "LH fuel quantity sending unit (item 9 STD / 10 LONG RANGE)",
+"terminal": "signal terminal",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "LH WING disconnect (housings items 7/8)",
+"terminal": "connector labelled '4 6' (pin 4 of 6-position housing, as drawn)",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB8",
+"awg": "20",
+"from": {
+"component": "RH fuel quantity sending unit (item 9 STD / 10 LONG RANGE)",
+"terminal": "signal terminal",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "RH WING disconnect (housings items 5/6)",
+"terminal": "connector labelled '4 6' (pin 4, as drawn)",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB19",
+"awg": "20",
+"from": {
+"component": "LH WING disconnect (items 7/8)",
+"terminal": "pin 4 (fuselage side)",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER (item 2 STD / 3 LONG RANGE)",
+"terminal": "SL",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [
+"connector item 4 at cluster"
+],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "SER (SR9742) & ON"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB20",
+"awg": "20",
+"from": {
+"component": "RH WING disconnect (items 5/6)",
+"terminal": "pin 4 (fuselage side)",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER (item 2/3)",
+"terminal": "SR",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [
+"connector item 4"
+],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "SER (SR9742) & ON"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB18",
+"awg": "20",
+"from": {
+"component": "CIRCUIT BREAKER item 1, 5 A, INST",
+"terminal": "load side",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER (item 2/3)",
+"terminal": "I",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [
+"connector item 4"
+],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "SER (SR9742) & ON"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB17",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 1, 5 A, INST",
+"terminal": "load side",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER (item 2 STD / 3 LONG RANGE) - Detail A",
+"terminal": "power (bottom triangle) terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [
+"connector item 4"
+],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "THRU SER (SR9742)"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB15",
+"awg": "20",
+"from": {
+"component": "LH WING disconnect",
+"terminal": "pin 4",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER - Detail A",
+"terminal": "L.H. FUEL terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "THRU SER (SR9742)"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB16",
+"awg": "20",
+"from": {
+"component": "RH WING disconnect",
+"terminal": "pin 4",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER - Detail A",
+"terminal": "R.H. FUEL terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 607,
+"manual": "20-63"
+},
+"serials": "THRU SER (SR9742)"
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB25",
+"awg": "20",
+"from": {
+"component": "LH fuel sending unit (item 9 STD / 11 LONG RANGE / 13 INTEGRAL TANK)",
+"terminal": "signal terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "LH WING disconnect (housings items 7/8)",
+"terminal": "pin 4",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 611,
+"manual": "20-66A"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB26",
+"awg": "20",
+"from": {
+"component": "RH fuel sending unit (item 10 / 12 / 14)",
+"terminal": "signal terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "RH WING disconnect (housings items 5/6)",
+"terminal": "pin 4",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 611,
+"manual": "20-66A"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB27",
+"awg": "20",
+"from": {
+"component": "LH WING disconnect",
+"terminal": "pin 4 (fuselage side)",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "INST CLUSTER (item 2/3/4) LH FUEL",
+"terminal": "SEND (LH)",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 611,
+"manual": "20-66A"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB28",
+"awg": "20",
+"from": {
+"component": "INST CLUSTER RH FUEL",
+"terminal": "SEND (RH)",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "RH WING disconnect",
+"terminal": "pin 4 (fuselage side)",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 611,
+"manual": "20-66A"
+},
+"serials": ""
+},
+{
+"circuit": "fuel_qty",
+"circuit_name": "Fuel quantity indicating",
+"wire_number": "EB29",
+"awg": "20",
+"from": {
+"component": "INST CLUSTER",
+"terminal": "A+ (LH gauge); 20 GA JUMPER to A+ (RH gauge)",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "CIRCUIT BREAKER item 1, 5 A, INST",
+"terminal": "load",
+"anchor": "cb:INST",
+"placed": true
+},
+"via": [
+"20 GA JUMPER between the two A+ terminals"
+],
+"page": {
+"pdf": 611,
+"manual": "20-66A"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DF7",
+"awg": "22",
+"from": {
+"component": "CLOCK item 7 (C664508-0102)",
+"terminal": "power terminal (same node as RED DC17 clock feed from fuse item 2)",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "PRESSURE SWITCH item 3 (S-1711-1)",
+"terminal": "input",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 608,
+"manual": "20-64"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DF6",
+"awg": "22",
+"from": {
+"component": "connector housings items 5/4 at DIGITAL CLOCK item 11 power lead (RED)",
+"terminal": "S-1635-2 pin",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "PRESSURE SWITCH item 3",
+"terminal": "input",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 608,
+"manual": "20-64"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DF5",
+"awg": "22",
+"from": {
+"component": "HOURMETER item 8",
+"terminal": "(-)",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 608,
+"manual": "20-64"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DF3",
+"awg": "22",
+"from": {
+"component": "PRESSURE SWITCH item 3",
+"terminal": "output (closes with oil pressure)",
+"anchor": "firewall",
+"placed": false
+},
+"to": {
+"component": "HOURMETER item 8",
+"terminal": "(+)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 608,
+"manual": "20-64"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DC18",
+"awg": "see clock drawing",
+"from": {
+"component": "BATTERY CONTACTOR item 12 (S-2475-1)",
+"terminal": "battery-side terminal (with PA26 to battery, PA27 flag 1)",
+"anchor": "battery_contactor",
+"placed": true
+},
+"to": {
+"component": "FUSE ASSY item 2",
+"terminal": "",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 609,
+"manual": "20-65"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DC2",
+"awg": "see clock drawing",
+"from": {
+"component": "FUSE ASSY item 2",
+"terminal": "load",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "housings items 4/5",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 609,
+"manual": "20-65"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DC17",
+"awg": "see clock drawing",
+"from": {
+"component": "housings items 4/5",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"to": {
+"component": "CLOCK item 7",
+"terminal": "power",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 609,
+"manual": "20-65"
+},
+"serials": ""
+},
+{
+"circuit": "hourmeter",
+"circuit_name": "Hourmeter (optional)",
+"wire_number": "DC12",
+"awg": "see clock drawing",
+"from": {
+"component": "CLOCK item 7",
+"terminal": "ground",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 609,
+"manual": "20-65"
+},
+"serials": ""
+},
+{
+"circuit": "carb_air_temp",
+"circuit_name": "Carburetor air temperature gauge (optional)",
+"wire_number": "EA7",
+"awg": "22",
+"from": {
+"component": "carb air temp PROBE item 1 (0550209)",
+"terminal": "lead, vendor terminal (>> disconnect symbol)",
+"anchor": "engine_sensor",
+"placed": true
+},
+"to": {
+"component": "INDICATOR item 2 (S-1311-4) connector (housing item 3, clamp item 5)",
+"terminal": "C",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 610,
+"manual": "20-66"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "carb_air_temp",
+"circuit_name": "Carburetor air temperature gauge (optional)",
+"wire_number": "EA6",
+"awg": "22",
+"from": {
+"component": "PROBE item 1",
+"terminal": "lead, vendor terminal",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "INDICATOR item 2 connector",
+"terminal": "B",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 610,
+"manual": "20-66"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "carb_air_temp",
+"circuit_name": "Carburetor air temperature gauge (optional)",
+"wire_number": "EA5",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 4, 5 A, INST",
+"terminal": "load",
+"anchor": "cb:INST",
+"placed": true
+},
+"to": {
+"component": "INDICATOR item 2 connector",
+"terminal": "A",
+"anchor": "cb:INST",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 610,
+"manual": "20-66"
+},
+"serials": ""
+},
+{
+"circuit": "carb_air_temp",
+"circuit_name": "Carburetor air temperature gauge (optional)",
+"wire_number": "EA4",
+"awg": "22",
+"from": {
+"component": "INDICATOR item 2 connector",
+"terminal": "C",
+"anchor": "cb:INST",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 610,
+"manual": "20-66"
+},
+"serials": ""
+},
+{
+"circuit": "turn_coord",
+"circuit_name": "Turn coordinator / turn & bank indicator",
+"wire_number": "FA1",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 1, 5 A, 'TURN COORD' on bus bar item 6",
+"terminal": "load",
+"anchor": "cb:TURN COORD",
+"placed": true
+},
+"to": {
+"component": "TURN COORDINATOR item 3 (or TURN & BANK IND item 2) via connector item 4 MS3106A10SL-3S",
+"terminal": "A",
+"anchor": "turn_coordinator",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 612,
+"manual": "20-67"
+},
+"serials": ""
+},
+{
+"circuit": "turn_coord",
+"circuit_name": "Turn coordinator / turn & bank indicator",
+"wire_number": "FA2",
+"awg": "22",
+"from": {
+"component": "connector item 4 at turn coordinator",
+"terminal": "B",
+"anchor": "turn_coordinator",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 612,
+"manual": "20-67"
+},
+"serials": ""
+},
+{
+"circuit": "clock",
+"circuit_name": "Clock",
+"wire_number": "DC18",
+"awg": "22",
+"from": {
+"component": "BATT. CONTACTOR item 7 (S-2475-1)",
+"terminal": "battery-side terminal (with PA26 'TO BATTERY')",
+"anchor": "battery",
+"placed": true
+},
+"to": {
+"component": "FUSE ASSY item 3 (0712031)",
+"terminal": "line (soldered)",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 615,
+"manual": "20-70"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "clock",
+"circuit_name": "Clock",
+"wire_number": "DC17",
+"awg": "22",
+"from": {
+"component": "in-line housings items 4/5 (from RED DC2)",
+"terminal": "S-1635-1 pin",
+"anchor": "firewall",
+"placed": false
+},
+"to": {
+"component": "CLOCK item 6 (C664508-0102)",
+"terminal": "BATT terminal (note 3)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 615,
+"manual": "20-70"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "clock",
+"circuit_name": "Clock",
+"wire_number": "DC12",
+"awg": "22",
+"from": {
+"component": "CLOCK item 6",
+"terminal": "ground terminal",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 615,
+"manual": "20-70"
+},
+"serials": ""
+},
+{
+"circuit": "clock",
+"circuit_name": "Clock",
+"wire_number": "DC2",
+"awg": "22",
+"from": {
+"component": "FUSE ASSY item 3",
+"terminal": "load (soldered)",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "in-line housings items 4/5",
+"terminal": "S-1636-1 socket",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 615,
+"manual": "20-70"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "DC19",
+"awg": "22",
+"from": {
+"component": "housings items 3/2 (in-line connector) on DC2 fuse output",
+"terminal": "",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "housings items 2/3 at DIGITAL CLOCK item 11 RED vendor lead",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "BLK (REF) vendor lead",
+"awg": "",
+"from": {
+"component": "DIGITAL CLOCK item 11",
+"terminal": "BLK lead",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings 2/3 -> BLK DC8",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "RED (REF) vendor lead",
+"awg": "",
+"from": {
+"component": "DIGITAL CLOCK item 11",
+"terminal": "RED lead",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings 2/3 -> DC19",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "DC8",
+"awg": "18",
+"from": {
+"component": "housings 2/3 on DIGITAL CLOCK BLK lead",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "DC18",
+"awg": "see clock page",
+"from": {
+"component": "BATTERY CONTACTOR item 12 (S-2475-1)",
+"terminal": "battery-side terminal",
+"anchor": "battery_contactor",
+"placed": true
+},
+"to": {
+"component": "FUSEHOLDER item 5 / FUSE item 6",
+"terminal": "",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "DC2",
+"awg": "see clock page",
+"from": {
+"component": "FUSE items 5/6",
+"terminal": "load",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "housings 3/2 -> DC19",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "digital_clock",
+"circuit_name": "Digital clock (optional)",
+"wire_number": "LB12",
+"awg": "see compass & instrument lights page",
+"from": {
+"component": "DIGITAL CLOCK item 11",
+"terminal": "BLK (REF) lamp lead",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "TERMINAL BLOCK item 10 (34003-817)",
+"terminal": "one of three positions (as drawn, bottom)",
+"anchor": "panel_tb",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 614,
+"manual": "20-69"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA1",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 1, 5 A, 'INT LTS'",
+"terminal": "load",
+"anchor": "cb:INT LT",
+"placed": true
+},
+"to": {
+"component": "in-line housings items 4/3",
+"terminal": "pin",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA17",
+"awg": "22",
+"from": {
+"component": "housings items 4/3 (from LA1)",
+"terminal": "socket",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "SWITCH item 2 (S-1501-1)",
+"terminal": "bottom terminal (as drawn)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA16",
+"awg": "22",
+"from": {
+"component": "housings items 3/4 (from LA5)",
+"terminal": "socket",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "SWITCH item 2",
+"terminal": "middle-left terminal (as drawn)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA5",
+"awg": "22",
+"from": {
+"component": "housings items 4/3 on dimmer line (LB9 REF 'TO DIMMER' / WHT REF 'TO COMPASS LT')",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings items 3/4 -> LA16",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA2",
+"awg": "22",
+"from": {
+"component": "SWITCH item 2",
+"terminal": "top-left terminal (as drawn)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "housings items 4/3 -> LA6",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA6",
+"awg": "22",
+"from": {
+"component": "housings 3/4 (from LA2)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "LIGHT ASSY item 5 (1470089)",
+"terminal": "lamp 'R'",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA3",
+"awg": "22",
+"from": {
+"component": "SWITCH item 2",
+"terminal": "bottom-right terminal (as drawn)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "housings items 4/3 -> LA4",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA4",
+"awg": "22",
+"from": {
+"component": "housings 3/4 (from LA3)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "LIGHT ASSY item 5",
+"terminal": "lamp 'C'",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "map_aux_inst_light",
+"circuit_name": "Map / auxiliary instrument light (optional)",
+"wire_number": "LA7",
+"awg": "22",
+"from": {
+"component": "LIGHT ASSY item 5",
+"terminal": "ground lead",
+"anchor": "ground",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 616,
+"manual": "20-71"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB1",
+"awg": "22",
+"from": {
+"component": "CIRCUIT BREAKER item 10, 5 A, 'INT LTS'",
+"terminal": "load (shared with LA1, LA8 REF)",
+"anchor": "cb:INT LT",
+"placed": true
+},
+"to": {
+"component": "RESISTOR ASSY item 1 (S2091-7, dual rheostat)",
+"terminal": "REAR rheostat top end (same node as LB2; 22 GA JUMPER to FRONT rheostat top)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB2",
+"awg": "22",
+"from": {
+"component": "RESISTOR ASSY item 1",
+"terminal": "REAR rheostat top end (power node)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "DIMMING ASSY item 2 (1570166) via housings 9/8",
+"terminal": "pin 1 (vendor RED)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB4",
+"awg": "22",
+"from": {
+"component": "RESISTOR ASSY item 1",
+"terminal": "REAR rheostat wiper",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "DIMMING ASSY via housings 9/8",
+"terminal": "pin 4 (vendor TAN)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB5",
+"awg": "22",
+"from": {
+"component": "RESISTOR ASSY item 1",
+"terminal": "FRONT rheostat wiper",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "DIMMING ASSY via housings 9/8",
+"terminal": "pin 2 (vendor WHT)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB8",
+"awg": "22",
+"from": {
+"component": "RESISTOR ASSY item 1",
+"terminal": "REAR rheostat bottom end (RESISTOR item 4 S2000C201J bridges REAR bottom to FRONT bottom)",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB3",
+"awg": "22",
+"from": {
+"component": "DIMMING ASSY via housings 9/8",
+"terminal": "pin 5 (vendor BLU)",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "TERMINAL BLOCK item 3 (34003-817)",
+"terminal": "common bottom terminal (AFT row, left)",
+"anchor": "panel_tb",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB6",
+"awg": "22",
+"from": {
+"component": "TERMINAL BLOCK item 3",
+"terminal": "common (with LB3)",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "housings items 17/16 (S-1641-9/S-1640-9)",
+"terminal": "pin 8",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB9",
+"awg": "22",
+"from": {
+"component": "DIMMING ASSY via housings 9/8",
+"terminal": "pin 3 (vendor BRN) - dimmed output",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings items 6/7 -> COMPASS light item 11 (MS25237-327) WHT (REF) lead",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB10",
+"awg": "22",
+"from": {
+"component": "DIMMING ASSY pin 3 (shares terminal with LB9)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings items 7/6 -> CONSOLE light lamp item 5 BLK (REF) lead",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB11",
+"awg": "22",
+"from": {
+"component": "housings 6/7 on COMPASS light BLK (REF) lead",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB12",
+"awg": "22",
+"from": {
+"component": "TERMINAL BLOCK item 3",
+"terminal": "right terminal of AFT row",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "digital clock lamp / LIGHT item 20 in SOCKET item 21 BLK (REF)",
+"terminal": "(X splice)",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": ""
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB24",
+"awg": "22",
+"from": {
+"component": "DIMMING ASSY pin 3 (shares terminal with LB9)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "housings 6/7 -> FUEL SELECTOR light (socket assy S2524-1, lamp MS25231-1829)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": "SER (SR10523) & ON"
+},
+{
+"circuit": "compass_inst_lights",
+"circuit_name": "Compass, instrument and radio lights (transistorized dimming)",
+"wire_number": "LB25",
+"awg": "22",
+"from": {
+"component": "housings 7/6 on FUEL SELECTOR light return",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 617,
+"manual": "20-72"
+},
+"serials": "SER (SR10523) & ON"
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB23",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "BLK (no code)",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": ""
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "RED/YEL (no code)",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": ""
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB22",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB21",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB20",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB19",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB18",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB17",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB16",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB15",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [
+"joins LB16"
+],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB14",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [
+"continues as LB15"
+],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "LB13",
+"awg": "22",
+"from": {
+"component": "see drawing sheet 11.3.1 (PDF p620, other fork)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "see drawing sheet 11.3.1 (PDF p620)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [
+"continues as LB10 (REF) TO 1570166 DIMMING ASSY (SEE D 11.2.1)"
+],
+"page": {
+"pdf": 619,
+"manual": "20-74"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "RED/YEL",
+"awg": "22",
+"from": {
+"component": "post light (4)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "next post light (4)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 620,
+"manual": "20-75"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "BLK",
+"awg": "22",
+"from": {
+"component": "post light (4)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"to": {
+"component": "next post light (4)",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 620,
+"manual": "20-75"
+},
+"serials": null
+},
+{
+"circuit": "post_lights",
+"circuit_name": "Instrument panel post lighting (optional)",
+"wire_number": "22GA JUMPERS (3)",
+"awg": "22",
+"from": {
+"component": "switch (3) contacts",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "switch (3) contacts",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 620,
+"manual": "20-75"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA8",
+"awg": "22",
+"from": {
+"component": "circuit breaker (1) 5A, INT LT bus position",
+"terminal": "",
+"anchor": "cb:INT LT",
+"placed": true
+},
+"to": {
+"component": "dome/courtesy switch (2) S-1831-1",
+"terminal": "",
+"anchor": "part:DomeLightSwitchWhite",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA9",
+"awg": "22",
+"from": {
+"component": "switch (2)",
+"terminal": "",
+"anchor": "part:DomeLightSwitchWhite",
+"placed": true
+},
+"to": {
+"component": "splice (X) junction",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [
+"splice joining LA10, LA11, LA12"
+],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA10",
+"awg": "22",
+"from": {
+"component": "splice with LA9",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "LH wing disconnect, housings 6 (S-1640-6)/5 (S-1641-6), strip labeled '6 3'",
+"terminal": "pin 3 (probable)",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA11",
+"awg": "22",
+"from": {
+"component": "dome light (lamp 11 MS25231-313 in socket 7)",
+"terminal": "soldered",
+"anchor": "dome_light",
+"placed": true
+},
+"to": {
+"component": "splice with LA9",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA12",
+"awg": "22",
+"from": {
+"component": "splice with LA9",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "RH wing disconnect, housings 4 (S-1640-9)/3 (S-1641-9), strip labeled '9 3'",
+"terminal": "pin 3 (probable)",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA13",
+"awg": "22",
+"from": {
+"component": "LH wing disconnect 6/5",
+"terminal": "",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "connector 9/8 (S-1637-2/-1) -> LH courtesy light (10/12)",
+"terminal": "",
+"anchor": "courtesy_left",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "dome_courtesy",
+"circuit_name": "Dome and courtesy lights",
+"wire_number": "LA14",
+"awg": "22",
+"from": {
+"component": "RH wing disconnect 4/3",
+"terminal": "",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "connector 9/8 -> RH courtesy light (10/12)",
+"terminal": "",
+"anchor": "courtesy_left",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 621,
+"manual": "20-76"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LE5",
+"awg": "16",
+"from": {
+"component": "dual LDG/TAXI connector 4/5 pin 1 (main view, F172/R172 & optional dual on 172)",
+"terminal": "",
+"anchor": "landing_light",
+"placed": true
+},
+"to": {
+"component": "TAXI LT (7) 4594 100W",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LC7",
+"awg": "16",
+"from": {
+"component": "LDG LT lamp ground side",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"to": {
+"component": "connector 4/5 pin 3 -> LC5 ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LC6",
+"awg": "16",
+"from": {
+"component": "connector 4/5 pin 2",
+"terminal": "",
+"anchor": "cb:LANDING LT",
+"placed": false
+},
+"to": {
+"component": "LDG LT / LDG-TAXI LT lamp feed",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LE4",
+"awg": "16",
+"from": {
+"component": "TAXI LT (7)",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"to": {
+"component": "LDG LT (7)",
+"terminal": "",
+"anchor": "cb:LANDING LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LE2",
+"awg": "16",
+"from": {
+"component": "dual switch (2) taxi pole",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"to": {
+"component": "connector 4/5 pin 1 (firewall)",
+"terminal": "",
+"anchor": "cb:LANDING LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LE1",
+"awg": "16",
+"from": {
+"component": "LDG LT breaker (1) 15A",
+"terminal": "",
+"anchor": "cb:LDG LT",
+"placed": true
+},
+"to": {
+"component": "dual switch (2) taxi pole",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LC5",
+"awg": "16",
+"from": {
+"component": "connector 4/5 pin 3",
+"terminal": "",
+"anchor": "cb:LANDING LT",
+"placed": false
+},
+"to": {
+"component": "ground at firewall",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LC2",
+"awg": "16",
+"from": {
+"component": "switch (3 single / 2 dual) landing pole",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"to": {
+"component": "connector 4/5 pin 2 (firewall)",
+"terminal": "",
+"anchor": "cb:LANDING LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi_1981",
+"circuit_name": "Landing & taxi lights, cowl-mounted (1981 172P only)",
+"wire_number": "LC1",
+"awg": "16",
+"from": {
+"component": "LDG LT breaker (1) 15A",
+"terminal": "",
+"anchor": "cb:LDG LT",
+"placed": true
+},
+"to": {
+"component": "landing light switch",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 622,
+"manual": "20-77"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC8",
+"awg": "14",
+"from": {
+"component": "dual switch (5) LAND pole output",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"to": {
+"component": "LH wing connector 8/9 (S-1638-2/-1)",
+"terminal": "1",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC9",
+"awg": "14 (ditto)",
+"from": {
+"component": "LH wing connector",
+"terminal": "1",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "LDG LT (2) 4596",
+"terminal": "",
+"anchor": "cb:LAND LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC10",
+"awg": "14 (ditto)",
+"from": {
+"component": "TAXI LT (1) return",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"to": {
+"component": "LDG LT (2) return",
+"terminal": "",
+"anchor": "cb:LAND LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC11",
+"awg": "14 (ditto)",
+"from": {
+"component": "LDG LT return (rev C; was TAXI LT)",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"to": {
+"component": "ground in wing (Detail A)",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": "THRU SER (SR10248)"
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC12",
+"awg": "14 (ditto)",
+"from": {
+"component": "LDG LT breaker (6) 20A",
+"terminal": "",
+"anchor": "cb:LDG LT",
+"placed": true
+},
+"to": {
+"component": "dual switch (5) input; 4 GA JUMPER bridges TAXI and LAND pole inputs",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LE6",
+"awg": "14 (ditto)",
+"from": {
+"component": "dual switch (5) TAXI pole output",
+"terminal": "",
+"anchor": "part:TaxiLightSwitch",
+"placed": true
+},
+"to": {
+"component": "LH wing connector",
+"terminal": "2",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LE7",
+"awg": "14",
+"from": {
+"component": "LH wing connector",
+"terminal": "2",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "TAXI LT (1) 4587",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": null
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC13",
+"awg": "14",
+"from": {
+"component": "LDG LT return (rev C 3-3-84; was TAXI LT)",
+"terminal": "",
+"anchor": "taxi_light",
+"placed": true
+},
+"to": {
+"component": "LH wing connector 8/9",
+"terminal": "3",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": "SER (SR10248) & ON"
+},
+{
+"circuit": "landing_taxi",
+"circuit_name": "Landing & taxi lights, left wing (1982-86)",
+"wire_number": "LC14",
+"awg": "14",
+"from": {
+"component": "LH wing connector 8/9",
+"terminal": "3",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "ground with A.C.U. mounting bolt (note 1)",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 629,
+"manual": "20-84"
+},
+"serials": "SER (SR10248) & ON"
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD1",
+"awg": "22",
+"from": {
+"component": "NAV LTS circuit breaker (1) 5A",
+"terminal": "",
+"anchor": "cb:NAV LT",
+"placed": true
+},
+"to": {
+"component": "nav light switch (2) S-2160-1",
+"terminal": "",
+"anchor": "part:NavLightSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD2",
+"awg": "22",
+"from": {
+"component": "switch (2) output",
+"terminal": "",
+"anchor": "part:NavLightSwitch",
+"placed": true
+},
+"to": {
+"component": "terminal block (3) FWD stud",
+"terminal": "",
+"anchor": "panel_tb",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD3",
+"awg": "22",
+"from": {
+"component": "terminal block (3) FWD",
+"terminal": "",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "RH wing disconnect housings 7/6 (S-1640-9/S-1641-9)",
+"terminal": "strip '9 1 3', wire on '1' position (pin uncertain)",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD4",
+"awg": "22",
+"from": {
+"component": "terminal block (3) FWD",
+"terminal": "",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "connector 9/8 (S-1637-1/-2) -> LD7 aft to tail",
+"terminal": "",
+"anchor": "cb:NAV LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD5",
+"awg": "22",
+"from": {
+"component": "terminal block (3) FWD",
+"terminal": "",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "LH wing disconnect housings 5/4 (S-1640-6/S-1641-6)",
+"terminal": "strip '5 1 6', wire on '1' position (pin uncertain)",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD6",
+"awg": "18",
+"from": {
+"component": "RH wing disconnect",
+"terminal": "",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "connector 9/8 -> RH wing tip nav light (10/11) RED lead",
+"terminal": "",
+"anchor": "nav_right",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD7",
+"awg": "22",
+"from": {
+"component": "connector 9/8 (from LD4)",
+"terminal": "",
+"anchor": "cb:NAV LT",
+"placed": false
+},
+"to": {
+"component": "connector 9/8 -> tail nav light (12/13) RED lead",
+"terminal": "",
+"anchor": "nav_tail",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "nav_lights",
+"circuit_name": "Navigation lights",
+"wire_number": "LD8",
+"awg": "18",
+"from": {
+"component": "LH wing disconnect",
+"terminal": "",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "connector 9/8 -> LH wing tip nav light (10/11) RED lead",
+"terminal": "",
+"anchor": "nav_left",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 624,
+"manual": "20-79"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF1",
+"awg": "18",
+"from": {
+"component": "BCN LT breaker (1) 10A",
+"terminal": "",
+"anchor": "cb:BCN LT",
+"placed": true
+},
+"to": {
+"component": "beacon switch (7)",
+"terminal": "",
+"anchor": "part:BeaconSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF2",
+"awg": "18",
+"from": {
+"component": "switch (7)",
+"terminal": "",
+"anchor": "part:BeaconSwitch",
+"placed": true
+},
+"to": {
+"component": "connector 5/6 pin 1 -> RED (REF) flasher (2) input",
+"terminal": "",
+"anchor": "beacon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF3",
+"awg": "18",
+"from": {
+"component": "connector 5/6 pin 2 (flasher GRN)",
+"terminal": "",
+"anchor": "beacon",
+"placed": true
+},
+"to": {
+"component": "resistor (4) OR95-6",
+"terminal": "",
+"anchor": "cb:BCN LT",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF4",
+"awg": "18",
+"from": {
+"component": "resistor (4)",
+"terminal": "",
+"anchor": "cb:BCN LT",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF5",
+"awg": "18",
+"from": {
+"component": "connector 5/6 pin 3 (flasher YEL output)",
+"terminal": "",
+"anchor": "beacon",
+"placed": true
+},
+"to": {
+"component": "connector 6/5 pin 3 -> YEL (REF) beacon light (3)",
+"terminal": "",
+"anchor": "beacon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "beacon",
+"circuit_name": "Flashing beacon (optional)",
+"wire_number": "LF6",
+"awg": "18",
+"from": {
+"component": "connector 6/5 pin 2 (light YEL return)",
+"terminal": "",
+"anchor": "cb:BCN LT",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 626,
+"manual": "20-81"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "LA15",
+"awg": "22",
+"from": {
+"component": "NAV LTS switch (2) output (shared with LD2)",
+"terminal": "",
+"anchor": "part:NavLightSwitch",
+"placed": true
+},
+"to": {
+"component": "terminal strip (3)",
+"terminal": "1",
+"anchor": "panel_tb",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "BLK (2)",
+"awg": "22",
+"from": {
+"component": "terminal strip (3)",
+"terminal": "3",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "RED",
+"awg": "",
+"from": {
+"component": "terminal strip (3)",
+"terminal": "5",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "map light assy (6)",
+"terminal": "4",
+"anchor": "instruments",
+"placed": true
+},
+"via": [
+"cable (5) 8409"
+],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "GRN",
+"awg": "",
+"from": {
+"component": "terminal strip (3)",
+"terminal": "4",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "map light assy (6)",
+"terminal": "2",
+"anchor": "instruments",
+"placed": true
+},
+"via": [
+"cable (5)"
+],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "BLK (1)",
+"awg": "",
+"from": {
+"component": "terminal strip (3)",
+"terminal": "3",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "map light assy (6)",
+"terminal": "3",
+"anchor": "instruments",
+"placed": true
+},
+"via": [
+"cable (5)"
+],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "cw_map_light",
+"circuit_name": "Control wheel map light (optional)",
+"wire_number": "WHT",
+"awg": "",
+"from": {
+"component": "terminal strip (3)",
+"terminal": "2",
+"anchor": "panel_tb",
+"placed": true
+},
+"to": {
+"component": "map light assy (6)",
+"terminal": "1",
+"anchor": "instruments",
+"placed": true
+},
+"via": [
+"cable (5)"
+],
+"page": {
+"pdf": 627,
+"manual": "20-82"
+},
+"serials": null
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD10",
+"awg": "22",
+"from": {
+"component": "strobe switch (2) output",
+"terminal": "",
+"anchor": "part:StrobeSwitch",
+"placed": true
+},
+"to": {
+"component": "RH wing disconnect housings 5/6 (S-1641-9/S-1640-9)",
+"terminal": "pin 2",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": null
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD11",
+"awg": "22",
+"from": {
+"component": "strobe switch (2) output (shared terminal with LD10)",
+"terminal": "",
+"anchor": "part:StrobeSwitch",
+"placed": true
+},
+"to": {
+"component": "LH wing disconnect housings 3/4 (S-1641-6/S-1640-6)",
+"terminal": "pin 2",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": null
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD12",
+"awg": "20",
+"from": {
+"component": "LH wing disconnect",
+"terminal": "pin 2",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "connector 7/8 at LH WING TIP -> RED (REF) strobe power supply (9)",
+"terminal": "",
+"anchor": "strobe_left",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": null
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD13",
+"awg": "20",
+"from": {
+"component": "RH wing disconnect",
+"terminal": "pin 2",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "connector 7/8 at RH WING TIP -> RED (REF) strobe power supply (9)",
+"terminal": "",
+"anchor": "strobe_right",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": null
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD14",
+"awg": "22",
+"from": {
+"component": "breaker (13) S-1232-5 5A 'STROBE LT / AVN FAN'",
+"terminal": "",
+"anchor": "cb:STROBE",
+"placed": true
+},
+"to": {
+"component": "strobe switch (2)",
+"terminal": "",
+"anchor": "part:StrobeSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": "SER (SR9624)(SR9625) THRU SER (SR10412)"
+},
+{
+"circuit": "strobe",
+"circuit_name": "Wing tip strobe lights (optional)",
+"wire_number": "LD15",
+"awg": "22",
+"from": {
+"component": "STROBE LT breaker (1) 5A S-1360-5L",
+"terminal": "",
+"anchor": "cb:STROBE",
+"placed": true
+},
+"to": {
+"component": "strobe switch (2)",
+"terminal": "",
+"anchor": "part:StrobeSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 628,
+"manual": "20-83"
+},
+"serials": "SER (SR10412) & ON"
+},
+{
+"circuit": "cigar_lighter",
+"circuit_name": "Cigar lighter (1981 172P version)",
+"wire_number": "HC1",
+"awg": "18",
+"from": {
+"component": "resistor (5)",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"to": {
+"component": "cigar lighter (2) 0513052",
+"terminal": "",
+"anchor": "instruments",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 630,
+"manual": "20-85"
+},
+"serials": null
+},
+{
+"circuit": "cigar_lighter",
+"circuit_name": "Cigar lighter (1981 172P version)",
+"wire_number": "HC2",
+"awg": "18",
+"from": {
+"component": "fuse holder (3) 7.5A",
+"terminal": "",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"to": {
+"component": "resistor (5) S-2044-50-1.6",
+"terminal": "",
+"anchor": "firewall",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 630,
+"manual": "20-85"
+},
+"serials": null
+},
+{
+"circuit": "cigar_lighter",
+"circuit_name": "Cigar lighter (1981 172P version)",
+"wire_number": "HC4",
+"awg": "18",
+"from": {
+"component": "bus bar (6) 0570451",
+"terminal": "",
+"anchor": "bus",
+"placed": true
+},
+"to": {
+"component": "fuse holder (3) 7.5A",
+"terminal": "",
+"anchor": "fuse_bracket",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 630,
+"manual": "20-85"
+},
+"serials": "SER (SR9624)(SR9625) & ON"
+},
+{
+"circuit": "pitot_heat",
+"circuit_name": "Pitot heat (optional)",
+"wire_number": "FB1",
+"awg": "22",
+"from": {
+"component": "PITOT HT breaker (1) 5A",
+"terminal": "",
+"anchor": "cb:PITOT HT",
+"placed": true
+},
+"to": {
+"component": "pitot heat switch (2)",
+"terminal": "",
+"anchor": "part:PitotHeatSwitch",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 631,
+"manual": "20-86"
+},
+"serials": null
+},
+{
+"circuit": "pitot_heat",
+"circuit_name": "Pitot heat (optional)",
+"wire_number": "FB4",
+"awg": "22",
+"from": {
+"component": "switch (2)",
+"terminal": "",
+"anchor": "part:PitotHeatSwitch",
+"placed": true
+},
+"to": {
+"component": "LH wing disconnect housings 3/4 (S-1641-6/S-1640-6)",
+"terminal": "pin 5",
+"anchor": "wingroot_L",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 631,
+"manual": "20-86"
+},
+"serials": null
+},
+{
+"circuit": "pitot_heat",
+"circuit_name": "Pitot heat (optional)",
+"wire_number": "FB2",
+"awg": "18",
+"from": {
+"component": "LH wing disconnect",
+"terminal": "pin 5",
+"anchor": "wingroot_L",
+"placed": true
+},
+"to": {
+"component": "connector 5/6 -> pitot heater (7)",
+"terminal": "",
+"anchor": "pitot_heat",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 631,
+"manual": "20-86"
+},
+"serials": null
+},
+{
+"circuit": "pitot_heat",
+"circuit_name": "Pitot heat (optional)",
+"wire_number": "FB3",
+"awg": "18",
+"from": {
+"component": "pitot heater (7) via connector 6/5",
+"terminal": "",
+"anchor": "pitot_heat",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 631,
+"manual": "20-86"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE1",
+"awg": "18",
+"from": {
+"component": "ALT breaker (12) 60A bus side (PA13 REF)",
+"terminal": "",
+"anchor": "cb:ALT",
+"placed": true
+},
+"to": {
+"component": "AIR COND breaker (1) 10A",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE2",
+"awg": "18",
+"from": {
+"component": "AIR COND breaker (1)",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": true
+},
+"to": {
+"component": "blower switch (2)",
+"terminal": "B",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE3",
+"awg": "18",
+"from": {
+"component": "blower switch (2)",
+"terminal": "C",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "thermostat switch (3)",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE4",
+"awg": "18",
+"from": {
+"component": "blower connector 13/14",
+"terminal": "2 (ORN)",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "blower switch (2)",
+"terminal": "HI (per p633/634 color convention)",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE6",
+"awg": "18",
+"from": {
+"component": "blower connector",
+"terminal": "1 (RED)",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "blower switch (2)",
+"terminal": "MED",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE7",
+"awg": "18",
+"from": {
+"component": "blower connector",
+"terminal": "3 (YEL)",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "blower switch (2)",
+"terminal": "LO",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": null
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE11",
+"awg": "18",
+"from": {
+"component": "thermostat switch (3)",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": false
+},
+"to": {
+"component": "through FIREWALL to connector 4/5 pin 1 -> high press switch (9)",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "air_cond_1981",
+"circuit_name": "Air conditioner (optional, 1981-82 version)",
+"wire_number": "HE12",
+"awg": "18",
+"from": {
+"component": "connector 4/5 pin 2 (high press switch return)",
+"terminal": "",
+"anchor": "cb:AIR COND",
+"placed": false
+},
+"to": {
+"component": "connector 6/7 -> compressor clutch (8) BLK -> ground",
+"terminal": "",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 632,
+"manual": "20-87"
+},
+"serials": "SER (SR9624) & ON"
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE13",
+"awg": "16",
+"from": {
+"component": "LH evaporator connector 12/13",
+"terminal": "1",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "RH evaporator connector 12/13",
+"terminal": "1",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE14",
+"awg": "16",
+"from": {
+"component": "LH evaporator connector",
+"terminal": "2",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "RH evaporator connector",
+"terminal": "2",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE15",
+"awg": "16",
+"from": {
+"component": "LH evaporator connector",
+"terminal": "3",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "RH evaporator connector",
+"terminal": "3",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE16",
+"awg": "16",
+"from": {
+"component": "blower switch (3)",
+"terminal": "M (per color convention)",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "LH evaporator connector",
+"terminal": "1 (RED)",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE17",
+"awg": "16",
+"from": {
+"component": "blower switch (3)",
+"terminal": "L",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "LH evaporator connector",
+"terminal": "3 (YEL)",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE18",
+"awg": "16",
+"from": {
+"component": "blower switch (3)",
+"terminal": "H",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "LH evaporator connector",
+"terminal": "2 (ORN)",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE19",
+"awg": "16",
+"from": {
+"component": "bus bar (1)",
+"terminal": "",
+"anchor": "bus",
+"placed": true
+},
+"to": {
+"component": "A/C breaker (2) 15A",
+"terminal": "",
+"anchor": "cb:A/C",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": "THRU SER (SR10412)"
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE20",
+"awg": "16",
+"from": {
+"component": "A/C breaker (2) 15A",
+"terminal": "",
+"anchor": "cb:A/C",
+"placed": true
+},
+"to": {
+"component": "blower switch (3)",
+"terminal": "B",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE21",
+"awg": "16",
+"from": {
+"component": "blower switch (3)",
+"terminal": "C",
+"anchor": "aircon",
+"placed": true
+},
+"to": {
+"component": "thermostat switch (4)",
+"terminal": "",
+"anchor": "cb:A/C (AIR COND)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE22",
+"awg": "16",
+"from": {
+"component": "thermostat switch (4)",
+"terminal": "",
+"anchor": "cb:A/C (AIR COND)",
+"placed": false
+},
+"to": {
+"component": "connector 5/6",
+"terminal": "1 -> high press switch (7)",
+"anchor": "cb:A/C (AIR COND)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "air_cond",
+"circuit_name": "Air conditioner (optional, 17275800 & on)",
+"wire_number": "HE23",
+"awg": "16",
+"from": {
+"component": "connector 5/6",
+"terminal": "2",
+"anchor": "cb:A/C (AIR COND)",
+"placed": false
+},
+"to": {
+"component": "connector 8/9 -> compressor (10) clutch BLK -> ground",
+"terminal": "",
+"anchor": "aircon",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 634,
+"manual": "20-89"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC1",
+"awg": "16",
+"from": {
+"component": "FLAPS breaker (1) 10A",
+"terminal": "",
+"anchor": "cb:FLAP",
+"placed": true
+},
+"to": {
+"component": "cabin flap switch (2) S-1906-1 (left, labeled UP LIMIT SWITCH)",
+"terminal": "NO",
+"anchor": "flap_motor",
+"placed": true
+},
+"via": [
+"CC22 jumper to right switch (2) NO"
+],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC3",
+"awg": "16",
+"from": {
+"component": "left cabin switch (2)",
+"terminal": "C",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "RH WING disconnect housings 3/4 (S-1641-9/S-1640-9)",
+"terminal": "6",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC5",
+"awg": "16",
+"from": {
+"component": "right cabin switch (2)",
+"terminal": "C",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "RH WING disconnect",
+"terminal": "7",
+"anchor": "wingroot_R",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC19",
+"awg": "16",
+"from": {
+"component": "down limit switch (5)",
+"terminal": "C",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "actuator connector 6/7 (S-1638-1/-2)",
+"terminal": "1 -> YEL (REF) motor lead",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC20",
+"awg": "16",
+"from": {
+"component": "left cabin switch (2)",
+"terminal": "NC",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC21",
+"awg": "16",
+"from": {
+"component": "right cabin switch (2)",
+"terminal": "NC",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC22",
+"awg": "16",
+"from": {
+"component": "left cabin switch (2)",
+"terminal": "NO (CC1 terminal)",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "right cabin switch (2)",
+"terminal": "NO",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC23",
+"awg": "16",
+"from": {
+"component": "RH WING disconnect",
+"terminal": "6",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "connector 9/10 (S-2035-2/-1)",
+"terminal": "2",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC24",
+"awg": "16",
+"from": {
+"component": "RH WING disconnect",
+"terminal": "7",
+"anchor": "wingroot_R",
+"placed": true
+},
+"to": {
+"component": "connector 9/10",
+"terminal": "1",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC25",
+"awg": "16",
+"from": {
+"component": "up limit switch (5)",
+"terminal": "NO",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC26",
+"awg": "16",
+"from": {
+"component": "down limit switch (5)",
+"terminal": "NO",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC27",
+"awg": "16",
+"from": {
+"component": "up limit switch (5)",
+"terminal": "C",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "actuator connector 6/7",
+"terminal": "2 -> BLK (REF) motor lead",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC28",
+"awg": "16",
+"from": {
+"component": "connector 9/10",
+"terminal": "1",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "down limit switch (5)",
+"terminal": "NC",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "wing_flaps",
+"circuit_name": "Electric wing flaps",
+"wire_number": "CC29",
+"awg": "16",
+"from": {
+"component": "connector 9/10",
+"terminal": "2",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"to": {
+"component": "up limit switch (5)",
+"terminal": "NC",
+"anchor": "cb:FLAP",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 637,
+"manual": "20-92"
+},
+"serials": null
+},
+{
+"circuit": "vacuum_warning",
+"circuit_name": "Low-vacuum warning light",
+"wire_number": "WE1",
+"awg": "22",
+"from": {
+"component": "INT LT breaker (1) 5A",
+"terminal": "",
+"anchor": "cb:INT LT",
+"placed": true
+},
+"to": {
+"component": "connector 2/3 -> VIO (REF) lamp assy (4)",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 638,
+"manual": "20-93"
+},
+"serials": null
+},
+{
+"circuit": "vacuum_warning",
+"circuit_name": "Low-vacuum warning light",
+"wire_number": "WE2",
+"awg": "22",
+"from": {
+"component": "connector 3/2 on lamp VIO return lead",
+"terminal": "",
+"anchor": "cb:INT LT (panel placard per Fig 16-1: INST LT)",
+"placed": false
+},
+"to": {
+"component": "vacuum switch (5)",
+"terminal": "",
+"anchor": "vacuum",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 638,
+"manual": "20-93"
+},
+"serials": null
+},
+{
+"circuit": "vacuum_warning",
+"circuit_name": "Low-vacuum warning light",
+"wire_number": "WE3",
+"awg": "22",
+"from": {
+"component": "vacuum switch (5)",
+"terminal": "",
+"anchor": "vacuum",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 638,
+"manual": "20-93"
+},
+"serials": null
+},
+{
+"circuit": "standby_vacuum",
+"circuit_name": "Standby vacuum pump (optional)",
+"wire_number": "MG1",
+"awg": "16",
+"from": {
+"component": "BUSBAR",
+"terminal": "",
+"anchor": "cb:STBY VAC (standby vacuum pump circuit breaker)",
+"placed": false
+},
+"to": {
+"component": "CKT BKR (1) 15A",
+"terminal": "",
+"anchor": "cb:STBY VAC (standby vacuum pump circuit breaker)",
+"placed": false
+},
+"via": [],
+"page": {
+"pdf": 639,
+"manual": "20-94"
+},
+"serials": null
+},
+{
+"circuit": "standby_vacuum",
+"circuit_name": "Standby vacuum pump (optional)",
+"wire_number": "MG2",
+"awg": "16",
+"from": {
+"component": "CKT BKR (1)",
+"terminal": "",
+"anchor": "cb:STBY VAC (standby vacuum pump circuit breaker)",
+"placed": false
+},
+"to": {
+"component": "vacuum pump motor (2)",
+"terminal": "",
+"anchor": "vacuum",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 639,
+"manual": "20-94"
+},
+"serials": null
+},
+{
+"circuit": "standby_vacuum",
+"circuit_name": "Standby vacuum pump (optional)",
+"wire_number": "MG3",
+"awg": "16",
+"from": {
+"component": "vacuum pump motor (2)",
+"terminal": "",
+"anchor": "vacuum",
+"placed": true
+},
+"to": {
+"component": "ground",
+"terminal": "",
+"anchor": "ground",
+"placed": true
+},
+"via": [],
+"page": {
+"pdf": 639,
+"manual": "20-94"
+},
+"serials": null
+}
+]
+}

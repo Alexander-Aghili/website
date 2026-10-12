@@ -1,0 +1,4573 @@
+{
+ "source": {
+  "title": "Pilot's Handbook of Aeronautical Knowledge",
+  "document": "FAA-H-8083-25C",
+  "edition": "25C (2023)",
+  "publisher": "U.S. Department of Transportation, Federal Aviation Administration, Flight Standards Service",
+  "supersedes": "FAA-H-8083-25B (2016) and Addenda A (Feb 2021), B (Jan 2022), C (Mar 2023) (Preface, p. iii)",
+  "currency_check": "The faa.gov PHAK page, fetched 2026-09-30, lists FAA-H-8083-25C as the current edition.",
+  "handbook_page": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak",
+  "full_pdf": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+  "front_matter_pdf": "https://www.faa.gov/sites/faa.gov/files/01_phak_front.pdf",
+  "chapter_pdfs": {
+   "6": "https://www.faa.gov/sites/faa.gov/files/08_phak_ch6.pdf",
+   "7": "https://www.faa.gov/sites/faa.gov/files/09_phak_ch7.pdf",
+   "8": "https://www.faa.gov/sites/faa.gov/files/10_phak_ch8.pdf"
+  },
+  "license": "Work of the U.S. Government (FAA), not subject to U.S. copyright under 17 U.S.C. 105; the handbook carries no copyright notice. Third-party images are credited in the front-matter Acknowledgments (p. v) by chapter (e.g. Ch. 6: Piaggio P-180 photo, autopilot imagery; Ch. 7: oxygen equipment, TKS; Ch. 8: avionics/ADC/AHRS images). None of the selected figures is among them or carries a credit or copyright line. A generic line thanks Cessna and other manufacturers for images 'used throughout' without naming figures. Suggested attribution: 'Source: FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C), Figure N.'",
+  "coordinates": "All bboxes/points are image pixels of the listed PNG (origin top-left, x right, y down). bbox = [x0,y0,x1,y1]. label_bbox = printed label (orange label box when present, else the text span), from PyMuPDF vector extraction; shape_bbox and path points from gridded visual inspection, verified on *.check.png.",
+  "method": "PyMuPDF 1.28.2 render of the vector figure regions (clip + matrix); no OCR needed (all figure text is vector text). tesseract is not installed."
+ },
+ "figures": {
+  "fuel": {
+   "file": "assets/faa/fuel.png",
+   "check_file": "assets/faa/fuel.check.png",
+   "width": 1601,
+   "height": 1391,
+   "figure": "Figure 7-30",
+   "caption": "Figure 7-30. Gravity-feed and fuel-pump systems.",
+   "chapter": "Chapter 7: Aircraft Systems",
+   "page": 26,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "7-26",
+   "url": "https://www.faa.gov/sites/faa.gov/files/09_phak_ch7.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-7-aircraft-systems",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     37.0,
+     45.9,
+     272.0,
+     250.0
+    ],
+    "scale_px_per_pt": 6.8085,
+    "note": "top (gravity-feed) half only; the 'Gravity-feed system' sub-title band, the fuel-pump half and the caption are cropped out"
+   },
+   "hotspots": [
+    {
+     "node": "tank_left",
+     "label_bbox": [
+      433,
+      374,
+      668,
+      535
+     ],
+     "shape_bbox": [
+      122,
+      213,
+      733,
+      578
+     ],
+     "confidence": "high",
+     "printed_label": "Left tank"
+    },
+    {
+     "node": "tank_right",
+     "label_bbox": [
+      1025,
+      131,
+      1261,
+      291
+     ],
+     "shape_bbox": [
+      775,
+      40,
+      1285,
+      332
+     ],
+     "confidence": "high",
+     "printed_label": "Right tank"
+    },
+    {
+     "node": "selector",
+     "label_bbox": [
+      75,
+      818,
+      548,
+      916
+     ],
+     "shape_bbox": [
+      771,
+      430,
+      1003,
+      659
+     ],
+     "confidence": "high",
+     "printed_label": "Selector valve",
+     "positions": {
+      "BOTH": [
+       853,
+       433,
+       916,
+       462
+      ],
+      "LEFT": [
+       776,
+       519,
+       806,
+       575
+      ],
+      "RIGHT": [
+       964,
+       512,
+       993,
+       582
+      ],
+      "OFF": [
+       862,
+       627,
+       907,
+       656
+      ]
+     },
+     "note": "positions = printed LEFT/RIGHT/BOTH/OFF legends on the valve face"
+    },
+    {
+     "node": "strainer",
+     "label_bbox": [
+      1219,
+      580,
+      1543,
+      678
+     ],
+     "shape_bbox": [
+      788,
+      704,
+      988,
+      866
+     ],
+     "confidence": "high",
+     "printed_label": "Strainer"
+    },
+    {
+     "node": "primer",
+     "label_bbox": [
+      1054,
+      1261,
+      1350,
+      1359
+     ],
+     "shape_bbox": [
+      1155,
+      795,
+      1380,
+      1166
+     ],
+     "confidence": "high",
+     "printed_label": "Primer",
+     "note": "shape includes the primer outlet tube, which leaves the figure toward the cylinders"
+    },
+    {
+     "node": "engine",
+     "label_bbox": [
+      75,
+      1206,
+      480,
+      1304
+     ],
+     "shape_bbox": [
+      432,
+      972,
+      752,
+      1362
+     ],
+     "confidence": "high",
+     "printed_label": "Carburetor",
+     "note": "figure shows the carburetor only; no engine is drawn"
+    },
+    {
+     "node": "vent",
+     "label_bbox": [
+      75,
+      644,
+      324,
+      742
+     ],
+     "shape_bbox": [
+      172,
+      376,
+      218,
+      430
+     ],
+     "confidence": "high",
+     "printed_label": "Vent",
+     "note": "vent elbow on the left tank that the 'Vent' leader points to"
+    },
+    {
+     "node": "vent_line",
+     "label_bbox": null,
+     "shape_bbox": [
+      588,
+      185,
+      870,
+      285
+     ],
+     "confidence": "medium",
+     "note": "unlabeled tube interconnecting the two tank tops (vent crossover); identification is inferred"
+    },
+    {
+     "node": "cap_left",
+     "label_bbox": null,
+     "shape_bbox": [
+      416,
+      196,
+      492,
+      241
+     ],
+     "confidence": "medium",
+     "note": "unlabeled filler cap on top of left tank"
+    },
+    {
+     "node": "cap_right",
+     "label_bbox": null,
+     "shape_bbox": [
+      1025,
+      38,
+      1087,
+      73
+     ],
+     "confidence": "medium",
+     "note": "unlabeled filler cap on top of right tank"
+    },
+    {
+     "node": "sump_left",
+     "label_bbox": null,
+     "shape_bbox": [
+      618,
+      468,
+      711,
+      527
+     ],
+     "confidence": "low",
+     "note": "unlabeled red fitting under the left tank at the outlet; drawn like a drain/sump valve, not named in the figure"
+    },
+    {
+     "node": "sump_right",
+     "label_bbox": null,
+     "shape_bbox": [
+      938,
+      315,
+      1030,
+      372
+     ],
+     "confidence": "low",
+     "note": "unlabeled red fitting under the right tank; drawn like a drain/sump valve, not named in the figure"
+    }
+   ],
+   "paths": [
+    {
+     "from": "tank_left",
+     "to": "selector",
+     "points": [
+      [
+       700,
+       440
+      ],
+      [
+       708,
+       437
+      ],
+      [
+       716,
+       447
+      ],
+      [
+       718,
+       470
+      ],
+      [
+       718,
+       500
+      ],
+      [
+       718,
+       530
+      ],
+      [
+       718,
+       555
+      ],
+      [
+       740,
+       555
+      ],
+      [
+       772,
+       555
+      ]
+     ],
+     "confidence": "high"
+    },
+    {
+     "from": "tank_right",
+     "to": "selector",
+     "points": [
+      [
+       1022,
+       300
+      ],
+      [
+       1028,
+       288
+      ],
+      [
+       1037,
+       298
+      ],
+      [
+       1037,
+       330
+      ],
+      [
+       1037,
+       400
+      ],
+      [
+       1037,
+       480
+      ],
+      [
+       1037,
+       555
+      ],
+      [
+       1020,
+       555
+      ],
+      [
+       1003,
+       555
+      ]
+     ],
+     "confidence": "high"
+    },
+    {
+     "from": "selector",
+     "to": "strainer",
+     "points": [
+      [
+       887,
+       659
+      ],
+      [
+       887,
+       685
+      ],
+      [
+       887,
+       710
+      ],
+      [
+       887,
+       735
+      ]
+     ],
+     "confidence": "high"
+    },
+    {
+     "from": "strainer",
+     "to": "engine",
+     "points": [
+      [
+       887,
+       866
+      ],
+      [
+       887,
+       950
+      ],
+      [
+       887,
+       1050
+      ],
+      [
+       887,
+       1130
+      ],
+      [
+       887,
+       1190
+      ],
+      [
+       840,
+       1218
+      ],
+      [
+       795,
+       1245
+      ],
+      [
+       752,
+       1272
+      ]
+     ],
+     "confidence": "high",
+     "note": "strainer outlet to carburetor inlet"
+    },
+    {
+     "from": "strainer",
+     "to": "primer",
+     "points": [
+      [
+       946,
+       840
+      ],
+      [
+       1000,
+       893
+      ],
+      [
+       1060,
+       950
+      ],
+      [
+       1120,
+       1008
+      ],
+      [
+       1160,
+       1047
+      ],
+      [
+       1175,
+       1062
+      ]
+     ],
+     "confidence": "high"
+    },
+    {
+     "from": "primer",
+     "to": "engine",
+     "points": [
+      [
+       1203,
+       920
+      ],
+      [
+       1203,
+       880
+      ],
+      [
+       1203,
+       855
+      ],
+      [
+       1215,
+       838
+      ],
+      [
+       1240,
+       832
+      ],
+      [
+       1300,
+       815
+      ],
+      [
+       1375,
+       795
+      ]
+     ],
+     "confidence": "low",
+     "note": "primer outlet tube; it leaves the figure toward the cylinders (engine not drawn), so the endpoint is the tube end"
+    }
+   ],
+   "missing": [
+    "float_chamber (carburetor body drawn but no float chamber labeled or shown in section)"
+   ],
+   "subfigure": "Gravity-feed system (upper half of Figure 7-30)"
+  },
+  "electrical": {
+   "file": "assets/faa/electrical.png",
+   "check_file": "assets/faa/electrical.check.png",
+   "width": 1801,
+   "height": 2037,
+   "figure": "Figure 7-34",
+   "caption": "Figure 7-34. Electrical system schematic.",
+   "chapter": "Chapter 7: Aircraft Systems",
+   "page": 32,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "7-32",
+   "url": "https://www.faa.gov/sites/faa.gov/files/09_phak_ch7.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-7-aircraft-systems",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     35.7,
+     45.7,
+     522.3,
+     596.3
+    ],
+    "scale_px_per_pt": 3.6991,
+    "note": "whole figure frame incl. the CODE legend; caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "battery",
+     "label_bbox": [
+      133,
+      1543,
+      234,
+      1618
+     ],
+     "shape_bbox": [
+      55,
+      1448,
+      252,
+      1648
+     ],
+     "confidence": "high",
+     "printed_label": "Battery"
+    },
+    {
+     "node": "battery_contactor",
+     "label_bbox": [
+      318,
+      1502,
+      454,
+      1568
+     ],
+     "shape_bbox": [
+      335,
+      1328,
+      422,
+      1500
+     ],
+     "confidence": "high",
+     "printed_label": "Battery contactor"
+    },
+    {
+     "node": "master_switch",
+     "label_bbox": [
+      356,
+      817,
+      452,
+      883
+     ],
+     "shape_bbox": [
+      276,
+      556,
+      455,
+      806
+     ],
+     "confidence": "high",
+     "printed_label": "Master switch",
+     "note": "split rocker; halves given as sw_alt and sw_bat"
+    },
+    {
+     "node": "sw_alt",
+     "label_bbox": [
+      278,
+      620,
+      307,
+      773
+     ],
+     "shape_bbox": [
+      308,
+      562,
+      362,
+      802
+     ],
+     "confidence": "medium",
+     "printed_label": "ALT (left half)"
+    },
+    {
+     "node": "sw_bat",
+     "label_bbox": [
+      422,
+      585,
+      453,
+      738
+     ],
+     "shape_bbox": [
+      362,
+      562,
+      418,
+      802
+     ],
+     "confidence": "medium",
+     "printed_label": "BAT (right half)"
+    },
+    {
+     "node": "alternator",
+     "label_bbox": [
+      609,
+      273,
+      752,
+      313
+     ],
+     "shape_bbox": [
+      478,
+      288,
+      716,
+      497
+     ],
+     "confidence": "high",
+     "printed_label": "Alternator"
+    },
+    {
+     "node": "alt_control_unit",
+     "label_bbox": [
+      184,
+      38,
+      349,
+      105
+     ],
+     "shape_bbox": [
+      137,
+      100,
+      380,
+      490
+     ],
+     "confidence": "high",
+     "printed_label": "Alternator control unit"
+    },
+    {
+     "node": "alt_breaker",
+     "label_bbox": [
+      855,
+      435,
+      957,
+      590
+     ],
+     "shape_bbox": [
+      835,
+      472,
+      935,
+      555
+     ],
+     "confidence": "high",
+     "printed_label": "Pull off / ALT"
+    },
+    {
+     "node": "alt_field_cb",
+     "label_bbox": [
+      554,
+      631,
+      766,
+      697
+     ],
+     "shape_bbox": [
+      627,
+      548,
+      707,
+      618
+     ],
+     "confidence": "high",
+     "printed_label": "Alternator field circuit breaker"
+    },
+    {
+     "node": "bus1",
+     "label_bbox": [
+      1040,
+      159,
+      1075,
+      639
+     ],
+     "shape_bbox": [
+      1003,
+      112,
+      1113,
+      683
+     ],
+     "confidence": "high",
+     "printed_label": "PRIMARY BUS"
+    },
+    {
+     "node": "bus2",
+     "label_bbox": [
+      1040,
+      1049,
+      1075,
+      1571
+     ],
+     "shape_bbox": [
+      1003,
+      721,
+      1113,
+      1900
+     ],
+     "confidence": "high",
+     "printed_label": "AVIONICS BUS"
+    },
+    {
+     "node": "ammeter",
+     "label_bbox": [
+      599,
+      781,
+      729,
+      821
+     ],
+     "shape_bbox": [
+      745,
+      735,
+      910,
+      895
+     ],
+     "confidence": "high",
+     "printed_label": "Ammeter"
+    },
+    {
+     "node": "starter",
+     "label_bbox": [
+      604,
+      900,
+      702,
+      977
+     ],
+     "shape_bbox": [
+      508,
+      858,
+      725,
+      1005
+     ],
+     "confidence": "high",
+     "printed_label": "Starter"
+    },
+    {
+     "node": "starter_contactor",
+     "label_bbox": [
+      661,
+      1271,
+      797,
+      1338
+     ],
+     "shape_bbox": [
+      685,
+      1045,
+      772,
+      1220
+     ],
+     "confidence": "high",
+     "printed_label": "Starter contactor"
+    },
+    {
+     "node": "ext_power",
+     "label_bbox": [
+      364,
+      1575,
+      584,
+      1642
+     ],
+     "shape_bbox": [
+      474,
+      1398,
+      546,
+      1500
+     ],
+     "confidence": "high",
+     "printed_label": "Ground service plug receptacle"
+    },
+    {
+     "node": "breakers",
+     "label_bbox": null,
+     "shape_bbox": [
+      1180,
+      128,
+      1295,
+      1885
+     ],
+     "confidence": "high",
+     "note": "column of bus circuit breakers; each load entry carries its own breaker_bbox"
+    },
+    {
+     "node": "ignition_switch",
+     "label_bbox": null,
+     "shape_bbox": [
+      788,
+      1403,
+      940,
+      1545
+     ],
+     "confidence": "medium",
+     "note": "key switch drawn next to the magnetos; not labeled by name"
+    },
+    {
+     "node": "magnetos",
+     "label_bbox": [
+      655,
+      1538,
+      794,
+      1578
+     ],
+     "shape_bbox": [
+      600,
+      1585,
+      868,
+      1668
+     ],
+     "confidence": "high",
+     "printed_label": "Magnetos"
+    },
+    {
+     "node": "low_voltage_light",
+     "label_bbox": [
+      478,
+      26,
+      664,
+      92
+     ],
+     "shape_bbox": [
+      494,
+      94,
+      612,
+      206
+     ],
+     "confidence": "high",
+     "printed_label": "Low-voltage warning light"
+    },
+    {
+     "node": "clock",
+     "label_bbox": [
+      141,
+      687,
+      222,
+      727
+     ],
+     "shape_bbox": [
+      80,
+      798,
+      268,
+      892
+     ],
+     "confidence": "high",
+     "printed_label": "Clock"
+    },
+    {
+     "node": "oil_pressure_switch",
+     "label_bbox": [
+      70,
+      947,
+      245,
+      1014
+     ],
+     "shape_bbox": [
+      158,
+      968,
+      246,
+      1112
+     ],
+     "confidence": "high",
+     "printed_label": "Oil pressure switch"
+    },
+    {
+     "node": "hour_meter",
+     "label_bbox": [
+      68,
+      1275,
+      224,
+      1342
+     ],
+     "shape_bbox": [
+      90,
+      1183,
+      292,
+      1252
+     ],
+     "confidence": "high",
+     "printed_label": "Flight hour recorder"
+    },
+    {
+     "node": "fuel_qty_ind",
+     "label_bbox": [
+      1337,
+      145,
+      1770,
+      191
+     ],
+     "shape_bbox": [
+      1337,
+      145,
+      1770,
+      191
+     ],
+     "confidence": "high",
+     "printed_label": "To fuel quantity indicators",
+     "breaker": "FUEL IND",
+     "breaker_bbox": [
+      1185,
+      130,
+      1292,
+      206
+     ],
+     "breaker_label_bbox": [
+      1218,
+      206,
+      1307,
+      229
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "beacon",
+     "label_bbox": [
+      1337,
+      230,
+      1770,
+      276
+     ],
+     "shape_bbox": [
+      1337,
+      230,
+      1770,
+      276
+     ],
+     "confidence": "high",
+     "printed_label": "To flashing beacon",
+     "breaker": "BCN PITOT",
+     "breaker_bbox": [
+      1185,
+      245,
+      1292,
+      321
+     ],
+     "breaker_label_bbox": [
+      1207,
+      318,
+      1305,
+      342
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "pitot_heat",
+     "label_bbox": [
+      1337,
+      287,
+      1770,
+      332
+     ],
+     "shape_bbox": [
+      1337,
+      287,
+      1770,
+      332
+     ],
+     "confidence": "high",
+     "printed_label": "To pitot heat",
+     "breaker": "BCN PITOT",
+     "breaker_bbox": [
+      1185,
+      245,
+      1292,
+      321
+     ],
+     "breaker_label_bbox": [
+      1207,
+      318,
+      1305,
+      342
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "radio_fan",
+     "label_bbox": [
+      1337,
+      343,
+      1770,
+      389
+     ],
+     "shape_bbox": [
+      1337,
+      343,
+      1770,
+      389
+     ],
+     "confidence": "high",
+     "printed_label": "To radio cooling fan",
+     "breaker": "STROBE RADIO FAN",
+     "breaker_bbox": [
+      1185,
+      355,
+      1292,
+      431
+     ],
+     "breaker_label_bbox": [
+      1210,
+      428,
+      1311,
+      471
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "strobe",
+     "label_bbox": [
+      1337,
+      400,
+      1770,
+      446
+     ],
+     "shape_bbox": [
+      1337,
+      400,
+      1770,
+      446
+     ],
+     "confidence": "high",
+     "printed_label": "To strobe lights",
+     "breaker": "STROBE RADIO FAN",
+     "breaker_bbox": [
+      1185,
+      355,
+      1292,
+      431
+     ],
+     "breaker_label_bbox": [
+      1210,
+      428,
+      1311,
+      471
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "landing_light",
+     "label_bbox": [
+      1337,
+      485,
+      1770,
+      531
+     ],
+     "shape_bbox": [
+      1337,
+      485,
+      1770,
+      531
+     ],
+     "confidence": "high",
+     "printed_label": "To landing and taxi lights",
+     "breaker": "LDG LTS",
+     "breaker_bbox": [
+      1185,
+      472,
+      1292,
+      548
+     ],
+     "breaker_label_bbox": [
+      1215,
+      546,
+      1293,
+      570
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "ign_switch_feed",
+     "label_bbox": [
+      1337,
+      571,
+      1770,
+      616
+     ],
+     "shape_bbox": [
+      1337,
+      571,
+      1770,
+      616
+     ],
+     "confidence": "high",
+     "printed_label": "To ignition switch",
+     "breaker": "FLAP",
+     "breaker_bbox": [
+      1185,
+      582,
+      1292,
+      658
+     ],
+     "breaker_label_bbox": [
+      1234,
+      656,
+      1282,
+      680
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "flaps_motor",
+     "label_bbox": [
+      1337,
+      627,
+      1770,
+      673
+     ],
+     "shape_bbox": [
+      1337,
+      627,
+      1770,
+      673
+     ],
+     "confidence": "high",
+     "printed_label": "To wing flap system",
+     "breaker": "FLAP",
+     "breaker_bbox": [
+      1185,
+      582,
+      1292,
+      658
+     ],
+     "breaker_label_bbox": [
+      1234,
+      656,
+      1282,
+      680
+     ],
+     "bus": "bus1",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "inst_lights",
+     "label_bbox": [
+      1337,
+      826,
+      1770,
+      900
+     ],
+     "shape_bbox": [
+      1337,
+      826,
+      1770,
+      900
+     ],
+     "confidence": "high",
+     "printed_label": "To instrument, radio, compass and post lights",
+     "breaker": "INST LTS",
+     "breaker_bbox": [
+      1185,
+      754,
+      1292,
+      830
+     ],
+     "breaker_label_bbox": [
+      1216,
+      827,
+      1297,
+      851
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "turn_coordinator",
+     "label_bbox": [
+      1337,
+      968,
+      1770,
+      1014
+     ],
+     "shape_bbox": [
+      1337,
+      968,
+      1770,
+      1014
+     ],
+     "confidence": "high",
+     "printed_label": "To turn coordinator",
+     "breaker": "INST LTS",
+     "breaker_bbox": [
+      1185,
+      754,
+      1292,
+      830
+     ],
+     "breaker_label_bbox": [
+      1216,
+      827,
+      1297,
+      851
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "stby_vac",
+     "label_bbox": [
+      1337,
+      1082,
+      1770,
+      1156
+     ],
+     "shape_bbox": [
+      1337,
+      1082,
+      1770,
+      1156
+     ],
+     "confidence": "high",
+     "printed_label": "Switch/circuit breaker to standby vacuum pump",
+     "breaker": "STBY VAC",
+     "breaker_bbox": [
+      1185,
+      1082,
+      1292,
+      1158
+     ],
+     "breaker_label_bbox": [
+      1213,
+      1160,
+      1305,
+      1184
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "nav_lights",
+     "label_bbox": [
+      1337,
+      1337,
+      1770,
+      1383
+     ],
+     "shape_bbox": [
+      1337,
+      1337,
+      1770,
+      1383
+     ],
+     "confidence": "high",
+     "printed_label": "To navigation lights",
+     "breaker": "NAV DOME",
+     "breaker_bbox": [
+      1185,
+      1265,
+      1292,
+      1341
+     ],
+     "breaker_label_bbox": [
+      1227,
+      1340,
+      1281,
+      1382
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "dome_light",
+     "label_bbox": [
+      1337,
+      1394,
+      1770,
+      1440
+     ],
+     "shape_bbox": [
+      1337,
+      1394,
+      1770,
+      1440
+     ],
+     "confidence": "high",
+     "printed_label": "To dome light",
+     "breaker": "NAV DOME",
+     "breaker_bbox": [
+      1185,
+      1265,
+      1292,
+      1341
+     ],
+     "breaker_label_bbox": [
+      1227,
+      1340,
+      1281,
+      1382
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "navcom1",
+     "label_bbox": [
+      1337,
+      1451,
+      1770,
+      1497
+     ],
+     "shape_bbox": [
+      1337,
+      1451,
+      1770,
+      1497
+     ],
+     "confidence": "high",
+     "printed_label": "To radio",
+     "breaker": "RADIO 1",
+     "breaker_bbox": [
+      1185,
+      1439,
+      1292,
+      1515
+     ],
+     "breaker_label_bbox": [
+      1220,
+      1514,
+      1293,
+      1538
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "navcom2",
+     "label_bbox": [
+      1337,
+      1564,
+      1770,
+      1610
+     ],
+     "shape_bbox": [
+      1337,
+      1564,
+      1770,
+      1610
+     ],
+     "confidence": "high",
+     "printed_label": "To radio",
+     "breaker": "RADIO 2",
+     "breaker_bbox": [
+      1185,
+      1550,
+      1292,
+      1626
+     ],
+     "breaker_label_bbox": [
+      1218,
+      1626,
+      1292,
+      1650
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "xpdr",
+     "label_bbox": [
+      1337,
+      1678,
+      1770,
+      1752
+     ],
+     "shape_bbox": [
+      1337,
+      1678,
+      1770,
+      1752
+     ],
+     "confidence": "high",
+     "printed_label": "To radio or transponder and encoding altimeter",
+     "breaker": "RADIO 3",
+     "breaker_bbox": [
+      1185,
+      1677,
+      1292,
+      1753
+     ],
+     "breaker_label_bbox": [
+      1218,
+      1752,
+      1292,
+      1776
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    },
+    {
+     "node": "radio4",
+     "label_bbox": [
+      1337,
+      1792,
+      1770,
+      1837
+     ],
+     "shape_bbox": [
+      1337,
+      1792,
+      1770,
+      1837
+     ],
+     "confidence": "high",
+     "printed_label": "To radio",
+     "breaker": "RADIO 4",
+     "breaker_bbox": [
+      1185,
+      1784,
+      1292,
+      1860
+     ],
+     "breaker_label_bbox": [
+      1220,
+      1857,
+      1293,
+      1881
+     ],
+     "bus": "bus2",
+     "note": "load is drawn only as a labeled box; shape_bbox = the box"
+    }
+   ],
+   "paths": [
+    {
+     "from": "battery",
+     "to": "battery_contactor",
+     "points": [
+      [
+       222,
+       1482
+      ],
+      [
+       240,
+       1478
+      ],
+      [
+       240,
+       1440
+      ],
+      [
+       240,
+       1400
+      ],
+      [
+       240,
+       1360
+      ],
+      [
+       240,
+       1302
+      ],
+      [
+       290,
+       1302
+      ],
+      [
+       338,
+       1302
+      ],
+      [
+       360,
+       1322
+      ],
+      [
+       380,
+       1340
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "sw_bat",
+     "to": "battery_contactor",
+     "points": [
+      [
+       390,
+       565
+      ],
+      [
+       390,
+       515
+      ],
+      [
+       240,
+       515
+      ],
+      [
+       85,
+       515
+      ],
+      [
+       66,
+       500
+      ],
+      [
+       48,
+       515
+      ],
+      [
+       48,
+       700
+      ],
+      [
+       48,
+       900
+      ],
+      [
+       48,
+       1100
+      ],
+      [
+       48,
+       1362
+      ],
+      [
+       160,
+       1362
+      ],
+      [
+       275,
+       1362
+      ],
+      [
+       358,
+       1365
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "control",
+     "note": "BAT half of the master switch energizes the battery contactor coil"
+    },
+    {
+     "from": "battery_contactor",
+     "to": "ammeter",
+     "points": [
+      [
+       408,
+       1352
+      ],
+      [
+       515,
+       1352
+      ],
+      [
+       614,
+       1352
+      ],
+      [
+       633,
+       1352
+      ],
+      [
+       720,
+       1352
+      ],
+      [
+       825,
+       1352
+      ],
+      [
+       825,
+       1210
+      ],
+      [
+       825,
+       1070
+      ],
+      [
+       825,
+       905
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "ammeter",
+     "to": "bus1",
+     "points": [
+      [
+       825,
+       720
+      ],
+      [
+       825,
+       670
+      ],
+      [
+       825,
+       622
+      ],
+      [
+       900,
+       622
+      ],
+      [
+       990,
+       622
+      ],
+      [
+       1003,
+       622
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "bus1",
+     "to": "bus2",
+     "points": [
+      [
+       990,
+       622
+      ],
+      [
+       972,
+       636
+      ],
+      [
+       955,
+       650
+      ],
+      [
+       955,
+       720
+      ],
+      [
+       955,
+       792
+      ],
+      [
+       990,
+       792
+      ],
+      [
+       1003,
+       792
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "alternator",
+     "to": "bus1",
+     "points": [
+      [
+       712,
+       435
+      ],
+      [
+       765,
+       435
+      ],
+      [
+       790,
+       435
+      ],
+      [
+       790,
+       512
+      ],
+      [
+       840,
+       512
+      ],
+      [
+       880,
+       512
+      ],
+      [
+       930,
+       512
+      ],
+      [
+       990,
+       512
+      ],
+      [
+       1003,
+       512
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "alt_breaker"
+     ]
+    },
+    {
+     "from": "bus1",
+     "to": "sw_alt",
+     "points": [
+      [
+       790,
+       512
+      ],
+      [
+       790,
+       588
+      ],
+      [
+       705,
+       588
+      ],
+      [
+       665,
+       588
+      ],
+      [
+       635,
+       588
+      ],
+      [
+       490,
+       590
+      ],
+      [
+       490,
+       750
+      ],
+      [
+       490,
+       885
+      ],
+      [
+       320,
+       885
+      ],
+      [
+       320,
+       795
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "control",
+     "via": [
+      "alt_field_cb"
+     ],
+     "note": "alternator field supply through the alternator field breaker to the ALT half of the master switch"
+    },
+    {
+     "from": "sw_alt",
+     "to": "alt_control_unit",
+     "points": [
+      [
+       320,
+       578
+      ],
+      [
+       320,
+       550
+      ],
+      [
+       200,
+       550
+      ],
+      [
+       65,
+       550
+      ],
+      [
+       65,
+       400
+      ],
+      [
+       65,
+       168
+      ],
+      [
+       125,
+       168
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "control"
+    },
+    {
+     "from": "alt_control_unit",
+     "to": "alternator",
+     "points": [
+      [
+       395,
+       318
+      ],
+      [
+       450,
+       318
+      ],
+      [
+       520,
+       318
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "control",
+     "note": "Field terminal to alternator F terminal"
+    },
+    {
+     "from": "battery_contactor",
+     "to": "starter_contactor",
+     "points": [
+      [
+       408,
+       1352
+      ],
+      [
+       614,
+       1352
+      ],
+      [
+       633,
+       1352
+      ],
+      [
+       825,
+       1352
+      ],
+      [
+       825,
+       1210
+      ],
+      [
+       825,
+       1070
+      ],
+      [
+       790,
+       1070
+      ],
+      [
+       753,
+       1070
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "starter_contactor",
+     "to": "starter",
+     "points": [
+      [
+       726,
+       1058
+      ],
+      [
+       726,
+       1030
+      ],
+      [
+       726,
+       1002
+      ],
+      [
+       690,
+       1002
+      ],
+      [
+       647,
+       1002
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power"
+    },
+    {
+     "from": "ignition_switch",
+     "to": "starter_contactor",
+     "points": [
+      [
+       800,
+       1422
+      ],
+      [
+       700,
+       1422
+      ],
+      [
+       633,
+       1422
+      ],
+      [
+       633,
+       1250
+      ],
+      [
+       633,
+       1084
+      ],
+      [
+       670,
+       1084
+      ],
+      [
+       705,
+       1084
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "control"
+    },
+    {
+     "from": "ext_power",
+     "to": "battery_contactor",
+     "points": [
+      [
+       514,
+       1401
+      ],
+      [
+       514,
+       1385
+      ],
+      [
+       514,
+       1370
+      ],
+      [
+       514,
+       1352
+      ],
+      [
+       460,
+       1352
+      ],
+      [
+       408,
+       1352
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "power",
+     "note": "ground service receptacle ties into the battery-contactor output line"
+    },
+    {
+     "from": "bus1",
+     "to": "fuel_qty_ind",
+     "points": [
+      [
+       1113,
+       168
+      ],
+      [
+       1125,
+       168
+      ],
+      [
+       1185,
+       168
+      ],
+      [
+       1250,
+       168
+      ],
+      [
+       1292,
+       168
+      ],
+      [
+       1310,
+       168
+      ],
+      [
+       1337,
+       170
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "FUEL IND"
+    },
+    {
+     "from": "bus1",
+     "to": "beacon",
+     "points": [
+      [
+       1113,
+       283
+      ],
+      [
+       1125,
+       283
+      ],
+      [
+       1185,
+       283
+      ],
+      [
+       1250,
+       283
+      ],
+      [
+       1292,
+       283
+      ],
+      [
+       1310,
+       283
+      ],
+      [
+       1327,
+       283
+      ],
+      [
+       1327,
+       256
+      ],
+      [
+       1337,
+       256
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "BCN PITOT"
+    },
+    {
+     "from": "bus1",
+     "to": "pitot_heat",
+     "points": [
+      [
+       1113,
+       283
+      ],
+      [
+       1125,
+       283
+      ],
+      [
+       1185,
+       283
+      ],
+      [
+       1250,
+       283
+      ],
+      [
+       1292,
+       283
+      ],
+      [
+       1310,
+       283
+      ],
+      [
+       1327,
+       283
+      ],
+      [
+       1327,
+       312
+      ],
+      [
+       1337,
+       312
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "BCN PITOT"
+    },
+    {
+     "from": "bus1",
+     "to": "radio_fan",
+     "points": [
+      [
+       1113,
+       393
+      ],
+      [
+       1125,
+       393
+      ],
+      [
+       1185,
+       393
+      ],
+      [
+       1250,
+       393
+      ],
+      [
+       1292,
+       393
+      ],
+      [
+       1310,
+       393
+      ],
+      [
+       1327,
+       393
+      ],
+      [
+       1327,
+       368
+      ],
+      [
+       1337,
+       368
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "STROBE RADIO FAN"
+    },
+    {
+     "from": "bus1",
+     "to": "strobe",
+     "points": [
+      [
+       1113,
+       393
+      ],
+      [
+       1125,
+       393
+      ],
+      [
+       1185,
+       393
+      ],
+      [
+       1250,
+       393
+      ],
+      [
+       1292,
+       393
+      ],
+      [
+       1310,
+       393
+      ],
+      [
+       1327,
+       393
+      ],
+      [
+       1327,
+       426
+      ],
+      [
+       1337,
+       426
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "STROBE RADIO FAN"
+    },
+    {
+     "from": "bus1",
+     "to": "landing_light",
+     "points": [
+      [
+       1113,
+       510
+      ],
+      [
+       1125,
+       510
+      ],
+      [
+       1185,
+       510
+      ],
+      [
+       1250,
+       510
+      ],
+      [
+       1292,
+       510
+      ],
+      [
+       1310,
+       510
+      ],
+      [
+       1337,
+       510
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "LDG LTS"
+    },
+    {
+     "from": "bus1",
+     "to": "ign_switch_feed",
+     "points": [
+      [
+       1113,
+       620
+      ],
+      [
+       1125,
+       620
+      ],
+      [
+       1185,
+       620
+      ],
+      [
+       1250,
+       620
+      ],
+      [
+       1292,
+       620
+      ],
+      [
+       1310,
+       620
+      ],
+      [
+       1327,
+       620
+      ],
+      [
+       1327,
+       596
+      ],
+      [
+       1337,
+       596
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "FLAP"
+    },
+    {
+     "from": "bus1",
+     "to": "flaps_motor",
+     "points": [
+      [
+       1113,
+       620
+      ],
+      [
+       1125,
+       620
+      ],
+      [
+       1185,
+       620
+      ],
+      [
+       1250,
+       620
+      ],
+      [
+       1292,
+       620
+      ],
+      [
+       1310,
+       620
+      ],
+      [
+       1327,
+       620
+      ],
+      [
+       1327,
+       652
+      ],
+      [
+       1337,
+       652
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "FLAP"
+    },
+    {
+     "from": "bus2",
+     "to": "inst_lights",
+     "points": [
+      [
+       1113,
+       792
+      ],
+      [
+       1125,
+       792
+      ],
+      [
+       1185,
+       792
+      ],
+      [
+       1250,
+       792
+      ],
+      [
+       1292,
+       792
+      ],
+      [
+       1310,
+       792
+      ],
+      [
+       1327,
+       792
+      ],
+      [
+       1327,
+       866
+      ],
+      [
+       1337,
+       866
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "INST LTS"
+    },
+    {
+     "from": "bus2",
+     "to": "turn_coordinator",
+     "points": [
+      [
+       1113,
+       792
+      ],
+      [
+       1125,
+       792
+      ],
+      [
+       1185,
+       792
+      ],
+      [
+       1250,
+       792
+      ],
+      [
+       1292,
+       792
+      ],
+      [
+       1310,
+       792
+      ],
+      [
+       1327,
+       792
+      ],
+      [
+       1327,
+       994
+      ],
+      [
+       1337,
+       994
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "INST LTS"
+    },
+    {
+     "from": "bus2",
+     "to": "stby_vac",
+     "points": [
+      [
+       1113,
+       1120
+      ],
+      [
+       1125,
+       1120
+      ],
+      [
+       1185,
+       1120
+      ],
+      [
+       1250,
+       1120
+      ],
+      [
+       1292,
+       1120
+      ],
+      [
+       1310,
+       1120
+      ],
+      [
+       1337,
+       1122
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "STBY VAC"
+    },
+    {
+     "from": "bus2",
+     "to": "nav_lights",
+     "points": [
+      [
+       1113,
+       1303
+      ],
+      [
+       1125,
+       1303
+      ],
+      [
+       1185,
+       1303
+      ],
+      [
+       1250,
+       1303
+      ],
+      [
+       1292,
+       1303
+      ],
+      [
+       1310,
+       1303
+      ],
+      [
+       1327,
+       1303
+      ],
+      [
+       1327,
+       1362
+      ],
+      [
+       1337,
+       1362
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "NAV DOME"
+    },
+    {
+     "from": "bus2",
+     "to": "dome_light",
+     "points": [
+      [
+       1113,
+       1303
+      ],
+      [
+       1125,
+       1303
+      ],
+      [
+       1185,
+       1303
+      ],
+      [
+       1250,
+       1303
+      ],
+      [
+       1292,
+       1303
+      ],
+      [
+       1310,
+       1303
+      ],
+      [
+       1327,
+       1303
+      ],
+      [
+       1327,
+       1420
+      ],
+      [
+       1337,
+       1420
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "NAV DOME"
+    },
+    {
+     "from": "bus2",
+     "to": "navcom1",
+     "points": [
+      [
+       1113,
+       1477
+      ],
+      [
+       1125,
+       1477
+      ],
+      [
+       1185,
+       1477
+      ],
+      [
+       1250,
+       1477
+      ],
+      [
+       1292,
+       1477
+      ],
+      [
+       1310,
+       1477
+      ],
+      [
+       1337,
+       1476
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "RADIO 1"
+    },
+    {
+     "from": "bus2",
+     "to": "navcom2",
+     "points": [
+      [
+       1113,
+       1588
+      ],
+      [
+       1125,
+       1588
+      ],
+      [
+       1185,
+       1588
+      ],
+      [
+       1250,
+       1588
+      ],
+      [
+       1292,
+       1588
+      ],
+      [
+       1310,
+       1588
+      ],
+      [
+       1337,
+       1590
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "RADIO 2"
+    },
+    {
+     "from": "bus2",
+     "to": "xpdr",
+     "points": [
+      [
+       1113,
+       1715
+      ],
+      [
+       1125,
+       1715
+      ],
+      [
+       1185,
+       1715
+      ],
+      [
+       1250,
+       1715
+      ],
+      [
+       1292,
+       1715
+      ],
+      [
+       1310,
+       1715
+      ],
+      [
+       1337,
+       1718
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "RADIO 3"
+    },
+    {
+     "from": "bus2",
+     "to": "radio4",
+     "points": [
+      [
+       1113,
+       1822
+      ],
+      [
+       1125,
+       1822
+      ],
+      [
+       1185,
+       1822
+      ],
+      [
+       1250,
+       1822
+      ],
+      [
+       1292,
+       1822
+      ],
+      [
+       1310,
+       1822
+      ],
+      [
+       1337,
+       1817
+      ]
+     ],
+     "confidence": "high",
+     "kind": "power",
+     "via": [
+      "breakers"
+     ],
+     "breaker": "RADIO 4"
+    }
+   ],
+   "missing": [
+    "sw_alt/sw_bat are the two halves of one drawn master switch (all three entries provided)",
+    "no separate turn coordinator, nav/landing/beacon/strobe/pitot-heat/flap-motor symbols: loads appear only as labeled 'To ...' boxes"
+   ],
+   "notes": "Paths carry kind=power|control. Load entries carry breaker, breaker_bbox, breaker_label_bbox and bus (bus1=PRIMARY BUS, bus2=AVIONICS BUS). The ammeter sits between the battery contactor and the buses; the alternator feeds the primary bus through the ALT pull-off breaker."
+  },
+  "pitot": {
+   "file": "assets/faa/pitot.png",
+   "check_file": "assets/faa/pitot.check.png",
+   "width": 1801,
+   "height": 1096,
+   "figure": "Figure 8-1",
+   "caption": "Figure 8-1. Pitot-static system and instruments.",
+   "chapter": "Chapter 8: Flight Instruments",
+   "page": 2,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "8-2",
+   "url": "https://www.faa.gov/sites/faa.gov/files/10_phak_ch8.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-8-flight-instruments",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     38.5,
+     46.4,
+     519.3,
+     338.8
+    ],
+    "scale_px_per_pt": 3.7438,
+    "note": "whole figure frame; caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "pitot_tube",
+     "label_bbox": [
+      240,
+      558,
+      415,
+      612
+     ],
+     "shape_bbox": [
+      88,
+      400,
+      897,
+      766
+     ],
+     "confidence": "high",
+     "printed_label": "Pitot tube",
+     "note": "whole pitot/static head including the pressure and static chambers"
+    },
+    {
+     "node": "static_port",
+     "label_bbox": [
+      1555,
+      370,
+      1735,
+      425
+     ],
+     "shape_bbox": [
+      1606,
+      500,
+      1780,
+      663
+     ],
+     "confidence": "high",
+     "printed_label": "Static port"
+    },
+    {
+     "node": "alt_static",
+     "label_bbox": [
+      1135,
+      1025,
+      1472,
+      1079
+     ],
+     "shape_bbox": [
+      1383,
+      728,
+      1594,
+      942
+     ],
+     "confidence": "high",
+     "printed_label": "Alternate static source"
+    },
+    {
+     "node": "asi",
+     "label_bbox": [
+      648,
+      13,
+      1010,
+      67
+     ],
+     "shape_bbox": [
+      876,
+      104,
+      1107,
+      332
+     ],
+     "confidence": "high",
+     "printed_label": "Airspeed indicator (ASI)"
+    },
+    {
+     "node": "altimeter",
+     "label_bbox": [
+      1520,
+      14,
+      1686,
+      68
+     ],
+     "shape_bbox": [
+      1363,
+      104,
+      1607,
+      356
+     ],
+     "confidence": "high",
+     "printed_label": "Altimeter"
+    },
+    {
+     "node": "vsi",
+     "label_bbox": [
+      1024,
+      13,
+      1457,
+      67
+     ],
+     "shape_bbox": [
+      1124,
+      104,
+      1350,
+      332
+     ],
+     "confidence": "high",
+     "printed_label": "Vertical speed indicator (VSI)"
+    },
+    {
+     "node": "pitot_heat_switch",
+     "label_bbox": [
+      763,
+      1025,
+      1056,
+      1079
+     ],
+     "shape_bbox": [
+      814,
+      838,
+      946,
+      932
+     ],
+     "confidence": "high",
+     "printed_label": "Pitot heater switch"
+    },
+    {
+     "node": "pitot_heater",
+     "label_bbox": [
+      216,
+      1025,
+      511,
+      1079
+     ],
+     "shape_bbox": [
+      213,
+      718,
+      330,
+      754
+     ],
+     "confidence": "high",
+     "printed_label": "Heater (100 watts)"
+    },
+    {
+     "node": "pitot_heater_35w",
+     "label_bbox": [
+      480,
+      929,
+      753,
+      983
+     ],
+     "shape_bbox": [
+      692,
+      643,
+      796,
+      748
+     ],
+     "confidence": "high",
+     "printed_label": "Heater (35 watts)"
+    },
+    {
+     "node": "pressure_chamber",
+     "label_bbox": [
+      294,
+      279,
+      584,
+      333
+     ],
+     "shape_bbox": [
+      598,
+      505,
+      852,
+      640
+     ],
+     "confidence": "medium",
+     "printed_label": "Pressure chamber"
+    },
+    {
+     "node": "static_chamber",
+     "label_bbox": [
+      199,
+      375,
+      446,
+      429
+     ],
+     "shape_bbox": [
+      180,
+      650,
+      880,
+      765
+     ],
+     "confidence": "low",
+     "printed_label": "Static chamber",
+     "note": "the annulus around the pitot line; bbox is approximate"
+    },
+    {
+     "node": "static_hole",
+     "label_bbox": [
+      328,
+      810,
+      513,
+      866
+     ],
+     "shape_bbox": [
+      412,
+      745,
+      438,
+      760
+     ],
+     "confidence": "medium",
+     "printed_label": "Static hole"
+    },
+    {
+     "node": "drain_hole",
+     "label_bbox": [
+      1021,
+      639,
+      1201,
+      693
+     ],
+     "shape_bbox": [
+      845,
+      592,
+      880,
+      610
+     ],
+     "confidence": "medium",
+     "printed_label": "Drain hole"
+    },
+    {
+     "node": "ram_air",
+     "label_bbox": [
+      37,
+      810,
+      191,
+      864
+     ],
+     "shape_bbox": [
+      3,
+      685,
+      82,
+      718
+     ],
+     "confidence": "high",
+     "printed_label": "Ram air"
+    },
+    {
+     "node": "baffle_plate",
+     "label_bbox": [
+      50,
+      470,
+      250,
+      524
+     ],
+     "shape_bbox": [
+      130,
+      672,
+      165,
+      728
+     ],
+     "confidence": "medium",
+     "printed_label": "Baffle plate"
+    }
+   ],
+   "paths": [
+    {
+     "from": "pitot_tube",
+     "to": "asi",
+     "points": [
+      [
+       95,
+       700
+      ],
+      [
+       300,
+       700
+      ],
+      [
+       520,
+       700
+      ],
+      [
+       585,
+       668
+      ],
+      [
+       615,
+       630
+      ],
+      [
+       640,
+       560
+      ],
+      [
+       655,
+       470
+      ],
+      [
+       661,
+       400
+      ],
+      [
+       661,
+       346
+      ],
+      [
+       661,
+       302
+      ],
+      [
+       676,
+       265
+      ],
+      [
+       695,
+       245
+      ],
+      [
+       720,
+       232
+      ],
+      [
+       764,
+       227
+      ],
+      [
+       820,
+       227
+      ],
+      [
+       880,
+       227
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "pitot",
+     "note": "ram-air bore to the pressure chamber is inside the tube (approximate); the red hose from the chamber fitting to the ASI is traced"
+    },
+    {
+     "from": "static_port",
+     "to": "altimeter",
+     "points": [
+      [
+       1606,
+       583
+      ],
+      [
+       1560,
+       583
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1488,
+       500
+      ],
+      [
+       1488,
+       420
+      ],
+      [
+       1488,
+       342
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "static_port",
+     "to": "vsi",
+     "points": [
+      [
+       1606,
+       583
+      ],
+      [
+       1560,
+       583
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1400,
+       583
+      ],
+      [
+       1300,
+       583
+      ],
+      [
+       1233,
+       583
+      ],
+      [
+       1233,
+       480
+      ],
+      [
+       1233,
+       400
+      ],
+      [
+       1233,
+       333
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "static_port",
+     "to": "asi",
+     "points": [
+      [
+       1606,
+       583
+      ],
+      [
+       1560,
+       583
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1400,
+       583
+      ],
+      [
+       1233,
+       583
+      ],
+      [
+       1095,
+       583
+      ],
+      [
+       1050,
+       572
+      ],
+      [
+       1015,
+       548
+      ],
+      [
+       996,
+       512
+      ],
+      [
+       990,
+       470
+      ],
+      [
+       990,
+       400
+      ],
+      [
+       990,
+       334
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "alt_static",
+     "to": "altimeter",
+     "points": [
+      [
+       1488,
+       730
+      ],
+      [
+       1488,
+       660
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1488,
+       500
+      ],
+      [
+       1488,
+       342
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "alt_static",
+     "to": "vsi",
+     "points": [
+      [
+       1488,
+       730
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1400,
+       583
+      ],
+      [
+       1300,
+       583
+      ],
+      [
+       1233,
+       583
+      ],
+      [
+       1233,
+       450
+      ],
+      [
+       1233,
+       333
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "alt_static",
+     "to": "asi",
+     "points": [
+      [
+       1488,
+       730
+      ],
+      [
+       1488,
+       583
+      ],
+      [
+       1300,
+       583
+      ],
+      [
+       1095,
+       583
+      ],
+      [
+       1050,
+       572
+      ],
+      [
+       1015,
+       548
+      ],
+      [
+       996,
+       512
+      ],
+      [
+       990,
+       470
+      ],
+      [
+       990,
+       334
+      ]
+     ],
+     "confidence": "high",
+     "kind": "static"
+    },
+    {
+     "from": "pitot_heat_switch",
+     "to": "pitot_tube",
+     "points": [
+      [
+       915,
+       838
+      ],
+      [
+       915,
+       780
+      ],
+      [
+       915,
+       720
+      ],
+      [
+       915,
+       693
+      ],
+      [
+       898,
+       693
+      ],
+      [
+       882,
+       693
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "electrical"
+    }
+   ],
+   "missing": [],
+   "notes": "Static lines from static_port and alt_static share one trunk; the cross junction is at about (1488,583). Path kind: pitot|static|electrical."
+  },
+  "controls": {
+   "file": "assets/faa/controls.png",
+   "check_file": "assets/faa/controls.check.png",
+   "width": 1601,
+   "height": 1943,
+   "figure": "Figure 6-4",
+   "caption": "Figure 6-4. Airplane controls, movement, axes of rotation, and type of stability.",
+   "chapter": "Chapter 6: Flight Controls",
+   "page": 3,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "6-3",
+   "url": "https://www.faa.gov/sites/faa.gov/files/08_phak_ch6.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-6-flight-controls",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     74.2,
+     367.6,
+     307.1,
+     650.3
+    ],
+    "scale_px_per_pt": 6.8699,
+    "note": "whole figure frame including the surface/movement/axis/stability table; caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "elevator",
+     "label_bbox": [
+      50,
+      13,
+      356,
+      310
+     ],
+     "shape_bbox": [
+      883,
+      505,
+      1136,
+      630
+     ],
+     "confidence": "medium",
+     "printed_label": "Elevator—Pitch",
+     "shape_polys": [
+      [
+       [
+        966,
+        559
+       ],
+       [
+        1020,
+        557
+       ],
+       [
+        1135,
+        613
+       ],
+       [
+        1124,
+        628
+       ],
+       [
+        1087,
+        626
+       ],
+       [
+        970,
+        580
+       ]
+      ],
+      [
+       [
+        885,
+        512
+       ],
+       [
+        912,
+        507
+       ],
+       [
+        974,
+        526
+       ],
+       [
+        953,
+        547
+       ],
+       [
+        888,
+        523
+       ]
+      ]
+     ],
+     "label_table_bbox": [
+      87,
+      1680,
+      334,
+      1802
+     ],
+     "note": "horizontal tail (stabilizer + elevator) both halves; the elevator itself is not separately outlined"
+    },
+    {
+     "node": "aileron_left",
+     "label_bbox": [
+      1210,
+      253,
+      1529,
+      407
+     ],
+     "shape_bbox": [
+      901,
+      686,
+      1167,
+      894
+     ],
+     "confidence": "medium",
+     "printed_label": "Aileron—Roll",
+     "shape_polys": [
+      [
+       [
+        912,
+        688
+       ],
+       [
+        1165,
+        872
+       ],
+       [
+        1155,
+        892
+       ],
+       [
+        903,
+        707
+       ]
+      ]
+     ],
+     "label_table_bbox": [
+      117,
+      1573,
+      303,
+      1641
+     ],
+     "note": "near (lower-right) wing is the airplane's LEFT wing (red wingtip); outboard trailing-edge surface"
+    },
+    {
+     "node": "aileron_right",
+     "label_bbox": [
+      1210,
+      253,
+      1529,
+      407
+     ],
+     "shape_bbox": [
+      440,
+      398,
+      600,
+      492
+     ],
+     "confidence": "medium",
+     "printed_label": "Aileron—Roll",
+     "shape_polys": [
+      [
+       [
+        449,
+        400
+       ],
+       [
+        597,
+        472
+       ],
+       [
+        590,
+        490
+       ],
+       [
+        442,
+        418
+       ]
+      ]
+     ],
+     "note": "far (upper-left) wing is the RIGHT wing; outboard trailing-edge surface"
+    },
+    {
+     "node": "rudder",
+     "label_bbox": [
+      496,
+      16,
+      838,
+      84
+     ],
+     "shape_bbox": [
+      1035,
+      438,
+      1090,
+      537
+     ],
+     "confidence": "medium",
+     "printed_label": "Rudder—Yaw",
+     "label_table_bbox": [
+      113,
+      1833,
+      308,
+      1900
+     ]
+    },
+    {
+     "node": "flaps",
+     "label_bbox": null,
+     "shape_bbox": [
+      595,
+      474,
+      911,
+      708
+     ],
+     "confidence": "medium",
+     "shape_polys": [
+      [
+       [
+        749,
+        592
+       ],
+       [
+        909,
+        688
+       ],
+       [
+        901,
+        706
+       ],
+       [
+        741,
+        610
+       ]
+      ],
+      [
+       [
+        605,
+        476
+       ],
+       [
+        722,
+        553
+       ],
+       [
+        712,
+        568
+       ],
+       [
+        597,
+        494
+       ]
+      ]
+     ],
+     "note": "unlabeled inboard trailing-edge strips of both wings (the hatched segment inboard of the break mark); shape_polys give each strip"
+    },
+    {
+     "node": "flap_left",
+     "label_bbox": null,
+     "shape_bbox": [
+      739,
+      588,
+      911,
+      708
+     ],
+     "confidence": "medium",
+     "shape_polys": [
+      [
+       [
+        749,
+        592
+       ],
+       [
+        909,
+        688
+       ],
+       [
+        901,
+        706
+       ],
+       [
+        741,
+        610
+       ]
+      ]
+     ],
+     "note": "inboard trailing edge of left (near) wing"
+    },
+    {
+     "node": "flap_right",
+     "label_bbox": null,
+     "shape_bbox": [
+      595,
+      474,
+      724,
+      570
+     ],
+     "confidence": "medium",
+     "shape_polys": [
+      [
+       [
+        605,
+        476
+       ],
+       [
+        722,
+        553
+       ],
+       [
+        712,
+        568
+       ],
+       [
+        597,
+        494
+       ]
+      ]
+     ],
+     "note": "inboard trailing edge of right (far) wing"
+    },
+    {
+     "node": "trim_tab",
+     "label_bbox": null,
+     "shape_bbox": [
+      1065,
+      596,
+      1105,
+      624
+     ],
+     "confidence": "low",
+     "note": "small step at the near elevator trailing edge that looks like a trim tab; not labeled"
+    },
+    {
+     "node": "vertical_axis",
+     "label_bbox": [
+      510,
+      121,
+      807,
+      295
+     ],
+     "shape_bbox": [
+      636,
+      320,
+      656,
+      1240
+     ],
+     "confidence": "high",
+     "printed_label": "Vertical axis (directional stability)"
+    },
+    {
+     "node": "lateral_axis",
+     "label_bbox": [
+      72,
+      125,
+      322,
+      442
+     ],
+     "shape_bbox": [
+      330,
+      415,
+      1310,
+      1205
+     ],
+     "confidence": "medium",
+     "printed_label": "Lateral axis (longitudinal stability)",
+     "note": "bbox of the diagonal orange axis rod"
+    },
+    {
+     "node": "longitudinal_axis",
+     "label_bbox": [
+      1231,
+      335,
+      1536,
+      587
+     ],
+     "shape_bbox": [
+      35,
+      505,
+      1205,
+      810
+     ],
+     "confidence": "medium",
+     "printed_label": "Longitudinal axis (lateral stability)",
+     "note": "bbox of the blue axis rod"
+    },
+    {
+     "node": "table",
+     "label_bbox": null,
+     "shape_bbox": [
+      30,
+      1340,
+      1575,
+      1920
+     ],
+     "confidence": "high",
+     "note": "table: surface / movement / axis / stability"
+    }
+   ],
+   "paths": [],
+   "missing": [
+    "yoke_left",
+    "pedals_pilot",
+    "cables (no cockpit controls or cable/pulley runs in this figure; see controls-cables, Figure 6-1)"
+   ],
+   "notes": "High-wing single drawn in oblique top view, nose to the lower left. The near (lower-right) wing is the airplane's LEFT wing (red wingtip light). Surfaces are not individually labeled on the drawing; the printed labels are the axis captions (Aileron-Roll, Elevator-Pitch, Rudder-Yaw) and the table rows (label_table_bbox). shape_polys give tighter polygons for the diagonal trailing-edge surfaces."
+  },
+  "controls-cables": {
+   "file": "assets/faa/controls-cables.png",
+   "check_file": "assets/faa/controls-cables.check.png",
+   "width": 1601,
+   "height": 1020,
+   "figure": "Figure 6-1",
+   "caption": "Figure 6-1. Mechanical flight control system.",
+   "chapter": "Chapter 6: Flight Controls",
+   "page": 2,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "6-2",
+   "url": "https://www.faa.gov/sites/faa.gov/files/08_phak_ch6.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-6-flight-controls",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     37.2,
+     46.6,
+     271.2,
+     195.6
+    ],
+    "scale_px_per_pt": 6.8376,
+    "note": "whole figure frame; caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "yoke_left",
+     "label_bbox": [
+      160,
+      45,
+      645,
+      148
+     ],
+     "shape_bbox": [
+      35,
+      185,
+      180,
+      640
+     ],
+     "confidence": "high",
+     "printed_label": "Control stick",
+     "note": "figure shows a control stick, not a C172 control wheel"
+    },
+    {
+     "node": "pulleys",
+     "label_bbox": [
+      407,
+      333,
+      724,
+      432
+     ],
+     "shape_bbox": [
+      228,
+      574,
+      907,
+      775
+     ],
+     "confidence": "high",
+     "printed_label": "Pulleys"
+    },
+    {
+     "node": "cables",
+     "label_bbox": [
+      435,
+      874,
+      714,
+      972
+     ],
+     "shape_bbox": [
+      360,
+      578,
+      765,
+      770
+     ],
+     "confidence": "high",
+     "printed_label": "Cable"
+    },
+    {
+     "node": "push_rod",
+     "label_bbox": [
+      943,
+      874,
+      1305,
+      972
+     ],
+     "shape_bbox": [
+      800,
+      722,
+      1335,
+      758
+     ],
+     "confidence": "high",
+     "printed_label": "Push rod"
+    },
+    {
+     "node": "elevator",
+     "label_bbox": [
+      1043,
+      165,
+      1396,
+      263
+     ],
+     "shape_bbox": [
+      1025,
+      378,
+      1562,
+      690
+     ],
+     "confidence": "high",
+     "printed_label": "Elevator"
+    },
+    {
+     "node": "stabilizer",
+     "label_bbox": null,
+     "shape_bbox": [
+      928,
+      375,
+      1262,
+      697
+     ],
+     "confidence": "medium",
+     "note": "fixed surface ahead of the elevator (unlabeled)"
+    },
+    {
+     "node": "control_horn",
+     "label_bbox": null,
+     "shape_bbox": [
+      1283,
+      655,
+      1372,
+      770
+     ],
+     "confidence": "medium",
+     "note": "elevator horn (unlabeled)"
+    }
+   ],
+   "paths": [
+    {
+     "from": "yoke_left",
+     "to": "elevator",
+     "points": [
+      [
+       88,
+       622
+      ],
+      [
+       200,
+       620
+      ],
+      [
+       290,
+       618
+      ],
+      [
+       338,
+       617
+      ],
+      [
+       380,
+       591
+      ],
+      [
+       570,
+       591
+      ],
+      [
+       760,
+       591
+      ],
+      [
+       812,
+       640
+      ],
+      [
+       812,
+       700
+      ],
+      [
+       812,
+       740
+      ],
+      [
+       1000,
+       740
+      ],
+      [
+       1200,
+       740
+      ],
+      [
+       1315,
+       740
+      ],
+      [
+       1312,
+       675
+      ]
+     ],
+     "confidence": "medium",
+     "kind": "mechanical",
+     "note": "stick link rod -> pulley 1 -> cable (upper run) -> pulley 2 -> push rod -> elevator horn"
+    }
+   ],
+   "missing": [
+    "aileron_left",
+    "aileron_right",
+    "rudder",
+    "flaps",
+    "trim_tab",
+    "pedals_pilot"
+   ],
+   "optional_extra": true,
+   "notes": "Supplementary to 'controls': the only PHAK 25C figure that shows cable/pulley/push-rod routing for a light airplane (stick-to-elevator). The node yoke_left is a control stick here, not a control wheel."
+  },
+  "engine-cycle": {
+   "file": "assets/faa/engine-cycle.png",
+   "check_file": "assets/faa/engine-cycle.check.png",
+   "width": 1401,
+   "height": 2289,
+   "figure": "Figure 7-5",
+   "caption": "Figure 7-5. The arrows in this illustration indicate the direction of motion of the crankshaft and piston during the four-stroke cycle.",
+   "chapter": "Chapter 7: Aircraft Systems",
+   "page": 4,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "7-4",
+   "url": "https://www.faa.gov/sites/faa.gov/files/09_phak_ch7.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-7-aircraft-systems",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     37.9,
+     292.1,
+     271.2,
+     673.3
+    ],
+    "scale_px_per_pt": 6.0009,
+    "note": "whole figure frame (four panels + panel titles); caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "intake",
+     "label_bbox": [
+      120,
+      1160,
+      635,
+      1226
+     ],
+     "shape_bbox": [
+      45,
+      170,
+      690,
+      1232
+     ],
+     "confidence": "high",
+     "printed_label": "1. Intake"
+    },
+    {
+     "node": "compression",
+     "label_bbox": [
+      768,
+      1160,
+      1282,
+      1226
+     ],
+     "shape_bbox": [
+      760,
+      200,
+      1335,
+      1232
+     ],
+     "confidence": "high",
+     "printed_label": "2. Compression"
+    },
+    {
+     "node": "power",
+     "label_bbox": [
+      120,
+      2160,
+      635,
+      2226
+     ],
+     "shape_bbox": [
+      45,
+      1280,
+      690,
+      2232
+     ],
+     "confidence": "high",
+     "printed_label": "3. Power"
+    },
+    {
+     "node": "exhaust",
+     "label_bbox": [
+      768,
+      2160,
+      1282,
+      2226
+     ],
+     "shape_bbox": [
+      760,
+      1280,
+      1340,
+      2232
+     ],
+     "confidence": "high",
+     "printed_label": "4. Exhaust"
+    },
+    {
+     "node": "intake_valve",
+     "label_bbox": [
+      82,
+      67,
+      470,
+      154
+     ],
+     "shape_bbox": [
+      265,
+      205,
+      392,
+      420
+     ],
+     "confidence": "high",
+     "printed_label": "Intake valve",
+     "panel": "intake"
+    },
+    {
+     "node": "exhaust_valve",
+     "label_bbox": [
+      513,
+      67,
+      950,
+      154
+     ],
+     "shape_bbox": [
+      410,
+      205,
+      548,
+      395
+     ],
+     "confidence": "high",
+     "printed_label": "Exhaust valve",
+     "panel": "intake"
+    },
+    {
+     "node": "spark_plug",
+     "label_bbox": [
+      512,
+      542,
+      877,
+      628
+     ],
+     "shape_bbox": [
+      460,
+      380,
+      588,
+      442
+     ],
+     "confidence": "high",
+     "printed_label": "Spark plug",
+     "panel": "intake",
+     "note": "the cylinder has a second plug on the left (205-325, 380-442), unlabeled"
+    },
+    {
+     "node": "piston",
+     "label_bbox": [
+      32,
+      528,
+      294,
+      614
+     ],
+     "shape_bbox": [
+      308,
+      514,
+      482,
+      617
+     ],
+     "confidence": "high",
+     "printed_label": "Piston",
+     "panel": "intake"
+    },
+    {
+     "node": "connecting_rod",
+     "label_bbox": [
+      514,
+      1034,
+      993,
+      1120
+     ],
+     "shape_bbox": [
+      388,
+      612,
+      505,
+      822
+     ],
+     "confidence": "medium",
+     "printed_label": "Connecting rod",
+     "panel": "intake"
+    },
+    {
+     "node": "crankshaft",
+     "label_bbox": [
+      99,
+      1034,
+      464,
+      1120
+     ],
+     "shape_bbox": [
+      348,
+      785,
+      530,
+      898
+     ],
+     "confidence": "medium",
+     "printed_label": "Crankshaft",
+     "panel": "intake"
+    }
+   ],
+   "paths": [],
+   "missing": [],
+   "notes": "Part labels (valves, piston, spark plug, connecting rod, crankshaft) are printed only on panel 1 (intake); the part hotspots are in that panel."
+  },
+  "engine-ignition": {
+   "file": "assets/faa/engine-ignition.png",
+   "check_file": "assets/faa/engine-ignition.check.png",
+   "width": 1801,
+   "height": 1047,
+   "figure": "Figure 7-16",
+   "caption": "Figure 7-16. Ignition system components.",
+   "chapter": "Chapter 7: Aircraft Systems",
+   "page": 15,
+   "page_note": "1-based page in the chapter PDF",
+   "printed_page": "7-15",
+   "url": "https://www.faa.gov/sites/faa.gov/files/09_phak_ch7.pdf",
+   "chapter_page_url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-7-aircraft-systems",
+   "credit": "None printed with the figure. FAA-H-8083-25C front matter (Acknowledgments, p. v) lists third-party image contributors per chapter; none of those credits apply to this figure. The same page thanks Cessna, Columbia, Eclipse, Garmin and Boeing generically for 'images provided and used throughout the Handbook' without identifying figures.",
+   "crop": {
+    "pdf_rect_pt": [
+     72.0,
+     409.3,
+     558.2,
+     692.0
+    ],
+    "scale_px_per_pt": 3.7022,
+    "note": "whole figure frame; caption dropped"
+   },
+   "hotspots": [
+    {
+     "node": "magneto_left",
+     "label_bbox": [
+      360,
+      944,
+      623,
+      998
+     ],
+     "shape_bbox": [
+      643,
+      812,
+      942,
+      1012
+     ],
+     "confidence": "high",
+     "printed_label": "Left magneto"
+    },
+    {
+     "node": "magneto_right",
+     "label_bbox": [
+      1291,
+      944,
+      1565,
+      998
+     ],
+     "shape_bbox": [
+      966,
+      812,
+      1266,
+      1012
+     ],
+     "confidence": "high",
+     "printed_label": "Right magneto"
+    },
+    {
+     "node": "ignition_switch",
+     "label_bbox": null,
+     "shape_bbox": [
+      18,
+      778,
+      288,
+      1032
+     ],
+     "confidence": "high",
+     "note": "inset key switch with printed positions OFF, R, L, BOTH, START; no caption label",
+     "positions": {
+      "OFF": [
+       45,
+       820,
+       62,
+       890
+      ],
+      "R": [
+       78,
+       800,
+       95,
+       820
+      ],
+      "L": [
+       138,
+       800,
+       153,
+       820
+      ],
+      "BOTH": [
+       174,
+       800,
+       232,
+       820
+      ],
+      "START": [
+       243,
+       823,
+       260,
+       937
+      ]
+     }
+    },
+    {
+     "node": "spark_plugs_upper",
+     "label_bbox": [
+      513,
+      37,
+      840,
+      91
+     ],
+     "shape_bbox": [
+      598,
+      195,
+      665,
+      415
+     ],
+     "confidence": "medium",
+     "printed_label": "Upper spark plugs",
+     "note": "leaders point at the plugs of cylinders 2 and 4 (green upper-magneto wires)"
+    },
+    {
+     "node": "spark_plugs_lower",
+     "label_bbox": [
+      1220,
+      40,
+      1547,
+      94
+     ],
+     "shape_bbox": [
+      1290,
+      150,
+      1350,
+      365
+     ],
+     "confidence": "medium",
+     "printed_label": "Lower spark plugs",
+     "note": "leaders point at the lower-plug leads of cylinders 1 and 3 (blue lower-magneto wires)"
+    },
+    {
+     "node": "cylinders",
+     "label_bbox": null,
+     "shape_bbox": [
+      573,
+      145,
+      1328,
+      462
+     ],
+     "confidence": "high",
+     "note": "four cylinders, numbered 1-4 in the figure"
+    },
+    {
+     "node": "cyl1",
+     "label_bbox": [
+      1195,
+      190,
+      1224,
+      260
+     ],
+     "shape_bbox": [
+      1095,
+      148,
+      1328,
+      300
+     ],
+     "confidence": "high",
+     "printed_label": "1"
+    },
+    {
+     "node": "cyl2",
+     "label_bbox": [
+      695,
+      190,
+      724,
+      260
+     ],
+     "shape_bbox": [
+      573,
+      148,
+      855,
+      300
+     ],
+     "confidence": "high",
+     "printed_label": "2"
+    },
+    {
+     "node": "cyl3",
+     "label_bbox": [
+      1195,
+      354,
+      1224,
+      423
+     ],
+     "shape_bbox": [
+      1095,
+      310,
+      1328,
+      462
+     ],
+     "confidence": "high",
+     "printed_label": "3"
+    },
+    {
+     "node": "cyl4",
+     "label_bbox": [
+      695,
+      353,
+      724,
+      422
+     ],
+     "shape_bbox": [
+      573,
+      310,
+      855,
+      462
+     ],
+     "confidence": "high",
+     "printed_label": "4"
+    },
+    {
+     "node": "crankcase",
+     "label_bbox": null,
+     "shape_bbox": [
+      805,
+      38,
+      1100,
+      540
+     ],
+     "confidence": "medium",
+     "note": "engine block / crankcase body (unlabeled)"
+    },
+    {
+     "node": "legend_upper_wires",
+     "label_bbox": [
+      107,
+      21,
+      411,
+      61
+     ],
+     "shape_bbox": [
+      25,
+      22,
+      90,
+      55
+     ],
+     "confidence": "high",
+     "printed_label": "Upper magneto wires (green)"
+    },
+    {
+     "node": "legend_lower_wires",
+     "label_bbox": [
+      107,
+      66,
+      413,
+      106
+     ],
+     "shape_bbox": [
+      25,
+      68,
+      90,
+      100
+     ],
+     "confidence": "high",
+     "printed_label": "Lower magneto wires (blue)"
+    }
+   ],
+   "paths": [],
+   "missing": [],
+   "notes": "Four-cylinder opposed engine seen from above with cylinders numbered 1-4 (1 and 3 on the image right, 2 and 4 on the left), consistent with the Lycoming convention (odd numbers on the right, viewed from the rear). Green = upper-magneto wires, blue = lower-magneto wires."
+  }
+ },
+ "engine_specs": {
+  "engine_model": "Lycoming O-320-D2J (C172P engine per task; TCDS E-274 lists -D2J, type certificate approved December 28, 1978)",
+  "rated_power": {
+   "value": "160 hp at 2700 rpm (alternate ratings 150 hp at 2500 rpm and 155 hp at 2600 rpm)",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16), O-320-B, -D series",
+   "quote": "Rated horsepower 160; Rated speed, RPM 2700; ** O-320-D2J has alternate rating of 150 HP at 2500 RPM and 155 HP at 2600 RPM",
+   "confirmed_by": {
+    "value": "160-2700",
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7, column O-320-B/-D models"
+   }
+  },
+  "bore_in": {
+   "value": 5.125,
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16)",
+   "quote": "Bore, inches 5.125",
+   "confirmed_by": {
+    "value": "5.125 x 3.875 (bore and stroke, in.)",
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7"
+   }
+  },
+  "stroke_in": {
+   "value": 3.875,
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16)",
+   "quote": "Stroke, inches 3.875",
+   "confirmed_by": {
+    "value": "5.125 x 3.875",
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7"
+   }
+  },
+  "displacement_cu_in": {
+   "value": 319.8,
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16)",
+   "quote": "Displacement, cubic inches 319.8",
+   "confirmed_by": {
+    "value": 319.8,
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7"
+   }
+  },
+  "compression_ratio": {
+   "value": "8.5:1",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16), O-320-B, -D series",
+   "quote": "Compression ratio 8.5:1",
+   "confirmed_by": {
+    "value": "8.50:1",
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7, column containing -D2J"
+   }
+  },
+  "firing_order": {
+   "value": "1-3-2-4",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16)",
+   "quote": "Firing order 1-3-2-4"
+  },
+  "ignition_timing": {
+   "value": "25 deg BTC",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 2-2 (PDF p.16)",
+   "confirmed_by": {
+    "value": "Timing BTC 25",
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 2 of 7"
+   }
+  },
+  "magnetos": {
+   "value": "two Slick 4251 impulse-coupling magnetos",
+   "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+   "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+   "page": "Page 6 of 7 (NOTE 5 model characteristics) and Page 7 of 7 (NOTE 9)",
+   "quote": "O-320-D2J: Similar to O-320-D2G except is equipped with two Slick impulse coupling magnetos ...; NOTE 9: -D2J 255 (2) 4251 (Slick)",
+   "confirmed_by": {
+    "value": "Left 4251, Right 4251",
+    "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+    "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+    "page": "printed 1-3 (PDF p.11), Table 1"
+   }
+  },
+  "cylinder_numbering": {
+   "value": "Cylinders numbered front to rear, odd numbers on the right, even on the left; left/right as seen by an observer facing the rear of the engine (front = propeller end). So #1 is right-front, #2 left-front, #3 right-rear, #4 left-rear.",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 1-1 (PDF p.9), Section 1 Description",
+   "quote": "The cylinders are numbered from front to rear, odd numbers on the right, even numbers on the left. ... Reference to the left and right side is made with the observer facing the rear of the engine.",
+   "derived": "#1..#4 positions are derived from the quoted rule"
+  },
+  "crankshaft_rotation": {
+   "value": "clockwise viewed from the rear",
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 1-1 and 2-2 (PDF p.9, p.16)"
+  },
+  "dry_weight_lb": {
+   "tcds": {
+    "value": 255,
+    "source": "FAA Type Certificate Data Sheet No. E-274, Revision 21, August 10, 2009 (copy hosted in an NTSB public docket; not retrieved from drs.faa.gov)",
+    "url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40381291&FileExtension=.PDF&FileName=Engine+Type+Certificate+Data+Sheet+for+Lycoming+O-320-E2D-Master.PDF",
+    "page": "Page 7 of 7, NOTE 9 (Weight (dry) and ignition, dual)",
+    "quote": "-D2J 255 (2) 4251 (Slick)"
+   },
+   "operators_manual_standard": {
+    "value": 275,
+    "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+    "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+    "page": "printed 2-3 (PDF p.17), Detail Weights",
+    "quote": "Engine, Standard, Dry Weight. Includes carburetor, magnetos, spark plugs, ignition harness, intercylinder baffles, tachometer drive, starter and generator (alternator) drive, starter and generator (alternator) with mounting bracket. ... -D2J, -E1J 275"
+   },
+   "note": "The two figures use different inclusions: TCDS dry weight 255 lb vs. the manual's 'standard' dry weight 275 lb with starter and alternator."
+  },
+  "overall_dimensions": {
+   "value": {
+    "height": 23.0,
+    "width": 32.24,
+    "length": 29.05
+   },
+   "source": "Lycoming Operator's Manual, O-320 Series, Part No. 60297-30, 3rd Edition, October 2006 ('Approved by FAA')",
+   "url": "https://www.lycoming.com/sites/default/files/attachments/O-320%2520Operator%2520Manual%252060297-30.pdf",
+   "page": "printed 1-3 (PDF p.11), Table 1 Model Application, row '-D2J*'",
+   "quote": "-D2J* 4251 4251 23.00 32.24 29.05 (* = fixed pitch propeller)",
+   "units": "not printed in the table; the values are consistent with inches (32.24 in width), but the manual does not state the unit"
+  },
+  "not_found": [
+   "Overall dimensions are not in TCDS E-274 (only in the operator's manual).",
+   "The current TCDS revision on drs.faa.gov could not be retrieved (it is a JavaScript application); values are from Revision 21 (2009) as hosted by NTSB."
+  ]
+ }
+}

@@ -1,0 +1,108 @@
+commit 15e6bc64f257fb2fb052e6ff13cdd2a4e40bd659
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Tue Aug 18 19:46:38 2026 -0700
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Tue Aug 18 19:46:38 2026 -0700
+
+    Created 2D Grid Version with optimized structure
+
+diff --git a/blas.cu b/blas.cu
+index a3c238c..576f2d5 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -3,7 +3,9 @@
+ #include <cmath>
+ 
+ #define BLOCK_SIZE 256
+-#define GEMV_BLOCK_SIZE 512 
++#define GEMV_BLOCK_SIZE BLOCK_SIZE
++#define GEMV_ROWS 32
++#define GEMV_SPLITS 16
+ 
+ static long span_of(int n, int inc) {
+     return n > 0 ? 1 + (long)(n - 1) * (inc < 0 ? -inc : inc) : 0;
+@@ -275,35 +277,32 @@ real_t asum(const Vector& x) {
+ 
+ 
+ template <typename Access>
+-__device__ real_t row_dot(const Matrix& A, const Vector& x, long i, long m, long len, Access at)
++__device__ real_t row_dot(const Matrix& A, const Vector& x, long i, long c0, long c1, Access at)
+ {
+-  __shared__ real_t xs[GEMV_BLOCK_SIZE];
+   real_t sum = 0;
+-  for (long tile = 0; tile < len; tile += GEMV_BLOCK_SIZE) {
+-      long j = tile + threadIdx.x;
+-      if (j < len)
+-	  xs[threadIdx.x] = x.data[j * x.inc];
+-      __syncthreads();
+-      const long lim = (len - tile < GEMV_BLOCK_SIZE) ? len - tile : GEMV_BLOCK_SIZE;
+-      if (i < m) {
+-	for (long k = 0; k < lim; k++) {
+-	    sum += at(A, i, tile+k) * xs[k];
+-	}
+-      }
+-      __syncthreads();
+-  }
++  for (long j = c0; j < c1; j++)
++      sum += at(A, i, j) * x.data[j * x.inc];
+   return sum;
+ }
+ 
+ template <typename Access>
+ __global__ void gemv_kernel(real_t alpha, const Matrix A, const Vector x, real_t beta, Vector y, long m, long n, Access at) {
++    __shared__ real_t partial[GEMV_SPLITS][GEMV_ROWS];
+     real_t* __restrict__ yp = y.data;
+-    for (long base = blockIdx.x * (long)blockDim.x; base < m; base += (long)gridDim.x * blockDim.x) {
++    const long chunk = (n + GEMV_SPLITS - 1) / GEMV_SPLITS;
++    const long c0 = threadIdx.y * chunk;
++    const long c1 = (c0 + chunk < n) ? c0 + chunk : n;
++    for (long base = blockIdx.x * (long)GEMV_ROWS; base < m; base += (long)gridDim.x * GEMV_ROWS) {
+ 	const long i = base + threadIdx.x;
+-	if (i < m) {
+-	    real_t sum = row_dot(A, x, i, m, n, at);
++	partial[threadIdx.y][threadIdx.x] = (i < m) ? row_dot(A, x, i, c0, c1, at) : real_t(0);
++	__syncthreads();
++	if (threadIdx.y == 0 && i < m) {
++	    real_t sum = 0;
++	    for (int t = 0; t < GEMV_SPLITS; t++)
++		sum += partial[t][threadIdx.x];
+ 	    yp[i * y.inc] = alpha * sum + (beta == real_t(0) ? real_t(0) : beta * yp[i * y.inc]);
+ 	}
++	__syncthreads();
+     }
+ }
+ 
+@@ -323,11 +322,12 @@ void gemv(const char* trans, real_t alpha, const Matrix& A, const Vector& x, rea
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = 128; 
++    const dim3 block(GEMV_ROWS, GEMV_SPLITS);
++    const int grid = (m + GEMV_ROWS - 1) / GEMV_ROWS;
+     if (notrans) {
+-	gemv_kernel<<<grid, GEMV_BLOCK_SIZE>>>(alpha, dA, dx, beta, dy, m, n, NoTransAt());
++	gemv_kernel<<<grid, block>>>(alpha, dA, dx, beta, dy, m, n, NoTransAt());
+     } else {
+-	gemv_kernel<<<grid, GEMV_BLOCK_SIZE>>>(alpha, dA, dx, beta, dy, m, n, TransAt());
++	gemv_kernel<<<grid, block>>>(alpha, dA, dx, beta, dy, m, n, TransAt());
+     }
+     CUDA_ERROR_CHECK(cudaGetLastError());
+     unstage_vector(y, sy);
+@@ -339,7 +339,7 @@ template <typename Access>
+ __global__ void symv_kernel(real_t alpha, const Matrix A, const Vector x, real_t beta, const Vector y, Access at) {
+     real_t* __restrict__ yp = y.data;
+     for (long i = blockIdx.x * (long)blockDim.x + threadIdx.x; i < A.rows; i+= (long)gridDim.x * blockDim.x) {
+-	real_t sum = row_dot(A, x, i, A.rows, A.cols, at);
++	real_t sum = row_dot(A, x, i, 0, A.cols, at);
+ 	yp[i * y.inc] = alpha * sum + (beta == real_t(0) ? real_t(0) : beta * yp[i * y.inc]);
+     }
+ }
+@@ -358,7 +358,7 @@ void symv(const char* uplo, real_t alpha, const Matrix& A, const Vector& x, real
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = 128;
++    const int grid = 512;
+     if (upper) {
+ 	symv_kernel<<<grid, GEMV_BLOCK_SIZE>>>(alpha, dA, dx, beta, dy, UpperAt());
+     } else {

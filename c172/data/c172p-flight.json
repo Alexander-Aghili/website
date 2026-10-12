@@ -1,0 +1,1406 @@
+{
+ "source": "FlightGear C172P checklists (c172p-team/c172p, c172-checklists.xml, GPL-2.0)",
+ "note": "One flight, preflight to tie-down, as a timeline for the explorer's story mode.",
+ "duration": 733.0,
+ "phases": [
+  {
+   "id": "preflight",
+   "title": "Preflight Inspection",
+   "t0": 0.0,
+   "t1": 184.0
+  },
+  {
+   "id": "before_start",
+   "title": "Before Starting Engine",
+   "t0": 184.0,
+   "t1": 196.0
+  },
+  {
+   "id": "start",
+   "title": "Starting Engine",
+   "t0": 196.0,
+   "t1": 258.0
+  },
+  {
+   "id": "runup",
+   "title": "Before Takeoff",
+   "t0": 258.0,
+   "t1": 376.0
+  },
+  {
+   "id": "takeoff",
+   "title": "Normal Takeoff",
+   "t0": 376.0,
+   "t1": 401.0
+  },
+  {
+   "id": "climb",
+   "title": "Enroute Climb",
+   "t0": 401.0,
+   "t1": 450.0
+  },
+  {
+   "id": "cruise",
+   "title": "Cruise",
+   "t0": 450.0,
+   "t1": 528.0
+  },
+  {
+   "id": "descent",
+   "title": "Descent",
+   "t0": 528.0,
+   "t1": 568.0
+  },
+  {
+   "id": "before_landing",
+   "title": "Before Landing",
+   "t0": 568.0,
+   "t1": 588.0
+  },
+  {
+   "id": "landing",
+   "title": "Normal Landing",
+   "t0": 588.0,
+   "t1": 634.0
+  },
+  {
+   "id": "after_landing",
+   "title": "After Landing",
+   "t0": 634.0,
+   "t1": 669.0
+  },
+  {
+   "id": "securing",
+   "title": "Securing Airplane",
+   "t0": 669.0,
+   "t1": 733.0
+  }
+ ],
+ "events": [
+  {
+   "t": 0.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Parking brake",
+   "value": "SET",
+   "patch": {}
+  },
+  {
+   "t": 5.0,
+   "dur": 11,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Control lock",
+   "value": "REMOVE",
+   "patch": {
+    "sweep": "all"
+   }
+  },
+  {
+   "t": 16.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Magnetos/Ignition",
+   "value": "OFF",
+   "patch": {
+    "engine.mags": "OFF"
+   }
+  },
+  {
+   "t": 21.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Avionics Power Switch",
+   "value": "OFF",
+   "patch": {
+    "loads.navcom1": false,
+    "loads.transponder": false,
+    "loads.audio_panel": false
+   }
+  },
+  {
+   "t": 26.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Battery Master Switch",
+   "value": "ON",
+   "patch": {
+    "electrical.bat": true
+   }
+  },
+  {
+   "t": 31.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Fuel Quantity",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 36.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Battery Master Switch",
+   "value": "OFF",
+   "patch": {
+    "electrical.bat": false
+   }
+  },
+  {
+   "t": 41.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Fuel Selector Valve",
+   "value": "BOTH",
+   "patch": {
+    "fuel.selector": "BOTH"
+   }
+  },
+  {
+   "t": 46.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Baggage door",
+   "value": "LOCK",
+   "patch": {},
+   "look": "baggagedoorexterior"
+  },
+  {
+   "t": 51.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Beacon light",
+   "value": "CHECK",
+   "patch": {},
+   "look": "Beacon"
+  },
+  {
+   "t": 56.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Empennage",
+   "value": "CHECK FOR DAMAGE",
+   "patch": {},
+   "look": "elevatorleft"
+  },
+  {
+   "t": 61.0,
+   "dur": 11,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Elevator/Rudder",
+   "value": "CHECK FOR FREEDOM OF MOVEMENT",
+   "patch": {
+    "sweep": "all"
+   },
+   "look": "elevatorleft"
+  },
+  {
+   "t": 72.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Tail tie-down",
+   "value": "REMOVE",
+   "patch": {},
+   "look": "elevatorleft"
+  },
+  {
+   "t": 77.0,
+   "dur": 11,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right Aileron",
+   "value": "CHECK FOR FREEDOM OF MOVEMENT",
+   "patch": {
+    "sweep": "roll"
+   },
+   "look": "rightaileron"
+  },
+  {
+   "t": 88.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right Wingtip",
+   "value": "CHECK CONDITION",
+   "patch": {},
+   "look": "RightNavLight"
+  },
+  {
+   "t": 93.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right Wing",
+   "value": "CHECK FOR DAMAGE",
+   "patch": {},
+   "look": "wing_right"
+  },
+  {
+   "t": 98.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right tie-down",
+   "value": "REMOVE",
+   "patch": {},
+   "look": "wing_right"
+  },
+  {
+   "t": 103.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right Fuel Tank Sump",
+   "value": "CHECK FOR WATER CONTAMINATION",
+   "patch": {},
+   "look": "wing_right"
+  },
+  {
+   "t": 108.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Right Main Wheel",
+   "value": "CHECK FOR TIRE PRESSURE",
+   "patch": {},
+   "look": "RightWheel"
+  },
+  {
+   "t": 113.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Oil level",
+   "value": "CHECK",
+   "patch": {},
+   "look": "oildoor"
+  },
+  {
+   "t": 118.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Propeller/Spinner",
+   "value": "CHECK FOR CONDITION",
+   "patch": {},
+   "look": "Propeller"
+  },
+  {
+   "t": 123.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Cowl Plugs",
+   "value": "REMOVED",
+   "patch": {
+    "cowlplugs": false
+   },
+   "look": "PropellerCowlPlugs"
+  },
+  {
+   "t": 128.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Nose wheel",
+   "value": "CHECK DAMPER",
+   "patch": {},
+   "look": "NoseWheel"
+  },
+  {
+   "t": 133.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Wheel Chocks",
+   "value": "REMOVED",
+   "patch": {},
+   "look": "NoseWheel"
+  },
+  {
+   "t": 138.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left Fuel Tank Sump",
+   "value": "CHECK FOR WATER CONTAMINATION",
+   "patch": {},
+   "look": "wing_left"
+  },
+  {
+   "t": 143.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left Main Wheel",
+   "value": "CHECK FOR TIRE PRESSURE",
+   "patch": {},
+   "look": "LeftWheel"
+  },
+  {
+   "t": 148.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Pitot tube cover",
+   "value": "REMOVE",
+   "patch": {},
+   "look": "pitot"
+  },
+  {
+   "t": 153.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left tie-down",
+   "value": "REMOVE",
+   "patch": {},
+   "look": "wing_left"
+  },
+  {
+   "t": 158.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left Wing",
+   "value": "CHECK FOR DAMAGE",
+   "patch": {},
+   "look": "wing_left"
+  },
+  {
+   "t": 163.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Landing light",
+   "value": "CHECK FOR CONDITION AND",
+   "patch": {
+    "loads.landing_light": false
+   },
+   "look": "landinglight"
+  },
+  {
+   "t": 168.0,
+   "dur": 5,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left Wingtip",
+   "value": "CHECK CONDITION",
+   "patch": {},
+   "look": "LeftNavLight"
+  },
+  {
+   "t": 173.0,
+   "dur": 11,
+   "phase": "preflight",
+   "checklist": "Preflight Inspection",
+   "item": "Left Aileron",
+   "value": "CHECK FOR FREEDOM OF MOVEMENT",
+   "patch": {
+    "sweep": "roll"
+   },
+   "look": "leftaileron"
+  },
+  {
+   "t": 184.0,
+   "dur": 3,
+   "phase": "before_start",
+   "checklist": "Before Starting Engine",
+   "item": "Preflight Inspection",
+   "value": "COMPLETE",
+   "patch": {}
+  },
+  {
+   "t": 187.0,
+   "dur": 3,
+   "phase": "before_start",
+   "checklist": "Before Starting Engine",
+   "item": "Passenger Briefing",
+   "value": "COMPLETE",
+   "patch": {}
+  },
+  {
+   "t": 190.0,
+   "dur": 3,
+   "phase": "before_start",
+   "checklist": "Before Starting Engine",
+   "item": "Seats, Seat Belts, Shoulder Harnesses",
+   "value": "ADJUST and LOCK",
+   "patch": {}
+  },
+  {
+   "t": 193.0,
+   "dur": 3,
+   "phase": "before_start",
+   "checklist": "Before Starting Engine",
+   "item": "Circuit Breakers",
+   "value": "CHECK IN",
+   "patch": {}
+  },
+  {
+   "t": 196.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Battery Master Switch",
+   "value": "ON",
+   "patch": {
+    "electrical.bat": true
+   }
+  },
+  {
+   "t": 200.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Flashing Beacon",
+   "value": "ON",
+   "patch": {
+    "loads.beacon": true
+   }
+  },
+  {
+   "t": 204.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Prime",
+   "value": "As Required - 2-6 strokes",
+   "patch": {}
+  },
+  {
+   "t": 208.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Carburetor Heat",
+   "value": "COLD",
+   "patch": {}
+  },
+  {
+   "t": 212.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Throttle",
+   "value": "OPEN 1/8 INCH",
+   "patch": {}
+  },
+  {
+   "t": 216.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Mixture",
+   "value": "RICH",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 220.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Propeller Area",
+   "value": "CLEAR",
+   "patch": {}
+  },
+  {
+   "t": 224.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Magnetos",
+   "value": "BOTH",
+   "patch": {
+    "engine.mags": "BOTH"
+   }
+  },
+  {
+   "t": 228.0,
+   "dur": 10,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Ignition Switch",
+   "value": "ON",
+   "patch": {
+    "start": true
+   }
+  },
+  {
+   "t": 238.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Oil Pressure",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 242.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Alternator Master Switch",
+   "value": "ON",
+   "patch": {
+    "electrical.alt": true
+   }
+  },
+  {
+   "t": 246.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Avionics Power Switch",
+   "value": "ON",
+   "patch": {
+    "loads.navcom1": true,
+    "loads.transponder": true,
+    "loads.audio_panel": true
+   }
+  },
+  {
+   "t": 250.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Navigation Lights, Flashing Beacon",
+   "value": "ON as required",
+   "patch": {
+    "loads.nav_lights": true,
+    "loads.beacon": true
+   }
+  },
+  {
+   "t": 254.0,
+   "dur": 4,
+   "phase": "start",
+   "checklist": "Starting Engine",
+   "item": "Radios",
+   "value": "ON",
+   "patch": {
+    "loads.navcom1": true,
+    "loads.audio_panel": true
+   }
+  },
+  {
+   "t": 258.0,
+   "dur": 20,
+   "phase": "runup",
+   "checklist": null,
+   "item": "Taxi",
+   "value": "1000 RPM, taxi light on",
+   "patch": {
+    "engine.rpm": 1000,
+    "loads.taxi_light": true
+   }
+  },
+  {
+   "t": 278.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Seats, Seat Belts, Shoulder Harnesses",
+   "value": "CHECK SECURE",
+   "patch": {}
+  },
+  {
+   "t": 282.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Cabin Doors",
+   "value": "CLOSED and LOCKED",
+   "patch": {}
+  },
+  {
+   "t": 286.0,
+   "dur": 10,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Flight Controls",
+   "value": "FREE and CORRECT",
+   "patch": {
+    "sweep": "all"
+   }
+  },
+  {
+   "t": 296.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Flight Instruments",
+   "value": "CHECK and SET",
+   "patch": {}
+  },
+  {
+   "t": 300.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Fuel Quantity",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 304.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Mixture",
+   "value": "RICH",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 308.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Fuel Selector Valve",
+   "value": "RECHECK BOTH",
+   "patch": {
+    "fuel.selector": "BOTH"
+   }
+  },
+  {
+   "t": 312.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Elevator Trim",
+   "value": "SET for takeoff",
+   "patch": {}
+  },
+  {
+   "t": 316.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Throttle",
+   "value": "1700 RPM",
+   "patch": {
+    "engine.rpm": 1700
+   }
+  },
+  {
+   "t": 320.0,
+   "dur": 12,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Magnetos",
+   "value": "CHECK RPM DROP",
+   "patch": {
+    "magcheck": true
+   }
+  },
+  {
+   "t": 332.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Carburetor Heat",
+   "value": "CHECK for RPM drop",
+   "patch": {}
+  },
+  {
+   "t": 336.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Suction Gauge",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 340.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Engine Instruments and Ammeter",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 344.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Throttle",
+   "value": "1000RPM or LESS",
+   "patch": {
+    "engine.rpm": 1000
+   }
+  },
+  {
+   "t": 348.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Throttle Friction Lock",
+   "value": "ADJUST",
+   "patch": {}
+  },
+  {
+   "t": 352.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Landing Light",
+   "value": "ON",
+   "patch": {
+    "loads.landing_light": true
+   }
+  },
+  {
+   "t": 356.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Strobe Lights",
+   "value": "ON",
+   "patch": {
+    "loads.strobe": true
+   }
+  },
+  {
+   "t": 360.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Radios and Avionics",
+   "value": "SET",
+   "patch": {}
+  },
+  {
+   "t": 364.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Transponder",
+   "value": "SET code",
+   "patch": {}
+  },
+  {
+   "t": 368.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Transponder Mode",
+   "value": "ON OR ALT",
+   "patch": {}
+  },
+  {
+   "t": 372.0,
+   "dur": 4,
+   "phase": "runup",
+   "checklist": "Before Takeoff",
+   "item": "Wing Flaps",
+   "value": "SET for takeoff",
+   "patch": {
+    "controls.flaps": 10
+   }
+  },
+  {
+   "t": 376.0,
+   "dur": 5,
+   "phase": "takeoff",
+   "checklist": "Normal Takeoff",
+   "item": "Wing Flaps",
+   "value": "0 - 10 degrees",
+   "patch": {
+    "controls.flaps": 10
+   }
+  },
+  {
+   "t": 381.0,
+   "dur": 5,
+   "phase": "takeoff",
+   "checklist": "Normal Takeoff",
+   "item": "Carburetor Heat",
+   "value": "COLD",
+   "patch": {}
+  },
+  {
+   "t": 386.0,
+   "dur": 5,
+   "phase": "takeoff",
+   "checklist": "Normal Takeoff",
+   "item": "Mixture",
+   "value": "RICH",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 391.0,
+   "dur": 5,
+   "phase": "takeoff",
+   "checklist": "Normal Takeoff",
+   "item": "Throttle",
+   "value": "FULL OPEN",
+   "patch": {
+    "engine.rpm": "full"
+   }
+  },
+  {
+   "t": 396.0,
+   "dur": 5,
+   "phase": "takeoff",
+   "checklist": "Normal Takeoff",
+   "item": "Elevator Control",
+   "value": "LIFT NOSE WHEEL",
+   "patch": {
+    "controls.pitch": -0.35
+   }
+  },
+  {
+   "t": 401.0,
+   "dur": 8,
+   "phase": "climb",
+   "checklist": "Enroute Climb",
+   "item": "Airspeed",
+   "value": "70-85 KIAS",
+   "patch": {}
+  },
+  {
+   "t": 409.0,
+   "dur": 8,
+   "phase": "climb",
+   "checklist": "Enroute Climb",
+   "item": "Throttle",
+   "value": "FULL OPEN",
+   "patch": {
+    "engine.rpm": "full"
+   }
+  },
+  {
+   "t": 417.0,
+   "dur": 8,
+   "phase": "climb",
+   "checklist": "Enroute Climb",
+   "item": "Mixture",
+   "value": "RICH",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 425.0,
+   "dur": 25,
+   "phase": "climb",
+   "checklist": null,
+   "item": "Climb",
+   "value": "70\u201385 KIAS, full throttle, mixture rich",
+   "patch": {}
+  },
+  {
+   "t": 450.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Altimeter",
+   "value": "SET STD/QNH",
+   "patch": {}
+  },
+  {
+   "t": 458.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Power",
+   "value": "2100-2700 RPM",
+   "patch": {
+    "engine.rpm": "cruise"
+   }
+  },
+  {
+   "t": 466.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Elevator Trim",
+   "value": "ADJUST",
+   "patch": {}
+  },
+  {
+   "t": 474.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Mixture",
+   "value": "LEAN",
+   "patch": {
+    "mixture": "lean"
+   }
+  },
+  {
+   "t": 482.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Fuel Quantity",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 490.0,
+   "dur": 8,
+   "phase": "cruise",
+   "checklist": "Cruise",
+   "item": "Lights",
+   "value": "AS REQUIRED",
+   "patch": {}
+  },
+  {
+   "t": 498.0,
+   "dur": 30,
+   "phase": "cruise",
+   "checklist": null,
+   "item": "Cruise",
+   "value": "level, 2100\u20132700 RPM",
+   "patch": {}
+  },
+  {
+   "t": 528.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "ATIS",
+   "value": "NOTED",
+   "patch": {}
+  },
+  {
+   "t": 533.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Altimeter",
+   "value": "SET QNH",
+   "patch": {}
+  },
+  {
+   "t": 538.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Landing Light",
+   "value": "ON",
+   "patch": {
+    "loads.landing_light": true
+   }
+  },
+  {
+   "t": 543.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Fuel Quantity",
+   "value": "CHECK",
+   "patch": {}
+  },
+  {
+   "t": 548.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Fuel Selector Valve",
+   "value": "BOTH",
+   "patch": {
+    "fuel.selector": "BOTH"
+   }
+  },
+  {
+   "t": 553.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Power",
+   "value": "AS DESIRED",
+   "patch": {}
+  },
+  {
+   "t": 558.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Mixture",
+   "value": "ADJUST for smooth operation",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 563.0,
+   "dur": 5,
+   "phase": "descent",
+   "checklist": "Descent",
+   "item": "Carburetor Heat",
+   "value": "FULL HEAT AS REQUIRED",
+   "patch": {}
+  },
+  {
+   "t": 568.0,
+   "dur": 4,
+   "phase": "before_landing",
+   "checklist": "Before Landing",
+   "item": "Seats, Seat Belt, Shoulder Harnesses",
+   "value": "SECURE",
+   "patch": {}
+  },
+  {
+   "t": 572.0,
+   "dur": 4,
+   "phase": "before_landing",
+   "checklist": "Before Landing",
+   "item": "Fuel Selector Valve",
+   "value": "BOTH",
+   "patch": {
+    "fuel.selector": "BOTH"
+   }
+  },
+  {
+   "t": 576.0,
+   "dur": 4,
+   "phase": "before_landing",
+   "checklist": "Before Landing",
+   "item": "Mixture",
+   "value": "RICH",
+   "patch": {
+    "mixture": "rich"
+   }
+  },
+  {
+   "t": 580.0,
+   "dur": 4,
+   "phase": "before_landing",
+   "checklist": "Before Landing",
+   "item": "Carburetor Heat",
+   "value": "FULL HEAT",
+   "patch": {}
+  },
+  {
+   "t": 584.0,
+   "dur": 4,
+   "phase": "before_landing",
+   "checklist": "Before Landing",
+   "item": "Landing Light",
+   "value": "ON",
+   "patch": {
+    "loads.landing_light": true
+   }
+  },
+  {
+   "t": 588.0,
+   "dur": 10,
+   "phase": "landing",
+   "checklist": null,
+   "item": "Approach",
+   "value": "",
+   "patch": {}
+  },
+  {
+   "t": 598.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Airspeed",
+   "value": "65-75 KIAS (flaps UP)",
+   "patch": {}
+  },
+  {
+   "t": 604.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Wing Flaps",
+   "value": "AS DESIRED",
+   "patch": {
+    "controls.flaps": 20
+   }
+  },
+  {
+   "t": 610.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Airspeed",
+   "value": "60-70 KIAS (flaps DOWN)",
+   "patch": {}
+  },
+  {
+   "t": 616.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Touchdown",
+   "value": "MAIN WHEELS FIRST",
+   "patch": {
+    "controls.pitch": -0.3
+   }
+  },
+  {
+   "t": 622.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Landing Roll",
+   "value": "LOWER NOSE WHEEL GENTLY",
+   "patch": {
+    "controls.pitch": 0
+   }
+  },
+  {
+   "t": 628.0,
+   "dur": 6,
+   "phase": "landing",
+   "checklist": "Normal Landing",
+   "item": "Braking",
+   "value": "MINIMUM REQUIRED",
+   "patch": {}
+  },
+  {
+   "t": 634.0,
+   "dur": 15,
+   "phase": "after_landing",
+   "checklist": null,
+   "item": "Taxi in",
+   "value": "",
+   "patch": {
+    "engine.rpm": 1000
+   }
+  },
+  {
+   "t": 649.0,
+   "dur": 4,
+   "phase": "after_landing",
+   "checklist": "After Landing",
+   "item": "Carburetor Heat",
+   "value": "COLD",
+   "patch": {}
+  },
+  {
+   "t": 653.0,
+   "dur": 4,
+   "phase": "after_landing",
+   "checklist": "After Landing",
+   "item": "Wing Flaps",
+   "value": "UP",
+   "patch": {
+    "controls.flaps": 0
+   }
+  },
+  {
+   "t": 657.0,
+   "dur": 4,
+   "phase": "after_landing",
+   "checklist": "After Landing",
+   "item": "Transponder Mode",
+   "value": "SBY",
+   "patch": {}
+  },
+  {
+   "t": 661.0,
+   "dur": 4,
+   "phase": "after_landing",
+   "checklist": "After Landing",
+   "item": "Landing Light",
+   "value": "AS REQUIRED",
+   "patch": {
+    "loads.landing_light": false
+   }
+  },
+  {
+   "t": 665.0,
+   "dur": 4,
+   "phase": "after_landing",
+   "checklist": "After Landing",
+   "item": "Taxi Light",
+   "value": "ON",
+   "patch": {
+    "loads.taxi_light": true
+   }
+  },
+  {
+   "t": 669.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Parking Brake",
+   "value": "SET",
+   "patch": {}
+  },
+  {
+   "t": 673.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Power",
+   "value": "SET 1000 RPM",
+   "patch": {
+    "engine.rpm": 1000
+   }
+  },
+  {
+   "t": 677.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Avionics Power Switch",
+   "value": "OFF",
+   "patch": {
+    "loads.navcom1": false,
+    "loads.transponder": false,
+    "loads.audio_panel": false
+   }
+  },
+  {
+   "t": 681.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Mixture",
+   "value": "PULLED FULL OUT",
+   "patch": {
+    "mixture": "cutoff"
+   }
+  },
+  {
+   "t": 685.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Magnetos",
+   "value": "OFF",
+   "patch": {
+    "engine.mags": "OFF"
+   }
+  },
+  {
+   "t": 689.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Flashing Beacon",
+   "value": "OFF",
+   "patch": {
+    "loads.beacon": false
+   }
+  },
+  {
+   "t": 693.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Alternator Master Switch",
+   "value": "OFF",
+   "patch": {
+    "electrical.alt": false
+   }
+  },
+  {
+   "t": 697.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Battery Master Switch",
+   "value": "OFF",
+   "patch": {
+    "electrical.bat": false
+   }
+  },
+  {
+   "t": 701.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Control lock",
+   "value": "INSTALL",
+   "patch": {}
+  },
+  {
+   "t": 705.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Pitot tube",
+   "value": "COVER",
+   "patch": {}
+  },
+  {
+   "t": 709.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Left tie-down",
+   "value": "SECURED",
+   "patch": {}
+  },
+  {
+   "t": 713.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Wheel Chocks",
+   "value": "PLACED",
+   "patch": {}
+  },
+  {
+   "t": 717.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Cowl Plugs",
+   "value": "PLACED",
+   "patch": {
+    "cowlplugs": true
+   }
+  },
+  {
+   "t": 721.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Right tie-down",
+   "value": "SECURED",
+   "patch": {}
+  },
+  {
+   "t": 725.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Tail tie-down",
+   "value": "SECURED",
+   "patch": {}
+  },
+  {
+   "t": 729.0,
+   "dur": 4,
+   "phase": "securing",
+   "checklist": "Securing Airplane",
+   "item": "Doors",
+   "value": "CLOSED AND LOCKED",
+   "patch": {}
+  }
+ ],
+ "airborne": [
+  399.0,
+  616.0
+ ]
+}

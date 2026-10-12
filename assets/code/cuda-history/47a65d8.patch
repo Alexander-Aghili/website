@@ -1,0 +1,26 @@
+commit 47a65d8c5f30e757fd4f8fbb5ad75fc7dffed48f
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Wed Aug 12 11:02:37 2026 -0400
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Wed Aug 12 11:02:37 2026 -0400
+
+    reversed loop and threadID-based indexing
+
+diff --git a/blas.cu b/blas.cu
+index 4a202d9..eecb19d 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -170,10 +170,9 @@ __global__ void dot_kernel(const Vector x, const Vector y, real_t* result) {
+     sdata[tid] = sum;
+     __syncthreads();
+ 
+-    for (unsigned int s = 1; s < blockDim.x; s *= 2) {
+-	int index = 2 * s * tid;
+-	if (index < blockDim.x) {
+-	    sdata[index] += sdata[index + s];
++    for (unsigned int s = blockDim.x / 2; s > 0; s >>= 1) {
++	if (tid < s) {
++	    sdata[tid] += sdata[tid + s];
+ 	}
+ 	__syncthreads();
+     }

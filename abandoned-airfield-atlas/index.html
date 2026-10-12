@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#162a30" />
+    <meta
+      name="description"
+      content="Search and map abandoned and little-known airfields from Paul Freeman’s catalog."
+    />
+    <title>Airfield Atlas · Abandoned & Little-Known Airfields</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+    ></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#search">Skip to search</a>
+    <header class="masthead">
+      <a href="./" class="brand" aria-label="Airfield Atlas home"
+        ><svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle
+            cx="20"
+            cy="20"
+            r="18"
+            stroke="currentColor"
+            stroke-width="1"
+          />
+          <path
+            d="M20 6v28M6 20h28M12 28l8-18 8 18-8-5-8 5Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+          /></svg
+        ><span
+          >AIRFIELD <strong>ATLAS</strong
+          ><small>ABANDONED & LITTLE-KNOWN</small></span
+        ></a
+      >
+      <div class="header-actions">
+        <button id="about" class="quiet-button">About</button>
+      </div>
+    </header>
+    <main>
+      <aside id="sidebar" aria-label="Airfield search">
+        <div class="sidebar-top">
+          <h1>Search airfields</h1>
+          <div class="catalog-stats">
+            <div>
+              <strong id="total-stat">—</strong><span>cataloged airfields</span>
+            </div>
+            <div>
+              <strong id="mapped-stat">—</strong><span>mapped locations</span>
+            </div>
+          </div>
+          <label for="search" class="sr">Find an airfield</label>
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle
+                cx="10.5"
+                cy="10.5"
+                r="6.5"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+              <path
+                d="m15.5 15.5 5 5"
+                stroke="currentColor"
+                stroke-width="1.7"
+              /></svg
+            ><input
+              id="search"
+              type="search"
+              placeholder="Airfield, town, or region…"
+              autocomplete="off"
+            /><kbd aria-hidden="true">/</kbd>
+          </div>
+          <div class="filters">
+            <div>
+              <label for="state">REGION</label
+              ><select id="state">
+                <option value="">All states & territories</option>
+              </select>
+            </div>
+            <div>
+              <label for="quality">LOCATION</label
+              ><select id="quality">
+                <option value="">All qualities</option>
+                <option value="source supplied">Source supplied</option>
+                <option value="approximate">Approximate</option>
+                <option value="reviewed">Reviewed</option>
+                <option value="missing">Unlocated</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-options">
+            <label class="check"
+              ><input id="in-view" type="checkbox" /> In this map view</label
+            ><button id="reset" class="text-button">Reset filters</button>
+          </div>
+          <div class="results-heading">
+            <p id="status" role="status">Loading catalog…</p>
+            <button
+              id="toggle-results"
+              class="text-button"
+              aria-expanded="true"
+              aria-controls="result-scroll"
+            >
+              Hide list
+            </button>
+          </div>
+        </div>
+        <div id="result-scroll">
+          <ul id="results" aria-label="Airfield search results"></ul>
+          <button id="more" hidden>Show more airfields</button>
+        </div>
+        <div class="sidebar-credit">
+          <span>SOURCE</span
+          ><a
+            href="https://airfields-freeman.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Paul Freeman <span aria-hidden="true">↗</span
+            ><span class="sr"> (opens a new tab)</span></a
+          ><small id="refresh">Loading dataset details…</small>
+        </div>
+      </aside>
+      <section class="map-area" aria-label="Airfields map">
+        <div id="map"></div>
+        <div class="map-top">
+          <div class="layer-switch" role="group" aria-label="Basemap">
+            <button id="street" aria-pressed="true">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="m2 4 5-2 6 2 5-2v14l-5 2-6-2-5 2V4ZM7 2v14M13 4v14"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                /></svg
+              >Map</button
+            ><button id="satellite" aria-pressed="false">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="m10 2 8 5-8 5-8-5 8-5Zm-8 9 8 5 8-5M2 15l8 4 8-4"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                /></svg
+              >Satellite
+            </button>
+          </div>
+        </div>
+        <div class="map-right-tools">
+          <button
+            id="fit"
+            title="Fit all matching locations"
+            aria-label="Fit all matching locations"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+            </svg></button
+          ><select id="view" aria-label="Jump to region">
+            <option value="us">Main US</option>
+            <option value="ak">Alaska</option>
+            <option value="hi">Hawaii</option>
+            <option value="pacific">Western Pacific</option>
+            <option value="territories">Puerto Rico</option>
+            <option value="all">All locations</option>
+          </select>
+        </div>
+        <div id="map-error" role="alert" hidden>
+          <span id="map-error-text"></span
+          ><button id="dismiss-error" aria-label="Dismiss map message">
+            ×
+          </button>
+        </div>
+        <div class="map-bottom">
+          <div class="legend">
+            <span><i class="legend-dot"></i>Source supplied</span
+            ><span><i class="legend-diamond"></i>Approximate</span>
+          </div>
+          <div id="map-location" aria-hidden="true">
+            38.00° N &nbsp; 98.00° W
+          </div>
+        </div>
+      </section>
+    </main>
+    <dialog id="about-dialog">
+      <button id="close-about" class="close-dialog" aria-label="Close about">
+        ×
+      </button>
+      <h2>About this map</h2>
+      <p>
+        This map brings together locations from
+        <a
+          href="https://airfields-freeman.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Paul Freeman’s Abandoned & Little-Known Airfields</a
+        >. Each airfield name links to its original source in a new tab. The
+        stories and photographs remain on Freeman’s website.
+      </p>
+      <h3>Reading the map</h3>
+      <p>
+        Round markers use coordinates supplied by the source. Diamond markers
+        indicate explicit location uncertainty. Source coordinates are not
+        independently verified. Unlocated entries remain searchable; no
+        substitute coordinates are invented.
+      </p>
+      <p>
+        Satellite imagery shows present-day landscapes from Esri World Imagery;
+        imagery dates and resolution vary. It is not a historical overlay.
+      </p>
+      <h3>Coverage & provenance</h3>
+      <p id="coverage">Loading coverage details…</p>
+      <p>
+        <a href="data/coverage.json" target="_blank" rel="noopener noreferrer"
+          >View the extraction report ↗</a
+        >
+      </p>
+      <p>
+        Markers do not establish property boundaries, landing suitability, or
+        access permission.
+      </p>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+commit 7099f40ef82038702cd4e94dd6d9bd35d6ba0ff3
+Author:     Alexander Aghili <alexander.w.aghili@gmail.com>
+AuthorDate: Wed Aug 12 11:19:48 2026 -0400
+Commit:     Alexander Aghili <alexander.w.aghili@gmail.com>
+CommitDate: Wed Aug 12 11:19:48 2026 -0400
+
+    Change grid size to allow multiple iterations in the loop per call
+
+diff --git a/blas.cu b/blas.cu
+index eecb19d..af17a57 100644
+--- a/blas.cu
++++ b/blas.cu
+@@ -190,7 +190,7 @@ real_t dot(const Vector& x, const Vector& y) {
+     const Vector dx = stage_vector(x, sx);
+     const Vector dy = stage_vector(y, sy);
+ 
+-    const int grid = (x.n + DOT_BLOCK_SIZE - 1) / DOT_BLOCK_SIZE;
++    const int grid = (x.n + 2L * DOT_BLOCK_SIZE - 1) / (2L * DOT_BLOCK_SIZE);
+     real_t* d_result = nullptr;
+     CUDA_ERROR_CHECK(cudaMalloc(&d_result, sizeof(real_t)));
+     CUDA_ERROR_CHECK(cudaMemset(d_result, 0, sizeof(real_t)));
