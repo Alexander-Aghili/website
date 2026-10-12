@@ -4,3 +4,6 @@
 [submodule "atlas-projects/air-crashes"]
 	path = atlas-projects/air-crashes
 	url = https://github.com/Alexander-Aghili/Air-Crash-Atlas.git
+[submodule "atlas-projects/aviation-infrastructure"]
+	path = atlas-projects/aviation-infrastructure
+	url = https://github.com/Alexander-Aghili/AviationInfrastructureAtlas.git

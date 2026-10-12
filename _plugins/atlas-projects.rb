@@ -21,7 +21,8 @@ module Jekyll
 
     APPS = {
       'atlas-projects/abandoned-airfields/web' => 'abandoned-airfield-atlas',
-      'atlas-projects/air-crashes/web' => 'air-crash-atlas'
+      'atlas-projects/air-crashes/web' => 'air-crash-atlas',
+      'atlas-projects/aviation-infrastructure/web' => 'aviation-infrastructure-atlas'
     }.freeze
     OMIT = %w[data/events.json data/events.previous.geojson].freeze
 
